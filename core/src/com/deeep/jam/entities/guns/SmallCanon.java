@@ -34,15 +34,14 @@ public class SmallCanon extends Gun {
         this.y = (float) (ship.y + Math.sin(ship.rotation) * 2);
         float deltaX = Gdx.input.getX() - x - 32;
         float deltaY = Gdx.graphics.getHeight() - Gdx.input.getY() - y - 22;
-        rotation = (float) Math.atan2(deltaY, deltaX);
         this.originX = ship.x;
         this.originY = ship.y;
         theta = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
-        System.out.println(theta);
+        theta = ship.rotation;
     }
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatch.draw(guns[level][(damaged) ? 1 : 0], originX + offX, originY + offY, originX, originY, (float) guns[level][(damaged) ? 1 : 0].getRegionWidth(), (float) guns[level][(damaged) ? 1 : 0].getRegionHeight(), 1, 1, theta);
+        spriteBatch.draw(guns[level][(damaged) ? 1 : 0], originX, originY, originX, originY, (float) guns[level][(damaged) ? 1 : 0].getRegionWidth(), (float) guns[level][(damaged) ? 1 : 0].getRegionHeight(), 1, 1, 90);
     }
 }
