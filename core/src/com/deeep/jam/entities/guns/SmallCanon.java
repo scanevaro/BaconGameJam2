@@ -16,6 +16,8 @@ public class SmallCanon extends Gun {
         }
     }
 
-    public void update()
+    public void update() {
+
+    }
 
 }
