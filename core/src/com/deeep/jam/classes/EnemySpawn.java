@@ -41,7 +41,7 @@ public class EnemySpawn {
         private HashMap<Integer, Integer> typeToAmount;
         private ArrayList<Integer> availableTypes;
         private int level;
-        private int enemyCap = 255;
+        private int enemyCap = 10;
         private Random random;
 
         public ArrayList<Enemy> enemies;
@@ -59,7 +59,7 @@ public class EnemySpawn {
 
             while (enemies.size() < enemyCap) {
                 PositionVector p = randomizePositionVector(new PositionVector());
-                enemies.add(new EnemySmall(p, 5));
+                enemies.add(new EnemySmall(p, 0));
             }
         }
 
