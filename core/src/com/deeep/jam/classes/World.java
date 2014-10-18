@@ -1,10 +1,14 @@
 package com.deeep.jam.classes;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.deeep.jam.Game;
+import com.deeep.jam.entities.Bullet;
+import com.deeep.jam.entities.Enemy;
+import com.deeep.jam.entities.Ship;
 
 import java.util.Random;
 
@@ -14,8 +18,10 @@ import java.util.Random;
 public class World {
     private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
+    private ShapeRenderer shapeRenderer;
 
-    private Sprite[] enemy;
+    private Ship ship;
+    private Enemy[] enemy;
     private int formation;
 
     private Random random;
@@ -23,71 +29,68 @@ public class World {
     public World(boolean debug) {
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
         this.spriteBatch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
+        shapeRenderer = new ShapeRenderer();
 
-        enemy = new Sprite[7];
-        for (int i = 0; i < enemy.length; i++) {
-            enemy[i] = new Sprite(Assets.getAssets().getEnemy1());
-            enemy[i].setPosition(0, Game.VIRTUAL_HEIGHT);
-        }
+        ship = new Ship();
 
         random = new Random();
         formation = random.nextInt(3);
+
+
+        for (int i = 0; i < enemy.length; i++) {
+            enemy[i] = new Enemy(Assets.getAssets().getEnemy1(), formation);
+            enemy[i].setPosition(0, Game.VIRTUAL_HEIGHT);
+        }
     }
 
     public void draw() {
-        int x;
-        switch (formation) {
-            case 0:
-                x = 100;
-                for (int i = 0; i < enemy.length; i++) {
-                    enemy[i].setPosition(x, enemy[i].getY());
-                    enemy[i].draw(spriteBatch);
-
-                    x += 100;
-                }
-                break;
-            case 1:
-                x = random.nextInt(150);
-                for (int i = 0; i < enemy.length; i++) {
-                    enemy[i].setPosition(x, enemy[i].getY());
-                    enemy[i].draw(spriteBatch);
-
-                    x += random.nextInt(50);
-                }
-                break;
-            case 2:
-                x = 100;
-                int y = 20;
-                for (int i = 0; i < enemy.length; i++) {
-                    enemy[i].setPosition(x, enemy[i].getY() + y);
-                    enemy[i].draw(spriteBatch);
-
-                    y += 15;
-                    x += 100;
-                }
-                break;
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        shapeRenderer.setColor(Color.BLUE);
+        // Render Ship
+        shapeRenderer.rect(ship.x, ship.y, 10, 10, 20, 40, 1, 1, (float) Math.toDegrees(ship.rotation - Math.PI / 2));
+        shapeRenderer.setColor(Color.RED);
+        // Render Ship Gun
+        shapeRenderer.rect(ship.gun.x, ship.gun.y, 5, 5, 10, 20, 1, 1, (float) Math.toDegrees(ship.gun.rotation - Math.PI / 2));
+        // Render Bullets
+        for (Bullet bullet : ship.gun.bullets) {
+            shapeRenderer.rect(bullet.x, bullet.y, 5, 5, 2, 8, 1, 1, (float) Math.toDegrees(bullet.rotation - Math.PI / 2));
         }
+        shapeRenderer.end();
 
+        spriteBatch.begin();
+        //Render Enemys
+        for (int i = 0; i < enemy.length; i++)
+            enemy[i].draw(spriteBatch);
+
+        spriteBatch.end();
     }
 
     public void update(float delta) {
-        for (int i = 0; i < enemy.length; i++)
-            if (enemy[i].getX() <= Game.VIRTUAL_HEIGHT)
-                enemy[i].setPosition(enemy[i].getX(), enemy[i].getY() - delta * 30 /*TODO enemySpeed*/);
+        updateShip(delta);
 
-        if (enemy[0].getX() > Game.VIRTUAL_HEIGHT + enemy[0].getHeight())
-            spawn();
+        updateEnemys(delta);
     }
 
-    private void spawn() {
+    private void updateShip(float delta) {
+        ship.update(delta);
+    }
+
+    private void updateEnemys(float delta) {
+        for (int i = 0; i < enemy.length; i++)
+            enemy[i].update(delta);
+
+        if (enemy[0].getY() < 0)
+            spawnEnemys();
+    }
+
+
+    private void spawnEnemys() {
+        formation = random.nextInt(3);
+
+        enemy = new Enemy[7];
         for (int i = 0; i < enemy.length; i++) {
-            enemy[i] = new Sprite(Assets.getAssets().getEnemy1());
+            enemy[i] = new Enemy(Assets.getAssets().getEnemy1(), formation);
             enemy[i].setPosition(0, Game.VIRTUAL_HEIGHT);
         }
-
-        formation = random.nextInt(3);
-    }
-
-    public void touched(float force) {
     }
 }

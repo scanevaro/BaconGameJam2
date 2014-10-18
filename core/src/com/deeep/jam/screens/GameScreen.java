@@ -58,12 +58,7 @@ public class GameScreen implements Screen {
         world.update(delta);
         stage.act();
 
-        spriteBatch.begin();
-
         world.draw();
-
-        spriteBatch.end();
-
         stage.draw();
     }
 
