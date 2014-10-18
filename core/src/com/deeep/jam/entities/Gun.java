@@ -15,6 +15,8 @@ public abstract class Gun {
     public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
     public float bulletTimer = 0;
     public final float bulletSpeed = 0.5f;
+    public float originX, originY;
+    public float theta;
 
     public Gun() {
 

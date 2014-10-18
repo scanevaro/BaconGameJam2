@@ -13,7 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
-import com.deeep.jam.classes.World;
+import com.deeep.jam.classes.Worlds;
 
 
 /**
@@ -35,7 +35,7 @@ public class GameScreen implements Screen {
     private ImageButton shopButton;
     private Window shopDialog;
     //World
-    private World world;
+    private Worlds world;
 
     @Override
     public void show() {
@@ -107,7 +107,7 @@ public class GameScreen implements Screen {
     }
 
     private void prepareWorld() {
-        world = new World(true);
+        world = new Worlds();
     }
 
     private void prepareShop() {
