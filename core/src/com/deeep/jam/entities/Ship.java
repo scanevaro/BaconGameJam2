@@ -40,6 +40,7 @@ public class Ship {
         sprite.setCenterY(sprite.getHeight() / 2);
         bodyDef.position.setAngleRad(rotation);
         bodyDef.position.set(0, 0);
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.fixedRotation = false;
         groundShape = new PolygonShape();
         groundShape.setAsBox(sprite.getWidth() / 2,sprite.getHeight() / 2);
