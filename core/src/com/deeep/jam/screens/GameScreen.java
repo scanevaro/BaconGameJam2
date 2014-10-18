@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Worlds;
+import com.deeep.jam.entities.HealthBar;
 
 
 /**
@@ -32,6 +33,7 @@ public class GameScreen implements Screen {
     private Label money;
     private Label healthLabel;
     private Label health;
+    private HealthBar healthBar;
     private ImageButton shopButton;
     private Window shopDialog;
     private ImageButton smallGunButton;
@@ -73,6 +75,7 @@ public class GameScreen implements Screen {
         money = new Label("0", Assets.getAssets().getSkin());
         healthLabel = new Label("Health: ", Assets.getAssets().getSkin());
         health = new Label("5", Assets.getAssets().getSkin());
+        healthBar = new HealthBar();
 
         ImageButton.ImageButtonStyle nowPlayingStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         nowPlayingStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
@@ -97,9 +100,10 @@ public class GameScreen implements Screen {
 
         money.setPosition(moneyLabel.getPrefWidth(), Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight());
 
-        healthLabel.setPosition(0, Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight() - healthLabel.getPrefHeight());
+        healthBar.setSize(128, 32);
+        healthBar.setPosition(Game.VIRTUAL_WIDTH / 2 - healthBar.getWidth() / 2, 0);
 
-        health.setPosition(healthLabel.getPrefWidth(), Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight() - healthLabel.getPrefHeight());
+        healthLabel.setPosition(Game.VIRTUAL_WIDTH / 2 - healthBar.getWidth() / 2, healthBar.getHeight());
 
         shopButton.setSize(64, 64);
         shopButton.setPosition(Game.VIRTUAL_WIDTH - shopButton.getWidth(), Game.VIRTUAL_HEIGHT - shopButton.getHeight());
@@ -110,6 +114,7 @@ public class GameScreen implements Screen {
         stage.addActor(money);
         stage.addActor(healthLabel);
         stage.addActor(health);
+        stage.addActor(healthBar);
         stage.addActor(shopButton);
     }
 

@@ -1,9 +1,12 @@
 package com.deeep.jam.classes;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 /**
@@ -27,6 +30,7 @@ public class Assets {
      */
     private TextureAtlas textureAtlas;
 
+    private BitmapFont font;
     /**
      * Skin for menus and buttons
      */
@@ -66,13 +70,31 @@ public class Assets {
     public void load() {
         if (!loaded) {
             textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
-            skin = new Skin(Gdx.files.internal("data/uiskin.json"));
+            loadFont();
+            loadSkin();
             logo = new Texture(Gdx.files.internal("data/newLogo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
 //            logger.system(Assets.class, "All assets have been loaded");
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
             loaded = true;
         }
+    }
+
+    private void loadFont() {
+        // Instead of using the default font that comes with libgdx default skin, we use a TrueType font and load it in runtime.
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Toucon.ttf"));
+        font = generator.generateFont(12);
+    }
+
+    private void loadSkin() {
+        skin = new Skin();
+        skin.add("default-font", font, BitmapFont.class);
+        FileHandle fileHandle = Gdx.files.internal("data/uiskin.json");
+        FileHandle atlasFile = fileHandle.sibling("uiskin.atlas");
+        if (atlasFile.exists()) {
+            skin.addRegions(new TextureAtlas(atlasFile));
+        }
+        skin.load(fileHandle);
     }
 
     /**
