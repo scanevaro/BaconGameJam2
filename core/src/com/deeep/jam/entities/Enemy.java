@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  * Created by scanevaro on 17/10/2014.
  */
 public abstract class Enemy {
-    private float x, y;
-    private float force;
-    private float rotation;
+    public float x, y;
+    public float force;
+    public float rotation;
     private TextureRegion textureRegion;
 
 

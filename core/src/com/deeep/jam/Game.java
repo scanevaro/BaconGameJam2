@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.screens.SplashScreen;
 
 public class Game implements ApplicationListener {
@@ -21,6 +22,7 @@ public class Game implements ApplicationListener {
     private SpriteBatch spriteBatch;
     private Screen screen;
     private Rectangle viewport;
+    public static Shaking shaking;
 
     @Override
     public void create() {
@@ -34,6 +36,7 @@ public class Game implements ApplicationListener {
         viewport = new Rectangle();
 
         setScreen(new SplashScreen());
+        shaking = new Shaking(getCamera());
     }
 
     @Override
@@ -46,6 +49,7 @@ public class Game implements ApplicationListener {
         spriteBatch.setProjectionMatrix(camera.combined);
 
         if (screen != null) screen.render(Gdx.graphics.getDeltaTime());
+        shaking.update(Gdx.graphics.getDeltaTime());
     }
 
     @Override

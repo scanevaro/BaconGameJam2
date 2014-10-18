@@ -2,6 +2,8 @@ package com.deeep.jam.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.deeep.jam.Game;
+import com.deeep.jam.classes.Shaking;
 
 import java.util.ArrayList;
 
@@ -32,6 +34,7 @@ public class Gun {
             if (bulletTimer >= bulletSpeed) {
                 bulletTimer = 0;
                 bullets.add(new Bullet(x, y, rotation));
+                Game.shaking.addShake(new Shaking.Shake(0.2f, 5));
             }
         }
         bulletTimer += deltaT;

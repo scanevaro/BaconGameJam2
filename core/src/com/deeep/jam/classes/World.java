@@ -10,7 +10,7 @@ import com.deeep.jam.entities.Bullet;
 import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.Ship;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 /**
  * Created by scanevaro on 12/10/2014.
@@ -21,28 +21,35 @@ public class World {
     private ShapeRenderer shapeRenderer;
 
     private Ship ship;
-    private Enemy[] enemy;
-    private int formation;
 
-    private Random random;
+    private EnemySpawner enemySpawner;
+    private ArrayList<Enemy> enemies;
 
     public World(boolean debug) {
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
         this.spriteBatch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
         shapeRenderer = new ShapeRenderer();
-
+        enemies = new ArrayList<Enemy>();
         ship = new Ship();
+        enemySpawner = new EnemySpawner();
+        enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 0));
+        enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 5));
+        enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 3));
 
-        spawnEnemys();
     }
 
     public void draw() {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        shapeRenderer.setProjectionMatrix(spriteBatch.getProjectionMatrix());
         shapeRenderer.setColor(Color.BLUE);
         // Render Ship
+        for (Enemy enemy : enemies) {
+            shapeRenderer.rect(enemy.x, enemy.y, 10, 10, 20, 40, 1, 1, (float) Math.toDegrees(enemy.rotation - Math.PI / 2));
+        }
         shapeRenderer.rect(ship.x, ship.y, 10, 10, 20, 40, 1, 1, (float) Math.toDegrees(ship.rotation - Math.PI / 2));
         shapeRenderer.setColor(Color.RED);
         // Render Ship Gun
+
         shapeRenderer.rect(ship.gun.x, ship.gun.y, 5, 5, 10, 20, 1, 1, (float) Math.toDegrees(ship.gun.rotation - Math.PI / 2));
         // Render Bullets
         for (Bullet bullet : ship.gun.bullets) {
@@ -52,39 +59,23 @@ public class World {
 
         spriteBatch.begin();
         //Render Enemys
-        for (int i = 0; i < enemy.length; i++)
-            enemy[i].draw(spriteBatch);
+
 
         spriteBatch.end();
     }
 
     public void update(float delta) {
         updateShip(delta);
-
-        updateEnemys(delta);
+        enemySpawner.update(delta);
+        for (Enemy enemy : enemies) {
+            enemy.update(delta);
+        }
+        //camera.position.set(ship.x, ship.y, 0);
     }
 
     private void updateShip(float delta) {
         ship.update(delta);
     }
 
-    private void updateEnemys(float delta) {
-        for (int i = 0; i < enemy.length; i++)
-            enemy[i].update(delta);
 
-        if (enemy[0].getY() < 0)
-            spawnEnemys();
-    }
-
-
-    private void spawnEnemys() {
-        if (random == null) random = new Random();
-        formation = random.nextInt(3);
-
-        enemy = new Enemy[7];
-        for (int i = 0; i < enemy.length; i++) {
-            enemy[i] = new Enemy(Assets.getAssets().getEnemy1(), formation);
-            enemy[i].setPosition(0, Game.VIRTUAL_HEIGHT);
-        }
-    }
 }
