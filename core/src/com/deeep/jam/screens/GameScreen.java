@@ -21,11 +21,13 @@ import com.deeep.jam.entities.HealthBar;
  * Created by scanevaro on 10/10/2014.
  */
 public class GameScreen implements Screen {
+    //Main
     private Game game;
     //Screen
     private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
     private Stage stage; //for UI
+    private boolean dialogOpen;
     //Widgets
     private Label waveLabel;
     private Label wave;
@@ -33,6 +35,8 @@ public class GameScreen implements Screen {
     private Label money;
     private Label healthLabel;
     private Label health;
+    private Label scoreLabel;
+    private Label score;
     private HealthBar healthBar;
     private ImageButton shopButton;
     private Window shopDialog;
@@ -71,21 +75,36 @@ public class GameScreen implements Screen {
     private void setWidgets() {
         waveLabel = new Label("Wave: ", Assets.getAssets().getSkin());
         wave = new Label("0", Assets.getAssets().getSkin());
-        moneyLabel = new Label("$: ", Assets.getAssets().getSkin());
+        moneyLabel = new Label("CASH $ : ", Assets.getAssets().getSkin());
         money = new Label("0", Assets.getAssets().getSkin());
         healthLabel = new Label("Health: ", Assets.getAssets().getSkin());
         health = new Label("5", Assets.getAssets().getSkin());
+        scoreLabel = new Label("Score: ", Assets.getAssets().getSkin());
+        score = new Label("0", Assets.getAssets().getSkin());
+
         healthBar = new HealthBar();
 
         ImageButton.ImageButtonStyle nowPlayingStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         nowPlayingStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
         shopButton = new ImageButton(nowPlayingStyle);
+
+        stage.addActor(waveLabel);
+        stage.addActor(wave);
+        stage.addActor(moneyLabel);
+        stage.addActor(money);
+        stage.addActor(healthLabel);
+        stage.addActor(health);
+        stage.addActor(healthBar);
+        stage.addActor(shopButton);
+        stage.addActor(scoreLabel);
+        stage.addActor(score);
     }
 
     private void addListeners() {
         shopButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                dialogOpen = true;
                 stage.addActor(shopDialog);
             }
         });
@@ -108,14 +127,8 @@ public class GameScreen implements Screen {
         shopButton.setSize(64, 64);
         shopButton.setPosition(Game.VIRTUAL_WIDTH - shopButton.getWidth(), Game.VIRTUAL_HEIGHT - shopButton.getHeight());
 
-        stage.addActor(waveLabel);
-        stage.addActor(wave);
-        stage.addActor(moneyLabel);
-        stage.addActor(money);
-        stage.addActor(healthLabel);
-        stage.addActor(health);
-        stage.addActor(healthBar);
-        stage.addActor(shopButton);
+        scoreLabel.setPosition(0, Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight() - scoreLabel.getPrefHeight());
+        score.setPosition(scoreLabel.getPrefWidth(), Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight() - scoreLabel.getPrefHeight());
     }
 
     private void prepareWorld() {
@@ -128,6 +141,7 @@ public class GameScreen implements Screen {
         closeDiagog.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                dialogOpen = false;
                 shopDialog.remove();
             }
         });
@@ -285,12 +299,13 @@ public class GameScreen implements Screen {
                         .show(stage);
             }
         });
-
     }
 
     @Override
     public void render(float delta) {
-        world.update(delta);
+        if (!dialogOpen)
+            world.update(delta);
+
         stage.act();
 
         world.draw();
