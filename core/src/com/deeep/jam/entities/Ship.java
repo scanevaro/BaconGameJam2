@@ -1,9 +1,16 @@
-package com.deeep.jam.entities;
+package com.deeep.jam;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+/**
+ * Created by Elmar on 18-10-2014.
+ */
 public class Ship {
+    private TextureRegion textureRegion;
     public float x, y;
     public float rotation;
     public float force;
@@ -15,6 +22,7 @@ public class Ship {
     public Ship() {
         force = x = y = rotation = 0;
         gun = new Gun();
+        textureRegion = new TextureRegion(new Texture(Gdx.files.internal("ship.png")));
     }
 
     public void update(float deltaT) {
@@ -26,10 +34,10 @@ public class Ship {
             force = 0;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            rotation += deltaT * 2 * (force / maxForce);
+            rotation += deltaT * (force / maxForce);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            rotation -= deltaT * 2 * (force / maxForce);
+            rotation -= deltaT * (force / maxForce);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             if (force < maxForce) {
@@ -47,8 +55,14 @@ public class Ship {
         gun.update(this, deltaT);
     }
 
+    public void draw(SpriteBatch spriteBatch) {
+        spriteBatch.begin();
+        spriteBatch.draw(textureRegion, x, y - 20, 32, 32, 64, 64, 1, 1, (float) Math.toDegrees(rotation - Math.PI / 2));
+        spriteBatch.end();
+        gun.render(spriteBatch);
+    }
+
     public String toString() {
         return "rot force (x, y)" + rotation + " " + force + " (" + x + ", " + y + ")";
     }
 }
-
