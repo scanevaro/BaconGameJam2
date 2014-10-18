@@ -63,7 +63,7 @@ public class Ship {
 
     public void draw(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(textureRegion, x, y, textureRegion.getRegionWidth() / 2, textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 1, 1, (float) Math.toDegrees(rotation - Math.PI / 2));
+        spriteBatch.draw(textureRegion, x - textureRegion.getRegionWidth() / 2, y - textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth() / 2, textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 1, 1, (float) Math.toDegrees(rotation - Math.PI / 2));
         for (int i = 0; i < 5; i++) {
             guns[i].render(spriteBatch);
         }
