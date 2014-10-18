@@ -32,8 +32,7 @@ public class Assets {
      */
     private Skin skin;
 
-    /**
-     * Logo for SplashScreen
+    /**     * Logo for SplashScreen
      */
     private Texture logo;
 
@@ -60,19 +59,16 @@ public class Assets {
         return assets;
     }
 
-    private Texture enemy1;
-
     /**
      * function to load everything. Nothing special. TODO add more resources here( sound music etc)
      */
     public void load() {
         if (!loaded) {
-//            textureAtlas = new TextureAtlas(Gdx.files.internal("images/TextureAtlas.txt"));
+            textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
             skin = new Skin(Gdx.files.internal("data/uiskin.json"));
             logo = new Texture(Gdx.files.internal("data/logo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
 //            logger.system(Assets.class, "All assets have been loaded");
-            enemy1 = new Texture(Gdx.files.internal("data/enemy1.png"));
             loaded = true;
         }
     }
@@ -104,11 +100,7 @@ public class Assets {
     }
 
     public void dispose() {
-//        textureAtlas.dispose();
+        textureAtlas.dispose();
         skin.dispose();
-    }
-
-    public Texture getEnemy1() {
-        return enemy1;
     }
 }

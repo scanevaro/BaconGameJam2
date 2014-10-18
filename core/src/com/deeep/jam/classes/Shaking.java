@@ -33,7 +33,6 @@ public class Shaking {
                 shakes.remove(shake);
             }
             remove.clear();
-            System.out.println("shaking with: " + magnitude);
             camera.position.set((Game.VIRTUAL_WIDTH / 2) + (0.5f - random.nextFloat()) * magnitude, (Game.VIRTUAL_HEIGHT / 2) + (0.5f - random.nextFloat()) * magnitude, 0);
         }
 

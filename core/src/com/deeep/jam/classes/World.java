@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.deeep.jam.Game;
 import com.deeep.jam.entities.Bullet;
@@ -27,8 +28,8 @@ public class World {
     private ArrayList<Enemy> enemies;
     public int waterTimer = 0;
 
-    private static Texture waterSprite0 = new Texture(Gdx.files.internal("water0.png"));
-    private static Texture waterSprite1;
+    private TextureRegion waterSprite0;
+    private TextureRegion waterSprite1;
 
     public World(boolean debug) {
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
@@ -40,17 +41,13 @@ public class World {
         enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 0));
         enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 5));
         enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 3));
-        waterSprite0 = new Texture(Gdx.files.internal("water0.png"));
-        waterSprite1 = new Texture(Gdx.files.internal("water1.png"));
+        waterSprite0 = new TextureRegion(new Texture(Gdx.files.internal("water0.png")));
+        waterSprite1 = new TextureRegion(new Texture(Gdx.files.internal("water1.png")));
     }
 
     public void draw() {
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.setProjectionMatrix(spriteBatch.getProjectionMatrix());
 
         spriteBatch.begin();
-
-        waterTimer++;
         for (int y = 0; y < Game.VIRTUAL_HEIGHT; y += 32) {
             for (int x = 0; x < Game.VIRTUAL_WIDTH; x += 96) {
                 if (waterTimer < 10)
@@ -60,7 +57,9 @@ public class World {
             }
         }
         if (waterTimer > 20) waterTimer = 0;
-
+        spriteBatch.end();
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        shapeRenderer.setProjectionMatrix(spriteBatch.getProjectionMatrix());
         shapeRenderer.setColor(Color.BLUE);
         // Render Ship
         for (Enemy enemy : enemies) {
@@ -78,8 +77,8 @@ public class World {
         shapeRenderer.end();
 
 
-        spriteBatch.end();
 
+        waterTimer++;
         ship.draw(spriteBatch);
     }
 
