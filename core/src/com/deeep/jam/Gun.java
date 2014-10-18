@@ -46,8 +46,10 @@ public class Gun {
     }
 
     public void render(SpriteBatch spriteBatch) {
+        float theta = (float) Math.toRadians(rotation - Math.PI / 2);
+        int compensationConstant = (int) (Math.PI * theta);
         spriteBatch.begin();
-        spriteBatch.draw(textureRegion, x, y - 20, 32, 32, 64, 64, 1, 1, (float) Math.toDegrees(rotation - Math.PI / 2));
+        spriteBatch.draw(textureRegion, x + 30, y + 12 - compensationConstant, 3, 0, 6, 14, 1, 1, (float) Math.toDegrees(rotation - Math.PI / 2));
         spriteBatch.end();
     }
 

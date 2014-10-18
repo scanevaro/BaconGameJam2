@@ -32,7 +32,6 @@ public class Game extends ApplicationAdapter {
         shapeRenderer.setColor(Color.BLUE);
         //shapeRenderer.rect(ship.x, ship.y, 10, 10, 20, 40, 1, 1, (float) Math.toDegrees(ship.rotation - Math.PI / 2));
         shapeRenderer.setColor(Color.BLACK);
-        shapeRenderer.rect(ship.gun.x, ship.gun.y, 5, 5, 10, 20, 1, 1, (float) Math.toDegrees(ship.gun.rotation - Math.PI / 2));
         for (Bullet bullet : ship.gun.bullets) {
             shapeRenderer.rect(bullet.x, bullet.y, 5, 5, 2, 8, 1, 1, (float) Math.toDegrees(bullet.rotation - Math.PI / 2));
         }
