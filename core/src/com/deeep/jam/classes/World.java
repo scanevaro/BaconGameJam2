@@ -28,7 +28,7 @@ public class World {
     public int waterTimer = 0;
 
     private static Texture waterSprite0 = new Texture(Gdx.files.internal("water0.png"));
-    private static Texture waterSprite1 = new Texture(Gdx.files.internal("water1.png"));
+    private static Texture waterSprite1;
 
     public World(boolean debug) {
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
@@ -40,7 +40,8 @@ public class World {
         enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 0));
         enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 5));
         enemySpawner.addFormation(new Formations.LineFormation(enemies, 5, 1, 3));
-
+        waterSprite0 = new Texture(Gdx.files.internal("water0.png"));
+        waterSprite1 = new Texture(Gdx.files.internal("water1.png"));
     }
 
     public void draw() {
@@ -52,13 +53,13 @@ public class World {
         waterTimer++;
         for (int y = 0; y < Game.VIRTUAL_HEIGHT; y += 32) {
             for (int x = 0; x < Game.VIRTUAL_WIDTH; x += 96) {
-                if (waterTimer < 5)
+                if (waterTimer < 10)
                     spriteBatch.draw(waterSprite0, x, y);
                 else
                     spriteBatch.draw(waterSprite1, x, y);
             }
         }
-        if (waterTimer > 10) waterTimer = 0;
+        if (waterTimer > 20) waterTimer = 0;
 
         shapeRenderer.setColor(Color.BLUE);
         // Render Ship
