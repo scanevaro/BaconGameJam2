@@ -13,14 +13,14 @@ import java.util.ArrayList;
 /**
  * Created by Elmar on 18-10-2014.
  */
-public class Gun {
+public abstract class Gun {
 
     public float rotation;
     public float x, y;
     public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
     public float bulletTimer = 0;
     public final float bulletSpeed = 0.5f;
-    private TextureRegion textureRegion;
+    protected TextureRegion textureRegion;
 
     public Gun() {
         textureRegion = new TextureRegion(new Texture(Gdx.files.internal("gun.png")));

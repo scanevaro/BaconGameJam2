@@ -21,7 +21,7 @@ public class Ship {
 
     public Ship() {
         force = x = y = rotation = 0;
-        gun = new Gun();
+        gun = new Gun(0, 0);
         textureRegion = Assets.getAssets().getRegion("ship_large_body");
     }
 
