@@ -33,14 +33,7 @@ public class World {
 
         ship = new Ship();
 
-        random = new Random();
-        formation = random.nextInt(3);
-
-
-        for (int i = 0; i < enemy.length; i++) {
-            enemy[i] = new Enemy(Assets.getAssets().getEnemy1(), formation);
-            enemy[i].setPosition(0, Game.VIRTUAL_HEIGHT);
-        }
+        spawnEnemys();
     }
 
     public void draw() {
@@ -85,6 +78,7 @@ public class World {
 
 
     private void spawnEnemys() {
+        if (random == null) random = new Random();
         formation = random.nextInt(3);
 
         enemy = new Enemy[7];

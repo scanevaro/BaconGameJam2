@@ -21,7 +21,7 @@ public class MainMenuScreen implements Screen {
     private Game game;
     private Stage stage;
 
-    private TextButton hostButton;
+    private TextButton playButton;
     private TextButton joinButton;
     private TextButton spectateButton;
 
@@ -40,7 +40,7 @@ public class MainMenuScreen implements Screen {
     }
 
     private void setActors() {
-        hostButton = new TextButton("Play", Assets.getAssets().getSkin());
+        playButton = new TextButton("Play", Assets.getAssets().getSkin());
         joinButton = new TextButton("About", Assets.getAssets().getSkin());
         spectateButton = new TextButton("Quit", Assets.getAssets().getSkin());
     }
@@ -49,7 +49,7 @@ public class MainMenuScreen implements Screen {
     }
 
     private void setListeners() {
-        hostButton.addListener(new ClickListener() {
+        playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new GameScreen());
@@ -82,7 +82,7 @@ public class MainMenuScreen implements Screen {
         table.pad(15);
         table.row();
         //add button and align center
-        table.add(hostButton).align(Align.center);
+        table.add(playButton).align(Align.center);
         //add a pad of 10 pixels
         table.row().pad(10);
         table.add(joinButton).align(Align.center);

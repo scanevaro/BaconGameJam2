@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.classes.Assets;
-import com.deeep.jam.screens.GameScreen;
+import com.deeep.jam.screens.SplashScreen;
 
 public class Game implements ApplicationListener {
     public static final float VIRTUAL_WIDTH = 1024;
@@ -32,7 +32,7 @@ public class Game implements ApplicationListener {
 
         viewport = new Rectangle();
 
-        setScreen(new GameScreen());
+        setScreen(new SplashScreen());
     }
 
     @Override
