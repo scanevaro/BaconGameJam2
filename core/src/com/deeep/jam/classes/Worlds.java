@@ -24,6 +24,7 @@ public class Worlds {
     private ArrayList<Enemy> enemies;
     private Box2DDebugRenderer debugRenderer;
     private Map map;
+    private EnemySpawn enemySpawner;
 
     public Worlds() {
         map = new Map();
@@ -33,7 +34,7 @@ public class Worlds {
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
-                System.out.println(contact.getFixtureA().getBody().getUserData() + " " + contact.getFixtureB().getBody().getUserData());
+                //System.out.println(contact.getFixtureA().getBody().getUserData() + " " + contact.getFixtureB().getBody().getUserData());
             }
 
             @Override
@@ -53,6 +54,7 @@ public class Worlds {
         });
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
         this.spriteBatch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
+        enemySpawner = new EnemySpawn();
         enemies = new ArrayList<Enemy>();
         ship = new Ship();
         enemies.add(new EnemySmall(240, 240, 0, 0));
@@ -64,18 +66,18 @@ public class Worlds {
         ship.draw(spriteBatch);
         debugRenderer.render(world, camera.combined);
         spriteBatch.begin();
-        for (Enemy enemy : enemies) {
-            enemy.draw(spriteBatch);
-        }
+        //for (Enemy enemy : enemies) {
+        //    enemy.draw(spriteBatch);
+        //}
+        enemySpawner.render(spriteBatch);
         spriteBatch.end();
     }
 
     public void update(float delta) {
         updateShip(delta);
-        for (Enemy enemy : enemies) {
-            enemy.update(delta);
-        }
+        enemySpawner.spawn(0);
         world.step(Gdx.graphics.getDeltaTime(), 0, 3);
+        enemySpawner.update(delta);
 
         camera.position.set(Math.min(Math.max((int) ship.x, Game.VIRTUAL_WIDTH / 2), Map.sizeX - Game.VIRTUAL_WIDTH), Math.min(Math.max((int) ship.y, Game.VIRTUAL_HEIGHT / 2), Map.sizeY - Game.VIRTUAL_HEIGHT), 0);
     }
