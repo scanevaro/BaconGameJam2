@@ -7,6 +7,7 @@ import com.deeep.jam.entities.Gun;
  */
 public class SmallCanon extends Gun {
 
-    public SmallCanon()
+    public SmallCanon() {
+    }
 
 }
