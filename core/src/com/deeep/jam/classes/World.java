@@ -27,6 +27,9 @@ public class World {
     private ArrayList<Enemy> enemies;
     public int waterTimer = 0;
 
+    private static Texture waterSprite0 = new Texture(Gdx.files.internal("water0.png"));
+    private static Texture waterSprite1 = new Texture(Gdx.files.internal("water1.png"));
+
     public World(boolean debug) {
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
         this.spriteBatch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
@@ -44,6 +47,19 @@ public class World {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setProjectionMatrix(spriteBatch.getProjectionMatrix());
 
+        spriteBatch.begin();
+
+        waterTimer++;
+        for (int y = 0; y < Game.VIRTUAL_HEIGHT; y += 32) {
+            for (int x = 0; x < Game.VIRTUAL_WIDTH; x += 96) {
+                if (waterTimer < 5)
+                    spriteBatch.draw(waterSprite0, x, y);
+                else
+                    spriteBatch.draw(waterSprite1, x, y);
+            }
+        }
+        if (waterTimer > 10) waterTimer = 0;
+
         shapeRenderer.setColor(Color.BLUE);
         // Render Ship
         for (Enemy enemy : enemies) {
@@ -60,18 +76,7 @@ public class World {
         }
         shapeRenderer.end();
 
-        spriteBatch.begin();
 
-        waterTimer++;
-        for (int y = 0; y < Game.VIRTUAL_HEIGHT; y += 32) {
-            for (int x = 0; x < Game.VIRTUAL_WIDTH; x += 96) {
-                if (waterTimer < 5)
-                    spriteBatch.draw(new Texture(Gdx.files.internal("water0.png")), x, y);
-                else
-                    spriteBatch.draw(new Texture(Gdx.files.internal("water1.png")), x, y);
-            }
-        }
-        if (waterTimer > 10) waterTimer = 0;
         spriteBatch.end();
 
         ship.draw(spriteBatch);
