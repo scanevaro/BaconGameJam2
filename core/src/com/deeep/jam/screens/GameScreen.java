@@ -34,6 +34,12 @@ public class GameScreen implements Screen {
     private Label health;
     private ImageButton shopButton;
     private Window shopDialog;
+    private ImageButton smallGunButton;
+    private ImageButton mediumGunButton;
+    private ImageButton bigGunButton;
+    private ImageButton bigGunDualButton;
+    private ImageButton bigGunBaseButton;
+    private ImageButton baseGunDarkButton;
     //World
     private Worlds world;
 
@@ -48,6 +54,7 @@ public class GameScreen implements Screen {
         prepareWorld();
 
         prepareShop();
+        addShopListeners();
 
         Gdx.input.setInputProcessor(stage);
     }
@@ -67,7 +74,7 @@ public class GameScreen implements Screen {
         healthLabel = new Label("Health: ", Assets.getAssets().getSkin());
         health = new Label("5", Assets.getAssets().getSkin());
 
-        ImageButton.ImageButtonStyle nowPlayingStyle = new ImageButton.ImageButtonStyle();
+        ImageButton.ImageButtonStyle nowPlayingStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         nowPlayingStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
         shopButton = new ImageButton(nowPlayingStyle);
     }
@@ -121,61 +128,32 @@ public class GameScreen implements Screen {
         });
         shopDialog.getButtonTable().add(closeDiagog).height(shopDialog.getPadTop());
 
-//        ImageButton.ImageButtonStyle gunButtonStyle = new ImageButton.ImageButtonStyle();
-//        gunButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
-//        ImageButton smallGunButton = new ImageButton(gunButtonStyle);
-//        smallGunButton.setSize(32, 32);
-//
-//        shopDialog.row();
-//        shopDialog.add(smallGunButton).width(32);
-//        shopDialog.add(new TextButton("Buy", Assets.getAssets().getSkin())).width(32);
-//
-//        ImageButton.ImageButtonStyle mediumGunButtonStyle = new ImageButton.ImageButtonStyle();
-//        mediumGunButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
-//        ImageButton mediumGunButton = new ImageButton(mediumGunButtonStyle);
-//        mediumGunButton.setSize(32, 32);1
-//
-//        shopDialog.row();
-//        shopDialog.add(mediumGunButton).width(32);
-//        shopDialog.add(new TextButton("Buy", Assets.getAssets().getSkin())).width(32);
-//
-//        ImageButton.ImageButtonStyle bigGunButtonStyle = new ImageButton.ImageButtonStyle();
-//        bigGunButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
-//        ImageButton bigGunButton = new ImageButton(bigGunButtonStyle);
-//        bigGunButton.setSize(32, 32);
-//
-//        shopDialog.row();
-//        shopDialog.add(bigGunButton).width(32);
-//        shopDialog.add(new TextButton("Buy", Assets.getAssets().getSkin())).width(32);
-//        shopDialog.pack();
-//        shopDialog.pack();
-
-        Table gunsTable = new Table(Assets.getAssets().getSkin());
+        Table gunsLeftTable = new Table(Assets.getAssets().getSkin());
         Table container = new Table(Assets.getAssets().getSkin());
 
-        ImageButton.ImageButtonStyle smallGunButtonStyle = new ImageButton.ImageButtonStyle();
+        ImageButton.ImageButtonStyle smallGunButtonStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         smallGunButtonStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
-        ImageButton smallGunButton = new ImageButton(smallGunButtonStyle);
+        smallGunButton = new ImageButton(smallGunButtonStyle);
         smallGunButton.setSize(64, 64);
 
-        ImageButton.ImageButtonStyle mediumGunButtonStyle = new ImageButton.ImageButtonStyle();
+        ImageButton.ImageButtonStyle mediumGunButtonStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         mediumGunButtonStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
-        ImageButton mediumGunButton = new ImageButton(mediumGunButtonStyle);
+        mediumGunButton = new ImageButton(mediumGunButtonStyle);
         mediumGunButton.setSize(64, 64);
 
-        ImageButton.ImageButtonStyle bigGunButtonStyle = new ImageButton.ImageButtonStyle();
+        ImageButton.ImageButtonStyle bigGunButtonStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         bigGunButtonStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
-        ImageButton bigGunButton = new ImageButton(bigGunButtonStyle);
+        bigGunButton = new ImageButton(bigGunButtonStyle);
         bigGunButton.setSize(64, 64);
 
-        gunsTable.add(smallGunButton).width(64).height(64);
-        gunsTable.row();
-        gunsTable.add(mediumGunButton).width(64).height(64);
-        gunsTable.row();
-        gunsTable.add(bigGunButton).width(64).height(64);
-        gunsTable.debug();
+        gunsLeftTable.add(smallGunButton).width(64).height(64);
+        gunsLeftTable.row();
+        gunsLeftTable.add(mediumGunButton).width(64).height(64);
+        gunsLeftTable.row();
+        gunsLeftTable.add(bigGunButton).width(64).height(64);
+        gunsLeftTable.debug();
 
-        container.add(gunsTable);
+        container.add(gunsLeftTable);
         container.setFillParent(true);
 
         ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
@@ -189,6 +167,120 @@ public class GameScreen implements Screen {
         shopDialog.setSize(512, 512);
 
         shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
+
+        Table gunsRightTable = new Table(Assets.getAssets().getSkin());
+
+        ImageButton.ImageButtonStyle bigGunDualStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+        bigGunDualStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun_dual"));
+        bigGunDualButton = new ImageButton(bigGunDualStyle);
+        bigGunDualButton.setSize(64, 64);
+
+        ImageButton.ImageButtonStyle bigGunBaseStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+        bigGunBaseStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_base_big"));
+        bigGunBaseButton = new ImageButton(bigGunBaseStyle);
+        bigGunBaseButton.setSize(64, 64);
+
+        ImageButton.ImageButtonStyle baseGunDarkStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+        baseGunDarkStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_base_dark"));
+        baseGunDarkButton = new ImageButton(baseGunDarkStyle);
+        baseGunDarkButton.setSize(64, 64);
+
+        gunsRightTable.add(bigGunDualButton).width(64).height(64);
+        gunsRightTable.row();
+        gunsRightTable.add(bigGunBaseButton).width(64).height(64);
+        gunsRightTable.row();
+        gunsRightTable.add(baseGunDarkButton).width(64).height(64);
+        gunsRightTable.debug();
+
+        container.add(gunsRightTable);
+    }
+
+    private void addShopListeners() {
+        smallGunButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                    }
+                }.text("Buy Small Gun for $1000?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+        mediumGunButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                    }
+                }.text("Buy Medium Gun for $1000?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+        bigGunButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                    }
+                }.text("Buy Small Gun for $1000?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+        bigGunDualButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                    }
+                }.text("Buy Small Gun for $1000?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+        bigGunBaseButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                    }
+                }.text("Buy Small Gun for $1000?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+        baseGunDarkButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                    }
+                }.text("Buy Small Gun for $1000?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+
     }
 
     @Override
