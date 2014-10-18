@@ -89,6 +89,14 @@ public class Assets {
         return textureAtlas.findRegion(name);
     }
 
+    public TextureRegion getRegion(String name, int index) {
+        TextureRegion textureRegion = textureAtlas.findRegion(name,index);
+        if (textureRegion == null) {
+//            logger.error(Assets.class, "Unkown texture requested: " + name);
+        }
+        return textureAtlas.findRegion(name);
+    }
+
     public Skin getSkin() {
         return skin;
     }

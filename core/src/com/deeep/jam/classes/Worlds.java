@@ -77,7 +77,7 @@ public class Worlds {
         }
         world.step(Gdx.graphics.getDeltaTime(), 0, 3);
 
-        camera.position.set(ship.x, ship.y, 0);
+        camera.position.set(Math.min(Math.max((int) ship.x, Game.VIRTUAL_WIDTH / 2), Map.sizeX - Game.VIRTUAL_WIDTH), Math.min(Math.max((int) ship.y, Game.VIRTUAL_HEIGHT / 2), Map.sizeY - Game.VIRTUAL_HEIGHT), 0);
     }
 
     private void updateShip(float delta) {

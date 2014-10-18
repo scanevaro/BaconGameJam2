@@ -1,5 +1,6 @@
 package com.deeep.jam.entities.guns;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.classes.Assets;
@@ -22,7 +23,7 @@ public class SmallCanon extends Gun {
         guns[2][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_red_destroyed"));
         switch (socketId) {
             case 0:
-                offX = 50;
+                offX = 90;
                 offY = 0;
         }
     }
@@ -31,14 +32,17 @@ public class SmallCanon extends Gun {
 
     @Override
     public void update(Ship ship, float deltaT) {
-        float shipX = ship.x;
-        float shipY = ship.y;
 
-        final float offSetX = 20;
-        final float offSetY = 30;
+        this.x = (float) ((float) (ship.x) + offX * Math.cos(ship.rotation) - offY * Math.sin(ship.rotation));
+        this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation) + offY * Math.cos(ship.rotation));
+        float deltaX = Gdx.input.getX() - x;
+        float deltaY = Gdx.graphics.getHeight() - Gdx.input.getY() - y;
+        //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
+        guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
+        guns[level][(damaged) ? 1 : 0].setPosition((x), (y));
+        theta = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
 
-        float dX = shipX + offSetX;
-        float dY = shipY + offSetY;
+        guns[level][(damaged) ? 1 : 0].setRotation(theta + 90);
     }
 
     @Override

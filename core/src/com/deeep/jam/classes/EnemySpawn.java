@@ -49,7 +49,7 @@ public class EnemySpawn {
                     p.x = -20;
                 else
                     p.x = Game.VIRTUAL_WIDTH + 20;
-                p.y = random.nextInt((int) Math.floor(Game.VIRTUAL_HEIGHT);
+                p.y = random.nextInt((int) Math.floor(Game.VIRTUAL_HEIGHT));
             } else {
                 //stuck on floor/ceiling
                 if (random.nextInt(2) == 0)
