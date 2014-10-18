@@ -2,7 +2,6 @@ package com.deeep.jam.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -91,9 +90,9 @@ public class Ship {
 
     public void draw(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        //for (int i = 0; i < 5; i++) {
-        //    guns[i].render(spriteBatch);
-        //}'
+        for (int i = 0; i < 5; i++) {
+            guns[i].render(spriteBatch);
+        }
         sprite.setPosition(x - sprite.getWidth()/2, y - (sprite.getHeight()/2));
         sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
         sprite.draw(spriteBatch);
