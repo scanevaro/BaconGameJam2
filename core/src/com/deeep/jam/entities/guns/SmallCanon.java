@@ -13,6 +13,20 @@ public class SmallCanon extends Gun {
     public SmallCanon(int socketId) {
         switch (socketId) {
             case 0:
+                offX = 30F;
+                offX = -20F;
+            case 1:
+                offX = 5F;
+                offX = -200F;
+            case 2:
+                offX = 105F;
+                offX = -200F;
+            case 3:
+                offX = 5F;
+                offX = -220F;
+            case 4:
+                offX = 105F;
+                offX = 220F;
         }
     }
 

@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.deeep.jam.Game;
-import com.deeep.jam.entities.Bullet;
 import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.Ship;
 
@@ -69,11 +68,11 @@ public class World {
         shapeRenderer.setColor(Color.RED);
         // Render Ship Gun
 
-        shapeRenderer.rect(ship.gun.x, ship.gun.y, 5, 5, 10, 20, 1, 1, (float) Math.toDegrees(ship.gun.rotation - Math.PI / 2));
+        //shapeRenderer.rect(ship.gun.x, ship.gun.y, 5, 5, 10, 20, 1, 1, (float) Math.toDegrees(ship.gun.rotation - Math.PI / 2));
         // Render Bullets
-        for (Bullet bullet : ship.gun.bullets) {
-            shapeRenderer.rect(bullet.x, bullet.y, 5, 5, 2, 8, 1, 1, (float) Math.toDegrees(bullet.rotation - Math.PI / 2));
-        }
+        //for (Bullet bullet : ship.gun.bullets) {
+        //    shapeRenderer.rect(bullet.x, bullet.y, 5, 5, 2, 8, 1, 1, (float) Math.toDegrees(bullet.rotation - Math.PI / 2));
+        //}
         shapeRenderer.end();
 
 

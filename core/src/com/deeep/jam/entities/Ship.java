@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.entities.guns.SmallCanon;
 
 /**
  * Created by Elmar on 18-10-2014.
@@ -17,11 +18,14 @@ public class Ship {
     public final float acceleration = 0.5f;
     public final float friction = acceleration / 2;
     public final float maxForce = 2;
-    public Gun gun;
+    public SmallCanon[] guns = new SmallCanon[5];
 
     public Ship() {
         force = x = y = rotation = 0;
         textureRegion = Assets.getAssets().getRegion("ship_large_body");
+        for (int i = 0; i < 5; i++) {
+            guns[i] = new SmallCanon(i);
+        }
     }
 
     public void update(float deltaT) {
@@ -51,14 +55,19 @@ public class Ship {
         x += Math.cos(rotation) * force;
         y += Math.sin(rotation) * force;
         //System.out.println(this);
-        gun.update(this, deltaT);
+
+        for (int i = 0; i < 5; i++) {
+            guns[i].update(this, deltaT);
+        }
     }
 
     public void draw(SpriteBatch spriteBatch) {
         spriteBatch.begin();
         spriteBatch.draw(textureRegion, x, y, textureRegion.getRegionWidth() / 2, textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 0.4f, 0.4f, (float) Math.toDegrees(rotation - Math.PI / 2));
+        for (int i = 0; i < 5; i++) {
+            spriteBatch.draw(guns[i].textureRegion, x, y, textureRegion.getRegionWidth() / 2, textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 0.4f, 0.4f, (float) Math.toDegrees(rotation - Math.PI / 2));
+        }
         spriteBatch.end();
-        gun.render(spriteBatch);
     }
 
     public String toString() {

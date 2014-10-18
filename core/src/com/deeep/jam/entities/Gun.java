@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public abstract class Gun {
 
     public float rotation;
-    public float x, y;
+    public float x, y, offX, offY;
     public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
     public float bulletTimer = 0;
     public final float bulletSpeed = 0.5f;
