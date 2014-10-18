@@ -10,7 +10,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Shaking;
-import com.deeep.jam.screens.SplashScreen;
+import com.deeep.jam.screens.GameScreen;
 
 public class Game implements ApplicationListener {
     public static final boolean DEBUG = true;
@@ -35,7 +35,7 @@ public class Game implements ApplicationListener {
 
         viewport = new Rectangle();
 
-        setScreen(new SplashScreen());
+        setScreen(new GameScreen());
         shaking = new Shaking(getCamera());
     }
 

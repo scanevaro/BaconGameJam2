@@ -35,7 +35,7 @@ public class MainMenuScreen implements Screen {
 
         setActors();
         configureActors();
-        setListeners();
+        addListeners();
         setLayout();
     }
 
@@ -48,7 +48,7 @@ public class MainMenuScreen implements Screen {
     private void configureActors() {
     }
 
-    private void setListeners() {
+    private void addListeners() {
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
