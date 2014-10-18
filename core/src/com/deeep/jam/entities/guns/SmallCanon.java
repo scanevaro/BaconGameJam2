@@ -1,6 +1,5 @@
 package com.deeep.jam.entities.guns;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.classes.Assets;
@@ -28,20 +27,18 @@ public class SmallCanon extends Gun {
         }
     }
 
+    //Function powered by: ( ͡° ͜ʖ ͡°) < l'elmar face
+
     @Override
     public void update(Ship ship, float deltaT) {
-        this.x = (float) (ship.x);
-        this.y = (float) (ship.y);
-        float deltaX = Gdx.input.getX() - x - 32;
-        float deltaY = Gdx.graphics.getHeight() - Gdx.input.getY() - y - 22;
-        this.originX = ship.x;
-        this.originY = ship.y;
-        //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
-        guns[level][(damaged) ? 1 : 0].setPosition(originX, originY);
+        float shipX = ship.x;
+        float shipY = ship.y;
 
-        theta = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
+        final float offSetX = 20;
+        final float offSetY = 30;
 
-        guns[level][(damaged) ? 1 : 0].setRotation(theta + 90);
+        float dX = shipX + offSetX;
+        float dY = shipY + offSetY;
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Worlds;
+import com.deeep.jam.math.PositionVector;
 
 /**
  * Created by scanevaro on 17/10/2014.
@@ -26,6 +27,13 @@ public abstract class Enemy {
         this.y = y;
         this.force = force;
         this.rotation = rotation;
+    }
+
+    protected Enemy(PositionVector positionV, float force) {
+        this.x = positionV.x;
+        this.y = positionV.y;
+        this.rotation = positionV.theta;
+        this.force = force;
     }
 
     public void update(float delta) {

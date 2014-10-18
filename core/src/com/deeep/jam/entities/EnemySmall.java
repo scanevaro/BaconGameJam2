@@ -1,6 +1,7 @@
 package com.deeep.jam.entities;
 
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.math.PositionVector;
 
 /**
  * Created by Elmar on 18-10-2014.
@@ -8,6 +9,11 @@ import com.deeep.jam.classes.Assets;
 public class EnemySmall extends Enemy {
     public EnemySmall(float x, float y, float force, float rotation) {
         super(x, y, force, rotation);
+        setSprite(Assets.getAssets().getRegion("ship_small_body"));
+    }
+
+    public EnemySmall(PositionVector p, float force) {
+        super(p, force);
         setSprite(Assets.getAssets().getRegion("ship_small_body"));
     }
 
