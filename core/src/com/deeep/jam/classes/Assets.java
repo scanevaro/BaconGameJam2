@@ -66,7 +66,7 @@ public class Assets {
         if (!loaded) {
             textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
             skin = new Skin(Gdx.files.internal("data/uiskin.json"));
-            logo = new Texture(Gdx.files.internal("data/logo.png"));
+            logo = new Texture(Gdx.files.internal("data/newLogo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
 //            logger.system(Assets.class, "All assets have been loaded");
             loaded = true;
