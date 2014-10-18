@@ -2,9 +2,17 @@ package com.deeep.jam.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.guns.SmallCanon;
 
 /**
@@ -19,10 +27,29 @@ public class Ship {
     public final float friction = acceleration / 2;
     public final float maxForce = 2;
     public SmallCanon[] guns = new SmallCanon[5];
+    private Sprite sprite;
+    ShapeRenderer shapeRenderer = new ShapeRenderer();
+    private Body body;
+    BodyDef bodyDef = new BodyDef();
+    PolygonShape groundShape;
 
     public Ship() {
+
         force = x = y = rotation = 0;
-        textureRegion = Assets.getAssets().getRegion("ship_large_body");
+        sprite = new Sprite(Assets.getAssets().getRegion("ship_large_body"));
+        sprite.setCenterX(sprite.getWidth() / 2);
+        sprite.setCenterY(sprite.getHeight() / 2);
+        bodyDef.position.setAngleRad(rotation);
+        bodyDef.position.set(0, 0);
+        bodyDef.fixedRotation = false;
+        groundShape = new PolygonShape();
+        groundShape.setAsBox(sprite.getWidth() / 2,sprite.getHeight() / 2);
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.shape = groundShape;
+
+        body = Worlds.world.createBody(bodyDef);
+        body.createFixture(fixtureDef);
+
         for (int i = 0; i < 5; i++) {
             guns[i] = new SmallCanon(i);
         }
@@ -59,16 +86,20 @@ public class Ship {
         for (int i = 0; i < 5; i++) {
             guns[i].update(this, deltaT);
         }
+        body.setTransform(x, y, (float) (rotation+Math.PI/2));
     }
 
     public void draw(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(textureRegion, x - textureRegion.getRegionWidth() / 2, y - textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth() / 2, textureRegion.getRegionHeight() / 2, textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 1, 1, (float) Math.toDegrees(rotation - Math.PI / 2));
-        for (int i = 0; i < 5; i++) {
-            guns[i].render(spriteBatch);
-        }
+        //for (int i = 0; i < 5; i++) {
+        //    guns[i].render(spriteBatch);
+        //}
+        sprite.setPosition(x - sprite.getWidth()/2, y - (sprite.getHeight()/2));
+        sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
+        sprite.draw(spriteBatch);
         spriteBatch.end();
     }
+
 
     public String toString() {
         return "rot force (x, y)" + rotation + " " + force + " (" + x + ", " + y + ")";

@@ -1,5 +1,6 @@
 package com.deeep.jam.entities;
 
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
@@ -30,5 +31,10 @@ public abstract class Enemy {
             if (!spriteBatch.isDrawing()) System.out.println("Forgot start at enemny");
             spriteBatch.draw(textureRegion, x, y, 0, 0, textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 1, 1, rotation);
         }
+    }
+
+    public boolean contains(int x, int y) {
+
+        return false;
     }
 }

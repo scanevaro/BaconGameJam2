@@ -8,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.GameInputProcessor;
-import com.deeep.jam.classes.World;
+import com.deeep.jam.classes.Worlds;
 
 /**
  * Created by scanevaro on 10/10/2014.
@@ -22,7 +22,7 @@ public class GameScreen implements Screen {
     //Widgets
 
     //World
-    private World world;
+    private Worlds worlds;
 
     @Override
     public void show() {
@@ -50,15 +50,15 @@ public class GameScreen implements Screen {
     }
 
     private void prepareWorld() {
-        world = new World(true);
+        worlds = new Worlds();
     }
 
     @Override
     public void render(float delta) {
-        world.update(delta);
+        worlds.update(delta);
         stage.act();
 
-        world.draw();
+        worlds.draw();
         stage.draw();
     }
 
