@@ -34,8 +34,6 @@ public class SmallCanon extends Gun {
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatch.begin();
         spriteBatch.draw(guns[level][(damaged) ? 1 : 0], x, y);
-        spriteBatch.end();
     }
 }
