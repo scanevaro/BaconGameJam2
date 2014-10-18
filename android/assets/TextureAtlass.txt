@@ -5,385 +5,385 @@ repeat: none
 ship_big_gun
   rotate: false
   xy: 2, 2
-  size: 32, 60
-  orig: 32, 60
+  size: 16, 30
+  orig: 16, 30
   offset: 0, 0
   index: -1
 ship_big_gun_destroyed
   rotate: false
-  xy: 36, 2
-  size: 32, 60
-  orig: 32, 60
+  xy: 20, 2
+  size: 16, 30
+  orig: 16, 30
   offset: 0, 0
   index: -1
 ship_big_gun_dual
   rotate: false
-  xy: 70, 2
-  size: 32, 66
-  orig: 32, 66
+  xy: 38, 2
+  size: 16, 33
+  orig: 16, 33
   offset: 0, 0
   index: -1
 ship_big_gun_dual_destroyed
   rotate: false
-  xy: 104, 2
-  size: 32, 66
-  orig: 32, 66
+  xy: 56, 2
+  size: 16, 33
+  orig: 16, 33
   offset: 0, 0
   index: -1
 ship_big_gun_dual_hit
   rotate: false
-  xy: 138, 2
-  size: 32, 66
-  orig: 32, 66
+  xy: 74, 2
+  size: 16, 33
+  orig: 16, 33
   offset: 0, 0
   index: -1
 ship_big_gun_hit
   rotate: false
-  xy: 172, 2
-  size: 32, 60
-  orig: 32, 60
+  xy: 92, 2
+  size: 16, 30
+  orig: 16, 30
   offset: 0, 0
   index: -1
 ship_gun_base
   rotate: false
-  xy: 206, 2
-  size: 24, 24
-  orig: 24, 24
+  xy: 110, 2
+  size: 12, 12
+  orig: 12, 12
   offset: 0, 0
   index: -1
 ship_gun_base_big
   rotate: false
-  xy: 232, 2
-  size: 28, 28
-  orig: 28, 28
+  xy: 2, 37
+  size: 14, 14
+  orig: 14, 14
   offset: 0, 0
   index: -1
 ship_gun_base_big_destroyed
   rotate: false
-  xy: 262, 2
-  size: 28, 28
-  orig: 28, 28
+  xy: 18, 37
+  size: 14, 14
+  orig: 14, 14
   offset: 0, 0
   index: -1
 ship_gun_base_dark
   rotate: false
-  xy: 292, 2
-  size: 24, 24
-  orig: 24, 24
+  xy: 34, 37
+  size: 12, 12
+  orig: 12, 12
   offset: 0, 0
   index: -1
 ship_gun_base_dark_destroyed
   rotate: false
-  xy: 318, 2
-  size: 24, 24
-  orig: 24, 24
+  xy: 48, 37
+  size: 12, 12
+  orig: 12, 12
   offset: 0, 0
   index: -1
 ship_gun_base_destroyed
   rotate: false
-  xy: 344, 2
-  size: 24, 24
-  orig: 24, 24
+  xy: 62, 37
+  size: 12, 12
+  orig: 12, 12
   offset: 0, 0
   index: -1
 ship_gun_dual_gray
   rotate: false
-  xy: 370, 2
-  size: 34, 56
-  orig: 34, 56
+  xy: 76, 37
+  size: 17, 28
+  orig: 17, 28
   offset: 0, 0
   index: -1
 ship_gun_dual_gray_destroyed
   rotate: false
-  xy: 406, 2
-  size: 34, 56
-  orig: 34, 56
+  xy: 95, 37
+  size: 17, 28
+  orig: 17, 28
   offset: 0, 0
   index: -1
 ship_gun_dual_gray_hit
   rotate: false
-  xy: 442, 2
-  size: 34, 56
-  orig: 34, 56
+  xy: 2, 67
+  size: 17, 28
+  orig: 17, 28
   offset: 0, 0
   index: -1
 ship_gun_dual_green
   rotate: false
-  xy: 478, 2
-  size: 32, 40
-  orig: 32, 40
+  xy: 21, 67
+  size: 16, 20
+  orig: 16, 20
   offset: 0, 0
   index: -1
 ship_gun_dual_green_destroyed
   rotate: false
-  xy: 2, 70
-  size: 32, 40
-  orig: 32, 40
+  xy: 39, 67
+  size: 16, 20
+  orig: 16, 20
   offset: 0, 0
   index: -1
 ship_gun_dual_green_hit
   rotate: false
-  xy: 36, 70
-  size: 32, 40
-  orig: 32, 40
+  xy: 57, 67
+  size: 16, 20
+  orig: 16, 20
   offset: 0, 0
   index: -1
 ship_gun_gray
   rotate: false
-  xy: 70, 70
-  size: 16, 40
-  orig: 16, 40
+  xy: 75, 67
+  size: 8, 20
+  orig: 8, 20
   offset: 0, 0
   index: -1
 ship_gun_gray_destroyed
   rotate: false
-  xy: 88, 70
-  size: 16, 40
-  orig: 16, 40
+  xy: 85, 67
+  size: 8, 20
+  orig: 8, 20
   offset: 0, 0
   index: -1
 ship_gun_gray_hit
   rotate: false
-  xy: 106, 70
-  size: 16, 40
-  orig: 16, 40
+  xy: 95, 67
+  size: 8, 20
+  orig: 8, 20
   offset: 0, 0
   index: -1
 ship_gun_green
   rotate: false
-  xy: 124, 70
-  size: 16, 46
-  orig: 16, 46
+  xy: 105, 67
+  size: 8, 23
+  orig: 8, 23
   offset: 0, 0
   index: -1
 ship_gun_green_destroyed
   rotate: false
-  xy: 142, 70
-  size: 16, 46
-  orig: 16, 46
+  xy: 115, 67
+  size: 8, 23
+  orig: 8, 23
   offset: 0, 0
   index: -1
 ship_gun_green_hit
   rotate: false
-  xy: 160, 70
-  size: 16, 46
-  orig: 16, 46
+  xy: 2, 97
+  size: 8, 23
+  orig: 8, 23
   offset: 0, 0
   index: -1
 ship_gun_huge
   rotate: false
-  xy: 178, 70
-  size: 32, 76
-  orig: 32, 76
+  xy: 12, 97
+  size: 16, 38
+  orig: 16, 38
   offset: 0, 0
   index: -1
 ship_gun_huge_destroyed
   rotate: false
-  xy: 212, 70
-  size: 32, 76
-  orig: 32, 76
+  xy: 30, 97
+  size: 16, 38
+  orig: 16, 38
   offset: 0, 0
   index: -1
 ship_gun_huge_hit
   rotate: false
-  xy: 246, 70
-  size: 32, 76
-  orig: 32, 76
+  xy: 48, 97
+  size: 16, 38
+  orig: 16, 38
   offset: 0, 0
   index: -1
 ship_gun_red
   rotate: false
-  xy: 280, 70
-  size: 16, 49
-  orig: 16, 49
+  xy: 66, 97
+  size: 8, 25
+  orig: 8, 25
   offset: 0, 0
   index: -1
 ship_gun_red_destroyed
   rotate: false
-  xy: 298, 70
-  size: 16, 49
-  orig: 16, 49
+  xy: 76, 97
+  size: 8, 25
+  orig: 8, 25
   offset: 0, 0
   index: -1
 ship_gun_red_hit
   rotate: false
-  xy: 316, 70
-  size: 16, 49
-  orig: 16, 49
+  xy: 86, 97
+  size: 8, 25
+  orig: 8, 25
   offset: 0, 0
   index: -1
 ship_large_body
   rotate: false
-  xy: 334, 70
-  size: 122, 368
-  orig: 122, 368
+  xy: 2, 137
+  size: 61, 184
+  orig: 61, 184
   offset: 0, 0
   index: -1
 ship_large_body_destroyed
   rotate: false
-  xy: 2, 440
-  size: 122, 368
-  orig: 122, 368
+  xy: 65, 137
+  size: 61, 184
+  orig: 61, 184
   offset: 0, 0
   index: -1
 ship_medium_body
   rotate: false
-  xy: 126, 440
-  size: 62, 179
-  orig: 62, 179
+  xy: 2, 323
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
   index: -1
 ship_medium_body_b
   rotate: false
-  xy: 190, 440
-  size: 62, 179
-  orig: 62, 179
+  xy: 35, 323
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
   index: -1
 ship_medium_body_b_destroyed
   rotate: false
-  xy: 254, 440
-  size: 62, 179
-  orig: 62, 179
+  xy: 68, 323
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
   index: -1
 ship_medium_body_destroyed
   rotate: false
-  xy: 318, 440
-  size: 62, 179
-  orig: 62, 179
+  xy: 2, 415
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
   index: -1
 ship_small_b_body
   rotate: false
-  xy: 382, 440
-  size: 54, 105
-  orig: 54, 105
+  xy: 35, 415
+  size: 27, 53
+  orig: 27, 53
   offset: 0, 0
   index: -1
 ship_small_body
   rotate: false
-  xy: 438, 440
-  size: 54, 105
-  orig: 54, 105
+  xy: 64, 415
+  size: 27, 53
+  orig: 27, 53
   offset: 0, 0
   index: -1
 ship_small_body_b_destroyed
   rotate: false
-  xy: 2, 810
-  size: 54, 105
-  orig: 54, 105
+  xy: 93, 415
+  size: 27, 53
+  orig: 27, 53
   offset: 0, 0
   index: -1
 ship_small_body_destroyed
   rotate: false
-  xy: 58, 810
-  size: 54, 105
-  orig: 54, 105
+  xy: 2, 507
+  size: 27, 53
+  orig: 27, 53
   offset: 0, 0
   index: -1
 water_ripple_big
   rotate: false
-  xy: 114, 810
-  size: 160, 415
-  orig: 160, 415
+  xy: 31, 507
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 0
 water_ripple_big
   rotate: false
-  xy: 276, 810
-  size: 160, 415
-  orig: 160, 415
+  xy: 2, 717
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 1
 water_ripple_big
   rotate: false
-  xy: 2, 1227
-  size: 160, 415
-  orig: 160, 415
+  xy: 2, 927
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 2
 water_ripple_big
   rotate: false
-  xy: 164, 1227
-  size: 160, 415
-  orig: 160, 415
+  xy: 2, 1137
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 3
 water_ripple_big
   rotate: false
-  xy: 326, 1227
-  size: 160, 415
-  orig: 160, 415
+  xy: 2, 1347
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 4
 water_ripple_medium
   rotate: false
-  xy: 2, 1644
-  size: 84, 226
-  orig: 84, 226
+  xy: 84, 1347
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 0
 water_ripple_medium
   rotate: false
-  xy: 88, 1644
-  size: 84, 226
-  orig: 84, 226
+  xy: 2, 1557
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 1
 water_ripple_medium
   rotate: false
-  xy: 174, 1644
-  size: 84, 226
-  orig: 84, 226
+  xy: 46, 1557
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 2
 water_ripple_medium
   rotate: false
-  xy: 260, 1644
-  size: 84, 226
-  orig: 84, 226
+  xy: 2, 1672
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 3
 water_ripple_medium
   rotate: false
-  xy: 346, 1644
-  size: 84, 226
-  orig: 84, 226
+  xy: 46, 1672
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 4
 water_ripple_small
   rotate: false
-  xy: 432, 1644
-  size: 64, 168
-  orig: 64, 168
+  xy: 90, 1672
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 0
 water_ripple_small
   rotate: false
-  xy: 2, 1872
-  size: 64, 168
-  orig: 64, 168
+  xy: 2, 1787
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 1
 water_ripple_small
   rotate: false
-  xy: 68, 1872
-  size: 64, 168
-  orig: 64, 168
+  xy: 36, 1787
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 2
 water_ripple_small
   rotate: false
-  xy: 134, 1872
-  size: 64, 168
-  orig: 64, 168
+  xy: 70, 1787
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 3
 water_ripple_small
   rotate: false
-  xy: 200, 1872
-  size: 64, 168
-  orig: 64, 168
+  xy: 2, 1873
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 4

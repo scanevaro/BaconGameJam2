@@ -41,6 +41,23 @@ public class Formations {
         spawned = true;
     }
 
+    public static class VFormation extends Formations {
+
+        public VFormation(ArrayList<Enemy> enemies, int amount, int enemyType, float delay) {
+            super(enemies, amount, enemyType, delay);
+        }
+
+        @Override
+        public void addEnemies() {
+            switch (enemyType){
+                default:
+                    for (int i = 0; i < amount; i++) {
+                        enemies.add(new BasicEnemy((((float) Game.VIRTUAL_WIDTH / (float) amount)) * i + (Game.VIRTUAL_WIDTH / (float) amount / 2f), Game.VIRTUAL_HEIGHT, 120, (float) (1.5f * Math.PI)));
+                    }
+            }
+        }
+    }
+
     public static class LineFormation extends Formations {
 
         public LineFormation(ArrayList<Enemy> enemies, int amount, int enemyType, float delay) {
