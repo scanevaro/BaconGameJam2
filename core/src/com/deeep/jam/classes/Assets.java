@@ -32,7 +32,8 @@ public class Assets {
      */
     private Skin skin;
 
-    /**     * Logo for SplashScreen
+    /**
+     * Logo for SplashScreen
      */
     private Texture logo;
 
@@ -69,6 +70,7 @@ public class Assets {
             logo = new Texture(Gdx.files.internal("data/newLogo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
 //            logger.system(Assets.class, "All assets have been loaded");
+            shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
             loaded = true;
         }
     }
@@ -102,5 +104,11 @@ public class Assets {
     public void dispose() {
         textureAtlas.dispose();
         skin.dispose();
+    }
+
+    private Texture shopButton;
+
+    public Texture getShopButton() {
+        return shopButton;
     }
 }
