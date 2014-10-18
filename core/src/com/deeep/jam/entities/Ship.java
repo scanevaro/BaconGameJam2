@@ -1,10 +1,11 @@
-package com.deeep.jam;
+package com.deeep.jam.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.deeep.jam.entities.Gun;
 
 /**
  * Created by Elmar on 18-10-2014.

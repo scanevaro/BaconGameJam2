@@ -1,10 +1,12 @@
-package com.deeep.jam;
+package com.deeep.jam.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.deeep.jam.Game;
+import com.deeep.jam.classes.Shaking;
 
 import java.util.ArrayList;
 
@@ -17,14 +19,14 @@ public class Gun {
     public float x, y;
     public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
     public float bulletTimer = 0;
-    public final float bulletSpeed = 0.005f;
+    public final float bulletSpeed = 0.5f;
     private TextureRegion textureRegion;
 
     public Gun() {
         textureRegion = new TextureRegion(new Texture(Gdx.files.internal("gun.png")));
     }
 
-    public void update(com.deeep.jam.Ship ship, float deltaT) {
+    public void update(Ship ship, float deltaT) {
         this.x = (float) (ship.x + Math.cos(ship.rotation) * 2);
         this.y = (float) (ship.y + Math.sin(ship.rotation) * 2);
         float deltaX = Gdx.input.getX() - x - 32;
@@ -40,6 +42,7 @@ public class Gun {
             if (bulletTimer >= bulletSpeed) {
                 bulletTimer = 0;
                 bullets.add(new Bullet(x + 32, y + 22, rotation));
+                Game.shaking.addShake(new Shaking.Shake(0.2f,5));
             }
         }
         bulletTimer += deltaT;

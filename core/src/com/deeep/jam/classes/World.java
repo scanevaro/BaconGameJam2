@@ -41,6 +41,7 @@ public class World {
     public void draw() {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setProjectionMatrix(spriteBatch.getProjectionMatrix());
+
         shapeRenderer.setColor(Color.BLUE);
         // Render Ship
         for (Enemy enemy : enemies) {
@@ -57,11 +58,9 @@ public class World {
         }
         shapeRenderer.end();
 
-        spriteBatch.begin();
         //Render Enemys
 
-
-        spriteBatch.end();
+        ship.draw(spriteBatch);
     }
 
     public void update(float delta) {
