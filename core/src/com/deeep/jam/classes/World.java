@@ -3,6 +3,7 @@ package com.deeep.jam.classes;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.deeep.jam.Game;
@@ -24,6 +25,7 @@ public class World {
 
     private EnemySpawner enemySpawner;
     private ArrayList<Enemy> enemies;
+    public int waterTimer = 0;
 
     public World(boolean debug) {
         this.camera = ((Game) Gdx.app.getApplicationListener()).getCamera();
@@ -58,7 +60,19 @@ public class World {
         }
         shapeRenderer.end();
 
-        //Render Enemys
+        spriteBatch.begin();
+
+        waterTimer++;
+        for (int y = 0; y < Game.VIRTUAL_HEIGHT; y += 32) {
+            for (int x = 0; x < Game.VIRTUAL_WIDTH; x += 96) {
+                if (waterTimer < 5)
+                    spriteBatch.draw(new Texture(Gdx.files.internal("water0.png")), x, y);
+                else
+                    spriteBatch.draw(new Texture(Gdx.files.internal("water1.png")), x, y);
+            }
+        }
+        if (waterTimer > 10) waterTimer = 0;
+        spriteBatch.end();
 
         ship.draw(spriteBatch);
     }
