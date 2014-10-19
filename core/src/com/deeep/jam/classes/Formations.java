@@ -1,7 +1,6 @@
 package com.deeep.jam.classes;
 
 import com.deeep.jam.Game;
-import com.deeep.jam.entities.BasicEnemy;
 import com.deeep.jam.entities.Enemy;
 
 import java.util.ArrayList;
@@ -49,7 +48,7 @@ public class Formations {
 
         @Override
         public void addEnemies() {
-            switch (enemyType){
+            switch (enemyType) {
                 default:
                     for (int i = 0; i < amount; i++) {
                         enemies.add(new BasicEnemy((((float) Game.VIRTUAL_WIDTH / (float) amount)) * i + (Game.VIRTUAL_WIDTH / (float) amount / 2f), Game.VIRTUAL_HEIGHT, 120, (float) (1.5f * Math.PI)));
