@@ -47,14 +47,9 @@ public abstract class Enemy {
         y += Math.sin(rotation) * delta * force;
         if (sprite != null) {
             sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
-            sprite.setRotation((float) Math.toDegrees(rotation - Math.PI/2));
+            sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
             if (body != null)
-                body.setTransform(x, y, (float) (rotation- Math.PI/2));
-        }
-
-        if (collide) {
-            x += cX;
-            y += cY;
+                body.setTransform(x, y, (float) (rotation - Math.PI / 2));
         }
 
     }
@@ -85,18 +80,6 @@ public abstract class Enemy {
     public boolean contains(int x, int y) {
 
         return false;
-    }
-
-    public void beginCollision(float x, float y) {
-        collide = true;
-        cX = x;
-        cY = y;
-    }
-
-    public void endCollision() {
-        collide = false;
-        cX = 0;
-        cY = 0;
     }
 
     public float getHealth() {
