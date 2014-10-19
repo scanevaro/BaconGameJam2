@@ -204,7 +204,7 @@ public class GameScreen implements Screen {
 
         Table container = new Table(Assets.getAssets().getSkin());
 
-        Table gunsTopTable = new Table(Assets.getAssets().getSkin());
+        Table topGunsTable = new Table(Assets.getAssets().getSkin());
 
         ImageButton.ImageButtonStyle topGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         topGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
@@ -221,15 +221,15 @@ public class GameScreen implements Screen {
         topGun3Button = new ImageButton(topGun3Style);
         topGun3Button.setSize(64, 64);
 
-        gunsTopTable.add(topGun1Button).width(64).height(64);
-        gunsTopTable.add(topGun2Button).width(64).height(64);
-        gunsTopTable.add(topGun3Button).width(64).height(64);
+        topGunsTable.add(topGun1Button).width(64).height(64);
+        topGunsTable.add(topGun2Button).width(64).height(64);
+        topGunsTable.add(topGun3Button).width(64).height(64);
 
         container.add();
-        container.add(gunsTopTable).align(Align.bottom);
+        container.add(topGunsTable).align(Align.bottom);
         container.row();
 
-        Table gunsLeftTable = new Table(Assets.getAssets().getSkin());
+        Table leftGunsTable = new Table(Assets.getAssets().getSkin());
 
         ImageButton.ImageButtonStyle leftGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         leftGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
@@ -246,27 +246,22 @@ public class GameScreen implements Screen {
         leftGun3Button = new ImageButton(leftGun3Style);
         leftGun3Button.setSize(64, 64);
 
-        gunsLeftTable.add(leftGun1Button).padBottom(40).width(64).height(64);
-        gunsLeftTable.row();
-        gunsLeftTable.add(leftGun2Button).width(64).height(64);
-        gunsLeftTable.row();
-        gunsLeftTable.add(leftGun3Button).width(64).height(64);
+        leftGunsTable.add(leftGun1Button).padBottom(40).width(64).height(64);
+        leftGunsTable.row();
+        leftGunsTable.add(leftGun2Button).width(64).height(64);
+        leftGunsTable.row();
+        leftGunsTable.add(leftGun3Button).width(64).height(64);
 
-        container.add(gunsLeftTable);
+        container.add(leftGunsTable);
         container.setFillParent(true);
 
-        ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
-        shipButtonStyle.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_large_body"));
-        ImageButton shipButton = new ImageButton(shipButtonStyle);
-
-        container.add(shipButton).fill();
 
         shopDialog.addActor(container);
         shopDialog.setSize(512, 512);
 
         shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
 
-        Table gunsRightTable = new Table(Assets.getAssets().getSkin());
+        Table rightGunsTable = new Table(Assets.getAssets().getSkin());
 
         ImageButton.ImageButtonStyle rightGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         rightGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun_dual"));
@@ -283,15 +278,23 @@ public class GameScreen implements Screen {
         rightGun3Button = new ImageButton(rightGun3Style);
         rightGun3Button.setSize(64, 64);
 
-        gunsRightTable.add(rightGun1Button).padBottom(40).width(64).height(64);
-        gunsRightTable.row();
-        gunsRightTable.add(rightGun2Button).width(64).height(64);
-        gunsRightTable.row();
-        gunsRightTable.add(rightGun3Button).width(64).height(64);
+        rightGunsTable.add(rightGun1Button).padBottom(40).width(64).height(64);
+        rightGunsTable.row();
+        rightGunsTable.add(rightGun2Button).width(64).height(64);
+        rightGunsTable.row();
+        rightGunsTable.add(rightGun3Button).width(64).height(64);
 
-        container.add(gunsRightTable);
+        container.add();
+        container.add(rightGunsTable);
 
-        Table gunsBottomTable = new Table(Assets.getAssets().getSkin());
+        ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
+        shipButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getCanonIndexReferenceTexture()));
+        ImageButton shipButton = new ImageButton(shipButtonStyle);
+
+        container.add();
+        container.add(shipButton).fill();
+
+        Table bottomGunsTable = new Table(Assets.getAssets().getSkin());
 
         ImageButton.ImageButtonStyle bottomGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         rightGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun_dual"));
@@ -303,12 +306,18 @@ public class GameScreen implements Screen {
         bottomGun2Button = new ImageButton(rightGun2Style);
         bottomGun2Button.setSize(64, 64);
 
-        gunsBottomTable.add(bottomGun1Button).width(64).height(64);
-        gunsBottomTable.add(bottomGun2Button).width(64).height(64);
+        bottomGunsTable.add(bottomGun1Button).width(64).height(64);
+        bottomGunsTable.add(bottomGun2Button).width(64).height(64);
 
         container.row();
         container.add();
-        container.add(gunsBottomTable).align(Align.center);
+        container.add(bottomGunsTable).align(Align.center);
+
+        container.debug();
+        topGunsTable.debug();
+        leftGunsTable.debug();
+        rightGunsTable.debug();
+        bottomGunsTable.debug();
     }
 
     private void addShopListeners() {
@@ -317,8 +326,9 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        //TODO process the input
-                        System.out.println("Chosen: " + object);
+                        if ((Boolean) object)
+                            world.ship.updateSmallGun(1);
+
                         if (!Game.MUTE)
                             shopClicked.play();
                     }

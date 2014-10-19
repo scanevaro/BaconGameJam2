@@ -5,7 +5,6 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -22,6 +21,7 @@ import com.badlogic.gdx.utils.Array;
  */
 public class Assets {
 
+    private Texture canonIndexReferenceTexture;
     private Texture shopButton;
     private Texture soundIcon;
     private Texture muteIcon;
@@ -94,7 +94,7 @@ public class Assets {
 //            logger.system(Assets.class, "All assets have been loaded");
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
             mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
-            inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/FailingDefense.mp3"));
+            inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/VolatileReaction.mp3"));
             big1 = Gdx.audio.newSound(Gdx.files.internal("sounds/big1.mp3"));
             big2 = Gdx.audio.newSound(Gdx.files.internal("sounds/big2.mp3"));
             medium = Gdx.audio.newSound(Gdx.files.internal("sounds/medium.mp3"));
@@ -103,6 +103,7 @@ public class Assets {
             shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
             soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
             muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
+            canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference.png"));
             loaded = true;
         }
     }
@@ -146,7 +147,7 @@ public class Assets {
         return textureAtlas.findRegion(name, index);
     }
 
-    public Array<TextureAtlas.AtlasRegion> getTextureRegions(String name){
+    public Array<TextureAtlas.AtlasRegion> getTextureRegions(String name) {
         return textureAtlas.findRegions(name);
     }
 
@@ -176,6 +177,7 @@ public class Assets {
         shopClick.dispose();
         selected.dispose();
         shopButton.dispose();
+        canonIndexReferenceTexture.dispose();
     }
 
     public Music getMainMenuMusic() {
@@ -220,5 +222,9 @@ public class Assets {
 
     public Texture getMuteIcon() {
         return muteIcon;
+    }
+
+    public Texture getCanonIndexReferenceTexture() {
+        return canonIndexReferenceTexture;
     }
 }
