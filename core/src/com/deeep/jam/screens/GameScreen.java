@@ -44,18 +44,18 @@ public class GameScreen implements Screen {
     private HealthBar healthBar;
     private ImageButton shopButton;
     private Window shopDialog;
-    private ImageButton smallSocket1Button;
+    private ImageButton topGun1Button;
     private ImageButton topGun2Button;
-    private ImageButton topGun3Button;
-    private ImageButton smallSocket2;
+    private ImageButton middleGun1Button;
+    private ImageButton leftGun1Button;
     private ImageButton leftGun2Button;
     private ImageButton leftGun3Button;
     private ImageButton rightGun1Button;
     private ImageButton rightGun2Button;
     private ImageButton rightGun3Button;
     private ImageButton muteButton;
-    private ImageButton bottomGun1Button;
-    private ImageButton bottomGun2Button;
+    private ImageButton middleGun2Button;
+    private ImageButton middleGun3Button;
     //World
     private Worlds world;
     //Sounds
@@ -208,8 +208,8 @@ public class GameScreen implements Screen {
 
         ImageButton.ImageButtonStyle topGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         topGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
-        smallSocket1Button = new ImageButton(topGun1Style);
-        smallSocket1Button.setSize(64, 64);
+        topGun1Button = new ImageButton(topGun1Style);
+        topGun1Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle topGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         topGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
@@ -218,13 +218,12 @@ public class GameScreen implements Screen {
 
         ImageButton.ImageButtonStyle topGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         topGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
-        topGun3Button = new ImageButton(topGun3Style);
-        topGun3Button.setSize(64, 64);
+        middleGun1Button = new ImageButton(topGun3Style);
+        middleGun1Button.setSize(64, 64);
 
-        topGunsTable.add(smallSocket1Button).width(64).height(64);
+        topGunsTable.add(topGun1Button).width(64).height(64);
         topGunsTable.row();
         topGunsTable.add(topGun2Button).width(64).height(64);
-//        topGunsTable.add(topGun3Button).width(64).height(64);
 
         container.add();
         container.add(topGunsTable).align(Align.bottom);
@@ -234,8 +233,8 @@ public class GameScreen implements Screen {
 
         ImageButton.ImageButtonStyle leftGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         leftGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
-        smallSocket2 = new ImageButton(leftGun1Style);
-        smallSocket2.setSize(64, 64);
+        leftGun1Button = new ImageButton(leftGun1Style);
+        leftGun1Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle leftGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         leftGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
@@ -247,7 +246,7 @@ public class GameScreen implements Screen {
         leftGun3Button = new ImageButton(leftGun3Style);
         leftGun3Button.setSize(64, 64);
 
-        leftGunsTable.add(smallSocket2).padBottom(40).width(64).height(64);
+        leftGunsTable.add(leftGun1Button).padBottom(40).width(64).height(64);
         leftGunsTable.row();
         leftGunsTable.add(leftGun2Button).width(64).height(64);
         leftGunsTable.row();
@@ -293,33 +292,25 @@ public class GameScreen implements Screen {
 
         Table middleGunsTable = new Table(Assets.getAssets().getSkin());
 
-        middleGunsTable.add(topGun3Button).width(64).height(64);
+        middleGunsTable.add(middleGun1Button).width(64).height(64);
         middleGunsTable.row();
 
         container.add(middleGunsTable);
         container.add(rightGunsTable);
 
-        Table bottomGunsTable = new Table(Assets.getAssets().getSkin());
-
         ImageButton.ImageButtonStyle bottomGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         bottomGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun_dual"));
-        bottomGun1Button = new ImageButton(bottomGun1Style);
-        bottomGun1Button.setSize(64, 64);
+        middleGun2Button = new ImageButton(bottomGun1Style);
+        middleGun2Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle bottomGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         bottomGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_base_big"));
-        bottomGun2Button = new ImageButton(bottomGun2Style);
-        bottomGun2Button.setSize(64, 64);
+        middleGun3Button = new ImageButton(bottomGun2Style);
+        middleGun3Button.setSize(64, 64);
 
-//        bottomGunsTable.add(bottomGun1Button).width(64).height(64);
-        middleGunsTable.add(bottomGun1Button).padTop(40).width(64).height(64);
+        middleGunsTable.add(middleGun2Button).padTop(40).width(64).height(64);
         middleGunsTable.row();
-        middleGunsTable.add(bottomGun2Button).width(64).height(64);
-//        bottomGunsTable.add(bottomGun2Button).width(64).height(64);
-
-//        container.row();
-//        container.add();
-//        container.add(bottomGunsTable).align(Align.center);
+        middleGunsTable.add(middleGun3Button).width(64).height(64);
 
 //        container.debug();
 //        topGunsTable.debug();
@@ -329,7 +320,7 @@ public class GameScreen implements Screen {
     }
 
     private void addShopListeners() {
-        smallSocket1Button.addListener(new ClickListener() {
+        topGun1Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
@@ -364,7 +355,7 @@ public class GameScreen implements Screen {
                         .show(stage);
             }
         });
-        topGun3Button.addListener(new ClickListener() {
+        middleGun1Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
@@ -374,13 +365,13 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Top Gun 3 for 500 moneyz?")
+                }.text("Upgrade Middle Gun 1 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
             }
         });
-        smallSocket2.addListener(new ClickListener() {
+        leftGun1Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
@@ -465,8 +456,7 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        //TODO process the input
-                        System.out.println("Chosen: " + object);
+
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
@@ -476,7 +466,7 @@ public class GameScreen implements Screen {
                         .show(stage);
             }
         });
-        bottomGun1Button.addListener(new ClickListener() {
+        middleGun2Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
@@ -486,13 +476,13 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Bottom Gun 1 for 500 moneyz?")
+                }.text("Upgrade Middle Gun 2 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
             }
         });
-        bottomGun2Button.addListener(new ClickListener() {
+        middleGun3Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
@@ -502,7 +492,7 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Bottom Gun 1 for 500 moneyz?")
+                }.text("Upgrade Middle Gun 3 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
