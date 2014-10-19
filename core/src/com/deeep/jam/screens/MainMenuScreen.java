@@ -89,6 +89,8 @@ public class MainMenuScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 if (!Game.MUTE)
                     Assets.getAssets().getSelected().play();
+
+                game.setScreen(new AboutScreen());
             }
         });
 
