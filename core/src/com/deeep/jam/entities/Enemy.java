@@ -10,8 +10,6 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.math.PositionVector;
 
-import java.util.Random;
-
 /**
  * Created by scanevaro on 17/10/2014.
  */
@@ -26,6 +24,7 @@ public abstract class Enemy {
     protected float health = 10;
     public float cX, cY, decayCounter = 255;
     public boolean collide, sinking, decaying;
+    public TextureRegion deadSprite;
 
     protected Enemy(float x, float y, float force, float rotation) {
         this.x = x;
@@ -125,7 +124,13 @@ public abstract class Enemy {
         }
     }
 
-    protected abstract void die();
+    protected void die() {
+        if (sinking) return;
+        sinking = true;
+        actuallyFuckingSetTheSprite(deadSprite);
+        finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
+        startDecay();
+    }
 
     protected abstract void startDecay();
 

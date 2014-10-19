@@ -27,6 +27,7 @@ public class EnemySpawn {
     public EnemySpawn() {
         waves = new ArrayList<Wave>();
         waves.add(Wave.WAVE_0);
+        waves.add(Wave.WAVE_1);
         random = new Random();
     }
 
@@ -39,7 +40,8 @@ public class EnemySpawn {
         }
         remove.clear();
         if (enemies.isEmpty()) {
-            startSpawning(0);
+            System.out.println(enemies.isEmpty());
+            startSpawning(waveNr);
             waveNr++;
         }
         if (spawning) {
@@ -109,7 +111,6 @@ public class EnemySpawn {
 
     public void startSpawning(int waveId) {
         if (waveId >= waves.size() || spawning) {
-            System.out.println("Wave is out of bounds! Tried spawning wave #" + waveId + " but the size of the arraw is only " + waves.size());
             return;
         }
         spawning = true;

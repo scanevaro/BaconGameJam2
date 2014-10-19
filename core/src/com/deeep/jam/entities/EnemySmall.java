@@ -1,6 +1,5 @@
 package com.deeep.jam.entities;
 
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.math.PositionVector;
 
@@ -11,29 +10,19 @@ import java.util.Random;
  */
 public class EnemySmall extends Enemy {
 
-    TextureRegion deadSprite;
-
     public EnemySmall(PositionVector p, boolean isFast) {
         super(p, 0);
         if (isFast) {
-            super.setForce(10F);
+            super.setForce(100F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));
             setBox2DProperties(Assets.getAssets().getRegion("ship_small_b_body"));
             deadSprite = Assets.getAssets().getRegion("ship_small_body_b_destroyed");
         } else {
-            super.setForce(5F);
+            super.setForce(50F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
             setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
             deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
         }
-    }
-
-    public void die() {
-        if (sinking) return;
-        sinking = true;
-        actuallyFuckingSetTheSprite(deadSprite);
-        finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
-        startDecay();
     }
 
     protected void startDecay() {
