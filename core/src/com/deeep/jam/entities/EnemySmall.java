@@ -3,8 +3,6 @@ package com.deeep.jam.entities;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.math.PositionVector;
 
-import java.util.Random;
-
 /**
  * Created by Elmar on 18-10-2014.
  */
@@ -26,10 +24,6 @@ public class EnemySmall extends Enemy {
     }
 
     protected void startDecay() {
-        Random random = new Random();
-        for (int i = 0; i < 11; i++) {
-            Effects.getEffects().addEffect(new Effects.Effect(i+1, x + random.nextInt(40), y + random.nextInt(20)));
-        }
         decaying = true;
         decayCounter = 255;
     }
