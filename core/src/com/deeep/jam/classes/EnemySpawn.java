@@ -124,7 +124,8 @@ public class EnemySpawn {
         A_ship1fCount = 0;
         A_ship2sCount = 0;
         A_ship2fCount = 0;
-        spawnTimer = mobsSpawned = 0;
+        spawnTimer = 0;
+        mobsSpawned = 0;
     }
 
     public void render(SpriteBatch spriteBatch) {
