@@ -26,10 +26,6 @@ public class EnemySmall extends Enemy {
     }
 
     protected void startDecay() {
-        Random random = new Random();
-        for (int i = 0; i < 11; i++) {
-            Effects.getEffects().addEffect(new Effects.Effect(i+1, x + random.nextInt(40), y + random.nextInt(20)));
-        }
         decaying = true;
         decayCounter = 255;
     }

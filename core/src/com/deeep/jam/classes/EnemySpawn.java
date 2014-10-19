@@ -35,6 +35,10 @@ public class EnemySpawn {
         for (Enemy enemy : enemies) {
             enemy.update(delta);
             if (enemy.getHealth() <= 0) {
+                if (enemy.body != null) {
+                    Worlds.world.destroyBody(enemy.body);
+                    enemy.body = null;
+                }
                 remove.add(enemy);
             }
         }
