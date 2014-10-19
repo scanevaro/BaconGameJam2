@@ -157,8 +157,7 @@ public abstract class Enemy {
         finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
         startDecay();
         GameScreen.money_amount += cashMoneyBitch;
-        GameScreen.money.setText("" + cashMoneyBitch);
-        System.out.println(GameScreen.money_amount + " "+ cashMoneyBitch);
+        GameScreen.money.setText("" + GameScreen.money_amount);
     }
 
     protected abstract void startDecay();
