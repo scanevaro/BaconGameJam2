@@ -34,11 +34,13 @@ public class Worlds {
                     SmallBullet bullet = (SmallBullet) contact.getFixtureB().getBody().getUserData();
                     EnemySmall enemy = (EnemySmall) contact.getFixtureA().getBody().getUserData();
                     enemy.takeDamage(1);
+                    bullet.alive = false;
                 }
                 if (contact.getFixtureA().getBody().getUserData() instanceof SmallBullet && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
                     SmallBullet bullet = (SmallBullet) contact.getFixtureA().getBody().getUserData();
                     EnemySmall enemy = (EnemySmall) contact.getFixtureB().getBody().getUserData();
                     enemy.takeDamage(1);
+                    bullet.alive = false;
                 }
                 //create explosion
             }

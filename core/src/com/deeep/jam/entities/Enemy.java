@@ -21,7 +21,7 @@ public abstract class Enemy {
     protected Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
-    protected float health = 15;
+    protected float health = 100;
     public float cX, cY, decayCounter = 255;
     public boolean collide, sinking, decaying;
 
