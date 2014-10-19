@@ -52,7 +52,7 @@ public abstract class Enemy {
                 body.setTransform(x, y, (float) (rotation - Math.PI / 2));
         }
 
-        if (sinking) force -= delta * 1000F;
+        if (sinking) force -= delta * 10F;
         if (force < 0) force = 0;
 
     }

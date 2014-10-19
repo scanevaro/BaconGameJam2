@@ -23,6 +23,7 @@ public class EnemySmall extends Enemy {
     }
 
     public void die() {
+        sinking = true;
         actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body_destroyed"));
     }
 
