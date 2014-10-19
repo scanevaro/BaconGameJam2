@@ -91,6 +91,47 @@ public abstract class Enemy {
     public boolean contains(int x, int y) {
 
         return false;
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
     }
 
 
