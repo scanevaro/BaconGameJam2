@@ -28,6 +28,25 @@ public class EnemySpawn {
         waves = new ArrayList<Wave>();
         waves.add(Wave.WAVE_0);
         waves.add(Wave.WAVE_1);
+        waves.add(Wave.WAVE_2);
+        waves.add(Wave.WAVE_3);
+        waves.add(Wave.WAVE_4);
+        waves.add(Wave.WAVE_5);
+        waves.add(Wave.WAVE_6);
+        waves.add(Wave.WAVE_7);
+        waves.add(Wave.WAVE_8);
+        waves.add(Wave.WAVE_9);
+        waves.add(Wave.WAVE_10);
+        waves.add(Wave.WAVE_11);
+        waves.add(Wave.WAVE_12);
+        waves.add(Wave.WAVE_13);
+        waves.add(Wave.WAVE_14);
+        waves.add(Wave.WAVE_15);
+        waves.add(Wave.WAVE_16);
+        waves.add(Wave.WAVE_17);
+        waves.add(Wave.WAVE_18);
+        waves.add(Wave.WAVE_19);
+        waves.add(Wave.WAVE_20);
         random = new Random();
     }
 
