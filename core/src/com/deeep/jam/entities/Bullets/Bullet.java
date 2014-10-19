@@ -17,7 +17,7 @@ public abstract class Bullet {
     private float rotation;
     private float force;
     private float x, y;
-    private Body body;
+    public Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
     public boolean alive = true;

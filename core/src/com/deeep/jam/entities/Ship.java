@@ -82,10 +82,10 @@ public class Ship {
             force = 0;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            rotation += deltaT * (force / maxForce) / 2;
+            rotation += deltaT * (force / maxForce);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            rotation -= deltaT * (force / maxForce) / 2;
+            rotation -= deltaT * (force / maxForce);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             if (force < maxForce) {

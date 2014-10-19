@@ -25,7 +25,7 @@ public class MegaCannon extends Gun {
         switch (socketId) {
             case 0:
                 offX = 0;
-                offY = 63;
+                offY = 63/2;
                 break;
         }
     }

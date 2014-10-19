@@ -31,24 +31,24 @@ public class SmallCanon extends Gun {
         guns[2][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_red_destroyed"));
         switch (socketId) {
             case 0:
-                offX = 0;
-                offY = 95;
+                offX = 0/2;
+                offY = 95/2;
                 break;
             case 1:
-                offX = -45;
-                offY = -45;
+                offX = -45/2;
+                offY = -45/2;
                 break;
             case 2:
-                offX = 45;
-                offY = -45;
+                offX = 45/2;
+                offY = -45/2;
                 break;
             case 3:
-                offX = -45;
-                offY = -70;
+                offX = -45/2;
+                offY = -70/2;
                 break;
             case 4:
-                offX = 45;
-                offY = -70;
+                offX = 45/2;
+                offY = -70/2;
                 break;
         }
     }

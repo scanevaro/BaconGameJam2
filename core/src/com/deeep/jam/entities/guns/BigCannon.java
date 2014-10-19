@@ -26,20 +26,20 @@ public class BigCannon extends Gun {
         guns[1][1] = new Sprite(Assets.getAssets().getRegion("ship_big_gun_dual_destroyed"));
         switch (socketId) {
             case 0:
-                offX = -32;
-                offY = 26;
+                offX = -32/2;
+                offY = 26/2;
                 break;
             case 1:
-                offX = 32;
-                offY = 26;
+                offX = 32/2;
+                offY = 26/2;
                 break;
             case 2:
                 offX = 0;
-                offY = -43;
+                offY = -43/2;
                 break;
             case 3:
                 offX = 0;
-                offY = -72;
+                offY = -72/2;
                 break;
         }
     }

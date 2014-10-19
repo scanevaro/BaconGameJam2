@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
+import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.Bullets.Bullet;
 
 import java.util.ArrayList;
@@ -49,6 +50,7 @@ public abstract class Gun {
             bullet.update(deltaT);
             if (bullet.isDead()) {
                 removal.add(bullet);
+                Worlds.world.destroyBody(bullet.body);
             }
         }
         for (Bullet bullet : removal) {

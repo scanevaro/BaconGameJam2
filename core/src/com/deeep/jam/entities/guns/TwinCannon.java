@@ -22,7 +22,7 @@ public class TwinCannon extends Gun {
         switch (socketId) {
             case 0:
                 offX = 0;
-                offY = 32;
+                offY = 32/2;
                 break;
         }
     }
