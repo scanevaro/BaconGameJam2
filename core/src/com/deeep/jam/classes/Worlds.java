@@ -75,7 +75,6 @@ public class Worlds {
         enemySpawner = new EnemySpawn();
         ship = new Ship();
         Camera.getCamera().followShip(ship);
-        enemySmall = new EnemySmall((Map.sizeX / 2) - 50, (Map.sizeY / 2) - 50, 50, 0);
 
     }
 

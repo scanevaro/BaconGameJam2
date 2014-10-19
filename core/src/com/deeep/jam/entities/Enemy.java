@@ -125,4 +125,7 @@ public abstract class Enemy {
 
     protected abstract void startDecay();
 
+    public void setForce(float force) {
+        this.force = force;
+    }
 }
