@@ -84,16 +84,16 @@ public class EnemySpawn {
             if (i > 0.5) {
                 //stuck on walls
                 if (random.nextInt(2) == 0)
-                    p.x = 0;
+                    p.x = random.nextInt(500) - 250;
                 else
-                    p.x = Map.sizeX + 20;
+                    p.x = Map.sizeX + random.nextInt(800) - 400;
                 p.y = random.nextInt((int) Math.floor(Map.sizeY));
             } else {
                 //stuck on floor/ceiling
                 if (random.nextInt(2) == 0)
-                    p.y = 0;
+                    p.y = random.nextInt(500) - 250;
                 else
-                    p.y = Map.sizeY + 20;
+                    p.y = Map.sizeY + random.nextInt(800) - 400;
                 p.x = random.nextInt((int) Math.floor(Map.sizeX));
             }
             return p;
