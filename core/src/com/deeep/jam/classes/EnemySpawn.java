@@ -40,6 +40,7 @@ public class EnemySpawn {
         }
         remove.clear();
         if (enemies.isEmpty()) {
+            spawning = false;
             System.out.println("Enemies are missing, " + waveNr);
             startSpawning(waveNr);
             waveNr++;
