@@ -26,14 +26,7 @@ public abstract class Enemy {
     public boolean collide, sinking, decaying;
     public TextureRegion deadSprite;
 
-    protected Enemy(float x, float y, float force, float rotation) {
-        this.x = x;
-        this.y = y;
-        this.force = force;
-        this.rotation = rotation;
-    }
-
-    protected Enemy(PositionVector positionV, float force) {
+    protected Enemy(PositionVector positionV, float force, float hp) {
         this.x = positionV.x;
         this.y = positionV.y;
         this.rotation = positionV.theta;

@@ -11,7 +11,7 @@ import java.util.Random;
 public class EnemySmall extends Enemy {
 
     public EnemySmall(PositionVector p, boolean isFast) {
-        super(p, 0);
+        super(p, 0, 10);
         if (isFast) {
             super.setForce(100F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));
