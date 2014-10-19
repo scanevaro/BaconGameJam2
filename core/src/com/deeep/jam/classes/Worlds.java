@@ -35,8 +35,11 @@ public class Worlds {
                 if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
                     EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
                     if (e1.x < e2.x) {
-                        e1.beginCollision(-1F, 0F);
-                        e2.beginCollision(1F, 0F);
+                        //e1.beginCollision(-0.5F, 0F);
+                        //e2.beginCollision(0.5F, 0F);
+                    } else {
+                        //e1.beginCollision(0.5F, 0F);
+                        //e2.beginCollision(-0.5F, 0F);
                     }
                 }
             }
@@ -52,7 +55,16 @@ public class Worlds {
 
             @Override
             public void preSolve(Contact contact, Manifold oldManifold) {
-
+                if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
+                    EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
+                    if (e1.x < e2.x) {
+                        e1.x -= 0.5;
+                        e2.x += 0.5;
+                    } else {
+                        e1.x += 0.5;
+                        e2.x -= 0.5;
+                    }
+                }
             }
 
             @Override
