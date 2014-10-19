@@ -10,6 +10,7 @@ public class EnemySmall extends Enemy {
 
     public EnemySmall(PositionVector p, boolean isFast) {
         super(p, 0, 10, 10);
+        this.cashMoneyBitch = 20;
         if (isFast) {
             super.setForce(200F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));

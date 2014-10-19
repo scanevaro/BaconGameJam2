@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.math.PositionVector;
+import com.deeep.jam.screens.GameScreen;
 
 /**
  * Created by scanevaro on 17/10/2014.
@@ -25,6 +26,7 @@ public abstract class Enemy {
     public float cX, cY, decayCounter = 255, damageCausal;
     public boolean collide, sinking, decaying;
     public TextureRegion deadSprite;
+    public int cashMoneyBitch;
 
     protected Enemy(PositionVector positionV, float force, float hp, float damageCausal) {
         this.damageCausal = damageCausal;
@@ -113,6 +115,8 @@ public abstract class Enemy {
         actuallyFuckingSetTheSprite(deadSprite);
         finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
         startDecay();
+        GameScreen.money_amount += cashMoneyBitch;
+        GameScreen.money.setText("" + cashMoneyBitch);
     }
 
     protected abstract void startDecay();
