@@ -3,15 +3,14 @@ package com.deeep.jam.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
@@ -26,9 +25,10 @@ public class MainMenuScreen implements Screen {
     private TextButton playButton;
     private TextButton aboutButton;
     private TextButton quitButton;
+    private Table table;
+    private ImageButton muteButton;
 
     private Music intro;
-    private Sound sound;
 
     public MainMenuScreen() {
         game = (Game) Gdx.app.getApplicationListener();
@@ -39,32 +39,43 @@ public class MainMenuScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
 
         prepareAudio();
-        setActors();
+        setWidgets();
         configureActors();
         addListeners();
         setLayout();
 
-        intro.play();
+        if (!Game.MUTE)
+            intro.play();
     }
 
     private void prepareAudio() {
         intro = Assets.getAssets().getMainMenuMusic();
     }
 
-    private void setActors() {
+    private void setWidgets() {
         playButton = new TextButton("Play", Assets.getAssets().getSkin());
         aboutButton = new TextButton("About", Assets.getAssets().getSkin());
         quitButton = new TextButton("Quit", Assets.getAssets().getSkin());
+
+        ImageButton.ImageButtonStyle soundStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+        soundStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getSoundIcon()));
+        soundStyle.imageChecked = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getMuteIcon()));
+        muteButton = new ImageButton(soundStyle);
+
+        stage.addActor(muteButton);
     }
 
     private void configureActors() {
+        muteButton.setSize(50, 50);
+        muteButton.setPosition(0, 0);
     }
 
     private void addListeners() {
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Assets.getAssets().getSelected().play();
+                if (!Game.MUTE)
+                    Assets.getAssets().getSelected().play();
 
                 if (intro.isPlaying())
                     intro.stop();
@@ -76,22 +87,40 @@ public class MainMenuScreen implements Screen {
         aboutButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Assets.getAssets().getSelected().play();
+                if (!Game.MUTE)
+                    Assets.getAssets().getSelected().play();
             }
         });
 
         quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Assets.getAssets().getSelected().play();
+                if (!Game.MUTE)
+                    Assets.getAssets().getSelected().play();
+
                 Gdx.app.exit();
+            }
+        });
+        muteButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                if (!Game.MUTE) {
+                    Game.MUTE = true;
+                    if (intro.isPlaying())
+                        intro.pause();
+                } else {
+                    Game.MUTE = false;
+                    if (!intro.isPlaying())
+                        intro.play();
+                }
+
             }
         });
     }
 
     private void setLayout() {
         //create table with skin
-        Table table = new Table(Assets.getAssets().getSkin());
+        table = new Table(Assets.getAssets().getSkin());
         //set fill parent
         table.setFillParent(true);
         //add game title, align center, set pad, and add new row
@@ -109,7 +138,10 @@ public class MainMenuScreen implements Screen {
         table.add(quitButton).align(Align.center);
         table.row().pad(10);
 
-        //add table actor to stage
+        //debug table layout
+//        table.debug();
+
+        //add table to stage
         stage.addActor(table);
     }
 

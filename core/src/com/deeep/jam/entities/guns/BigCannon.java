@@ -15,8 +15,9 @@ import java.util.ArrayList;
 /**
  * Created by Andreas on 10/18/2014.
  */
-public class BigCannon extends Gun{
+public class BigCannon extends Gun {
     Sprite[][] guns = new Sprite[2][2];
+
     public BigCannon(int socketId) {
         super(0.5f);
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_big_gun"));

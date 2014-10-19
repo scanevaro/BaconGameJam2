@@ -60,7 +60,8 @@ public class SmallCanon extends Gun {
         Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.1f, 1f));
         bullets.add(new SmallBullet((float) Math.toRadians(rotation), 800, x, y));
         //shoot sound
-        Assets.getAssets().getShootSound().play();
+        if (!Game.MUTE)
+            Assets.getAssets().getSmall().play();
     }
 
     @Override

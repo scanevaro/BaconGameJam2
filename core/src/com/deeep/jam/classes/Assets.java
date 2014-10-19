@@ -21,10 +21,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class Assets {
 
     private Texture shopButton;
+    private Texture soundIcon;
+    private Texture muteIcon;
     private Music mainMenuMusic;
-    private Music inGameMusic1;
-    private Music inGameMusic2;
-    private Sound shoot;
+    private Music inGameMusic;
+    private Sound big1;
+    private Sound big2;
+    private Sound small;
+    private Sound medium;
     private Sound shopClick;
     private Sound selected;
 
@@ -88,11 +92,15 @@ public class Assets {
 //            logger.system(Assets.class, "All assets have been loaded");
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
             mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
-            inGameMusic1 = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/BlackVortex.mp3"));
-            inGameMusic2 = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/TheComplex.mp3"));
-            shoot = Gdx.audio.newSound(Gdx.files.internal("sounds/shoot.mp3"));
+            inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/FailingDefense.mp3"));
+            big1 = Gdx.audio.newSound(Gdx.files.internal("sounds/big1.mp3"));
+            big2 = Gdx.audio.newSound(Gdx.files.internal("sounds/big2.mp3"));
+            medium = Gdx.audio.newSound(Gdx.files.internal("sounds/medium.mp3"));
+            small = Gdx.audio.newSound(Gdx.files.internal("sounds/small.mp3"));
             selected = Gdx.audio.newSound(Gdx.files.internal("sounds/selected.mp3"));
             shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
+            soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
+            muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
             loaded = true;
         }
     }
@@ -154,9 +162,11 @@ public class Assets {
         logo.dispose();
         title.dispose();
         mainMenuMusic.dispose();
-        inGameMusic1.dispose();
-        inGameMusic2.dispose();
-        shoot.dispose();
+        inGameMusic.dispose();
+        big1.dispose();
+        big2.dispose();
+        medium.dispose();
+        small.dispose();
         shopClick.dispose();
         selected.dispose();
         shopButton.dispose();
@@ -166,16 +176,12 @@ public class Assets {
         return mainMenuMusic;
     }
 
-    public Music getInGameMusic1() {
-        return inGameMusic1;
+    public Music getInGameMusic() {
+        return inGameMusic;
     }
 
-    public Music getInGameMusic2() {
-        return inGameMusic2;
-    }
-
-    public Sound getShootSound() {
-        return shoot;
+    public Sound getBig1() {
+        return big1;
     }
 
     public Sound getShopClick() {
@@ -188,5 +194,25 @@ public class Assets {
 
     public Texture getShopButton() {
         return shopButton;
+    }
+
+    public Sound getBig2() {
+        return big2;
+    }
+
+    public Sound getSmall() {
+        return small;
+    }
+
+    public Sound getMedium() {
+        return medium;
+    }
+
+    public Texture getSoundIcon() {
+        return soundIcon;
+    }
+
+    public Texture getMuteIcon() {
+        return muteIcon;
     }
 }
