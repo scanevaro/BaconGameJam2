@@ -61,7 +61,7 @@ public class EnemySpawn {
         private HashMap<Integer, Integer> typeToAmount;
         private ArrayList<Integer> availableTypes;
         private int level;
-        private int enemyCap = 10;
+        private int enemyCap = 255;
         private Random random;
 
 

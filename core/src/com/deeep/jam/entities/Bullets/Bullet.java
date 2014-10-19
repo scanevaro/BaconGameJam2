@@ -20,8 +20,8 @@ public abstract class Bullet {
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
-    private boolean alive = true;
-    private float aliveTimer = 0;
+    public boolean alive = true;
+    public float aliveTimer = 0;
     public float aliveTime = 10;
 
     public Bullet(Sprite sprite, float rotation, float force, float x, float y) {
