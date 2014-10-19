@@ -64,8 +64,8 @@ public class SmallCanon extends Gun {
         float deltaX = (Gdx.input.getX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
         float deltaY = (Gdx.graphics.getHeight()) - Gdx.input.getY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
         //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
-        guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
-        guns[level][(damaged) ? 1 : 0].setPosition((x), (y));
+        //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
+        guns[level][(damaged) ? 1 : 0].setPosition((x) -guns[level][(damaged) ? 1 : 0].getWidth()/2 , (y)-guns[level][(damaged) ? 1 : 0].getHeight()/2);
         theta = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
         if (Gdx.input.isTouched()) {
             if (shootTimer >= fireRate) {
