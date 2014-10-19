@@ -140,6 +140,9 @@ public class GameScreen implements Screen {
                     selectedSound.play();
                 dialogOpen = true;
                 stage.addActor(shopDialog);
+                ImageButton.ImageButtonStyle topGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+                topGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
+                smallGun1Button.setStyle(topGun1Style);
             }
         });
         muteButton.addListener(new ClickListener() {

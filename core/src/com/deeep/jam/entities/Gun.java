@@ -1,7 +1,9 @@
 package com.deeep.jam.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Shaking;
@@ -15,6 +17,7 @@ import java.util.Random;
  * Created by Elmar on 18-10-2014.
  */
 public abstract class Gun {
+    protected Sprite[][] guns;
     protected int maxLevel = 1;
     protected int level = 0;
     protected boolean damaged = false;
@@ -78,5 +81,12 @@ public abstract class Gun {
     public abstract void update(float deltaT);
 
     public abstract void render(SpriteBatch spriteBatch);
+
+    public TextureRegion getTexture(int level){
+        if(level > maxLevel){
+            level = maxLevel;
+        }
+        return guns[level][0];
+    }
 
 }

@@ -14,10 +14,10 @@ import java.util.ArrayList;
  */
 public class MegaCannon extends Gun {
     public static final int MAX_LEVEL = 1;
-    Sprite[][] guns = new Sprite[1][2];
 
     public MegaCannon(int socketId) {
         super(1);
+        guns = new Sprite[1][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_huge"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_huge_destroyed"));
         switch (socketId) {

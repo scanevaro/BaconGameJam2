@@ -19,10 +19,10 @@ import java.util.ArrayList;
  */
 public class SmallCanon extends Gun {
 
-    Sprite[][] guns = new Sprite[3][2];
     public static final int MAX_LEVEL = 3;
     public SmallCanon(int socketId) {
         super(0.15f);
+        guns = new Sprite[3][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray_destroyed"));
         guns[1][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_green"));
