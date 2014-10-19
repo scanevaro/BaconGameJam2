@@ -35,8 +35,8 @@ public class GameScreen implements Screen {
     private Stage stage; //for UI
     private boolean dialogOpen;
     //Widgets
-    public static Label waveLabel;
-    private Label wave;
+    private Label waveLabel;
+    public static Label wave;
     private Label moneyLabel;
     public static Label money;
     private Label healthLabel;

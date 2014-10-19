@@ -20,7 +20,7 @@ public class HugeBullet extends Bullet {
     }
 
     public void update(float deltaT) {
-        animationTimer++;
+        animationTimer += deltaT;
         if (aliveTimer >= aliveTime) {
             alive = false;
         }

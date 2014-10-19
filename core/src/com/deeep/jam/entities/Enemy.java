@@ -59,8 +59,8 @@ public abstract class Enemy {
 
     public void actuallyFuckingSetTheSprite(TextureRegion textureRegion) {
         sprite = new Sprite(textureRegion);
-        sprite.setOrigin(sprite.getWidth() / 2, sprite.getWidth() / 2);
-        sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
+        sprite.setCenterX(sprite.getWidth() / 2);
+        sprite.setCenterY(sprite.getHeight() / 2);
     }
 
     public void setBox2DProperties(TextureRegion textureRegion) {
@@ -158,6 +158,7 @@ public abstract class Enemy {
         startDecay();
         GameScreen.money_amount += cashMoneyBitch;
         GameScreen.money.setText("" + cashMoneyBitch);
+        System.out.println(GameScreen.money_amount + " "+ cashMoneyBitch);
     }
 
     protected abstract void startDecay();

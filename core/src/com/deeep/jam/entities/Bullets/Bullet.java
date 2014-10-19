@@ -35,7 +35,8 @@ public abstract class Bullet {
         this.x = x;
         this.y = y;
         sprite.setRotation((float) Math.toDegrees(rotation + Math.PI / 2));
-
+        sprite.setCenterX(sprite.getWidth() / 2);
+        sprite.setCenterY(sprite.getHeight() / 2);
         bodyDef.position.setAngleRad(rotation);
         bodyDef.position.set(0, 0);
         bodyDef.type = BodyDef.BodyType.DynamicBody;

@@ -62,7 +62,7 @@ public class EnemySpawn {
                 remove.add(enemy);
             }
         }
-        GameScreen.waveLabel.setText("Wave #" + waveNr + "...");
+        GameScreen.wave.setText(waveNr +"");
         remove.clear();
         if (enemies.isEmpty()) {
             spawning = false;
