@@ -22,8 +22,8 @@ public abstract class Enemy {
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
     protected float health = 15;
-    public float cX, cY;
-    public boolean collide, sinking;
+    public float cX, cY, decayCounter = 255;
+    public boolean collide, sinking, decaying;
 
     protected Enemy(float x, float y, float force, float rotation) {
         this.x = x;
@@ -40,24 +40,36 @@ public abstract class Enemy {
     }
 
     public void update(float delta) {
-        if (Worlds.ship != null) {
-            rotation = (float) Math.atan2(Worlds.ship.y - y, Worlds.ship.x - x);
+        if (decaying) {
+            decayCounter -= delta * 100;
+            if (decayCounter < 0) decayCounter = 0;
+            if (sprite != null) {
+                sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
+                if (sinking)
+                    sprite.setRotation(finalRotation);
+                else
+                    sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
+                if (body != null)
+                    body.setTransform(x, y, (float) (rotation - Math.PI / 2));
+            }
+        } else {
+            if (Worlds.ship != null) {
+                rotation = (float) Math.atan2(Worlds.ship.y - y, Worlds.ship.x - x);
+            }
+            x += Math.cos(rotation) * delta * force;
+            y += Math.sin(rotation) * delta * force;
+            if (sprite != null) {
+                sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
+                if (sinking)
+                    sprite.setRotation(finalRotation);
+                else
+                    sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
+                if (body != null)
+                    body.setTransform(x, y, (float) (rotation - Math.PI / 2));
+            }
+            if (sinking) force -= delta * 10F;
+            if (force < 0) force = 0;
         }
-        x += Math.cos(rotation) * delta * force;
-        y += Math.sin(rotation) * delta * force;
-        if (sprite != null) {
-            sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
-            if (sinking)
-                sprite.setRotation(finalRotation);
-            else
-                sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
-            if (body != null)
-                body.setTransform(x, y, (float) (rotation - Math.PI / 2));
-        }
-
-        if (sinking) force -= delta * 10F;
-        if (force < 0) force = 0;
-
     }
 
     public void actuallyFuckingSetTheSprite(TextureRegion textureRegion) {
@@ -82,7 +94,10 @@ public abstract class Enemy {
 
     public void draw(SpriteBatch spriteBatch) {
         if (sprite != null) {
-            sprite.draw(spriteBatch);
+            if (decaying) {
+                sprite.draw(spriteBatch, decayCounter / 255);
+                System.out.println(decayCounter);
+            } else sprite.draw(spriteBatch);
         }
     }
 
@@ -106,5 +121,7 @@ public abstract class Enemy {
     }
 
     protected abstract void die();
+
+    protected abstract void startDecay();
 
 }

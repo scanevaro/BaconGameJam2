@@ -10,4 +10,9 @@ public class BasicEnemy extends Enemy {
 
     public void die() {
     }
+
+    @Override
+    protected void startDecay() {
+
+    }
 }

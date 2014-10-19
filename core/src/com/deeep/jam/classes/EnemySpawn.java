@@ -7,6 +7,7 @@ import com.deeep.jam.math.PositionVector;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -34,6 +35,11 @@ public class EnemySpawn {
         if (enemies.isEmpty()) {
             spawn(waveNo);
             waveNo++;
+        }
+        Iterator<Enemy> iterator = enemies.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().decayCounter <= 0)
+                iterator.remove();
         }
     }
 

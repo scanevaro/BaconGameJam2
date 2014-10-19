@@ -30,6 +30,12 @@ public class EnemySmall extends Enemy {
         sinking = true;
         actuallyFuckingSetTheSprite(deadSprite);
         finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
+        startDecay();
+    }
+
+    protected void startDecay() {
+        decaying = true;
+        decayCounter = 255;
     }
 
     public void update(float delta) {
