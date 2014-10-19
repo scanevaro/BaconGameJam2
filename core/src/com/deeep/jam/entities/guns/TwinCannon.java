@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class TwinCannon extends Gun {
     public static final int MAX_LEVEL = 2;
     public TwinCannon(int socketId) {
-        super(0.4f);
+        super(0.3f);
         guns = new Sprite[2][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_dual_gray"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_dual_gray_destroyed"));

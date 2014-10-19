@@ -100,7 +100,7 @@ public class Worlds {
     public void draw() {
         map.render(spriteBatch);
         ship.draw(spriteBatch);
-        debugRenderer.render(world, Camera.getCamera().getProjectionMatrix());
+        //debugRenderer.render(world, Camera.getCamera().getProjectionMatrix());
         spriteBatch.begin();
         enemySpawner.render(spriteBatch);
         Effects.getEffects().render(spriteBatch);

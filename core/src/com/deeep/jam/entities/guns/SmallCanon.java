@@ -15,9 +15,9 @@ import java.util.ArrayList;
  */
 public class SmallCanon extends Gun {
 
-    public static final int MAX_LEVEL = 3;
+    public static final int MAX_LEVEL = 2;
     public SmallCanon(int socketId) {
-        super(0.15f);
+        super(0.2f);
         damage = 1;
         guns = new Sprite[3][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray"));

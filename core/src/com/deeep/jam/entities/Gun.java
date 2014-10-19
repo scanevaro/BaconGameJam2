@@ -27,11 +27,13 @@ public abstract class Gun {
     public ArrayList<Bullet> removal = new ArrayList<Bullet>();
     public float bulletTimer = 0;
     public float fireRate = 0.5f;
+    public float defaultFireRate = 0.5f;
     public boolean locked = false;
     private Random random = new Random();
     public float damage;
 
     public Gun(float fireRate) {
+        this.defaultFireRate = fireRate;
         this.fireRate = fireRate;
     }
 
@@ -40,8 +42,8 @@ public abstract class Gun {
         update(deltaT);
         this.x = (float) ((float) (ship.x) + offX * Math.cos(ship.rotation - Math.PI / 2) - offY * Math.sin(ship.rotation - Math.PI / 2));
         this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation - Math.PI / 2) + offY * Math.cos(ship.rotation - Math.PI / 2));
-        float deltaX = (Gdx.input.getX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
-        float deltaY = (Gdx.graphics.getHeight()) - Gdx.input.getY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
+        float deltaX = (Camera.getCamera().getTouchX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
+        float deltaY = (Gdx.graphics.getHeight()) - Camera.getCamera().getTouchY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
         if (!locked) {
             rotation = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
         } else {
@@ -69,8 +71,11 @@ public abstract class Gun {
     }
 
     public void levelUp() {
-        if (level < maxLevel)
+        if (level < maxLevel) {
             level++;
+            fireRate = defaultFireRate - ((level / (1 + maxLevel)) * defaultFireRate);
+            damage = damage + damage * 1.5f;
+        }
     }
 
     public int getMaxLevel() {
@@ -83,8 +88,8 @@ public abstract class Gun {
 
     public abstract void render(SpriteBatch spriteBatch);
 
-    public TextureRegion getTexture(int level){
-        if(level > maxLevel){
+    public TextureRegion getTexture(int level) {
+        if (level > maxLevel) {
             level = maxLevel;
         }
         return guns[level][0];

@@ -1,5 +1,6 @@
 package com.deeep.jam;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Matrix4;
 import com.deeep.jam.classes.Map;
@@ -65,5 +66,13 @@ public class Camera {
 
     public OrthographicCamera getOrthographicCamera() {
         return orthographicCamera;
+    }
+
+    public float getTouchX() {
+        return Gdx.input.getX() * Gdx.graphics.getWidth() / Game.VIRTUAL_WIDTH;
+    }
+
+    public float getTouchY() {
+        return Gdx.input.getY() * Gdx.graphics.getHeight() / Game.VIRTUAL_HEIGHT;
     }
 }
