@@ -30,6 +30,15 @@ public class Worlds {
             @Override
             public void beginContact(Contact contact) {
                 System.out.println(contact.getFixtureA().getBody().getUserData() + " " + contact.getFixtureB().getBody().getUserData());
+
+                //Collision 2 small enemies
+                if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
+                    EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
+                    if (e1.x < e2.x) {
+                        e1.x -= 20;
+                        e2.x += 20;
+                    }
+                }
             }
 
             @Override
@@ -69,7 +78,7 @@ public class Worlds {
         updateShip(delta);
         world.step(Gdx.graphics.getDeltaTime(), 0, 3);
         enemySpawner.update(delta);
-        enemySmall.update( delta);
+        enemySmall.update(delta);
     }
 
     private void updateShip(float delta) {
