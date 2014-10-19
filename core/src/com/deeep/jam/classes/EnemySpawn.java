@@ -43,7 +43,6 @@ public class EnemySpawn {
             waveNr++;
         }
         if (spawning) {
-            System.out.println("Spawn UPDATE");
             updateSpawner(delta);
         }
 
@@ -60,25 +59,28 @@ public class EnemySpawn {
                 enemies.add(new EnemySmall(randomizePositionVector(), false));
                 System.out.println("Spawned a small slow enemy");
                 A_ship1sCount++;
+                mobsSpawned++;
             } else if (A_ship1fCount < ship1fCount) {
                 enemies.add(new EnemySmall(randomizePositionVector(), true));
                 System.out.println("Spawned a small fast enemy");
                 A_ship1fCount++;
+                mobsSpawned++;
             } else if (A_ship2sCount < ship2sCount) {
                 enemies.add(new EnemyBig(randomizePositionVector(), false));
                 System.out.println("Spawned a medium slow enemy");
                 A_ship2sCount++;
+                mobsSpawned++;
             } else if (A_ship2fCount < ship2fCount) {
                 enemies.add(new EnemyBig(randomizePositionVector(), true));
                 System.out.println("Spawned a medium fast enemy");
                 A_ship2fCount++;
+                mobsSpawned++;
             }
         } else {
-            System.out.println("Spawntimer: " + spawnTimer);
-            System.out.println("Mobsspawned: " + spawnTimer);
-            System.out.println("Interval: " + spawnInterval);
+            //System.out.println("Spawntimer: " + spawnTimer);
+            //System.out.println("Mobsspawned: " + mobsSpawned);
+            //System.out.println("Interval: " + spawnInterval);
         }
-        mobsSpawned++;
         spawnTimer += delta;
     }
 
@@ -100,6 +102,8 @@ public class EnemySpawn {
                 p.y = Map.sizeY + random.nextInt(800) - 400;
             p.x = random.nextInt((int) Math.floor(Map.sizeX));
         }
+        p.x = 2000;
+        p.y = 2000;
         return p;
     }
 
