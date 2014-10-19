@@ -25,7 +25,7 @@ import com.deeep.jam.entities.HealthBar;
  * Created by scanevaro on 10/10/2014.
  */
 public class GameScreen implements Screen {
-    public static int money_amount = 5000;
+    public static int money_amount = 1000;
 
     //Main
     private Game game;
@@ -372,15 +372,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Dual Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 1500) {
-                            if ((Boolean) object)
+                        if ((Boolean) object)
+                            if (money_amount >= 1500) {
+
                                 world.ship.updateTwinGun(0);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 1500;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 1500;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Dual Gun 1 for 1500 moneyz?")
                         .button("Yes", true)
@@ -393,15 +394,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 1000) {
-                            if ((Boolean) object)
-                                world.ship.updateMediumGun(0);
+                        if ((Boolean) object)
+                            if (money_amount >= 1000) {
+                                if ((Boolean) object)
+                                    world.ship.updateMediumGun(0);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 1000;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 1000;
+                                money.setText(money_amount + "");
+                            }
 
                         if ((Boolean) object)
                             world.ship.updateMediumGun(0);
@@ -419,15 +421,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 500) {
-                            if ((Boolean) object)
-                                world.ship.updateSmallGun(1);
+                        if ((Boolean) object)
+                            if (money_amount >= 500) {
+                                if ((Boolean) object)
+                                    world.ship.updateSmallGun(1);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 500;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 500;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Small Gun 2 for 500 moneyz?")
                         .button("Yes", true)
@@ -440,15 +443,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 500) {
-                            if ((Boolean) object)
-                                world.ship.updateSmallGun(2);
+                        if ((Boolean) object)
+                            if (money_amount >= 500) {
+                                if ((Boolean) object)
+                                    world.ship.updateSmallGun(2);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 500;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 500;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Small Gun 3 for 500 moneyz?")
                         .button("Yes", true)
@@ -461,15 +465,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 1000) {
-                            if ((Boolean) object)
-                                world.ship.updateMediumGun(1);
+                        if ((Boolean) object)
+                            if (money_amount >= 1000) {
+                                if ((Boolean) object)
+                                    world.ship.updateMediumGun(1);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 1000;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 1000;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Medium Gun 2 for 1000 moneyz?")
                         .button("Yes", true)
@@ -482,15 +487,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 500) {
-                            if ((Boolean) object)
-                                world.ship.updateSmallGun(3);
+                        if ((Boolean) object)
+                            if (money_amount >= 500) {
+                                if ((Boolean) object)
+                                    world.ship.updateSmallGun(3);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 500;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 500;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Small Gun 4 for 500 moneyz?")
                         .button("Yes", true)
@@ -503,15 +509,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 500) {
-                            if ((Boolean) object)
-                                world.ship.updateSmallGun(4);
+                        if ((Boolean) object)
+                            if (money_amount >= 500) {
+                                if ((Boolean) object)
+                                    world.ship.updateSmallGun(4);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 500;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 500;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Small Gun 5 for 500 moneyz?")
                         .button("Yes", true)
@@ -524,15 +531,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 1000) {
-                            if ((Boolean) object)
-                                world.ship.updateMediumGun(2);
+                        if ((Boolean) object)
+                            if (money_amount >= 1000) {
+                                if ((Boolean) object)
+                                    world.ship.updateMediumGun(2);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 1000;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 1000;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Medium Gun 3 for 1000 moneyz?")
                         .button("Yes", true)
@@ -545,15 +553,16 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
-                        if (money_amount >= 1000) {
-                            if ((Boolean) object)
-                                world.ship.updateMediumGun(3);
+                        if ((Boolean) object)
+                            if (money_amount >= 1000) {
+                                if ((Boolean) object)
+                                    world.ship.updateMediumGun(3);
 
-                            if (!Game.MUTE)
-                                shopClicked.play();
-                            money_amount -= 1000;
-                            money.setText(money_amount + "");
-                        }
+                                if (!Game.MUTE)
+                                    shopClicked.play();
+                                money_amount -= 1000;
+                                money.setText(money_amount + "");
+                            }
                     }
                 }.text("Upgrade Medium Gun 4 for 1000 moneyz?")
                         .button("Yes", true)
