@@ -56,7 +56,7 @@ public class EnemySpawn {
     }
 
     private void updateSpawner(float delta) {
-        if (spawnTimer > mobsSpawned * spawnInterval) {
+        if (spawnTimer > mobsSpawned * spawnInterval || spawnTimer == 0) {
             if (A_ship1sCount < ship1sCount) {
                 enemies.add(new EnemySmall(randomizePositionVector(), false));
                 System.out.println("Spawned a small slow enemy");
