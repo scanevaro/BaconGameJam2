@@ -5,11 +5,13 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.Array;
 
 /**
  * Created with IntelliJ IDEA.
@@ -142,6 +144,10 @@ public class Assets {
 //            logger.error(Assets.class, "Unkown texture requested: " + name);
         }
         return textureAtlas.findRegion(name, index);
+    }
+
+    public Array<TextureAtlas.AtlasRegion> getTextureRegions(String name){
+        return textureAtlas.findRegions(name);
     }
 
     public Skin getSkin() {

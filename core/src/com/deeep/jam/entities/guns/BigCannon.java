@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * Created by Andreas on 10/18/2014.
  */
 public class BigCannon extends Gun {
+    public static final int MAX_LEVEL = 2;
     Sprite[][] guns = new Sprite[2][2];
 
     public BigCannon(int socketId) {
@@ -42,11 +43,11 @@ public class BigCannon extends Gun {
                 offY = -72/2;
                 break;
         }
+        maxLevel = MAX_LEVEL;
     }
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-        Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.5f, 2f));
         bullets.add(new BigBullet((float) Math.toRadians(rotation), 1200, x, y));
     }
 

@@ -19,6 +19,7 @@ import com.deeep.jam.entities.guns.SmallCanon;
 import com.deeep.jam.entities.guns.TwinCannon;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Elmar on 18-10-2014.
@@ -39,6 +40,10 @@ public class Ship {
     PolygonShape groundShape;
     private Sprite[] splash;
     private ArrayList<Gun> guns = new ArrayList<Gun>();
+    private HashMap<Integer, Gun> slotsToSmallGuns = new HashMap<Integer, Gun>();
+    private HashMap<Integer, Gun> slotsToMediumGuns = new HashMap<Integer, Gun>();
+    private HashMap<Integer, Gun> slotsToBigGuns = new HashMap<Integer, Gun>();
+    private HashMap<Integer, Gun> slotsToTwinGuns = new HashMap<Integer, Gun>();
 
     public Ship() {
         splash = new Sprite[5];
@@ -71,6 +76,46 @@ public class Ship {
         }
         guns.add(new MegaCannon(0));
         guns.add(new TwinCannon(0));
+    }
+
+    public void updateSmallGun(int slot) {
+        if (slotsToSmallGuns.containsKey(slot)) {
+            slotsToSmallGuns.get(slot).levelUp();
+        } else {
+            SmallCanon smallCanon = new SmallCanon(slot);
+            guns.add(smallCanon);
+            slotsToSmallGuns.put(slot, smallCanon);
+        }
+    }
+
+    public void updateMediumGun(int slot) {
+        if (slotsToMediumGuns.containsKey(slot)) {
+            slotsToMediumGuns.get(slot).levelUp();
+        } else {
+            BigCannon smallCanon = new BigCannon(slot);
+            guns.add(smallCanon);
+            slotsToMediumGuns.put(slot, smallCanon);
+        }
+    }
+
+    public void updateBigGun(int slot) {
+        if (slotsToBigGuns.containsKey(slot)) {
+            slotsToBigGuns.get(slot).levelUp();
+        } else {
+            MegaCannon smallCanon = new MegaCannon(slot);
+            guns.add(smallCanon);
+            slotsToBigGuns.put(slot, smallCanon);
+        }
+    }
+
+    public void updateTwinGun(int slot) {
+        if (slotsToTwinGuns.containsKey(slot)) {
+            slotsToTwinGuns.get(slot).levelUp();
+        } else {
+            TwinCannon smallCanon = new TwinCannon(slot);
+            guns.add(smallCanon);
+            slotsToTwinGuns.put(slot, smallCanon);
+        }
     }
 
     public void update(float deltaT) {

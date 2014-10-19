@@ -10,6 +10,8 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.math.PositionVector;
 
+import java.util.Random;
+
 /**
  * Created by scanevaro on 17/10/2014.
  */
@@ -21,7 +23,7 @@ public abstract class Enemy {
     protected Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
-    protected float health = 100;
+    protected float health = 10;
     public float cX, cY, decayCounter = 255;
     public boolean collide, sinking, decaying;
 
@@ -41,6 +43,7 @@ public abstract class Enemy {
 
     public void update(float delta) {
         if (decaying) {
+            // Worlds.world.destroyBody(body);
             decayCounter -= delta * 100;
             if (decayCounter < 0) decayCounter = 0;
             if (sprite != null) {
@@ -49,8 +52,7 @@ public abstract class Enemy {
                     sprite.setRotation(finalRotation);
                 else
                     sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
-                if (body != null)
-                    body.setTransform(x, y, (float) (rotation - Math.PI / 2));
+
             }
         } else {
             if (Worlds.ship != null) {
@@ -97,7 +99,6 @@ public abstract class Enemy {
         if (sprite != null) {
             if (decaying) {
                 sprite.draw(spriteBatch, decayCounter / 255);
-                System.out.println(decayCounter);
             } else sprite.draw(spriteBatch);
         }
     }
@@ -118,7 +119,10 @@ public abstract class Enemy {
 
     public void takeDamage(float h) {
         setHealth(getHealth() - h);
-        if (getHealth() <= 0) die();
+        if (getHealth() <= 0) {
+
+            die();
+        }
     }
 
     protected abstract void die();

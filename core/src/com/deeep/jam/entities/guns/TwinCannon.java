@@ -12,7 +12,9 @@ import java.util.ArrayList;
  * Created by Elmar on 19-10-2014.
  */
 public class TwinCannon extends Gun {
+    public static final int MAX_LEVEL = 2;
     Sprite[][] guns = new Sprite[2][2];
+
     public TwinCannon(int socketId) {
         super(0.4f);
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_dual_gray"));
@@ -22,9 +24,10 @@ public class TwinCannon extends Gun {
         switch (socketId) {
             case 0:
                 offX = 0;
-                offY = 32/2;
+                offY = 32 / 2;
                 break;
         }
+        maxLevel = MAX_LEVEL;
     }
 
     @Override

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class SmallCanon extends Gun {
 
     Sprite[][] guns = new Sprite[3][2];
-
+    public static final int MAX_LEVEL = 3;
     public SmallCanon(int socketId) {
         super(0.15f);
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray"));
@@ -51,13 +51,13 @@ public class SmallCanon extends Gun {
                 offY = -70/2;
                 break;
         }
+        maxLevel = MAX_LEVEL;
     }
 
     //Function powered by: ( ͡° ͜ʖ ͡°) < l'elmar face
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-        Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.1f, 1f));
         bullets.add(new SmallBullet((float) Math.toRadians(rotation), 800, x, y));
         //shoot sound
         if (!Game.MUTE)
