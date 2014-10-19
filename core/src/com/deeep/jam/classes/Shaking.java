@@ -1,7 +1,6 @@
 package com.deeep.jam.classes;
 
 import com.badlogic.gdx.graphics.Camera;
-import com.deeep.jam.Game;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,6 +13,7 @@ public class Shaking {
     private ArrayList<Shake> shakes = new ArrayList<Shake>();
     private ArrayList<Shake> remove = new ArrayList<Shake>();
     private Random random = new Random();
+    private float shakeX, shakeY;
 
     public Shaking(Camera camera) {
         this.camera = camera;
@@ -33,9 +33,18 @@ public class Shaking {
                 shakes.remove(shake);
             }
             remove.clear();
-            camera.position.set((Game.VIRTUAL_WIDTH / 2) + (0.5f - random.nextFloat()) * magnitude, (Game.VIRTUAL_HEIGHT / 2) + (0.5f - random.nextFloat()) * magnitude, 0);
+            shakeX = (0.5f - random.nextFloat()) * magnitude;
+            shakeY = (0.5f - random.nextFloat()) * magnitude;
         }
 
+    }
+
+    public float getShakeX() {
+        return shakeX;
+    }
+
+    public float getShakeY() {
+        return shakeY;
     }
 
     public void addShake(Shake shake) {

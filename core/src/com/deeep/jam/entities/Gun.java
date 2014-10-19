@@ -1,6 +1,7 @@
 package com.deeep.jam.entities;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.deeep.jam.entities.Bullets.Bullet;
 
 import java.util.ArrayList;
 

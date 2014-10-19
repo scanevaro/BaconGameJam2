@@ -51,7 +51,9 @@ public class Camera {
         shaking.update(deltaT);
         viewBounds.setLocation((int) (orthographicCamera.position.x - offSet - VIRTUAL_WIDTH / 2), (int) (orthographicCamera.position.y - offSet - VIRTUAL_HEIGHT / 2));
         if (ship != null) {
-            orthographicCamera.position.set(Math.min(Math.max((int) ship.x, Game.VIRTUAL_WIDTH / 2), Map.sizeX - Game.VIRTUAL_WIDTH), Math.min(Math.max((int) ship.y, Game.VIRTUAL_HEIGHT / 2), Map.sizeY - Game.VIRTUAL_HEIGHT), 0);
+            orthographicCamera.position.set((int) (Math.min(Math.max((int) ship.x, Game.VIRTUAL_WIDTH / 2), Map.sizeX - Game.VIRTUAL_WIDTH) + shaking.getShakeX()),
+                    (int) (Math.min(Math.max((int) ship.y, Game.VIRTUAL_HEIGHT / 2), Map.sizeY - Game.VIRTUAL_HEIGHT) + shaking.getShakeY()),
+                    0);
         } else {
 
         }

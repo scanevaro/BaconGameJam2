@@ -135,6 +135,13 @@ ship_gun_gray
   orig: 20, 44
   offset: 0, 0
   index: -1
+ship_gun_gray_bullet
+  rotate: false
+  xy: 270, 948
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
 ship_gun_gray_destroyed
   rotate: false
   xy: 886, 6

@@ -13,6 +13,9 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Map;
 import com.deeep.jam.classes.Worlds;
+import com.deeep.jam.entities.guns.SmallCanon;
+
+import java.util.ArrayList;
 
 /**
  * Created by Elmar on 18-10-2014.
@@ -32,6 +35,7 @@ public class Ship {
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
     private Sprite[] splash;
+    private ArrayList<Gun> guns = new ArrayList<Gun>();
 
     public Ship() {
         splash = new Sprite[5];
@@ -56,6 +60,9 @@ public class Ship {
         body = Worlds.world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         body.setUserData(this);
+        for (int i = 0; i < 5; i++) {
+            guns.add(new SmallCanon(i));
+        }
     }
 
     public void update(float deltaT) {
@@ -86,9 +93,12 @@ public class Ship {
         y += Math.sin(rotation) * force;
         //System.out.println(this);
         splashTimer = (splashTimer + force * deltaT * 4) % 5;
-        splash[(int) splashTimer].setPosition(x - splash[(int) force].getWidth() / 2, y - 20- splash[(int) force].getHeight() / 2);
+        splash[(int) splashTimer].setPosition(x - splash[(int) force].getWidth() / 2, y - splash[(int) force].getHeight() / 2);
         splash[(int) splashTimer].setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
         body.setTransform(x, y, (float) (rotation + Math.PI / 2));
+        for (Gun gun : guns) {
+            gun.update(this, deltaT);
+        }
     }
 
     public void draw(SpriteBatch spriteBatch) {
@@ -97,6 +107,9 @@ public class Ship {
         sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
         sprite.setRotation((int) Math.toDegrees(rotation - Math.PI / 2));
         sprite.draw(spriteBatch);
+        for (Gun gun : guns) {
+            gun.render(spriteBatch);
+        }
         spriteBatch.end();
 
     }
