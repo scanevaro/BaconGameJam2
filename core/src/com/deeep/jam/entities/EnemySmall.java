@@ -7,6 +7,7 @@ import com.deeep.jam.math.PositionVector;
  * Created by Elmar on 18-10-2014.
  */
 public class EnemySmall extends Enemy {
+
     public EnemySmall(float x, float y, float force, float rotation) {
         super(x, y, force, rotation);
         setSprite(Assets.getAssets().getRegion("ship_small_body"));
@@ -18,6 +19,5 @@ public class EnemySmall extends Enemy {
         setSprite(Assets.getAssets().getRegion("ship_small_body"));
         System.out.println("spawned enemy small");
     }
-
 
 }

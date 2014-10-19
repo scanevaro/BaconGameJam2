@@ -35,15 +35,19 @@ public class Worlds {
                 if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
                     EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
                     if (e1.x < e2.x) {
-                        e1.x -= 20;
-                        e2.x += 20;
+                        e1.beginCollision(-1F, 0F);
+                        e2.beginCollision(1F, 0F);
                     }
                 }
             }
 
             @Override
             public void endContact(Contact contact) {
-
+                if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
+                    EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
+                    e1.endCollision();
+                    e2.endCollision();
+                }
             }
 
             @Override
