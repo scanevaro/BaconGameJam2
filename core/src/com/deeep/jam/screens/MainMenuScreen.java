@@ -50,6 +50,7 @@ public class MainMenuScreen implements Screen {
 
     private void prepareAudio() {
         intro = Assets.getAssets().getMainMenuMusic();
+        intro.setVolume(0.5f);
     }
 
     private void setWidgets() {
