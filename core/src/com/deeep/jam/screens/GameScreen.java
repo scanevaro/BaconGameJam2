@@ -593,6 +593,14 @@ public class GameScreen implements Screen {
         Window gameOverDialog = new Window("REKT !", Assets.getAssets().getSkin());
 
         //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+
         gameOverDialog.setSize(512, 512);
 
         ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
