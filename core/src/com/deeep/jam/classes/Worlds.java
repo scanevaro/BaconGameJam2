@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
+import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.EnemySmall;
 import com.deeep.jam.entities.Ship;
 
@@ -29,7 +30,17 @@ public class Worlds {
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
-                System.out.println(contact.getFixtureA().getBody().getUserData() + " " + contact.getFixtureB().getBody().getUserData());
+                if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof SmallBullet) {
+                    SmallBullet bullet = (SmallBullet) contact.getFixtureB().getBody().getUserData();
+                    EnemySmall enemy = (EnemySmall) contact.getFixtureA().getBody().getUserData();
+                    enemy.takeDamage(1);
+                }
+                if (contact.getFixtureA().getBody().getUserData() instanceof SmallBullet && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
+                    SmallBullet bullet = (SmallBullet) contact.getFixtureA().getBody().getUserData();
+                    EnemySmall enemy = (EnemySmall) contact.getFixtureB().getBody().getUserData();
+                    enemy.takeDamage(1);
+                }
+                //create explosion
             }
 
             @Override
@@ -37,6 +48,8 @@ public class Worlds {
 
             }
 
+
+            //( ͡° ͜ʖ ͡°) < l'elmar face
             @Override
             public void preSolve(Contact contact, Manifold oldManifold) {
                 if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {

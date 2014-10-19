@@ -20,4 +20,8 @@ public class EnemySmall extends Enemy {
         System.out.println("spawned enemy small");
     }
 
+    public void die() {
+        setSprite(Assets.getAssets().getRegion("ship_small_body_destroyed"));
+    }
+
 }

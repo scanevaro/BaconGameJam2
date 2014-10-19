@@ -21,9 +21,9 @@ public abstract class Enemy {
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
-    private float health = 100;
+    private float health = 15;
     public float cX, cY;
-    public boolean collide;
+    public boolean collide, sinking;
 
     protected Enemy(float x, float y, float force, float rotation) {
         this.x = x;
@@ -51,6 +51,9 @@ public abstract class Enemy {
             if (body != null)
                 body.setTransform(x, y, (float) (rotation - Math.PI / 2));
         }
+
+        if (sinking) force -= delta;
+        if (force < 0) force = 0;
 
     }
 
@@ -82,6 +85,7 @@ public abstract class Enemy {
         return false;
     }
 
+
     public float getHealth() {
         return health;
     }
@@ -89,4 +93,12 @@ public abstract class Enemy {
     public void setHealth(float health) {
         this.health = health;
     }
+
+    public void takeDamage(float h) {
+        setHealth(getHealth() - h);
+        if (getHealth() <= 0) die();
+    }
+
+    protected abstract void die();
+
 }

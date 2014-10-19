@@ -60,7 +60,7 @@ public class Ship {
         body = Worlds.world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         body.setUserData(this);
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 5; i++) {
             guns.add(new SmallCanon(i));
         }
     }
