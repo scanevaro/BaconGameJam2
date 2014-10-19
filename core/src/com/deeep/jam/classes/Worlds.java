@@ -6,8 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
-import com.deeep.jam.entities.Bullets.BigBullet;
-import com.deeep.jam.entities.Bullets.SmallBullet;
+import com.deeep.jam.entities.Bullets.Bullet;
 import com.deeep.jam.entities.Effects;
 import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.EnemySmall;
@@ -23,7 +22,6 @@ public class Worlds {
     private Box2DDebugRenderer debugRenderer;
     private Map map;
     private EnemySpawn enemySpawner;
-    private EnemySmall enemySmall;
 
     public Worlds() {
         map = new Map();
@@ -33,23 +31,17 @@ public class Worlds {
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
-                if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof SmallBullet) {
-                    SmallBullet bullet = (SmallBullet) contact.getFixtureB().getBody().getUserData();
+                if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof Bullet) {
+                    Bullet bullet = (Bullet) contact.getFixtureB().getBody().getUserData();
                     Enemy enemy = (Enemy) contact.getFixtureA().getBody().getUserData();
                     enemy.takeDamage(1);
                     bullet.hitEffect();
                     bullet.alive = false;
-                } else if (contact.getFixtureA().getBody().getUserData() instanceof SmallBullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
-                    SmallBullet bullet = (SmallBullet) contact.getFixtureA().getBody().getUserData();
+                } else if (contact.getFixtureA().getBody().getUserData() instanceof Bullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
+                    Bullet bullet = (Bullet) contact.getFixtureA().getBody().getUserData();
                     Enemy enemy = (Enemy) contact.getFixtureB().getBody().getUserData();
                     bullet.hitEffect();
-                    enemy.takeDamage(1);
-                    bullet.alive = false;
-                } else if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof BigBullet) {
-                    BigBullet bullet = (BigBullet) contact.getFixtureB().getBody().getUserData();
-                    bullet.hitEffect();
-                    Enemy enemy = (Enemy) contact.getFixtureA().getBody().getUserData();
-                    enemy.takeDamage(3);
+                    enemy.takeDamage(bullet.damage);
                     bullet.alive = false;
                 } else if (contact.getFixtureA().getBody().getUserData() instanceof Ship && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
                     Enemy enemy = (Enemy) contact.getFixtureB().getBody().getUserData();

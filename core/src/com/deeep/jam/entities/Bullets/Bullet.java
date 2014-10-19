@@ -25,11 +25,13 @@ public abstract class Bullet {
     public float aliveTimer = 0;
     public float aliveTime = 10;
     public int explosionType = 2;
+    public float damage;
 
-    public Bullet(Sprite sprite, float rotation, float force, float x, float y) {
+    public Bullet(Sprite sprite, float rotation, float force, float x, float y, float damage) {
         this.sprite = sprite;
         this.rotation = rotation;
         this.force = force;
+        this.damage = damage;
         this.x = x;
         this.y = y;
         sprite.setRotation((float) Math.toDegrees(rotation + Math.PI / 2));

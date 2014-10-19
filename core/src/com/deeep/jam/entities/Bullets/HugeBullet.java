@@ -12,8 +12,8 @@ public class HugeBullet extends Bullet {
     private Animation animation;
     private float animationTimer = 0;
 
-    public HugeBullet(float rotation, float force, float x, float y) {
-        super(new Sprite(Assets.getAssets().getRegion("ship_gun_bullet_huge")), rotation, force, x, y);
+    public HugeBullet(float rotation, float force, float x, float y, float damage) {
+        super(new Sprite(Assets.getAssets().getRegion("ship_gun_bullet_huge")), rotation, force, x, y, damage);
         animation = new Animation(0.1f, Assets.getAssets().getTextureRegions("rocket_flame/rocket_1"));
         animation.setPlayMode(Animation.PlayMode.LOOP);
         explosionType = 1;

@@ -1,16 +1,12 @@
 package com.deeep.jam.entities.guns;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
-import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.entities.Bullets.Bullet;
 import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
-import com.deeep.jam.entities.Ship;
 
 import java.util.ArrayList;
 
@@ -22,6 +18,7 @@ public class SmallCanon extends Gun {
     public static final int MAX_LEVEL = 3;
     public SmallCanon(int socketId) {
         super(0.15f);
+        damage = 1;
         guns = new Sprite[3][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray_destroyed"));
@@ -58,7 +55,7 @@ public class SmallCanon extends Gun {
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 800, x, y));
+        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 800, x, y, damage));
         //shoot sound
         if (!Game.MUTE)
             Assets.getAssets().getSmall().play();

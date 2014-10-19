@@ -3,12 +3,9 @@ package com.deeep.jam.entities.guns;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.deeep.jam.Camera;
 import com.deeep.jam.classes.Assets;
-import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.entities.Bullets.BigBullet;
 import com.deeep.jam.entities.Bullets.Bullet;
-import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
 
 import java.util.ArrayList;
@@ -22,6 +19,7 @@ public class BigCannon extends Gun {
 
     public BigCannon(int socketId) {
         super(0.5f);
+        damage = 5;
         guns = new Sprite[2][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_big_gun"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_big_gun_destroyed"));
@@ -50,7 +48,7 @@ public class BigCannon extends Gun {
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-        bullets.add(new BigBullet((float) Math.toRadians(rotation), 1200, x, y));
+        bullets.add(new BigBullet((float) Math.toRadians(rotation), 1200, x, y, damage));
     }
 
     @Override

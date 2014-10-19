@@ -17,6 +17,7 @@ public class MegaCannon extends Gun {
 
     public MegaCannon(int socketId) {
         super(1);
+        damage = 15;
         guns = new Sprite[1][2];
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_huge"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_huge_destroyed"));
@@ -31,7 +32,7 @@ public class MegaCannon extends Gun {
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-        bullets.add(new HugeBullet((float) Math.toRadians(rotation), 500, x, y));
+        bullets.add(new HugeBullet((float) Math.toRadians(rotation), 500, x, y, damage));
     }
 
     public void update(float deltaT) {

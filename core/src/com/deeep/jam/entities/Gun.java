@@ -29,6 +29,7 @@ public abstract class Gun {
     public float fireRate = 0.5f;
     public boolean locked = false;
     private Random random = new Random();
+    public float damage;
 
     public Gun(float fireRate) {
         this.fireRate = fireRate;

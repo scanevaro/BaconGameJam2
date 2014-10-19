@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.entities.Bullets.Bullet;
+import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
 
 import java.util.ArrayList;
@@ -31,7 +32,8 @@ public class TwinCannon extends Gun {
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-
+        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 500, x - 4, y, damage));
+        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 500, x + 4, y, damage));
     }
 
     @Override
