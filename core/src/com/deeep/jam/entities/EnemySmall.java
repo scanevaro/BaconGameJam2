@@ -11,12 +11,12 @@ public class EnemySmall extends Enemy {
     public EnemySmall(PositionVector p, boolean isFast) {
         super(p, 0, 10);
         if (isFast) {
-            super.setForce(100F);
+            super.setForce(200F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));
             setBox2DProperties(Assets.getAssets().getRegion("ship_small_b_body"));
             deadSprite = Assets.getAssets().getRegion("ship_small_body_b_destroyed");
         } else {
-            super.setForce(50F);
+            super.setForce(100F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
             setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
             deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
