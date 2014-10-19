@@ -15,6 +15,9 @@ import java.util.Random;
  */
 public class EnemySpawn {
     private ArrayList<Wave> waves;
+    public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    public ArrayList<Enemy> remove = new ArrayList<Enemy>();
+    private int waveNo = 0;
 
     public EnemySpawn() {
         waves = new ArrayList<Wave>();
@@ -22,18 +25,33 @@ public class EnemySpawn {
     }
 
     public void update(float delta) {
-        for (Wave wave : waves) {
-            wave.update(delta);
+        for (Enemy enemy : enemies) {
+            enemy.update(delta);
+            if (enemy.getHealth() <= 0) {
+                remove.add(enemy);
+            }
+        }
+        for (Enemy enemy : remove) {
+            enemies.remove(enemy);
+        }
+        remove.clear();
+        if (enemies.isEmpty()) {
+            spawn(waveNo);
+            waveNo++;
         }
     }
 
     public void spawn(int waveId) {
-        waves.get(waveId).spawnEnemies(new ArrayList<Enemy>());
+        if (waveId >= waves.size()) {
+            System.out.println("Already spawning next?");
+            return;
+        }
+        waves.get(waveId).spawnEnemies(enemies);
     }
 
     public void render(SpriteBatch spriteBatch) {
-        for (Wave wave : waves) {
-            wave.render(spriteBatch);
+        for (Enemy enemy : enemies) {
+            enemy.draw(spriteBatch);
         }
     }
 
@@ -44,7 +62,6 @@ public class EnemySpawn {
         private int enemyCap = 10;
         private Random random;
 
-        public ArrayList<Enemy> enemies;
 
         public Wave(int level) {
             typeToAmount = new HashMap<Integer, Integer>();
@@ -54,18 +71,9 @@ public class EnemySpawn {
         }
 
         public void spawnEnemies(ArrayList<Enemy> enemies) {
-
-            this.enemies = enemies;
-
             while (enemies.size() < enemyCap) {
                 PositionVector p = randomizePositionVector(new PositionVector());
-                enemies.add(new EnemySmall(p, 0));
-            }
-        }
-
-        public void update(float delta) {
-            for (Enemy enemy : enemies) {
-                enemy.update(delta);
+                enemies.add(new EnemySmall(p, 50));
             }
         }
 
@@ -76,23 +84,17 @@ public class EnemySpawn {
                 if (random.nextInt(2) == 0)
                     p.x = 0;
                 else
-                    p.x = Game.VIRTUAL_WIDTH + 20;
-                p.y = random.nextInt((int) Math.floor(Game.VIRTUAL_HEIGHT));
+                    p.x = Map.sizeX + 20;
+                p.y = random.nextInt((int) Math.floor(Map.sizeY));
             } else {
                 //stuck on floor/ceiling
                 if (random.nextInt(2) == 0)
                     p.y = 0;
                 else
-                    p.y = Game.VIRTUAL_HEIGHT + 20;
-                p.x = random.nextInt((int) Math.floor(Game.VIRTUAL_WIDTH));
+                    p.y = Map.sizeY + 20;
+                p.x = random.nextInt((int) Math.floor(Map.sizeX));
             }
             return p;
-        }
-
-        public void render(SpriteBatch spriteBatch) {
-            for (Enemy enemy : enemies) {
-                enemy.draw(spriteBatch);
-            }
         }
     }
 }

@@ -116,7 +116,7 @@ public class Assets {
         if (textureRegion == null) {
 //            logger.error(Assets.class, "Unkown texture requested: " + name);
         }
-        return textureAtlas.findRegion(name);
+        return textureAtlas.findRegion(name,index);
     }
 
     public Skin getSkin() {

@@ -24,9 +24,10 @@ public class Ship {
     public float force;
     public final float acceleration = 1f;
     public final float friction = acceleration / 2;
-    public final float maxForce = 5;
+    public final float maxForce = 4.5f;
     private Sprite sprite;
     ShapeRenderer shapeRenderer = new ShapeRenderer();
+    private float splashTimer = 0;
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
@@ -84,16 +85,17 @@ public class Ship {
         x += Math.cos(rotation) * force;
         y += Math.sin(rotation) * force;
         //System.out.println(this);
-        splash[(int) force].setPosition(x - splash[(int) force].getWidth() / 2, y - splash[(int) force].getHeight() / 2);
-        splash[(int) force].setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
+        splashTimer = (splashTimer + force * deltaT * 4) % 5;
+        splash[(int) splashTimer].setPosition(x - splash[(int) force].getWidth() / 2, y - 20- splash[(int) force].getHeight() / 2);
+        splash[(int) splashTimer].setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
         body.setTransform(x, y, (float) (rotation + Math.PI / 2));
     }
 
     public void draw(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        splash[(int) force].draw(spriteBatch);
+        splash[(int) splashTimer].draw(spriteBatch);
         sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
-        sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
+        sprite.setRotation((int) Math.toDegrees(rotation - Math.PI / 2));
         sprite.draw(spriteBatch);
         spriteBatch.end();
 

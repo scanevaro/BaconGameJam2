@@ -3,7 +3,7 @@ package com.deeep.jam.classes;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.deeep.jam.Game;
+import com.deeep.jam.Camera;
 
 /**
  * Created by Elmar on 18-10-2014.
@@ -26,18 +26,14 @@ public class Map {
         spriteBatch.begin();
         for (int x = 0; x < sizeX / water[0].getRegionWidth(); x++) {
             for (int y = 0; y < sizeX / water[0].getRegionHeight(); y++) {
-                if (x - 96 < 0 || x + 96 > Game.VIRTUAL_WIDTH) {
-                    continue;
+                if (Camera.getCamera().viewportContains(x * water[0].getRegionWidth(), y * water[0].getRegionHeight())) {
+                    if (waterTimer < 1)
+                        spriteBatch.draw(water[0], x * water[0].getRegionWidth(), y * water[0].getRegionHeight());
+                    else if (waterTimer < 2)
+                        spriteBatch.draw(water[1], x * water[1].getRegionWidth(), y * water[1].getRegionHeight());
+                    else
+                        waterTimer = 0;
                 }
-                if (y - 96 < 0 || y + 96 > Game.VIRTUAL_HEIGHT) {
-                    continue;
-                }
-                if (waterTimer < 1)
-                    spriteBatch.draw(water[0], x * water[0].getRegionWidth(), y * water[0].getRegionHeight());
-                else if (waterTimer < 2)
-                    spriteBatch.draw(water[1], x * water[1].getRegionWidth(), y * water[1].getRegionHeight());
-                else
-                    waterTimer = 0;
             }
         }
         spriteBatch.end();

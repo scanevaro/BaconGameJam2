@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Worlds;
@@ -66,7 +67,7 @@ public class GameScreen implements Screen {
     }
 
     private void prepareScreen() {
-        camera = game.getCamera();
+        camera = Camera.getCamera().getOrthographicCamera();
         camera.position.set(Game.VIRTUAL_WIDTH / 2, Game.VIRTUAL_HEIGHT / 2, 0);
         spriteBatch = game.getSpriteBatch();
         stage = new Stage(new StretchViewport(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT), spriteBatch);

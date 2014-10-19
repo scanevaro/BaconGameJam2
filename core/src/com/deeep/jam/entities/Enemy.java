@@ -21,6 +21,7 @@ public abstract class Enemy {
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
+    private float health = 100;
 
     protected Enemy(float x, float y, float force, float rotation) {
         this.x = x;
@@ -37,13 +38,16 @@ public abstract class Enemy {
     }
 
     public void update(float delta) {
+        if (Worlds.ship != null) {
+            rotation = (float) Math.atan2(Worlds.ship.y - y, Worlds.ship.x - x);
+        }
         x += Math.cos(rotation) * delta * force;
         y += Math.sin(rotation) * delta * force;
         if (sprite != null) {
-            sprite.setPosition(x, y);
-            sprite.setRotation(rotation);
+            sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
+            sprite.setRotation((float) Math.toDegrees(rotation - Math.PI/2));
             if (body != null)
-                body.setTransform(x, y, (float) (rotation));
+                body.setTransform(x, y, (float) (rotation- Math.PI/2));
         }
     }
 
@@ -73,5 +77,13 @@ public abstract class Enemy {
     public boolean contains(int x, int y) {
 
         return false;
+    }
+
+    public float getHealth() {
+        return health;
+    }
+
+    public void setHealth(float health) {
+        this.health = health;
     }
 }

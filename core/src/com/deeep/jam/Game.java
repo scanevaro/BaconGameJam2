@@ -18,38 +18,33 @@ public class Game implements ApplicationListener {
     public static final float VIRTUAL_HEIGHT = 720;
     private final float VIRTUAL_ASPECT = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
 
-    private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
     private Screen screen;
     private Rectangle viewport;
-    public static Shaking shaking;
+
 
     @Override
     public void create() {
         Assets.getAssets().load();
 
-        camera = new OrthographicCamera(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
-        camera.position.set(VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2, 0);
 
         spriteBatch = new SpriteBatch();
 
         viewport = new Rectangle();
 
         setScreen(new GameScreen());
-        shaking = new Shaking(getCamera());
     }
 
     @Override
     public void render() {
-        camera.update();
+        Camera.getCamera().update(Gdx.graphics.getDeltaTime());
 
         Gdx.gl.glViewport((int) viewport.x, (int) viewport.y, (int) viewport.width, (int) viewport.height);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // This cryptic line clears the screen.
 
-        spriteBatch.setProjectionMatrix(camera.combined);
+        spriteBatch.setProjectionMatrix(Camera.getCamera().getProjectionMatrix());
 
         if (screen != null) screen.render(Gdx.graphics.getDeltaTime());
-        shaking.update(Gdx.graphics.getDeltaTime());
     }
 
     @Override
@@ -99,10 +94,6 @@ public class Game implements ApplicationListener {
             this.screen.show();
             this.screen.resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
-    }
-
-    public OrthographicCamera getCamera() {
-        return camera;
     }
 
     public SpriteBatch getSpriteBatch() {
