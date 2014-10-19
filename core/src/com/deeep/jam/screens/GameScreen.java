@@ -171,7 +171,6 @@ public class GameScreen implements Screen {
         gunsLeftTable.add(mediumGunButton).width(64).height(64);
         gunsLeftTable.row();
         gunsLeftTable.add(bigGunButton).width(64).height(64);
-        gunsLeftTable.debug();
 
         container.add(gunsLeftTable);
         container.setFillParent(true);
@@ -181,7 +180,6 @@ public class GameScreen implements Screen {
         ImageButton shipButton = new ImageButton(shipButtonStyle);
 
         container.add(shipButton).width(200).height(350);
-        container.debug();
 
         shopDialog.addActor(container);
         shopDialog.setSize(512, 512);
@@ -210,7 +208,6 @@ public class GameScreen implements Screen {
         gunsRightTable.add(bigGunBaseButton).width(64).height(64);
         gunsRightTable.row();
         gunsRightTable.add(baseGunDarkButton).width(64).height(64);
-        gunsRightTable.debug();
 
         container.add(gunsRightTable);
     }
