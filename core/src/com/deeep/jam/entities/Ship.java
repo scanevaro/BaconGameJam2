@@ -80,6 +80,30 @@ public class Ship {
         }
     }
 
+    public Gun getSmallCanon(int slot) {
+        if (slotsToSmallGuns.containsKey(slot)) {
+            return slotsToSmallGuns.get(slot);
+        } else return new SmallCanon(slot);
+    }
+
+    public Gun getMediumGun(int slot) {
+        if (slotsToMediumGuns.containsKey(slot)) {
+            return slotsToMediumGuns.get(slot);
+        } else return new BigCannon(slot);
+    }
+
+    public Gun getBigGun(int slot) {
+        if (slotsToBigGuns.containsKey(slot)) {
+            return slotsToBigGuns.get(slot);
+        } else return new MegaCannon(slot);
+    }
+
+    public Gun getTwinGuns(int slot) {
+        if (slotsToTwinGuns.containsKey(slot)) {
+            return slotsToTwinGuns.get(slot);
+        } else return new TwinCannon(slot);
+    }
+
     public void updateMediumGun(int slot) {
         if (slotsToMediumGuns.containsKey(slot)) {
             slotsToMediumGuns.get(slot).levelUp();
