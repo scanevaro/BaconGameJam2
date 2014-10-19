@@ -2,6 +2,7 @@ package com.deeep.jam.classes;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.entities.Enemy;
+import com.deeep.jam.entities.EnemyBig;
 import com.deeep.jam.entities.EnemySmall;
 import com.deeep.jam.math.PositionVector;
 
@@ -57,16 +58,24 @@ public class EnemySpawn {
 
         if (spawnTimer > mobsSpawned * spawnInterval) {
             if (A_ship1sCount < ship1sCount) {
-
-                mobsSpawned++;
-            } else if (A_ship1sCount < ship1fCount) {
                 enemies.add(new EnemySmall(randomizePositionVector(), false));
+                System.out.println("Spawned a small slow enemy");
+                A_ship1sCount++;
                 mobsSpawned++;
-            } else if (A_ship1sCount < ship2sCount) {
-                enemies.add(new EnemySmall(randomizePositionVector(), false));
+            } else if (A_ship1fCount < ship1fCount) {
+                enemies.add(new EnemySmall(randomizePositionVector(), true));
+                System.out.println("Spawned a small fast enemy");
+                A_ship1fCount++;
                 mobsSpawned++;
-            } else if (A_ship1sCount < ship2fCount) {
-
+            } else if (A_ship2sCount < ship2sCount) {
+                enemies.add(new EnemyBig(randomizePositionVector(), false));
+                System.out.println("Spawned a medium slow enemy");
+                A_ship2sCount++;
+                mobsSpawned++;
+            } else if (A_ship2fCount < ship2fCount) {
+                enemies.add(new EnemyBig(randomizePositionVector(), true));
+                System.out.println("Spawned a medium fast enemy");
+                A_ship2fCount++;
                 mobsSpawned++;
             }
         }

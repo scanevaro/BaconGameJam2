@@ -14,15 +14,15 @@ public class EnemyBig extends Enemy {
     public EnemyBig(PositionVector p, boolean isFast) {
         super(p, 0);
         if (isFast) {
-            super.setForce(10F);
-            actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));
-            setBox2DProperties(Assets.getAssets().getRegion("ship_small_b_body"));
-            deadSprite = Assets.getAssets().getRegion("ship_small_body_b_destroyed");
-        } else {
             super.setForce(5F);
-            actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
-            setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
-            deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
+            actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_medium_body_b"));
+            setBox2DProperties(Assets.getAssets().getRegion("ship_medium_body_b"));
+            deadSprite = Assets.getAssets().getRegion("ship_medium_body_b_destroyed");
+        } else {
+            super.setForce(2.5F);
+            actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_medium_body"));
+            setBox2DProperties(Assets.getAssets().getRegion("ship_medium_body"));
+            deadSprite = Assets.getAssets().getRegion("ship_medium_body_destroyed");
         }
     }
 
@@ -42,3 +42,4 @@ public class EnemyBig extends Enemy {
     public void update(float delta) {
         super.update(delta);
     }
+}

@@ -84,7 +84,6 @@ public class Worlds {
         debugRenderer.render(world, Camera.getCamera().getProjectionMatrix());
         spriteBatch.begin();
         enemySpawner.render(spriteBatch);
-        enemySmall.draw(spriteBatch);
         spriteBatch.end();
     }
 
@@ -92,7 +91,6 @@ public class Worlds {
         updateShip(delta);
         world.step(Gdx.graphics.getDeltaTime(), 0, 3);
         enemySpawner.update(delta);
-        enemySmall.update(delta);
     }
 
     private void updateShip(float delta) {
