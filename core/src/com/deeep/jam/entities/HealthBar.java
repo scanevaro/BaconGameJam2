@@ -16,6 +16,8 @@ public class HealthBar extends Actor {
 
     private NinePatchDrawable loadingBar;
 
+    private Ship ship;
+
     public HealthBar() {
         TextureAtlas skinAtlas = new TextureAtlas(Gdx.files.internal("data/uiskin.atlas"));
         NinePatch loadingBarBackgroundPatch = new NinePatch(skinAtlas.findRegion("default-round"), 5, 5, 4, 4);
@@ -24,11 +26,13 @@ public class HealthBar extends Actor {
         loadingBarBackground = new NinePatchDrawable(loadingBarBackgroundPatch);
     }
 
+    public void setMainActor(Ship ship) {
+        this.ship = ship;
+    }
+
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        float progress = 0.5f;
-
         loadingBarBackground.draw(batch, getX(), getY(), getWidth() * getScaleX(), getHeight() * getScaleY());
-        loadingBar.draw(batch, getX(), getY(), progress * getWidth() * getScaleX(), getHeight() * getScaleY());
+        loadingBar.draw(batch, getX(), getY(), ship.health / 100 * getWidth() * getScaleX(), getHeight() * getScaleY());
     }
 }

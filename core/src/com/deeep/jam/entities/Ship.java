@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Map;
 import com.deeep.jam.classes.Worlds;
@@ -34,7 +35,7 @@ public class Ship {
     public final float maxForce = 4.5f;
     private Sprite sprite;
     ShapeRenderer shapeRenderer = new ShapeRenderer();
-    private float splashTimer = 0, health = 100;
+    public float splashTimer = 0, health = 100;
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
@@ -196,6 +197,8 @@ public class Ship {
     }
 
     private void die() {
+        Game.GAME_OVER = true;
+
         System.out.println("Game Over!");
     }
 }

@@ -22,6 +22,7 @@ import com.badlogic.gdx.utils.Array;
 public class Assets {
 
     private Texture canonIndexReferenceTexture;
+    private Texture gameOverTexture;
     private Texture shopButton;
     private Texture soundIcon;
     private Texture muteIcon;
@@ -104,6 +105,7 @@ public class Assets {
             soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
             muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
             canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference.png"));
+            gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
             loaded = true;
         }
     }
@@ -226,5 +228,9 @@ public class Assets {
 
     public Texture getCanonIndexReferenceTexture() {
         return canonIndexReferenceTexture;
+    }
+
+    public Texture getGameOverTexture() {
+        return gameOverTexture;
     }
 }

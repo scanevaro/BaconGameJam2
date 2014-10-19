@@ -189,6 +189,7 @@ public class GameScreen implements Screen {
 
     private void prepareWorld() {
         world = new Worlds();
+        healthBar.setMainActor(world.ship);
     }
 
     private void prepareShop() {
@@ -257,7 +258,7 @@ public class GameScreen implements Screen {
 
         container.add(leftGunsTable);
         container.setFillParent(true);
-
+        //( ͡° ͜ʖ ͡°) < l'elmar face
         shopDialog.setSize(512, 512);
 
         ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
@@ -401,6 +402,11 @@ public class GameScreen implements Screen {
                             money_amount -= 1000;
                             money.setText(money_amount + "");
                         }
+
+                        if ((Boolean) object)
+                            world.ship.updateMediumGun(0);
+                        if (!Game.MUTE)
+                            shopClicked.play();
                     }
                 }.text("Upgrade Medium Gun 1 for 1000 moneyz?")
                         .button("Yes", true)
@@ -562,10 +568,61 @@ public class GameScreen implements Screen {
         if (!dialogOpen)
             world.update(delta);
 
+        if (Game.GAME_OVER)
+            prepareGameOverDialog();
+
         stage.act();
 
         world.draw();
         stage.draw();
+    }
+
+    private void prepareGameOverDialog() {
+        dialogOpen = true;
+        Game.GAME_OVER = false;
+
+        Window gameOverDialog = new Window("REKT !", Assets.getAssets().getSkin());
+
+        //( ͡° ͜ʖ ͡°) < l'elmar face
+        gameOverDialog.setSize(512, 512);
+
+        ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
+        shipButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getGameOverTexture()));
+        ImageButton gameOverButton = new ImageButton(shipButtonStyle);
+        gameOverButton.setSize(500, 500);
+        gameOverButton.setPosition(gameOverDialog.getWidth() / 2 - gameOverButton.getWidth() / 2, gameOverDialog.getHeight() / 2 - gameOverButton.getHeight() / 2);
+
+        //add to dialog
+        gameOverDialog.addActor(gameOverButton);
+
+        TextButton retryButton = new TextButton("R e t r y", Assets.getAssets().getSkin());
+        retryButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                dialogOpen = false;
+                game.setScreen(new GameScreen());
+            }
+        });
+        retryButton.setPosition(gameOverDialog.getWidth() / 2 - retryButton.getWidth() / 2, gameOverDialog.getHeight() / 2 - 100);
+
+        //add to dialog
+        gameOverDialog.addActor(retryButton);
+
+        TextButton quitButton = new TextButton("I M  D O N E", Assets.getAssets().getSkin());
+        quitButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                Gdx.app.exit();
+            }
+        });
+        quitButton.setPosition(gameOverDialog.getWidth() / 2 - quitButton.getWidth() / 2, gameOverDialog.getHeight() / 2 - 135);
+
+        //add to dialog
+        gameOverDialog.addActor(quitButton);
+
+        gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
+
+        stage.addActor(gameOverDialog);
     }
 
     @Override

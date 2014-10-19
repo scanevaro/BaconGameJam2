@@ -9,13 +9,13 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.screens.GameScreen;
-import com.deeep.jam.screens.SplashScreen;
 
 public class Game implements ApplicationListener {
     public static final boolean DEBUG = true;
     public static final float VIRTUAL_WIDTH = 1024;
     public static final float VIRTUAL_HEIGHT = 720;
     private final float VIRTUAL_ASPECT = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
+    public static boolean GAME_OVER = false;
     public static boolean MUTE = false;
 
     private SpriteBatch spriteBatch;
