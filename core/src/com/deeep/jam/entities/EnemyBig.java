@@ -11,18 +11,19 @@ public class EnemyBig extends Enemy {
 
     TextureRegion deadSprite;
 
-    public EnemyBig(float x, float y, float force, float rotation) {
-        super(x, y, force, rotation);
-        actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
-        setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
-        deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
-    }
-
-    public EnemyBig(PositionVector p, float force) {
-        super(p, force);
-        actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
-        setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
-        deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
+    public EnemyBig(PositionVector p, boolean isFast) {
+        super(p, 0);
+        if (isFast) {
+            super.setForce(10F);
+            actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));
+            setBox2DProperties(Assets.getAssets().getRegion("ship_small_b_body"));
+            deadSprite = Assets.getAssets().getRegion("ship_small_body_b_destroyed");
+        } else {
+            super.setForce(5F);
+            actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
+            setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
+            deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
+        }
     }
 
     public void die() {
@@ -41,5 +42,3 @@ public class EnemyBig extends Enemy {
     public void update(float delta) {
         super.update(delta);
     }
-
-}
