@@ -16,12 +16,12 @@ import com.deeep.jam.math.PositionVector;
 public abstract class Enemy {
     public float x, y;
     public float force;
-    public float rotation;
-    private Sprite sprite;
-    private Body body;
+    public float rotation, finalRotation;
+    protected Sprite sprite;
+    protected Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
-    private float health = 15;
+    protected float health = 15;
     public float cX, cY;
     public boolean collide, sinking;
 
@@ -47,7 +47,10 @@ public abstract class Enemy {
         y += Math.sin(rotation) * delta * force;
         if (sprite != null) {
             sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
-            sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
+            if (sinking)
+                sprite.setRotation(finalRotation);
+            else
+                sprite.setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
             if (body != null)
                 body.setTransform(x, y, (float) (rotation - Math.PI / 2));
         }

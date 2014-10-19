@@ -1,5 +1,6 @@
 package com.deeep.jam.entities;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.math.PositionVector;
 
@@ -8,23 +9,31 @@ import com.deeep.jam.math.PositionVector;
  */
 public class EnemySmall extends Enemy {
 
+    TextureRegion deadSprite;
+
     public EnemySmall(float x, float y, float force, float rotation) {
         super(x, y, force, rotation);
         actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
         setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
-        System.out.println("spawned enemy small");
+        deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
     }
 
     public EnemySmall(PositionVector p, float force) {
         super(p, force);
         actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body"));
         setBox2DProperties(Assets.getAssets().getRegion("ship_small_body"));
-        System.out.println("spawned enemy small");
+        deadSprite = Assets.getAssets().getRegion("ship_small_body_destroyed");
     }
 
     public void die() {
+        if (sinking) return;
         sinking = true;
-        actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_body_destroyed"));
+        actuallyFuckingSetTheSprite(deadSprite);
+        finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
+    }
+
+    public void update(float delta) {
+        super.update(delta);
     }
 
 }

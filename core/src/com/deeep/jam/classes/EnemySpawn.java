@@ -1,7 +1,6 @@
 package com.deeep.jam.classes;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.deeep.jam.Game;
 import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.EnemySmall;
 import com.deeep.jam.math.PositionVector;
@@ -30,9 +29,6 @@ public class EnemySpawn {
             if (enemy.getHealth() <= 0) {
                 remove.add(enemy);
             }
-        }
-        for (Enemy enemy : remove) {
-            enemies.remove(enemy);
         }
         remove.clear();
         if (enemies.isEmpty()) {
