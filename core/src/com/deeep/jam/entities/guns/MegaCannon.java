@@ -2,6 +2,7 @@ package com.deeep.jam.entities.guns;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.entities.Bullets.Bullet;
 import com.deeep.jam.entities.Bullets.HugeBullet;
@@ -33,6 +34,8 @@ public class MegaCannon extends Gun {
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
         bullets.add(new HugeBullet((float) Math.toRadians(rotation), 500, x, y, damage));
+        if (!Game.MUTE)
+            Assets.getAssets().getBig2().play();
     }
 
     public void update(float deltaT) {

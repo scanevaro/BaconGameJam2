@@ -5,6 +5,7 @@ import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.EnemyBig;
 import com.deeep.jam.entities.EnemySmall;
 import com.deeep.jam.math.PositionVector;
+import com.deeep.jam.screens.GameScreen;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -61,6 +62,7 @@ public class EnemySpawn {
                 remove.add(enemy);
             }
         }
+        GameScreen.waveLabel.setText("Wave #" + waveNr + "...");
         remove.clear();
         if (enemies.isEmpty()) {
             spawning = false;
