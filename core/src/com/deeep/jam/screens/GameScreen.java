@@ -46,7 +46,7 @@ public class GameScreen implements Screen {
     private Window shopDialog;
     private ImageButton smallGun1Button;
     private ImageButton bigGun1Button;
-    private ImageButton middleGun1Button;
+    private ImageButton dualGun1Button;
     private ImageButton mediumGun1Button;
     private ImageButton smallGun2Button;
     private ImageButton smallGun3Button;
@@ -218,8 +218,8 @@ public class GameScreen implements Screen {
 
         ImageButton.ImageButtonStyle topGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         topGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
-        middleGun1Button = new ImageButton(topGun3Style);
-        middleGun1Button.setSize(64, 64);
+        dualGun1Button = new ImageButton(topGun3Style);
+        dualGun1Button.setSize(64, 64);
 
         topGunsTable.add(smallGun1Button).width(64).height(64);
         topGunsTable.row();
@@ -292,7 +292,7 @@ public class GameScreen implements Screen {
 
         Table middleGunsTable = new Table(Assets.getAssets().getSkin());
 
-        middleGunsTable.add(middleGun1Button).width(64).height(64);
+        middleGunsTable.add(dualGun1Button).width(64).height(64);
         middleGunsTable.row();
 
         container.add(middleGunsTable);
@@ -331,7 +331,7 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Top Gun 1 for 500 moneyz?")
+                }.text("Upgrade Small Gun 1 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -340,7 +340,7 @@ public class GameScreen implements Screen {
         bigGun1Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                new Dialog("Big Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         if ((Boolean) object)
                             world.ship.updateMediumGun(1);
@@ -349,45 +349,29 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Top Gun 2 for 500 moneyz?")
+                }.text("Upgrade Big Gun 1 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
             }
         });
-        middleGun1Button.addListener(new ClickListener() {
+        dualGun1Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                new Dialog("Dual Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Middle Gun 1 for 500 moneyz?")
+                }.text("Upgrade Dual Gun 1 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
             }
         });
         mediumGun1Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        //TODO process the input
-                        System.out.println("Chosen: " + object);
-                        if (!Game.MUTE)
-                            shopClicked.play();
-                    }
-                }.text("Upgrade Left Gun 1 for 500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        smallGun2Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
@@ -397,7 +381,23 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Left Gun 2 for 500 moneyz?")
+                }.text("Upgrade Medium Gun 1 for 500 moneyz?")
+                        .button("Yes", true)
+                        .button("No", false)
+                        .show(stage);
+            }
+        });
+        smallGun2Button.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                    protected void result(Object object) {
+                        //TODO process the input
+                        System.out.println("Chosen: " + object);
+                        if (!Game.MUTE)
+                            shopClicked.play();
+                    }
+                }.text("Upgrade Small Gun 2 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -413,7 +413,7 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Left Gun 3 for 500 moneyz?")
+                }.text("Upgrade Small Gun 3 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -422,14 +422,14 @@ public class GameScreen implements Screen {
         mediumGun2Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Right Gun 1 for 500 moneyz?")
+                }.text("Upgrade Medium Gun 2 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -445,7 +445,7 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Right Gun 2 for 500 moneyz?")
+                }.text("Upgrade Small Gun 4 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -460,7 +460,7 @@ public class GameScreen implements Screen {
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Right Gun 3 for 500 moneyz?")
+                }.text("Upgrade Small Gun 5 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -469,14 +469,14 @@ public class GameScreen implements Screen {
         mediumGun3Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Middle Gun 2 for 500 moneyz?")
+                }.text("Upgrade Medium Gun 3 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
@@ -485,14 +485,14 @@ public class GameScreen implements Screen {
         mediumGun4Button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
-                }.text("Upgrade Middle Gun 3 for 500 moneyz?")
+                }.text("Upgrade Medium Gun 4 for 500 moneyz?")
                         .button("Yes", true)
                         .button("No", false)
                         .show(stage);
