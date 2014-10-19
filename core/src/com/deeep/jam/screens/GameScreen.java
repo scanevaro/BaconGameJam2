@@ -326,7 +326,7 @@ public class GameScreen implements Screen {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         if ((Boolean) object)
-                            world.ship.updateSmallGun(1);
+                            world.ship.updateSmallGun(0);
 
                         if (!Game.MUTE)
                             shopClicked.play();
@@ -343,7 +343,7 @@ public class GameScreen implements Screen {
                 new Dialog("Big Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         if ((Boolean) object)
-                            world.ship.updateMediumGun(1);
+                            world.ship.updateBigGun(0);
 
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
@@ -361,6 +361,8 @@ public class GameScreen implements Screen {
                 new Dialog("Dual Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
                         //TODO process the input
+                        if ((Boolean) object)
+                            world.ship.updateTwinGun(0);
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
@@ -378,6 +380,8 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        if ((Boolean) object)
+                            world.ship.updateMediumGun(0);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
@@ -394,6 +398,8 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        if ((Boolean) object)
+                            world.ship.updateSmallGun(1);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
@@ -410,6 +416,8 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        if ((Boolean) object)
+                            world.ship.updateSmallGun(2);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
@@ -426,6 +434,8 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        if ((Boolean) object)
+                            world.ship.updateMediumGun(1);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
@@ -444,6 +454,8 @@ public class GameScreen implements Screen {
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
+                        if ((Boolean) object)
+                            world.ship.updateSmallGun(3);
                     }
                 }.text("Upgrade Small Gun 4 for 500 moneyz?")
                         .button("Yes", true)
@@ -457,6 +469,8 @@ public class GameScreen implements Screen {
                 new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
                     protected void result(Object object) {
 
+                        if ((Boolean) object)
+                            world.ship.updateSmallGun(4);
                         if (!Game.MUTE)
                             shopClicked.play();
                     }
@@ -475,6 +489,8 @@ public class GameScreen implements Screen {
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
+                        if ((Boolean) object)
+                            world.ship.updateMediumGun(2);
                     }
                 }.text("Upgrade Medium Gun 3 for 500 moneyz?")
                         .button("Yes", true)
@@ -491,6 +507,8 @@ public class GameScreen implements Screen {
                         System.out.println("Chosen: " + object);
                         if (!Game.MUTE)
                             shopClicked.play();
+                        if ((Boolean) object)
+                            world.ship.updateMediumGun(3);
                     }
                 }.text("Upgrade Medium Gun 4 for 500 moneyz?")
                         .button("Yes", true)

@@ -68,14 +68,6 @@ public class Ship {
         body = Worlds.world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         body.setUserData(this);
-        for (int i = 0; i < 5; i++) {
-            guns.add(new SmallCanon(i));
-        }
-        for (int i = 0; i < 4; i++) {
-            guns.add(new BigCannon(i));
-        }
-        guns.add(new MegaCannon(0));
-        guns.add(new TwinCannon(0));
     }
 
     public void updateSmallGun(int slot) {
