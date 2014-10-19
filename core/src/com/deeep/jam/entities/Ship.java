@@ -13,6 +13,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Map;
 import com.deeep.jam.classes.Worlds;
+import com.deeep.jam.entities.guns.BigCannon;
 import com.deeep.jam.entities.guns.SmallCanon;
 
 import java.util.ArrayList;
@@ -62,6 +63,9 @@ public class Ship {
         body.setUserData(this);
         for (int i = 0; i < 5; i++) {
             guns.add(new SmallCanon(i));
+        }
+        for (int i = 0; i < 4; i++) {
+            guns.add(new BigCannon(i));
         }
     }
 

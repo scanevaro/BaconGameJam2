@@ -12,6 +12,7 @@ public abstract class Bullet {
     private float rotation;
     private float force;
     private float x, y;
+    private boolean alive;
 
     public Bullet(Sprite sprite, float rotation, float force, float x, float y) {
         this.sprite = sprite;
@@ -19,7 +20,7 @@ public abstract class Bullet {
         this.force = force;
         this.x = x;
         this.y = y;
-        sprite.setRotation((float) Math.toDegrees(rotation + Math.PI/2));
+        sprite.setRotation((float) Math.toDegrees(rotation + Math.PI / 2));
     }
 
     public void update(float deltaT) {
@@ -32,8 +33,12 @@ public abstract class Bullet {
         sprite.draw(spriteBatch);
     }
 
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
     public boolean isDead() {
-        if (x < 0 || x > Map.sizeX || y < 0 || y > Map.sizeY)
+        if (x < 0 || x > Map.sizeX || y < 0 || y > Map.sizeY || !alive)
             return true;
         return false;
     }
