@@ -52,14 +52,17 @@ public abstract class Enemy {
                 body.setTransform(x, y, (float) (rotation - Math.PI / 2));
         }
 
-        if (sinking) force -= delta;
+        if (sinking) force -= delta * 1000F;
         if (force < 0) force = 0;
 
     }
 
-    public void setSprite(TextureRegion textureRegion) {
+    public void actuallyFuckingSetTheSprite(TextureRegion textureRegion) {
         sprite = new Sprite(textureRegion);
         sprite.setOrigin(sprite.getWidth() / 2, sprite.getWidth() / 2);
+    }
+
+    public void setBox2DProperties(TextureRegion textureRegion) {
         bodyDef.position.setAngleRad(rotation);
         bodyDef.position.set(0, 0);
         bodyDef.fixedRotation = false;
