@@ -4,15 +4,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
+import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.Bullets.Bullet;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Elmar on 18-10-2014.
  */
 public abstract class Gun {
+    protected int maxLevel = 1;
     protected int level = 0;
     protected boolean damaged = false;
     public float rotation;
@@ -22,6 +25,7 @@ public abstract class Gun {
     public float bulletTimer = 0;
     public float fireRate = 0.5f;
     public boolean locked = false;
+    private Random random = new Random();
 
     public Gun(float fireRate) {
         this.fireRate = fireRate;
@@ -42,7 +46,8 @@ public abstract class Gun {
         bulletTimer += deltaT;
         if (Gdx.input.isTouched()) {
             if (bulletTimer >= fireRate) {
-                bulletTimer = 0;
+                Camera.getCamera().getShaking().addShake(new Shaking.Shake(fireRate, fireRate));
+                bulletTimer = random.nextFloat() * fireRate / 10;
                 shootBullet(bullets);
             }
         }
@@ -57,6 +62,15 @@ public abstract class Gun {
             bullets.remove(bullet);
         }
         removal.clear();
+    }
+
+    public void levelUp() {
+        if (level < maxLevel)
+            level++;
+    }
+
+    public int getMaxLevel() {
+        return maxLevel;
     }
 
     public abstract void shootBullet(ArrayList<Bullet> bullets);

@@ -8,21 +8,23 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.classes.Map;
 import com.deeep.jam.classes.Worlds;
+import com.deeep.jam.entities.Effects;
 
 /**
  * Created by Elmar on 19-10-2014.
  */
 public abstract class Bullet {
-    private Sprite sprite;
-    private float rotation;
-    private float force;
-    private float x, y;
+    protected Sprite sprite;
+    protected float rotation;
+    protected float force;
+    protected float x, y;
     public Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
     public boolean alive = true;
     public float aliveTimer = 0;
     public float aliveTime = 10;
+    public int explosionType = 2;
 
     public Bullet(Sprite sprite, float rotation, float force, float x, float y) {
         this.sprite = sprite;
@@ -46,6 +48,11 @@ public abstract class Bullet {
         body.setUserData(this);
     }
 
+
+
+    public void hitEffect() {
+        Effects.getEffects().addEffect(new Effects.Effect(explosionType, x, y));
+    }
     public void update(float deltaT) {
         if (aliveTimer >= aliveTime) {
             alive = false;
@@ -56,7 +63,6 @@ public abstract class Bullet {
         sprite.setPosition(x, y);
         body.setTransform(x, y, (float) (rotation + Math.PI / 2));
     }
-
     public void render(SpriteBatch spriteBatch) {
         sprite.draw(spriteBatch);
     }

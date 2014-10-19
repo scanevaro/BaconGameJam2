@@ -9,6 +9,7 @@ import com.deeep.jam.classes.Assets;
 public class BigBullet extends Bullet {
     public BigBullet(float rotation, float force, float x, float y) {
         super(new Sprite(Assets.getAssets().getRegion("ship_gun_bullet_big")), rotation, force, x, y);
+        explosionType = 3;
     }
 
 }
