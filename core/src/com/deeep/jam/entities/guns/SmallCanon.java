@@ -1,13 +1,16 @@
 package com.deeep.jam.entities.guns;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.Camera;
+import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.entities.Bullets.Bullet;
 import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
+import com.deeep.jam.entities.Ship;
 
 import java.util.ArrayList;
 
@@ -19,7 +22,7 @@ public class SmallCanon extends Gun {
     Sprite[][] guns = new Sprite[3][2];
 
     public SmallCanon(int socketId) {
-        super(0.1f);
+        super(0.15f);
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray_destroyed"));
         guns[1][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_green"));
@@ -55,13 +58,14 @@ public class SmallCanon extends Gun {
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
         Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.1f, 1f));
-        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 1500, x, y));
+        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 800, x, y));
         //shoot sound
         Assets.getAssets().getShootSound().play();
     }
 
     @Override
     public void update(float deltaT) {
+
         guns[level][(damaged) ? 1 : 0].setPosition((x) - guns[level][(damaged) ? 1 : 0].getWidth() / 2, (y) - guns[level][(damaged) ? 1 : 0].getHeight() / 2);
         guns[level][(damaged) ? 1 : 0].setRotation(rotation + 90);
     }

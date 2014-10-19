@@ -20,6 +20,7 @@ public abstract class Gun {
     public ArrayList<Bullet> removal = new ArrayList<Bullet>();
     public float bulletTimer = 0;
     public float fireRate = 0.5f;
+    public boolean locked = false;
 
     public Gun(float fireRate) {
         this.fireRate = fireRate;
@@ -32,7 +33,11 @@ public abstract class Gun {
         this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation - Math.PI / 2) + offY * Math.cos(ship.rotation - Math.PI / 2));
         float deltaX = (Gdx.input.getX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
         float deltaY = (Gdx.graphics.getHeight()) - Gdx.input.getY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
-        rotation = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
+        if (!locked) {
+            rotation = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
+        } else {
+            rotation = (float) Math.toDegrees(ship.rotation);
+        }
         bulletTimer += deltaT;
         if (Gdx.input.isTouched()) {
             if (bulletTimer >= fireRate) {

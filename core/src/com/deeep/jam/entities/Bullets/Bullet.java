@@ -20,6 +20,9 @@ public abstract class Bullet {
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
+    private boolean alive = true;
+    private float aliveTimer = 0;
+    public float aliveTime = 10;
 
     public Bullet(Sprite sprite, float rotation, float force, float x, float y) {
         this.sprite = sprite;
@@ -27,7 +30,7 @@ public abstract class Bullet {
         this.force = force;
         this.x = x;
         this.y = y;
-        sprite.setRotation((float) Math.toDegrees(rotation + Math.PI/2));
+        sprite.setRotation((float) Math.toDegrees(rotation + Math.PI / 2));
 
         bodyDef.position.setAngleRad(rotation);
         bodyDef.position.set(0, 0);
@@ -44,6 +47,10 @@ public abstract class Bullet {
     }
 
     public void update(float deltaT) {
+        if (aliveTimer >= aliveTime) {
+            alive = false;
+        }
+        aliveTimer += deltaT;
         x += deltaT * Math.cos(rotation) * force;
         y += deltaT * Math.sin(rotation) * force;
         sprite.setPosition(x, y);
@@ -55,7 +62,7 @@ public abstract class Bullet {
     }
 
     public boolean isDead() {
-        if (x < 0 || x > Map.sizeX || y < 0 || y > Map.sizeY)
+        if (x < 0 || x > Map.sizeX || y < 0 || y > Map.sizeY || !alive)
             return true;
         return false;
     }

@@ -14,7 +14,9 @@ import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Map;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.guns.BigCannon;
+import com.deeep.jam.entities.guns.MegaCannon;
 import com.deeep.jam.entities.guns.SmallCanon;
+import com.deeep.jam.entities.guns.TwinCannon;
 
 import java.util.ArrayList;
 
@@ -67,6 +69,8 @@ public class Ship {
         for (int i = 0; i < 4; i++) {
             guns.add(new BigCannon(i));
         }
+        guns.add(new MegaCannon(0));
+        guns.add(new TwinCannon(0));
     }
 
     public void update(float deltaT) {

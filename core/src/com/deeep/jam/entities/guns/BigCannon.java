@@ -2,8 +2,12 @@ package com.deeep.jam.entities.guns;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.deeep.jam.Camera;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.classes.Shaking;
+import com.deeep.jam.entities.Bullets.BigBullet;
 import com.deeep.jam.entities.Bullets.Bullet;
+import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
 
 import java.util.ArrayList;
@@ -22,11 +26,11 @@ public class BigCannon extends Gun{
         switch (socketId) {
             case 0:
                 offX = -32;
-                offY = 24;
+                offY = 26;
                 break;
             case 1:
                 offX = 32;
-                offY = 24;
+                offY = 26;
                 break;
             case 2:
                 offX = 0;
@@ -41,7 +45,8 @@ public class BigCannon extends Gun{
 
     @Override
     public void shootBullet(ArrayList<Bullet> bullets) {
-
+        Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.5f, 2f));
+        bullets.add(new BigBullet((float) Math.toRadians(rotation), 1200, x, y));
     }
 
     @Override

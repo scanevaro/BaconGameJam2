@@ -8,6 +8,7 @@ import com.deeep.jam.classes.Assets;
  */
 public class SmallBullet extends Bullet {
     public SmallBullet(float rotation, float force, float x, float y) {
-        super(new Sprite(Assets.getAssets().getRegion("ship_gun_gray_bullet")), rotation, force, x, y);
+        super(new Sprite(Assets.getAssets().getRegion("ship_gun_bullet_small")), rotation, force, x, y);
+        this.aliveTime = 0.8f;
     }
 }
