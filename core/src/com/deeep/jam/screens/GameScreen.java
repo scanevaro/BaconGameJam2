@@ -73,7 +73,8 @@ public class GameScreen implements Screen {
 
         Gdx.input.setInputProcessor(stage);
 
-        inGameMusic.play();
+        if (!Game.MUTE)
+            inGameMusic.play();
     }
 
     private void prepareAudio() {
@@ -173,6 +174,8 @@ public class GameScreen implements Screen {
 
         muteButton.setSize(64, 64);
         muteButton.setPosition(Game.VIRTUAL_WIDTH - muteButton.getWidth() - shopButton.getWidth(), Game.VIRTUAL_HEIGHT - muteButton.getHeight());
+        if (Game.MUTE)
+            muteButton.setChecked(true);
     }
 
     private void prepareWorld() {
