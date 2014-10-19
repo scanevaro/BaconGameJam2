@@ -86,6 +86,7 @@ public class GameScreen implements Screen {
     private void prepareAudio() {
         inGameMusic = Assets.getAssets().getInGameMusic();
         inGameMusic.setLooping(true);
+        inGameMusic.setVolume(0.5f);
 
         selectedSound = Assets.getAssets().getSelected();
         shopClicked = Assets.getAssets().getShopClick();
