@@ -2,6 +2,8 @@ package com.deeep.jam.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -16,6 +18,8 @@ import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.HealthBar;
+
+import java.util.Random;
 
 
 /**
@@ -49,11 +53,16 @@ public class GameScreen implements Screen {
     private ImageButton baseGunDarkButton;
     //World
     private Worlds world;
+    //Sounds
+    private Music inGameMusic;
+    private Sound selectedSound;
+    private Sound shopClicked;
 
     @Override
     public void show() {
         this.game = (Game) Gdx.app.getApplicationListener();
 
+        prepareAudio();
         prepareScreen();
         setWidgets();
         addListeners();
@@ -64,6 +73,19 @@ public class GameScreen implements Screen {
         addShopListeners();
 
         Gdx.input.setInputProcessor(stage);
+
+        inGameMusic.play();
+    }
+
+    private void prepareAudio() {
+        Random random = new Random();
+        if (random.nextInt(2) == 0)
+            inGameMusic = Assets.getAssets().getInGameMusic1();
+        else
+            inGameMusic = Assets.getAssets().getInGameMusic2();
+
+        selectedSound = Assets.getAssets().getSelected();
+        shopClicked = Assets.getAssets().getShopClick();
     }
 
     private void prepareScreen() {
@@ -105,6 +127,7 @@ public class GameScreen implements Screen {
         shopButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                selectedSound.play();
                 dialogOpen = true;
                 stage.addActor(shopDialog);
             }
@@ -142,6 +165,7 @@ public class GameScreen implements Screen {
         closeDiagog.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                selectedSound.play();
                 dialogOpen = false;
                 shopDialog.remove();
             }
@@ -220,6 +244,7 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        shopClicked.play();
                     }
                 }.text("Buy Small Gun for $1000?")
                         .button("Yes", true)
@@ -234,6 +259,7 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        shopClicked.play();
                     }
                 }.text("Buy Medium Gun for $1000?")
                         .button("Yes", true)
@@ -248,6 +274,7 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        shopClicked.play();
                     }
                 }.text("Buy Small Gun for $1000?")
                         .button("Yes", true)
@@ -262,6 +289,7 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        shopClicked.play();
                     }
                 }.text("Buy Small Gun for $1000?")
                         .button("Yes", true)
@@ -276,6 +304,7 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        shopClicked.play();
                     }
                 }.text("Buy Small Gun for $1000?")
                         .button("Yes", true)
@@ -290,6 +319,7 @@ public class GameScreen implements Screen {
                     protected void result(Object object) {
                         //TODO process the input
                         System.out.println("Chosen: " + object);
+                        shopClicked.play();
                     }
                 }.text("Buy Small Gun for $1000?")
                         .button("Yes", true)

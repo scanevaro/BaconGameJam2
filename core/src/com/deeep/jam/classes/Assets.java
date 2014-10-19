@@ -1,6 +1,8 @@
 package com.deeep.jam.classes;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -17,6 +19,15 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
  * To change this template use File | Settings | File Templates.
  */
 public class Assets {
+
+    private Texture shopButton;
+    private Music mainMenuMusic;
+    private Music inGameMusic1;
+    private Music inGameMusic2;
+    private Sound shoot;
+    private Sound shopClick;
+    private Sound selected;
+
     /**
      * instance for singleton
      */
@@ -76,6 +87,12 @@ public class Assets {
             title = new Texture(Gdx.files.internal("data/title.png"));
 //            logger.system(Assets.class, "All assets have been loaded");
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
+            mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
+            inGameMusic1 = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/BlackVortex.mp3"));
+            inGameMusic2 = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/TheComplex.mp3"));
+            shoot = Gdx.audio.newSound(Gdx.files.internal("sounds/shoot.mp3"));
+            selected = Gdx.audio.newSound(Gdx.files.internal("sounds/selected.mp3"));
+            shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
             loaded = true;
         }
     }
@@ -112,11 +129,11 @@ public class Assets {
     }
 
     public TextureRegion getRegion(String name, int index) {
-        TextureRegion textureRegion = textureAtlas.findRegion(name,index);
+        TextureRegion textureRegion = textureAtlas.findRegion(name, index);
         if (textureRegion == null) {
 //            logger.error(Assets.class, "Unkown texture requested: " + name);
         }
-        return textureAtlas.findRegion(name,index);
+        return textureAtlas.findRegion(name, index);
     }
 
     public Skin getSkin() {
@@ -134,9 +151,40 @@ public class Assets {
     public void dispose() {
         textureAtlas.dispose();
         skin.dispose();
+        logo.dispose();
+        title.dispose();
+        mainMenuMusic.dispose();
+        inGameMusic1.dispose();
+        inGameMusic2.dispose();
+        shoot.dispose();
+        shopClick.dispose();
+        selected.dispose();
+        shopButton.dispose();
     }
 
-    private Texture shopButton;
+    public Music getMainMenuMusic() {
+        return mainMenuMusic;
+    }
+
+    public Music getInGameMusic1() {
+        return inGameMusic1;
+    }
+
+    public Music getInGameMusic2() {
+        return inGameMusic2;
+    }
+
+    public Sound getShootSound() {
+        return shoot;
+    }
+
+    public Sound getShopClick() {
+        return shopClick;
+    }
+
+    public Sound getSelected() {
+        return selected;
+    }
 
     public Texture getShopButton() {
         return shopButton;

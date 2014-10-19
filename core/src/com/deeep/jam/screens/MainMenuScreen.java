@@ -2,6 +2,8 @@ package com.deeep.jam.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -22,8 +24,11 @@ public class MainMenuScreen implements Screen {
     private Stage stage;
 
     private TextButton playButton;
-    private TextButton joinButton;
-    private TextButton spectateButton;
+    private TextButton aboutButton;
+    private TextButton quitButton;
+
+    private Music intro;
+    private Sound sound;
 
     public MainMenuScreen() {
         game = (Game) Gdx.app.getApplicationListener();
@@ -33,16 +38,23 @@ public class MainMenuScreen implements Screen {
         // set input processor
         Gdx.input.setInputProcessor(stage);
 
+        prepareAudio();
         setActors();
         configureActors();
         addListeners();
         setLayout();
+
+        intro.play();
+    }
+
+    private void prepareAudio() {
+        intro = Assets.getAssets().getMainMenuMusic();
     }
 
     private void setActors() {
         playButton = new TextButton("Play", Assets.getAssets().getSkin());
-        joinButton = new TextButton("About", Assets.getAssets().getSkin());
-        spectateButton = new TextButton("Quit", Assets.getAssets().getSkin());
+        aboutButton = new TextButton("About", Assets.getAssets().getSkin());
+        quitButton = new TextButton("Quit", Assets.getAssets().getSkin());
     }
 
     private void configureActors() {
@@ -52,21 +64,27 @@ public class MainMenuScreen implements Screen {
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                Assets.getAssets().getSelected().play();
+
+                if (intro.isPlaying())
+                    intro.stop();
+
                 game.setScreen(new GameScreen());
             }
         });
 
-        joinButton.addListener(new ClickListener() {
+        aboutButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-
+                Assets.getAssets().getSelected().play();
             }
         });
 
-        spectateButton.addListener(new ClickListener() {
+        quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-
+                Assets.getAssets().getSelected().play();
+                Gdx.app.exit();
             }
         });
     }
@@ -85,10 +103,10 @@ public class MainMenuScreen implements Screen {
         table.add(playButton).align(Align.center);
         //add a pad of 10 pixels
         table.row().pad(10);
-        table.add(joinButton).align(Align.center);
+        table.add(aboutButton).align(Align.center);
         //add new row
         table.row();
-        table.add(spectateButton).align(Align.center);
+        table.add(quitButton).align(Align.center);
         table.row().pad(10);
 
         //add table actor to stage
