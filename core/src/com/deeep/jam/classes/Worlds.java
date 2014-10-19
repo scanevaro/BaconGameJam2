@@ -39,19 +39,19 @@ public class Worlds {
                     bullet.alive = false;
                 }
                 if (contact.getFixtureA().getBody().getUserData() instanceof SmallBullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
-                    BigBullet bullet = (BigBullet) contact.getFixtureA().getBody().getUserData();
+                    SmallBullet bullet = (SmallBullet) contact.getFixtureA().getBody().getUserData();
                     Enemy enemy = (Enemy) contact.getFixtureB().getBody().getUserData();
                     enemy.takeDamage(1);
                     bullet.alive = false;
                 }
-                if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof SmallBullet) {
+                if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof BigBullet) {
                     BigBullet bullet = (BigBullet) contact.getFixtureB().getBody().getUserData();
                     Enemy enemy = (Enemy) contact.getFixtureA().getBody().getUserData();
                     enemy.takeDamage(3);
                     bullet.alive = false;
                 }
-                if (contact.getFixtureA().getBody().getUserData() instanceof SmallBullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
-                    SmallBullet bullet = (SmallBullet) contact.getFixtureA().getBody().getUserData();
+                if (contact.getFixtureA().getBody().getUserData() instanceof BigBullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
+                    BigBullet bullet = (BigBullet) contact.getFixtureA().getBody().getUserData();
                     Enemy enemy = (Enemy) contact.getFixtureB().getBody().getUserData();
                     enemy.takeDamage(3);
                     bullet.alive = false;
