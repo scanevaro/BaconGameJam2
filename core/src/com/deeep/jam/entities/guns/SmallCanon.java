@@ -17,7 +17,7 @@ import com.deeep.jam.entities.Ship;
  */
 public class SmallCanon extends Gun {
     private float shootTimer = 0;
-    private float fireRate = 0.5f;
+    private float fireRate = 0.1f;
     Sprite[][] guns = new Sprite[3][2];
 
     public SmallCanon(int socketId) {
@@ -29,8 +29,8 @@ public class SmallCanon extends Gun {
         guns[2][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_red_destroyed"));
         switch (socketId) {
             case 0:
-                offX = 90;
-                offY = 0;
+                offX = 0;
+                offY = 90;
                 break;
             case 1:
                 offX = -45;
@@ -59,8 +59,8 @@ public class SmallCanon extends Gun {
             shootTimer += deltaT;
         }
 
-        this.x = (float) ((float) (ship.x) + offX * Math.cos(ship.rotation) - offY * Math.sin(ship.rotation));
-        this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation) + offY * Math.cos(ship.rotation));
+        this.x = (float) ((float) (ship.x) + offX * Math.cos(ship.rotation - Math.PI/2) - offY * Math.sin(ship.rotation- Math.PI/2));
+        this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation- Math.PI/2) + offY * Math.cos(ship.rotation- Math.PI/2));
         float deltaX = (Gdx.input.getX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
         float deltaY = (Gdx.graphics.getHeight()) - Gdx.input.getY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
         //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
@@ -70,8 +70,8 @@ public class SmallCanon extends Gun {
         if (Gdx.input.isTouched()) {
             if (shootTimer >= fireRate) {
                 shootTimer = 0;
-                Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.2f, 2f));
-                bullets.add(new SmallBullet((float) Math.toRadians(theta), 800, x, y));
+                Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.1f, 1f));
+                bullets.add(new SmallBullet((float) Math.toRadians(theta), 150, x, y));
             }
         }
         for (Bullet bullet : bullets) {
