@@ -12,17 +12,17 @@ import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
 import com.deeep.jam.entities.Ship;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 /**
  * Created by Andreas on 10/18/2014.
  */
 public class SmallCanon extends Gun {
-    private float shootTimer = 0;
-    private float fireRate = 0.1f;
+
     Sprite[][] guns = new Sprite[3][2];
 
     public SmallCanon(int socketId) {
+        super(0.1f);
         guns[0][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray"));
         guns[0][1] = new Sprite(Assets.getAssets().getRegion("ship_gun_gray_destroyed"));
         guns[1][0] = new Sprite(Assets.getAssets().getRegion("ship_gun_green"));
@@ -32,7 +32,7 @@ public class SmallCanon extends Gun {
         switch (socketId) {
             case 0:
                 offX = 0;
-                offY = 90;
+                offY = 95;
                 break;
             case 1:
                 offX = -45;
@@ -44,45 +44,27 @@ public class SmallCanon extends Gun {
                 break;
             case 3:
                 offX = -45;
-                offY = -75;
+                offY = -70;
                 break;
             case 4:
                 offX = 45;
-                offY = -75;
+                offY = -70;
                 break;
-            default:
-                offX = new Random().nextInt(100) - 50;
-                offY = new Random().nextInt(40) - 20;
         }
     }
 
     //Function powered by: ( ͡° ͜ʖ ͡°) < l'elmar face
 
     @Override
-    public void update(Ship ship, float deltaT) {
-        if (shootTimer < fireRate) {
-            shootTimer += deltaT;
-        }
+    public void shootBullet(ArrayList<Bullet> bullets) {
+        Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.1f, 1f));
+        bullets.add(new SmallBullet((float) Math.toRadians(rotation), 1500, x, y));
+    }
 
-        this.x = (float) ((float) (ship.x) + offX * Math.cos(ship.rotation - Math.PI/2) - offY * Math.sin(ship.rotation- Math.PI/2));
-        this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation- Math.PI/2) + offY * Math.cos(ship.rotation- Math.PI/2));
-        float deltaX = (Gdx.input.getX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
-        float deltaY = (Gdx.graphics.getHeight()) - Gdx.input.getY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
-        //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
-        //guns[level][(damaged) ? 1 : 0].setOrigin(guns[level][(damaged) ? 1 : 0].getWidth() / 2, guns[level][(damaged) ? 1 : 0].getHeight() / 2);
-        guns[level][(damaged) ? 1 : 0].setPosition((x) -guns[level][(damaged) ? 1 : 0].getWidth()/2 , (y)-guns[level][(damaged) ? 1 : 0].getHeight()/2);
-        theta = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
-        if (Gdx.input.isTouched()) {
-            if (shootTimer >= fireRate) {
-                shootTimer = 0;
-                Camera.getCamera().getShaking().addShake(new Shaking.Shake(0.1f, 1f));
-                bullets.add(new SmallBullet((float) Math.toRadians(theta), 150, x, y));
-            }
-        }
-        for (Bullet bullet : bullets) {
-            bullet.update(deltaT);
-        }
-        guns[level][(damaged) ? 1 : 0].setRotation(theta + 90);
+    @Override
+    public void update(float deltaT) {
+        guns[level][(damaged) ? 1 : 0].setPosition((x) - guns[level][(damaged) ? 1 : 0].getWidth() / 2, (y) - guns[level][(damaged) ? 1 : 0].getHeight() / 2);
+        guns[level][(damaged) ? 1 : 0].setRotation(rotation + 90);
     }
 
     @Override
