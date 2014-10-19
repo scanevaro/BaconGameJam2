@@ -23,6 +23,7 @@ public class Assets {
 
     private Texture canonIndexReferenceTexture;
     private Texture gameOverTexture;
+    private Texture aboutTexture;
     private Texture shopButton;
     private Texture soundIcon;
     private Texture muteIcon;
@@ -106,6 +107,7 @@ public class Assets {
             muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
             canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference.png"));
             gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
+            aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
             loaded = true;
         }
     }
@@ -232,5 +234,9 @@ public class Assets {
 
     public Texture getGameOverTexture() {
         return gameOverTexture;
+    }
+
+    public Texture getAboutTexture() {
+        return aboutTexture;
     }
 }
