@@ -22,11 +22,12 @@ public abstract class Enemy {
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
     protected float health = 10;
-    public float cX, cY, decayCounter = 255;
+    public float cX, cY, decayCounter = 255, damageCausal;
     public boolean collide, sinking, decaying;
     public TextureRegion deadSprite;
 
-    protected Enemy(PositionVector positionV, float force, float hp) {
+    protected Enemy(PositionVector positionV, float force, float hp, float damageCausal) {
+        this.damageCausal = damageCausal;
         this.x = positionV.x;
         this.y = positionV.y;
         this.rotation = positionV.theta;

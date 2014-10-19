@@ -34,7 +34,7 @@ public class Ship {
     public final float maxForce = 4.5f;
     private Sprite sprite;
     ShapeRenderer shapeRenderer = new ShapeRenderer();
-    private float splashTimer = 0;
+    private float splashTimer = 0, health = 100;
     private Body body;
     BodyDef bodyDef = new BodyDef();
     PolygonShape groundShape;
@@ -162,5 +162,16 @@ public class Ship {
 
     public String toString() {
         return "rot force (x, y)" + rotation + " " + force + " (" + x + ", " + y + ")";
+    }
+
+    public void takeDamage(float damageCausal) {
+        health -= damageCausal;
+        if (health <= 0) {
+            die();
+        }
+    }
+
+    private void die() {
+        System.out.println("Game Over!");
     }
 }

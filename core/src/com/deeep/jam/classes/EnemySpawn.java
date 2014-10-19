@@ -102,10 +102,6 @@ public class EnemySpawn {
                 A_ship2fCount++;
                 mobsSpawned++;
             }
-        } else {
-            //System.out.println("Spawntimer: " + spawnTimer);
-            //System.out.println("Mobsspawned: " + mobsSpawned);
-            //System.out.println("Interval: " + spawnInterval);
         }
         spawnTimer += delta;
     }
@@ -128,8 +124,6 @@ public class EnemySpawn {
                 p.y = Map.sizeY + random.nextInt(800) - 400;
             p.x = random.nextInt((int) Math.floor(Map.sizeX));
         }
-        p.x = 2000;
-        p.y = 2000;
         return p;
     }
 

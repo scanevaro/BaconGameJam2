@@ -9,7 +9,7 @@ import com.deeep.jam.math.PositionVector;
 public class EnemySmall extends Enemy {
 
     public EnemySmall(PositionVector p, boolean isFast) {
-        super(p, 0, 10);
+        super(p, 0, 10, 10);
         if (isFast) {
             super.setForce(200F);
             actuallyFuckingSetTheSprite(Assets.getAssets().getRegion("ship_small_b_body"));

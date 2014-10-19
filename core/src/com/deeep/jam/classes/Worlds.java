@@ -51,12 +51,24 @@ public class Worlds {
                     Enemy enemy = (Enemy) contact.getFixtureA().getBody().getUserData();
                     enemy.takeDamage(3);
                     bullet.alive = false;
-                } else if (contact.getFixtureA().getBody().getUserData() instanceof BigBullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
-                    BigBullet bullet = (BigBullet) contact.getFixtureA().getBody().getUserData();
+                } else if (contact.getFixtureA().getBody().getUserData() instanceof Ship && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
                     Enemy enemy = (Enemy) contact.getFixtureB().getBody().getUserData();
-                    enemy.takeDamage(3);
-                    bullet.alive = false;
-                    bullet.hitEffect();
+                    Ship ship = (Ship) contact.getFixtureA().getBody().getUserData();
+                    ship.takeDamage(enemy.damageCausal);
+                    enemy.takeDamage(100000000);
+                    Effects.getEffects().addEffect(new Effects.Effect(9, enemy.x, enemy.y));
+                    Effects.getEffects().addEffect(new Effects.Effect(3, enemy.x + 10, enemy.y));
+                    Effects.getEffects().addEffect(new Effects.Effect(8, enemy.x + 10, enemy.y + 10));
+                    Effects.getEffects().addEffect(new Effects.Effect(10, enemy.x, enemy.y + 10));
+                } else if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof Ship) {
+                    Enemy enemy = (Enemy) contact.getFixtureA().getBody().getUserData();
+                    Ship ship = (Ship) contact.getFixtureB().getBody().getUserData();
+                    ship.takeDamage(enemy.damageCausal);
+                    enemy.takeDamage(100000000);
+                    Effects.getEffects().addEffect(new Effects.Effect(9, enemy.x, enemy.y));
+                    Effects.getEffects().addEffect(new Effects.Effect(3, enemy.x + 10, enemy.y));
+                    Effects.getEffects().addEffect(new Effects.Effect(8, enemy.x + 10, enemy.y + 10));
+                    Effects.getEffects().addEffect(new Effects.Effect(10, enemy.x, enemy.y + 10));
                 }
             }
 
