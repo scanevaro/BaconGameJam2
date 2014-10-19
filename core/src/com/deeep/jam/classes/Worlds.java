@@ -30,27 +30,11 @@ public class Worlds {
             @Override
             public void beginContact(Contact contact) {
                 System.out.println(contact.getFixtureA().getBody().getUserData() + " " + contact.getFixtureB().getBody().getUserData());
-
-                //Collision 2 small enemies
-                if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
-                    EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
-                    if (e1.x < e2.x) {
-                        //e1.beginCollision(-0.5F, 0F);
-                        //e2.beginCollision(0.5F, 0F);
-                    } else {
-                        //e1.beginCollision(0.5F, 0F);
-                        //e2.beginCollision(-0.5F, 0F);
-                    }
-                }
             }
 
             @Override
             public void endContact(Contact contact) {
-                if (contact.getFixtureA().getBody().getUserData() instanceof EnemySmall && contact.getFixtureB().getBody().getUserData() instanceof EnemySmall) {
-                    EnemySmall e1 = (EnemySmall) contact.getFixtureA().getBody().getUserData(), e2 = (EnemySmall) contact.getFixtureB().getBody().getUserData();
-                    e1.endCollision();
-                    e2.endCollision();
-                }
+
             }
 
             @Override

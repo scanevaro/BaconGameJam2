@@ -12,6 +12,8 @@ import com.deeep.jam.entities.Bullets.SmallBullet;
 import com.deeep.jam.entities.Gun;
 import com.deeep.jam.entities.Ship;
 
+import java.util.Random;
+
 /**
  * Created by Andreas on 10/18/2014.
  */
@@ -48,6 +50,9 @@ public class SmallCanon extends Gun {
                 offX = 45;
                 offY = -75;
                 break;
+            default:
+                offX = new Random().nextInt(100) - 50;
+                offY = new Random().nextInt(40) - 20;
         }
     }
 
