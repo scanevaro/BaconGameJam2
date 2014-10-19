@@ -215,12 +215,12 @@ public class GameScreen implements Screen {
         smallGun1Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle topGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        topGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
+        topGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_huge"));
         bigGun1Button = new ImageButton(topGun2Style);
         bigGun1Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle topGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        topGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
+        topGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
         dualGun1Button = new ImageButton(topGun3Style);
         dualGun1Button.setSize(64, 64);
 
@@ -235,17 +235,17 @@ public class GameScreen implements Screen {
         Table leftGunsTable = new Table(Assets.getAssets().getSkin());
 
         ImageButton.ImageButtonStyle leftGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        leftGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
+        leftGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
         mediumGun1Button = new ImageButton(leftGun1Style);
         mediumGun1Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle leftGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        leftGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
+        leftGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
         smallGun2Button = new ImageButton(leftGun2Style);
         smallGun2Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle leftGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        leftGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
+        leftGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
         smallGun3Button = new ImageButton(leftGun3Style);
         smallGun3Button.setSize(64, 64);
 
@@ -273,17 +273,17 @@ public class GameScreen implements Screen {
         Table rightGunsTable = new Table(Assets.getAssets().getSkin());
 
         ImageButton.ImageButtonStyle rightGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        rightGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun_dual"));
+        rightGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
         mediumGun2Button = new ImageButton(rightGun1Style);
         mediumGun2Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle rightGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        rightGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_base_big"));
+        rightGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
         smallGun4Button = new ImageButton(rightGun2Style);
         smallGun4Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle rightGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        rightGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_base_dark"));
+        rightGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
         smallGun5Button = new ImageButton(rightGun3Style);
         smallGun5Button.setSize(64, 64);
 
@@ -302,12 +302,12 @@ public class GameScreen implements Screen {
         container.add(rightGunsTable);
 
         ImageButton.ImageButtonStyle bottomGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        bottomGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun_dual"));
+        bottomGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
         mediumGun3Button = new ImageButton(bottomGun1Style);
         mediumGun3Button.setSize(64, 64);
 
         ImageButton.ImageButtonStyle bottomGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        bottomGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_base_big"));
+        bottomGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
         mediumGun4Button = new ImageButton(bottomGun2Style);
         mediumGun4Button.setSize(64, 64);
 
