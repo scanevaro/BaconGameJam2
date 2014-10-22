@@ -143,13 +143,13 @@ public class Ship {
         } else {
             force = 0;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY()<-2) {
             rotation += deltaT * (force / maxForce);
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.getAccelerometerY() > 2) {
             rotation -= deltaT * (force / maxForce);
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.getAccelerometerZ() > 5) {
             if (force < maxForce) {
                 force += deltaT * acceleration;
             }
@@ -169,6 +169,7 @@ public class Ship {
         for (Gun gun : guns) {
             gun.update(this, deltaT);
         }
+
     }
 
     public void draw(SpriteBatch spriteBatch) {

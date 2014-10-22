@@ -17,10 +17,11 @@ public class Game implements ApplicationListener {
     private final float VIRTUAL_ASPECT = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
     public static boolean GAME_OVER = false;
     public static boolean MUTE = false;
+    public static Vector2 crop = new Vector2(0f, 0f);
 
     private SpriteBatch spriteBatch;
     private Screen screen;
-    private Rectangle viewport;
+    public static Rectangle viewport;
 
 
     @Override
@@ -52,9 +53,8 @@ public class Game implements ApplicationListener {
         if (screen != null) screen.resize(width, height);
 
         float aspectRatio = (float) width / (float) height;
-        float scale;
+        float scale = 1;
 
-        Vector2 crop = new Vector2(0f, 0f);
         if (aspectRatio > VIRTUAL_ASPECT) {
             scale = (float) height / VIRTUAL_HEIGHT;
             crop.x = (width - VIRTUAL_WIDTH * scale) / 2f;

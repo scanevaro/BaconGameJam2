@@ -24,7 +24,7 @@ import com.deeep.jam.entities.HealthBar;
  * Created by scanevaro on 10/10/2014.
  */
 public class GameScreen implements Screen {
-    public static int money_amount = 1000;
+    public static int money_amount = 100000;
 
     //Main
     private Game game;

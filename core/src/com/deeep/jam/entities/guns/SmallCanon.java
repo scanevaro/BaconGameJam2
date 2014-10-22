@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class SmallCanon extends Gun {
 
-    public static final int MAX_LEVEL = 2;
+    public static final int MAX_LEVEL = 3;
     public SmallCanon(int socketId) {
         super(0.2f);
         damage = 1;

@@ -4,14 +4,17 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.Bullets.Bullet;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 
 /**
  * Created by Elmar on 18-10-2014.
@@ -25,6 +28,7 @@ public abstract class Gun {
     public float x, y, offX, offY;
     public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
     public ArrayList<Bullet> removal = new ArrayList<Bullet>();
+    private ArrayList<Vector2> vector2s;
     public float bulletTimer = 0;
     public float fireRate = 0.5f;
     public float defaultFireRate = 0.5f;
@@ -44,6 +48,7 @@ public abstract class Gun {
         this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation - Math.PI / 2) + offY * Math.cos(ship.rotation - Math.PI / 2));
         float deltaX = (Camera.getCamera().getTouchX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
         float deltaY = (Gdx.graphics.getHeight()) - Camera.getCamera().getTouchY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
+        System.out.println(" touch X: " + Camera.getCamera().getTouchX()+Game.viewport.getX() + " touch Y: " + Camera.getCamera().getTouchY() + " viewport x: " + Game.viewport.getX() + " crop x " + Game.crop.x);
         if (!locked) {
             rotation = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
         } else {
@@ -71,7 +76,7 @@ public abstract class Gun {
     }
 
     public void levelUp() {
-        if (level < maxLevel) {
+        if (level < maxLevel-1) {
             level++;
             fireRate = defaultFireRate - ((level / (1 + maxLevel)) * defaultFireRate);
             damage = damage + damage * 1.5f;

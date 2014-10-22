@@ -69,10 +69,10 @@ public class Camera {
     }
 
     public float getTouchX() {
-        return Gdx.input.getX() * Gdx.graphics.getWidth() / Game.VIRTUAL_WIDTH;
+        return Gdx.input.getX() * (Game.VIRTUAL_WIDTH / Gdx.graphics.getWidth());
     }
 
     public float getTouchY() {
-        return Gdx.input.getY() * Gdx.graphics.getHeight() / Game.VIRTUAL_HEIGHT;
+        return Gdx.input.getY() * (Game.VIRTUAL_HEIGHT / Gdx.graphics.getHeight());
     }
 }
