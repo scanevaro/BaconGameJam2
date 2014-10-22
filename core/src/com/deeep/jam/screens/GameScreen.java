@@ -197,10 +197,19 @@ public class GameScreen implements Screen {
     }
 
     private void prepareShop() {
-        {//create dialog, add close button. Its not added to the Stage until its wanted to be shown
-            shopDialog = new Window("Shop - Blow sht up ! \n", Assets.getAssets().getSkin());
+
+        {//initialize containers
+            container = new Table(Assets.getAssets().getSkin());
+            leftGunsTable = new Table(Assets.getAssets().getSkin());
+            rightGunsTable = new Table(Assets.getAssets().getSkin());
+        }
+
+        {//create dialog, add close button, add table container. Its not added to the Stage until its wanted to be shown
+            shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
+            shopDialog.setSize(512, 512);
+            shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
+
             TextButton closeDialogButton = new TextButton("X", Assets.getAssets().getSkin());
-            closeDialogButton.setSize(64, 64);
             closeDialogButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
@@ -210,20 +219,24 @@ public class GameScreen implements Screen {
                     shopDialog.remove();
                 }
             });
-            shopDialog.getButtonTable().add(closeDialogButton).width(64).height(64/*shopDialog.getPadTop()*/);
-        }
-
-        {//initialize containers
-            container = new Table(Assets.getAssets().getSkin());
-            leftGunsTable = new Table(Assets.getAssets().getSkin());
-            rightGunsTable = new Table(Assets.getAssets().getSkin());
-        }
-
-        {//configure dialog
-            shopDialog.setSize(512, 512);
-            shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
+            shopDialog.getButtonTable().add(closeDialogButton).height(shopDialog.getPadTop());
 
             shopDialog.addActor(container);
+
+            TextButton closeDialogButton2 = new TextButton("Close", Assets.getAssets().getSkin());
+            closeDialogButton2.setSize(64, 64);
+            closeDialogButton2.setPosition(shopDialog.getWidth() / 2 - closeDialogButton2.getWidth() / 2, 0);
+            closeDialogButton2.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    if (!Game.MUTE)
+                        selectedSound.play();
+                    dialogOpen = false;
+                    shopDialog.remove();
+                }
+            });
+            shopDialog.add();
+            shopDialog.addActor(closeDialogButton2);
         }
 
         {//setWidgets

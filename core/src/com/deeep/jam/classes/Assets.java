@@ -105,7 +105,7 @@ public class Assets {
             shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
             soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
             muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
-            canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference.png"));
+            canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
             gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
             aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
             loaded = true;
