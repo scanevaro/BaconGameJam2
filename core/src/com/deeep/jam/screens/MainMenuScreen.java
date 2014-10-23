@@ -22,6 +22,7 @@ public class MainMenuScreen implements Screen {
     private Game game;
     private Stage stage;
 
+    private Image titleImage;
     private TextButton playButton;
     private TextButton aboutButton;
     private TextButton quitButton;
@@ -63,12 +64,18 @@ public class MainMenuScreen implements Screen {
         soundStyle.imageChecked = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getMuteIcon()));
         muteButton = new ImageButton(soundStyle);
 
-        stage.addActor(muteButton);
+        titleImage = new Image(Assets.getAssets().getTitle());
     }
 
     private void configureActors() {
-        muteButton.setSize(50, 50);
+        muteButton.setSize(128, 128);
         muteButton.setPosition(0, 0);
+
+        playButton.setSize(128, 128);
+        aboutButton.setSize(192, 128);
+        quitButton.setSize(128, 128);
+
+        titleImage.setSize(256, 192);
     }
 
     private void addListeners() {
@@ -127,18 +134,18 @@ public class MainMenuScreen implements Screen {
         //set fill parent
         table.setFillParent(true);
         //add game title, align center, set pad, and add new row
-        table.add(new Image(Assets.getAssets().getTitle()));
+        table.add(titleImage).width(256).height(192);
         table.align(Align.center);
         table.pad(15);
         table.row();
         //add button and align center
-        table.add(playButton).align(Align.center);
+        table.add(playButton).align(Align.center).width(128).height(128);
         //add a pad of 10 pixels
         table.row().pad(10);
-        table.add(aboutButton).align(Align.center);
+        table.add(aboutButton).align(Align.center).width(192).height(128);
         //add new row
         table.row();
-        table.add(quitButton).align(Align.center);
+        table.add(quitButton).align(Align.center).width(128).height(128);
         table.row().pad(10);
 
         //debug table layout
@@ -146,6 +153,8 @@ public class MainMenuScreen implements Screen {
 
         //add table to stage
         stage.addActor(table);
+
+        stage.addActor(muteButton);
     }
 
     @Override
