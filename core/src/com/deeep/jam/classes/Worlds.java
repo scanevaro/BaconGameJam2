@@ -2,6 +2,7 @@ package com.deeep.jam.classes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.deeep.jam.Camera;
@@ -16,7 +17,8 @@ import com.deeep.jam.entities.Ship;
  * Created by scanevaro on 12/10/2014.
  */
 public class Worlds {
-    private SpriteBatch spriteBatch;
+    private SpriteBatch batch;
+    private ShaderProgram vignetteShader;
     public static Ship ship;
     public static World world;
     private Box2DDebugRenderer debugRenderer;
@@ -24,6 +26,13 @@ public class Worlds {
     private EnemySpawn enemySpawner;
 
     public Worlds() {
+        this.batch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
+        ShaderProgram.pedantic = false;
+        vignetteShader = new ShaderProgram(Gdx.files.internal("shaders/vignette.vsh"), Gdx.files.internal("shaders/vignette.fsh"));
+        if (!vignetteShader.isCompiled())
+            System.out.println(vignetteShader.getLog());
+
+
         map = new Map();
         debugRenderer = new Box2DDebugRenderer();
         Vector2 gravity = new Vector2(0, 0);
@@ -69,7 +78,6 @@ public class Worlds {
 
             }
 
-
             //( ͡° ͜ʖ ͡°) < l'elmar face
             @Override
             public void preSolve(Contact contact, Manifold oldManifold) {
@@ -90,21 +98,27 @@ public class Worlds {
 
             }
         });
-        this.spriteBatch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
+
         enemySpawner = new EnemySpawn();
         ship = new Ship();
         Camera.getCamera().followShip(ship);
-
     }
 
     public void draw() {
-        map.render(spriteBatch);
-        ship.draw(spriteBatch);
+        batch.setShader(vignetteShader);
+
+        map.render(batch);
+        ship.draw(batch);
+
+        //if(Game.DEBUG)
         //debugRenderer.render(world, Camera.getCamera().getProjectionMatrix());
-        spriteBatch.begin();
-        enemySpawner.render(spriteBatch);
-        Effects.getEffects().render(spriteBatch);
-        spriteBatch.end();
+
+        batch.begin();
+        enemySpawner.render(batch);
+        Effects.getEffects().render(batch);
+        batch.end();
+
+        batch.setShader(null);
     }
 
     public void update(float delta) {
@@ -117,6 +131,4 @@ public class Worlds {
     private void updateShip(float delta) {
         ship.update(delta);
     }
-
-
 }
