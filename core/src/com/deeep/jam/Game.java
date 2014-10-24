@@ -69,6 +69,8 @@ public class Game implements ApplicationListener {
         float h = VIRTUAL_HEIGHT * scale;
 
         viewport.set(crop.x, crop.y, w, h);
+
+        screen.resize((int) w, (int) h);
     }
 
     @Override

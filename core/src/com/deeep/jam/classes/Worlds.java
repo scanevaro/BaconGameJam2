@@ -32,7 +32,6 @@ public class Worlds {
         if (!vignetteShader.isCompiled())
             System.out.println(vignetteShader.getLog());
 
-
         map = new Map();
         debugRenderer = new Box2DDebugRenderer();
         Vector2 gravity = new Vector2(0, 0);
@@ -130,5 +129,11 @@ public class Worlds {
 
     private void updateShip(float delta) {
         ship.update(delta);
+    }
+
+    public void resize(int width, int height) {
+        vignetteShader.begin();
+        vignetteShader.setUniformf("u_resolution", width, height);
+        vignetteShader.end();
     }
 }
