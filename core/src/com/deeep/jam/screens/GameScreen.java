@@ -348,248 +348,354 @@ public class GameScreen implements Screen {
 
 
     private void addShopListeners() {
-        smallGun1Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 500) {
-                                if ((Boolean) object)
-                                    world.ship.updateSmallGun(0);
+        TextButton yes1Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes1Button.setSize(64, 32);
+        TextButton yes2Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes2Button.setSize(64, 32);
+        TextButton yes3Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes3Button.setSize(64, 32);
+        TextButton yes4Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes4Button.setSize(64, 32);
+        TextButton yes5Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes5Button.setSize(64, 32);
+        TextButton yes6Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes6Button.setSize(64, 32);
+        TextButton yes7Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes7Button.setSize(64, 32);
+        TextButton yes8Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes8Button.setSize(64, 32);
+        TextButton yes9Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes9Button.setSize(64, 32);
+        TextButton yes10Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes10Button.setSize(64, 32);
+        TextButton yes11Button = new TextButton("Yes", Assets.getAssets().getSkin());
+        yes11Button.setSize(64, 32);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 500;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Small Gun 1 for 500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        bigGun1Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Big Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 2000) {
-                                if ((Boolean) object)
-                                    world.ship.updateBigGun(0);
+        TextButton no1Button = new TextButton("No", Assets.getAssets().getSkin());
+        no1Button.setSize(64, 32);
+        TextButton no2Button = new TextButton("No", Assets.getAssets().getSkin());
+        no2Button.setSize(64, 32);
+        TextButton no3Button = new TextButton("No", Assets.getAssets().getSkin());
+        no3Button.setSize(64, 32);
+        TextButton no4Button = new TextButton("No", Assets.getAssets().getSkin());
+        no4Button.setSize(64, 32);
+        TextButton no5Button = new TextButton("No", Assets.getAssets().getSkin());
+        no5Button.setSize(64, 32);
+        TextButton no6Button = new TextButton("No", Assets.getAssets().getSkin());
+        no6Button.setSize(64, 32);
+        TextButton no7Button = new TextButton("No", Assets.getAssets().getSkin());
+        no7Button.setSize(64, 32);
+        TextButton no8Button = new TextButton("No", Assets.getAssets().getSkin());
+        no8Button.setSize(64, 32);
+        TextButton no9Button = new TextButton("No", Assets.getAssets().getSkin());
+        no9Button.setSize(64, 32);
+        TextButton no10Button = new TextButton("No", Assets.getAssets().getSkin());
+        no10Button.setSize(64, 32);
+        TextButton no11Button = new TextButton("No", Assets.getAssets().getSkin());
+        no11Button.setSize(64, 32);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 2000;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Big Gun 1 for 2000 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        dualGun1Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Dual Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 1500) {
+        final Dialog smallGun1Dialog;
+        final Dialog smallGun2Dialog;
+        final Dialog smallGun3Dialog;
+        final Dialog smallGun4Dialog;
+        final Dialog smallGun5Dialog;
+        final Dialog bigGun1Dialog;
+        final Dialog dualGun1Dialog;
+        final Dialog mediumGun1Dialog;
+        final Dialog mediumGun2Dialog;
+        final Dialog mediumGun3Dialog;
+        final Dialog mediumGun4Dialog;
 
-                                world.ship.updateTwinGun(0);
+        {//initialize dialogs
+            smallGun1Dialog = new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 500) {
+                            if ((Boolean) object)
+                                world.ship.updateSmallGun(0);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 1500;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Dual Gun 1 for 1500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        mediumGun1Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 1000) {
-                                if ((Boolean) object)
-                                    world.ship.updateMediumGun(0);
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 500;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            smallGun1Dialog.text("Upgrade Small Gun 1 for 500 moneyz?");
+            smallGun1Dialog.getButtonTable().add(yes1Button).width(64).height(32);
+            smallGun1Dialog.getButtonTable().add(no1Button).width(64).height(32);
+            smallGun1Dialog.setObject(yes1Button, true);
+            smallGun1Dialog.setObject(no1Button, false);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 1000;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Medium Gun 1 for 1000 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        smallGun2Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 500) {
-                                if ((Boolean) object)
-                                    world.ship.updateSmallGun(1);
+            bigGun1Dialog = new Dialog("Big Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 2000) {
+                            if ((Boolean) object)
+                                world.ship.updateBigGun(0);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 500;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Small Gun 2 for 500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        smallGun3Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 500) {
-                                if ((Boolean) object)
-                                    world.ship.updateSmallGun(2);
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 2000;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            bigGun1Dialog.text("Upgrade Big Gun 1 for 2000 moneyz?");
+            bigGun1Dialog.getButtonTable().add(yes2Button).width(64).height(32);
+            bigGun1Dialog.getButtonTable().add(no2Button).width(64).height(32);
+            bigGun1Dialog.setObject(yes2Button, true);
+            bigGun1Dialog.setObject(no2Button, false);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 500;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Small Gun 3 for 500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        mediumGun2Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 1000) {
-                                if ((Boolean) object)
-                                    world.ship.updateMediumGun(1);
+            dualGun1Dialog = new Dialog("Dual Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 1500) {
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 1000;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Medium Gun 2 for 1000 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        smallGun4Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 500) {
-                                if ((Boolean) object)
-                                    world.ship.updateSmallGun(3);
+                            world.ship.updateTwinGun(0);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 500;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Small Gun 4 for 500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        smallGun5Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 500) {
-                                if ((Boolean) object)
-                                    world.ship.updateSmallGun(4);
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 1500;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            dualGun1Dialog.text("Upgrade Dual Gun 1 for 1500 moneyz?");
+            dualGun1Dialog.getButtonTable().add(yes3Button).width(64).height(32);
+            dualGun1Dialog.getButtonTable().add(no3Button).width(64).height(32);
+            dualGun1Dialog.setObject(yes3Button, true);
+            dualGun1Dialog.setObject(no3Button, false);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 500;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Small Gun 5 for 500 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        mediumGun3Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 1000) {
-                                if ((Boolean) object)
-                                    world.ship.updateMediumGun(2);
+            mediumGun1Dialog = new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 1000) {
+                            if ((Boolean) object)
+                                world.ship.updateMediumGun(0);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 1000;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Medium Gun 3 for 1000 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
-        mediumGun4Button.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
-                    protected void result(Object object) {
-                        if ((Boolean) object)
-                            if (money_amount >= 1000) {
-                                if ((Boolean) object)
-                                    world.ship.updateMediumGun(3);
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 1000;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            mediumGun1Dialog.text("Upgrade Medium Gun 1 for 1000 moneyz?");
+            mediumGun1Dialog.getButtonTable().add(yes4Button).width(64).height(32);
+            mediumGun1Dialog.getButtonTable().add(no4Button).width(64).height(32);
+            mediumGun1Dialog.setObject(yes4Button, true);
+            mediumGun1Dialog.setObject(no4Button, false);
 
-                                if (!Game.MUTE)
-                                    shopClicked.play();
-                                money_amount -= 1000;
-                                money.setText(money_amount + "");
-                            }
-                    }
-                }.text("Upgrade Medium Gun 4 for 1000 moneyz?")
-                        .button("Yes", true)
-                        .button("No", false)
-                        .show(stage);
-            }
-        });
+            smallGun2Dialog = new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 500) {
+                            if ((Boolean) object)
+                                world.ship.updateSmallGun(1);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 500;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            smallGun2Dialog.text("Upgrade Small Gun 2 for 500 moneyz?");
+            smallGun2Dialog.getButtonTable().add(yes5Button).width(64).height(32);
+            smallGun2Dialog.getButtonTable().add(no5Button).width(64).height(32);
+            smallGun2Dialog.setObject(yes5Button, true);
+            smallGun2Dialog.setObject(no5Button, false);
+
+            smallGun3Dialog = new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 500) {
+                            if ((Boolean) object)
+                                world.ship.updateSmallGun(2);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 500;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            smallGun3Dialog.text("Upgrade Small Gun 3 for 500 moneyz?");
+            smallGun3Dialog.getButtonTable().add(yes6Button).width(64).height(32);
+            smallGun3Dialog.getButtonTable().add(no6Button).width(64).height(32);
+            smallGun3Dialog.setObject(yes6Button, true);
+            smallGun3Dialog.setObject(no6Button, false);
+
+            mediumGun2Dialog = new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 1000) {
+                            if ((Boolean) object)
+                                world.ship.updateMediumGun(1);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 1000;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            mediumGun2Dialog.text("Upgrade Medium Gun 2 for 1000 moneyz?");
+            mediumGun2Dialog.getButtonTable().add(yes7Button).width(64).height(32);
+            mediumGun2Dialog.getButtonTable().add(no7Button).width(64).height(32);
+            mediumGun2Dialog.setObject(yes7Button, true);
+            mediumGun2Dialog.setObject(no7Button, false);
+
+            smallGun4Dialog = new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 500) {
+                            if ((Boolean) object)
+                                world.ship.updateSmallGun(3);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 500;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            smallGun4Dialog.text("Upgrade Small Gun 4 for 500 moneyz?");
+            smallGun4Dialog.getButtonTable().add(yes8Button).width(64).height(32);
+            smallGun4Dialog.getButtonTable().add(no8Button).width(64).height(32);
+            smallGun4Dialog.setObject(yes8Button, true);
+            smallGun4Dialog.setObject(no8Button, false);
+
+            smallGun5Dialog = new Dialog("Small Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 500) {
+                            if ((Boolean) object)
+                                world.ship.updateSmallGun(4);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 500;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            smallGun5Dialog.text("Upgrade Small Gun 5 for 500 moneyz?");
+            smallGun5Dialog.getButtonTable().add(yes9Button).width(64).height(32);
+            smallGun5Dialog.getButtonTable().add(no9Button).width(64).height(32);
+            smallGun5Dialog.setObject(yes9Button, true);
+            smallGun5Dialog.setObject(no9Button, false);
+
+            mediumGun3Dialog = new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 1000) {
+                            if ((Boolean) object)
+                                world.ship.updateMediumGun(2);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 1000;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            mediumGun3Dialog.text("Upgrade Medium Gun 3 for 1000 moneyz?");
+            mediumGun3Dialog.getButtonTable().add(yes10Button).width(64).height(32);
+            mediumGun3Dialog.getButtonTable().add(no10Button).width(64).height(32);
+            mediumGun3Dialog.setObject(yes10Button, true);
+            mediumGun3Dialog.setObject(no10Button, false);
+
+            mediumGun4Dialog = new Dialog("Medium Gun", Assets.getAssets().getSkin(), "dialog") {
+                protected void result(Object object) {
+                    if ((Boolean) object)
+                        if (money_amount >= 1000) {
+                            if ((Boolean) object)
+                                world.ship.updateMediumGun(3);
+
+                            if (!Game.MUTE)
+                                shopClicked.play();
+                            money_amount -= 1000;
+                            money.setText(money_amount + "");
+                        }
+                }
+            };
+            mediumGun4Dialog.text("Upgrade Medium Gun 4 for 1000 moneyz?");
+            mediumGun4Dialog.getButtonTable().add(yes11Button).width(64).height(32);
+            mediumGun4Dialog.getButtonTable().add(no11Button).width(64).height(32);
+            mediumGun4Dialog.setObject(yes11Button, true);
+            mediumGun4Dialog.setObject(no11Button, false);
+        }
+
+        {//add dialogs to buttons
+            smallGun1Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    smallGun1Dialog.show(stage);
+                }
+            });
+            bigGun1Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    bigGun1Dialog.show(stage);
+                }
+            });
+            dualGun1Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    dualGun1Dialog.show(stage);
+                }
+            });
+            mediumGun1Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    mediumGun1Dialog.show(stage);
+                }
+            });
+            smallGun2Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    smallGun2Dialog.show(stage);
+                }
+            });
+            smallGun3Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    smallGun3Dialog.show(stage);
+                }
+            });
+            mediumGun2Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    mediumGun2Dialog.show(stage);
+                }
+            });
+            smallGun4Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    smallGun4Dialog.show(stage);
+                }
+            });
+            smallGun5Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    smallGun5Dialog.show(stage);
+                }
+            });
+            mediumGun3Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    mediumGun3Dialog.show(stage);
+                }
+            });
+            mediumGun4Button.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    mediumGun4Dialog.show(stage);
+                }
+            });
+        }
     }
 
     @Override
