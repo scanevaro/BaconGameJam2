@@ -4,7 +4,7 @@ varying vec2 v_texCoord0;
 uniform vec2 u_resolution;
 uniform sampler2D u_sampler2D;
 
-const float outerRadius = .65, innerRadius = .4, intensity = .6;
+const float outerRadius = .4, innerRadius = .3, intensity = .6;
 
 void main() {
 	vec4 color = texture2D(u_sampler2D, v_texCoord0) * v_color;
