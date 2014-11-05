@@ -17,6 +17,8 @@ import com.deeep.jam.entities.Ship;
  * Created by scanevaro on 12/10/2014.
  */
 public class Worlds {
+    public static boolean day;
+    private static float dayNightStateTime;
     private SpriteBatch batch;
     private ShaderProgram vignetteShader;
     public static Ship ship;
@@ -31,6 +33,7 @@ public class Worlds {
         vignetteShader = new ShaderProgram(Gdx.files.internal("shaders/vignette.vsh"), Gdx.files.internal("shaders/vignette.fsh"));
         if (!vignetteShader.isCompiled())
             System.out.println(vignetteShader.getLog());
+        setDay(false);
 
         map = new Map();
         debugRenderer = new Box2DDebugRenderer();
@@ -121,10 +124,31 @@ public class Worlds {
     }
 
     public void update(float delta) {
+        setDayNight(delta);
         updateShip(delta);
         world.step(Gdx.graphics.getDeltaTime(), 0, 3);
         enemySpawner.update(delta);
         Effects.getEffects().update(delta);
+    }
+
+    private void setDayNight(float delta) {
+        if (day) {
+            if (dayNightStateTime < 0.8f) {
+                dayNightStateTime += delta / 2;
+
+                vignetteShader.begin();
+                vignetteShader.setUniformf("u_intensity", dayNightStateTime);
+                vignetteShader.end();
+            }
+        } else {
+            if (dayNightStateTime > 0) {
+                dayNightStateTime -= delta / 2;
+
+                vignetteShader.begin();
+                vignetteShader.setUniformf("u_intensity", dayNightStateTime);
+                vignetteShader.end();
+            }
+        }
     }
 
     private void updateShip(float delta) {
@@ -135,5 +159,16 @@ public class Worlds {
         vignetteShader.begin();
         vignetteShader.setUniformf("u_resolution", width, height);
         vignetteShader.end();
+    }
+
+    public static boolean isDay() {
+        return day;
+    }
+
+    public static void setDay(boolean day) {
+        Worlds.day = day;
+
+        if (day) dayNightStateTime = 0;
+        else dayNightStateTime = 1;
     }
 }

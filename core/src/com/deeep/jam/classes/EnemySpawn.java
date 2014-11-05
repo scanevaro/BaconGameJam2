@@ -62,13 +62,19 @@ public class EnemySpawn {
                 remove.add(enemy);
             }
         }
-        GameScreen.wave.setText(waveNr +"");
+        GameScreen.wave.setText(waveNr + "");
         remove.clear();
         if (enemies.isEmpty()) {
             spawning = false;
             System.out.println("Enemies are missing, " + waveNr);
             startSpawning(waveNr);
             waveNr++;
+
+            //iterate between day and night when wave is over
+            if (Worlds.isDay())
+                Worlds.setDay(false);
+            else
+                Worlds.setDay(true);
         }
         if (spawning) {
             updateSpawner(delta);
@@ -153,5 +159,4 @@ public class EnemySpawn {
             enemy.draw(spriteBatch);
         }
     }
-
 }
