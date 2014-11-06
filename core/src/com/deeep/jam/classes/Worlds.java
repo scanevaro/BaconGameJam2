@@ -33,7 +33,7 @@ public class Worlds {
         vignetteShader = new ShaderProgram(Gdx.files.internal("shaders/vignette.vsh"), Gdx.files.internal("shaders/vignette.fsh"));
         if (!vignetteShader.isCompiled())
             System.out.println(vignetteShader.getLog());
-        setDay(false);
+        setDay(true);
 
         map = new Map();
         debugRenderer = new Box2DDebugRenderer();
