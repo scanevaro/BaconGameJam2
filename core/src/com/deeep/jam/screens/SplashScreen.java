@@ -28,9 +28,6 @@ public class SplashScreen implements Screen {
 
         stage = new Stage(new StretchViewport(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT), game.getSpriteBatch());
 
-        /**
-         * Set input processor
-         */
         Gdx.input.setInputProcessor(stage);
 
         setActors();
@@ -52,6 +49,10 @@ public class SplashScreen implements Screen {
 
     private void configureActors() {
         splashSprite.setColor(1, 1, 1, 0);
+//        splashSprite.setPosition(Game.VIRTUAL_WIDTH / 2, Game.VIRTUAL_HEIGHT / 2);
+//        splashSprite.getSprite().setPosition(Game.VIRTUAL_WIDTH / 2 - splashSprite.getSprite().getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - splashSprite.getSprite().getHeight() / 2);
+//        splashSprite.setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
+//        splashSprite.getSprite().setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
     }
 
     private void setListeners() {
@@ -79,10 +80,10 @@ public class SplashScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        splashSprite.setPosition(width / 2, height / 2);
-        splashSprite.getSprite().setSize(width, height);
-        splashSprite.getSprite().setPosition(width / 2 - splashSprite.getSprite().getWidth() / 2, height / 2 - splashSprite.getSprite().getHeight() / 2);
-        splashSprite.setSize(width, height);
+        splashSprite.setPosition(Game.VIRTUAL_WIDTH / 2, Game.VIRTUAL_HEIGHT / 2);
+        splashSprite.getSprite().setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
+        splashSprite.getSprite().setPosition(Game.VIRTUAL_WIDTH / 2 - splashSprite.getSprite().getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - splashSprite.getSprite().getHeight() / 2);
+        splashSprite.setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
     }
 
     @Override

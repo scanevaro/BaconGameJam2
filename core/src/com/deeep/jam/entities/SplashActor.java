@@ -45,7 +45,5 @@ public class SplashActor extends Actor {
     @Override
     public void act(float delta) {
         super.act(delta);
-
-
     }
 }
