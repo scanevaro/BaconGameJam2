@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 
@@ -34,7 +34,7 @@ public class MainMenuScreen implements Screen {
     public MainMenuScreen() {
         game = (Game) Gdx.app.getApplicationListener();
 
-        stage = new Stage(new StretchViewport(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT), game.getSpriteBatch());
+        stage = new Stage(new FitViewport(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT), game.getSpriteBatch());
 
         // set input processor
         Gdx.input.setInputProcessor(stage);
@@ -168,8 +168,6 @@ public class MainMenuScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-//        stage.getViewport().setWorldWidth(width);
-//        stage.getViewport().setWorldHeight(height);
     }
 
     @Override

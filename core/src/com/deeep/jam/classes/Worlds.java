@@ -29,11 +29,18 @@ public class Worlds {
 
     public Worlds() {
         this.batch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
-        ShaderProgram.pedantic = false;
-        vignetteShader = new ShaderProgram(Gdx.files.internal("shaders/vignette.vsh"), Gdx.files.internal("shaders/vignette.fsh"));
-        if (!vignetteShader.isCompiled())
-            System.out.println(vignetteShader.getLog());
-        setDay(true);
+
+        {//prepare shader
+            ShaderProgram.pedantic = false;
+            vignetteShader = new ShaderProgram(Gdx.files.internal("shaders/vignette.vsh"), Gdx.files.internal("shaders/vignette.fsh"));
+            if (!vignetteShader.isCompiled())
+                System.out.println(vignetteShader.getLog());
+        }
+
+        {//set day or night
+            setDay(true);
+            dayNightStateTime = 0.8f;
+        }
 
         map = new Map();
         debugRenderer = new Box2DDebugRenderer();
