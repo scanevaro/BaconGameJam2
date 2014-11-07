@@ -108,6 +108,10 @@ public class Assets {
             canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
             gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
             aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
+
+            TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/buttons.atlas"));
+            skin.addRegions(buttonAtlas);
+
             loaded = true;
         }
     }

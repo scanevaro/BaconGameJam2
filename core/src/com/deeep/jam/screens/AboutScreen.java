@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -35,7 +34,9 @@ public class AboutScreen implements Screen {
     }
 
     private void setWidgets() {
-        ImageButton.ImageButtonStyle aboutStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+        ImageButton.ImageButtonStyle aboutStyle = new ImageButton.ImageButtonStyle();
+        aboutStyle.up = Assets.getAssets().getSkin().getDrawable("buttonTestUp");
+        aboutStyle.down = Assets.getAssets().getSkin().getDrawable("buttonTestDown");
         aboutStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getAboutTexture()));
         ImageButton aboutButton = new ImageButton(aboutStyle);
         aboutButton.addListener(new ClickListener() {
