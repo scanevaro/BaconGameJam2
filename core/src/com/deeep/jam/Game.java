@@ -11,6 +11,7 @@ import com.deeep.jam.classes.Assets;
 import com.deeep.jam.screens.SplashScreen;
 
 public class Game implements ApplicationListener {
+    public static boolean android = false;
     public static final boolean DEBUG = true;
     public static final float VIRTUAL_WIDTH = 1024;
     public static final float VIRTUAL_HEIGHT = 720;
@@ -23,6 +24,12 @@ public class Game implements ApplicationListener {
     private Screen screen;
     public static Rectangle viewport;
 
+    public Game() {
+    }
+
+    public Game(boolean android) {
+        Game.android = android;
+    }
 
     @Override
     public void create() {

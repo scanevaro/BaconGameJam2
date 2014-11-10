@@ -146,6 +146,7 @@ public class Ship {
         } else {
             force = 0;
         }
+
         System.out.println(Controller.getController().getMovementVector().x + ", " + Controller.getController().getMovementVector().y);
         if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY()<-2) {
             rotation += deltaT * (force / maxForce);
