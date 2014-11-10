@@ -24,16 +24,16 @@ public class Controller {
 
     public Controller() {
         Skin touchPadSkin = new Skin();
-        touchPadSkin.add("touchBackground", Assets.getAssets().getRegion("touchBackground"));
-        touchPadSkin.add("touchKnob", Assets.getAssets().getRegion("touchKnob"));
-
+        touchPadSkin.add("touchBackground", Assets.getAssets().getRegion("touchBackground").getTexture());
+        touchPadSkin.add("touchKnob", Assets.getAssets().getRegion("touchKnob").getTexture());
+        System.out.println("assets: "+Assets.getAssets().getRegion("touchKnob"));
         Touchpad.TouchpadStyle touchpadStyle = new Touchpad.TouchpadStyle();
         touchpadStyle.knob = touchPadSkin.getDrawable("touchKnob");
         touchpadStyle.background = touchPadSkin.getDrawable("touchBackground");
 
         movementPad = new Touchpad(10, touchpadStyle);
         firePad = new Touchpad(10, touchpadStyle);
-        //setBounds(x,y,width,height)
+
         movementPad.setBounds(15, 15, 200, 200);
         firePad.setBounds(80, 15, 200, 200);
         movementVector = new Vector2(0, 0);
@@ -42,17 +42,17 @@ public class Controller {
     }
 
     public void addToStage(Stage stage) {
-        stage.addActor(movementPad);
-        stage.addActor(firePad);
+       stage.addActor(movementPad);
+       stage.addActor(firePad);
     }
 
     public Vector2 getMovementVector() {
-        movementVector.set(movementPad.getKnobPercentX(), movementPad.getKnobPercentY());
+       // movementVector.set(movementPad.getKnobPercentX(), movementPad.getKnobPercentY());
         return movementVector;
     }
 
     public Vector2 getFireVector() {
-        fireVector.set(firePad.getKnobPercentX(), firePad.getKnobPercentY());
+       // fireVector.set(firePad.getKnobPercentX(), firePad.getKnobPercentY());
         return fireVector;
     }
 

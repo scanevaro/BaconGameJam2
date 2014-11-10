@@ -18,6 +18,8 @@ public class Map {
         water = new TextureRegion[2];
         water[0] = Assets.getAssets().getRegion("water0");
         water[1] = Assets.getAssets().getRegion("water1");
+        System.out.println("water:"+water[0]);
+        System.out.println("water:"+water[1]);
     }
 
     public void render(SpriteBatch spriteBatch) {
