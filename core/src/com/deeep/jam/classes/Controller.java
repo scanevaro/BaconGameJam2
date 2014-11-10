@@ -1,5 +1,7 @@
 package com.deeep.jam.classes;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -24,9 +26,9 @@ public class Controller {
 
     public Controller() {
         Skin touchPadSkin = new Skin();
-        touchPadSkin.add("touchBackground", Assets.getAssets().getRegion("touchBackground").getTexture());
-        touchPadSkin.add("touchKnob", Assets.getAssets().getRegion("touchKnob").getTexture());
-        System.out.println("assets: "+Assets.getAssets().getRegion("touchKnob"));
+        touchPadSkin.add("touchBackground", new Texture(Gdx.files.internal("images/touchBackground.png")));
+        touchPadSkin.add("touchKnob", new Texture(Gdx.files.internal("images/touchKnob.png")));
+
         Touchpad.TouchpadStyle touchpadStyle = new Touchpad.TouchpadStyle();
         touchpadStyle.knob = touchPadSkin.getDrawable("touchKnob");
         touchpadStyle.background = touchPadSkin.getDrawable("touchBackground");
@@ -42,17 +44,19 @@ public class Controller {
     }
 
     public void addToStage(Stage stage) {
-       stage.addActor(movementPad);
-       stage.addActor(firePad);
+        movementPad.setBounds(15, 15, 200, 200);
+        firePad.setBounds(stage.getWidth()-215, 15, 200, 200);
+        stage.addActor(movementPad);
+        stage.addActor(firePad);
     }
 
     public Vector2 getMovementVector() {
-       // movementVector.set(movementPad.getKnobPercentX(), movementPad.getKnobPercentY());
+        movementVector.set(movementPad.getKnobPercentX(), movementPad.getKnobPercentY());
         return movementVector;
     }
 
     public Vector2 getFireVector() {
-       // fireVector.set(firePad.getKnobPercentX(), firePad.getKnobPercentY());
+        fireVector.set(firePad.getKnobPercentX(), firePad.getKnobPercentY());
         return fireVector;
     }
 
