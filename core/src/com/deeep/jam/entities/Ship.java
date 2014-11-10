@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.classes.Controller;
 import com.deeep.jam.classes.Map;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.guns.BigCannon;
@@ -145,7 +146,8 @@ public class Ship {
         } else {
             force = 0;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY() < -2) {
+        System.out.println(Controller.getController().getMovementVector().x + ", " + Controller.getController().getMovementVector().y);
+        if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY()<-2) {
             rotation += deltaT * (force / maxForce);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.getAccelerometerY() > 2) {

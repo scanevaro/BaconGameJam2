@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.classes.Controller;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.HealthBar;
 import com.deeep.jam.entities.RepairBar;
@@ -74,7 +75,6 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         this.game = (Game) Gdx.app.getApplicationListener();
-
         prepareAudio();
         prepareScreen();
         setWidgets();
@@ -86,6 +86,7 @@ public class GameScreen implements Screen {
         addShopListeners();
 
         Gdx.input.setInputProcessor(stage);
+        Controller.getController().addToStage(stage);
 
         if (!Game.MUTE)
             inGameMusic.play();
