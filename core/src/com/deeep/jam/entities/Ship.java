@@ -46,6 +46,8 @@ public class Ship {
     private HashMap<Integer, Gun> slotsToBigGuns = new HashMap<Integer, Gun>();
     private HashMap<Integer, Gun> slotsToTwinGuns = new HashMap<Integer, Gun>();
 
+    private RepairBar repairBar;
+
     public Ship() {
         splash = new Sprite[5];
         for (int i = 0; i < 5; i++) {
@@ -143,7 +145,7 @@ public class Ship {
         } else {
             force = 0;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY()<-2) {
+        if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY() < -2) {
             rotation += deltaT * (force / maxForce);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.getAccelerometerY() > 2) {
@@ -195,11 +197,17 @@ public class Ship {
         if (health <= 0) {
             die();
         }
+
+        repairBar.stateTime = 0;
     }
 
     private void die() {
         Game.GAME_OVER = true;
 
         System.out.println("Game Over!");
+    }
+
+    public void setRepairBar(RepairBar repairBar) {
+        this.repairBar = repairBar;
     }
 }

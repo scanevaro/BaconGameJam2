@@ -18,6 +18,7 @@ import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.HealthBar;
+import com.deeep.jam.entities.RepairBar;
 
 
 /**
@@ -32,17 +33,19 @@ public class GameScreen implements Screen {
     private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
     private Stage stage; //for UI
-    private boolean dialogOpen;
+    public static boolean dialogOpen;
     //Widgets
     private Label waveLabel;
     public static Label wave;
     private Label moneyLabel;
     public static Label money;
     private Label healthLabel;
+    private Label repairLabel;
     private Label health;
     private Label scoreLabel;
     private Label score;
     private HealthBar healthBar;
+    private RepairBar repairBar;
     private ImageButton shopButton;
     private Window shopDialog;
     private ImageButton smallGun1Button;
@@ -110,11 +113,13 @@ public class GameScreen implements Screen {
         moneyLabel = new Label("CASH $ : ", Assets.getAssets().getSkin());
         money = new Label(money_amount + "", Assets.getAssets().getSkin());
         healthLabel = new Label("Health: ", Assets.getAssets().getSkin());
+        repairLabel = new Label("Repairs... ", Assets.getAssets().getSkin());
         health = new Label("5", Assets.getAssets().getSkin());
         scoreLabel = new Label("Score: ", Assets.getAssets().getSkin());
         score = new Label("0", Assets.getAssets().getSkin());
 
         healthBar = new HealthBar();
+        repairBar = new RepairBar();
 
         ImageButton.ImageButtonStyle nowPlayingStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
         nowPlayingStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
@@ -130,8 +135,10 @@ public class GameScreen implements Screen {
         stage.addActor(moneyLabel);
         stage.addActor(money);
         stage.addActor(healthLabel);
+        stage.addActor(repairLabel);
         stage.addActor(health);
         stage.addActor(healthBar);
+        stage.addActor(repairBar);
         stage.addActor(shopButton);
         stage.addActor(scoreLabel);
         stage.addActor(score);
@@ -179,6 +186,11 @@ public class GameScreen implements Screen {
 
         healthLabel.setPosition(Game.VIRTUAL_WIDTH / 2 - healthBar.getWidth() / 2, healthBar.getHeight());
 
+        repairBar.setSize(96, 16);
+        repairBar.setPosition(Game.VIRTUAL_WIDTH / 2 - repairBar.getWidth() / 2, 50);
+
+        repairLabel.setPosition(Game.VIRTUAL_WIDTH / 2 - repairBar.getWidth() / 2, repairBar.getHeight() + 50);
+
         shopButton.setSize(64, 64);
         shopButton.setPosition(Game.VIRTUAL_WIDTH - shopButton.getWidth(), Game.VIRTUAL_HEIGHT - shopButton.getHeight());
 
@@ -194,10 +206,11 @@ public class GameScreen implements Screen {
     private void prepareWorld() {
         world = new Worlds();
         healthBar.setMainActor(world.ship);
+        repairBar.setMainActor(world.ship);
+        world.ship.setRepairBar(repairBar);
     }
 
     private void prepareShop() {
-
         {//initialize containers
             container = new Table(Assets.getAssets().getSkin());
             leftGunsTable = new Table(Assets.getAssets().getSkin());
