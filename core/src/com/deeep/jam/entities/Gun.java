@@ -46,20 +46,17 @@ public abstract class Gun {
         update(deltaT);
         this.x = (float) ((float) (ship.x) + offX * Math.cos(ship.rotation - Math.PI / 2) - offY * Math.sin(ship.rotation - Math.PI / 2));
         this.y = (float) ((float) (ship.y) + offX * Math.sin(ship.rotation - Math.PI / 2) + offY * Math.cos(ship.rotation - Math.PI / 2));
-        float deltaX = (Camera.getCamera().getTouchX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
-        float deltaY = (Gdx.graphics.getHeight()) - Camera.getCamera().getTouchY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
-        System.out.println(" touch X: " + Camera.getCamera().getTouchX()+Game.viewport.getX() + " touch Y: " + Camera.getCamera().getTouchY() + " viewport x: " + Game.viewport.getX() + " crop x " + Game.crop.x);
-        if (!locked) {
-            rotation = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
-        } else {
-            rotation = (float) Math.toDegrees(ship.rotation);
-        }
         bulletTimer += deltaT;
-        if (Gdx.input.isTouched()) {
-            if (bulletTimer >= fireRate) {
-                Camera.getCamera().getShaking().addShake(new Shaking.Shake(fireRate, fireRate));
-                bulletTimer = random.nextFloat() * fireRate / 10;
-                shootBullet(bullets);
+        if (Game.android == false) {
+            float deltaX = (Camera.getCamera().getTouchX()) - (x - Camera.getCamera().getOrthographicCamera().position.x + Game.VIRTUAL_WIDTH / 2);
+            float deltaY = (Gdx.graphics.getHeight()) - Camera.getCamera().getTouchY() - (y - Camera.getCamera().getOrthographicCamera().position.y + Game.VIRTUAL_HEIGHT / 2);
+            if (!locked) {
+                rotation = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
+            } else {
+                rotation = (float) Math.toDegrees(ship.rotation);
+            }
+            if (Gdx.input.isTouched()) {
+                fire();
             }
         }
         for (Bullet bullet : bullets) {
@@ -75,8 +72,20 @@ public abstract class Gun {
         removal.clear();
     }
 
+    public void setRotation(int degrees) {
+        rotation = degrees;
+    }
+
+    public void fire() {
+        if (bulletTimer >= fireRate) {
+            Camera.getCamera().getShaking().addShake(new Shaking.Shake(fireRate, fireRate));
+            bulletTimer = random.nextFloat() * fireRate / 10;
+            shootBullet(bullets);
+        }
+    }
+
     public void levelUp() {
-        if (level < maxLevel-1) {
+        if (level < maxLevel - 1) {
             level++;
             fireRate = defaultFireRate - ((level / (1 + maxLevel)) * defaultFireRate);
             damage = damage + damage * 1.5f;

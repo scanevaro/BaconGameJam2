@@ -146,22 +146,29 @@ public class Ship {
         } else {
             force = 0;
         }
-
-        System.out.println(Controller.getController().getMovementVector().x + ", " + Controller.getController().getMovementVector().y);
-        if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.getAccelerometerY()<-2) {
-            rotation += deltaT * (force / maxForce);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.getAccelerometerY() > 2) {
-            rotation -= deltaT * (force / maxForce);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.getAccelerometerZ() > 5) {
-            if (force < maxForce) {
-                force += deltaT * acceleration;
+        if (Game.android) {
+            if (Controller.getController().getMovementVector().len() != 0) {
+                if (force < maxForce) {
+                    force += deltaT * acceleration * Controller.getController().getMovementVector().y * Math.abs(Controller.getController().getMovementVector().len());
+                }
             }
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-            if (force > maxForce / 5) {
-                force -= deltaT * acceleration / 2;
+            rotation += deltaT * (force / maxForce) * Controller.getController().getMovementVector().x * -1;
+        } else {
+            if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+                rotation += deltaT * (force / maxForce);
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+                rotation -= deltaT * (force / maxForce);
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+                if (force < maxForce) {
+                    force += deltaT * acceleration;
+                }
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+                if (force > maxForce / 5) {
+                    force -= deltaT * acceleration / 2;
+                }
             }
         }
         x += Math.cos(rotation) * force;
@@ -172,6 +179,12 @@ public class Ship {
         splash[(int) splashTimer].setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
         body.setTransform(x, y, (float) (rotation + Math.PI / 2));
         for (Gun gun : guns) {
+            if (Game.android) {
+                if (Controller.getController().getFireVector().len() != 0) {
+                    gun.fire();
+                    gun.setRotation((int) Controller.getController().getFireVector().angle());
+                }
+            }
             gun.update(this, deltaT);
         }
 
