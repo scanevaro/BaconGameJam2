@@ -58,7 +58,7 @@ public class SmallCanon extends Gun {
         bullets.add(new SmallBullet((float) Math.toRadians(rotation), 800, x, y, damage));
         //shoot sound
         if (!Game.MUTE)
-            Assets.getAssets().getSmall().play();
+            Assets.getAssets().getSmall().play(.3f);
     }
 
     @Override

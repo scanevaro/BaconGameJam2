@@ -94,19 +94,23 @@ public class Assets {
             logo = new Texture(Gdx.files.internal("data/newLogo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
+            soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
+            muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
+            canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
+            gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
+            aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
+
+            //music
             mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
             inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/VolatileReaction.mp3"));
+
+            //sound effects
             big1 = Gdx.audio.newSound(Gdx.files.internal("sounds/big1.mp3"));
             big2 = Gdx.audio.newSound(Gdx.files.internal("sounds/big2.mp3"));
             medium = Gdx.audio.newSound(Gdx.files.internal("sounds/medium.mp3"));
             small = Gdx.audio.newSound(Gdx.files.internal("sounds/small.mp3"));
             selected = Gdx.audio.newSound(Gdx.files.internal("sounds/selected.mp3"));
             shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
-            soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
-            muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
-            canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
-            gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
-            aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
 
             TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/buttons.atlas"));
             skin.addRegions(buttonAtlas);

@@ -35,7 +35,7 @@ public class MegaCannon extends Gun {
     public void shootBullet(ArrayList<Bullet> bullets) {
         bullets.add(new HugeBullet((float) Math.toRadians(rotation), 500, x, y, damage));
         if (!Game.MUTE)
-            Assets.getAssets().getBig2().play();
+            Assets.getAssets().getBig2().play(.3f);
     }
 
     public void update(float deltaT) {

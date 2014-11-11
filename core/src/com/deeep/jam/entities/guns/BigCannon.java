@@ -51,7 +51,7 @@ public class BigCannon extends Gun {
     public void shootBullet(ArrayList<Bullet> bullets) {
         bullets.add(new BigBullet((float) Math.toRadians(rotation), 1200, x, y, damage));
         if (!Game.MUTE)
-            Assets.getAssets().getBig1().play();
+            Assets.getAssets().getBig1().play(.3f);
     }
 
     @Override

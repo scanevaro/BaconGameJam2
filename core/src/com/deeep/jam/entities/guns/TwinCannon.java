@@ -36,7 +36,7 @@ public class TwinCannon extends Gun {
         bullets.add(new SmallBullet((float) Math.toRadians(rotation), 500, x - 4, y, damage));
         bullets.add(new SmallBullet((float) Math.toRadians(rotation), 500, x + 4, y, damage));
         if (!Game.MUTE)
-            Assets.getAssets().getMedium().play();
+            Assets.getAssets().getMedium().play(.3f);
     }
 
     @Override
