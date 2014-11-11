@@ -149,10 +149,25 @@ public class Ship {
         if (Game.android) {
             if (Controller.getController().getMovementVector().len() != 0) {
                 if (force < maxForce) {
-                    force += deltaT * acceleration * Controller.getController().getMovementVector().y * Math.abs(Controller.getController().getMovementVector().len());
+                    force += deltaT * acceleration * Math.abs(Controller.getController().getMovementVector().len());
                 }
             }
-            rotation += deltaT * (force / maxForce) * Controller.getController().getMovementVector().x * -1;
+            if (((Controller.getController().getMovementVector().angleRad())) < rotation) {
+                if ((Math.abs(rotation - Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
+                    rotation += deltaT * (force / maxForce);
+                else
+                    rotation -= deltaT * (force / maxForce);
+                System.out.println("-" + Controller.getController().getMovementVector().angleRad() + ", " + rotation);
+                //System.out.println("-- | " + (Controller.getController().getMovementVector().angleRad() - rotation));
+            } else {
+                if (Math.abs(rotation + Math.abs(Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
+                    rotation -= deltaT * (force / maxForce);
+                else
+                    rotation += deltaT * (force / maxForce);
+                System.out.println("+" + Controller.getController().getMovementVector().angleRad() + ", " + rotation);
+                //System.out.println("++ | " + (Controller.getController().getMovementVector().angleRad() - rotation));
+            }
+
         } else {
             if (Gdx.input.isKeyPressed(Input.Keys.A)) {
                 rotation += deltaT * (force / maxForce);
