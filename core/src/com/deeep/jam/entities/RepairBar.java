@@ -39,7 +39,7 @@ public class RepairBar extends Actor {
     public void draw(Batch batch, float parentAlpha) {
         loadingBarBackground.draw(batch, getX(), getY(), getWidth() * getScaleX(), getHeight() * getScaleY());
         if (stateTime > 0)
-            loadingBar.draw(batch, getX(), getY(), stateTime / 5 * getWidth() * getScaleX(), getHeight() * getScaleY());
+            loadingBar.draw(batch, getX(), getY(), stateTime / 10 * getWidth() * getScaleX(), getHeight() * getScaleY());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class RepairBar extends Actor {
         if (ship.health != 100 && !GameScreen.dialogOpen) {
             stateTime += delta;
 
-            if (stateTime >= 5) {
+            if (stateTime >= 10) {
                 stateTime = 0;
 
                 if (ship.health <= 90)
