@@ -119,8 +119,8 @@ public class Worlds {
         map.render(batch);
         ship.draw(batch);
 
-        //if(Game.DEBUG)
-        //debugRenderer.render(world, Camera.getCamera().getProjectionMatrix());
+//        if (Game.DEBUG)
+//            debugRenderer.render(world, Camera.getCamera().getProjectionMatrix());
 
         batch.begin();
         enemySpawner.render(batch);

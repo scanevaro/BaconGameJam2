@@ -93,7 +93,6 @@ public class Assets {
             loadSkin();
             logo = new Texture(Gdx.files.internal("data/newLogo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
-//            logger.system(Assets.class, "All assets have been loaded");
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
             mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
             inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/VolatileReaction.mp3"));
@@ -186,6 +185,8 @@ public class Assets {
         selected.dispose();
         shopButton.dispose();
         canonIndexReferenceTexture.dispose();
+
+        loaded = false;
     }
 
     public Music getMainMenuMusic() {

@@ -7,8 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 
-import java.util.Vector;
-
 /**
  * Created by Elmar on 11/10/2014.
  */
