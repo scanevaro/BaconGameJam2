@@ -154,12 +154,12 @@ public class Ship {
             }
             if (((Controller.getController().getMovementVector().angleRad())) < rotation) {
                 //if ((Math.abs(rotation - Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
-                    rotation += deltaT * (force / maxForce);
+                rotation -= deltaT * (force / maxForce);
                 System.out.println("-" + Controller.getController().getMovementVector().angleRad() + ", " + rotation);
                 //System.out.println("-- | " + (Controller.getController().getMovementVector().angleRad() - rotation));
             } else {
                 //if (Math.abs(rotation + Math.abs(Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
-                    rotation -= deltaT * (force / maxForce);
+                rotation += deltaT * (force / maxForce);
                 System.out.println("+" + Controller.getController().getMovementVector().angleRad() + ", " + rotation);
                 //System.out.println("++ | " + (Controller.getController().getMovementVector().angleRad() - rotation));
             }
