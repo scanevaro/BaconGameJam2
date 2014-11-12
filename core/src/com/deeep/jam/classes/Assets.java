@@ -89,8 +89,8 @@ public class Assets {
     public void load() {
         if (!loaded) {
             textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
-            loadFont();
             loadSkin();
+            loadFont();
             logo = new Texture(Gdx.files.internal("data/newLogo.png"));
             title = new Texture(Gdx.files.internal("data/title.png"));
             shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
@@ -112,28 +112,30 @@ public class Assets {
             selected = Gdx.audio.newSound(Gdx.files.internal("sounds/selected.mp3"));
             shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
 
-            TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/buttons.atlas"));
+            TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/assetsPack.pack"));
             skin.addRegions(buttonAtlas);
 
             loaded = true;
         }
     }
 
-    private void loadFont() {
-        // Instead of using the default font that comes with libgdx default skin, we use a TrueType font and load it in runtime.
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Toucon.ttf"));
-        font = generator.generateFont(12);
-    }
 
     private void loadSkin() {
         skin = new Skin();
-        skin.add("default-font", font, BitmapFont.class);
         FileHandle fileHandle = Gdx.files.internal("data/uiskin.json");
         FileHandle atlasFile = fileHandle.sibling("uiskin.atlas");
         if (atlasFile.exists()) {
             skin.addRegions(new TextureAtlas(atlasFile));
         }
         skin.load(fileHandle);
+    }
+
+    private void loadFont() {
+        // Instead of using the default font that comes with libgdx default skin, we use a TrueType font and load it in runtime.
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Toucon.ttf"));
+        font = generator.generateFont(12);
+
+        skin.add("gameFont", font, BitmapFont.class);
     }
 
     /**
