@@ -49,10 +49,6 @@ public class SplashScreen implements Screen {
 
     private void configureActors() {
         splashSprite.setColor(1, 1, 1, 0);
-//        splashSprite.setPosition(Game.VIRTUAL_WIDTH / 2, Game.VIRTUAL_HEIGHT / 2);
-//        splashSprite.getSprite().setPosition(Game.VIRTUAL_WIDTH / 2 - splashSprite.getSprite().getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - splashSprite.getSprite().getHeight() / 2);
-//        splashSprite.setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
-//        splashSprite.getSprite().setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
     }
 
     private void setListeners() {
