@@ -152,6 +152,7 @@ public class Ship {
                     force += deltaT * acceleration * Math.abs(Controller.getController().getMovementVector().len());
                 }
             }
+            //
             if (((Controller.getController().getMovementVector().angleRad())) < rotation) {
                 //if ((Math.abs(rotation - Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
                 rotation -= deltaT * (force / maxForce);
