@@ -151,20 +151,25 @@ public class Ship {
                 if (force < maxForce) {
                     force += deltaT * acceleration * Math.abs(Controller.getController().getMovementVector().len());
                 }
+                double inputRotation = Controller.getController().getMovementVector().angleRad() + Math.PI;
+                double difference = (inputRotation - rotation + Math.PI) - Math.PI * 2;
+                difference %= (Math.PI * 2);
+                System.out.println("Difference: " + difference + " Rotate: " + inputRotation + " Ship: " + (rotation + Math.PI));
+                if (difference > 0) {
+                    if (Math.abs(difference) >= Math.PI) {
+                        rotation -= deltaT * (force / maxForce) * Math.min(1, Math.abs(difference));
+                    } else {
+                        rotation += deltaT * (force / maxForce) * Math.min(1, Math.abs(difference));
+                    }
+                } else {
+                    if (Math.abs(difference) >= Math.PI) {
+                        rotation += deltaT * (force / maxForce) * Math.min(1, Math.abs(difference));
+                    } else {
+                        rotation -= deltaT * (force / maxForce) * Math.min(1, Math.abs(difference));
+                    }
+                }
+                rotation %= (Math.PI * 2);
             }
-            //
-            if (((Controller.getController().getMovementVector().angleRad())) < rotation) {
-                //if ((Math.abs(rotation - Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
-                rotation -= deltaT * (force / maxForce);
-                System.out.println("-" + Controller.getController().getMovementVector().angleRad() + ", " + rotation);
-                //System.out.println("-- | " + (Controller.getController().getMovementVector().angleRad() - rotation));
-            } else {
-                //if (Math.abs(rotation + Math.abs(Controller.getController().getMovementVector().angleRad()) - Math.PI / 2) > 0)
-                rotation += deltaT * (force / maxForce);
-                System.out.println("+" + Controller.getController().getMovementVector().angleRad() + ", " + rotation);
-                //System.out.println("++ | " + (Controller.getController().getMovementVector().angleRad() - rotation));
-            }
-
         } else {
             if (Gdx.input.isKeyPressed(Input.Keys.A)) {
                 rotation += deltaT * (force / maxForce);
