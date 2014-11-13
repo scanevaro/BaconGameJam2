@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.utils.Array;
+import com.deeep.jam.Game;
 
 /**
  * Created by scanevaro on 26/09/2014.
@@ -41,7 +42,7 @@ public class SplashActor extends Actor {
 
         batch.setColor(color);
 
-        batch.draw(animation.getKeyFrame(stateTime), 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.draw(animation.getKeyFrame(stateTime), 0, 0, Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
     }
 
     @Override
