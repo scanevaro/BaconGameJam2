@@ -1,22 +1,29 @@
 package com.deeep.jam.entities;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
+import com.badlogic.gdx.utils.Array;
 
 /**
  * Created by scanevaro on 26/09/2014.
  */
 public class SplashActor extends Actor {
-    private Sprite sprite;
+    private Animation animation;
+    private float stateTime;
 
-    public SplashActor(Sprite sprite) {
-        this.sprite = sprite;
+    public SplashActor() {
+        Array<TextureAtlas.AtlasRegion> atlasRegions = new TextureAtlas(Gdx.files.internal("data/newLogo.pack")).getRegions();
+        animation = new Animation(0.5f, atlasRegions);
 
         setActions();
+
+        stateTime = 0;
     }
 
     private void setActions() {
@@ -33,17 +40,14 @@ public class SplashActor extends Actor {
                 getColor().b, getColor().a * parentAlpha);
 
         batch.setColor(color);
-        sprite.setColor(color);
 
-        sprite.draw(batch);
-    }
-
-    public Sprite getSprite() {
-        return sprite;
+        batch.draw(animation.getKeyFrame(stateTime), 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
+
+        stateTime += delta;
     }
 }

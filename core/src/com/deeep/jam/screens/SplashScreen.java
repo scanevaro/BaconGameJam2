@@ -3,14 +3,12 @@ package com.deeep.jam.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.deeep.jam.Game;
-import com.deeep.jam.classes.Assets;
 import com.deeep.jam.entities.SplashActor;
 
 /**
@@ -44,7 +42,7 @@ public class SplashScreen implements Screen {
     }
 
     private void setActors() {
-        splashSprite = new SplashActor(new Sprite(Assets.getAssets().getLogo()));
+        splashSprite = new SplashActor();
     }
 
     private void configureActors() {
@@ -70,15 +68,13 @@ public class SplashScreen implements Screen {
         Gdx.gl.glClearColor(0, 0.1f, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        stage.draw();
         stage.act();
+        stage.draw();
     }
 
     @Override
     public void resize(int width, int height) {
         splashSprite.setPosition(Game.VIRTUAL_WIDTH / 2, Game.VIRTUAL_HEIGHT / 2);
-        splashSprite.getSprite().setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
-        splashSprite.getSprite().setPosition(Game.VIRTUAL_WIDTH / 2 - splashSprite.getSprite().getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - splashSprite.getSprite().getHeight() / 2);
         splashSprite.setSize(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT);
     }
 
