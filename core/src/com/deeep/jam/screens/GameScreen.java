@@ -73,8 +73,23 @@ public class GameScreen implements Screen {
     private Sound shopClicked;
 
     @Override
+    public void render(float delta) {
+        if (!dialogOpen)
+            world.update(delta);
+
+        if (Game.GAME_OVER)
+            prepareGameOverDialog();
+
+        stage.act();
+
+        world.draw();
+        stage.draw();
+    }
+
+    @Override
     public void show() {
         this.game = (Game) Gdx.app.getApplicationListener();
+
         prepareAudio();
         prepareScreen();
         setWidgets();
@@ -715,20 +730,6 @@ public class GameScreen implements Screen {
                 }
             });
         }
-    }
-
-    @Override
-    public void render(float delta) {
-        if (!dialogOpen)
-            world.update(delta);
-
-        if (Game.GAME_OVER)
-            prepareGameOverDialog();
-
-        stage.act();
-
-        world.draw();
-        stage.draw();
     }
 
     private void prepareGameOverDialog() {

@@ -34,16 +34,18 @@ public class Controller {
         movementPad = new Touchpad(10, touchpadStyle);
         firePad = new Touchpad(10, touchpadStyle);
 
+        movementPad.setColor(0.5f, 0.5f, 0.5f, 0.5f);
+        firePad.setColor(0.5f, 0.5f, 0.5f, 0.5f);
+
         movementPad.setBounds(15, 15, 200, 200);
         firePad.setBounds(80, 15, 200, 200);
         movementVector = new Vector2(0, 0);
         fireVector = new Vector2(0, 0);
-
     }
 
     public void addToStage(Stage stage) {
         movementPad.setBounds(15, 15, 200, 200);
-        firePad.setBounds(stage.getWidth()-215, 15, 200, 200);
+        firePad.setBounds(stage.getWidth() - 215, 15, 200, 200);
         stage.addActor(movementPad);
         stage.addActor(firePad);
     }
@@ -57,5 +59,4 @@ public class Controller {
         fireVector.set(firePad.getKnobPercentX(), firePad.getKnobPercentY());
         return fireVector;
     }
-
 }

@@ -114,6 +114,8 @@ public class Worlds {
     }
 
     public void draw() {
+        batch.setColor(1, 1, 1, 1);
+
         batch.setShader(vignetteShader);
 
         map.render(batch);
