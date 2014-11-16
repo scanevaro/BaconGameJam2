@@ -1,6 +1,7 @@
 package com.deeep.jam.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
@@ -20,7 +22,6 @@ import com.deeep.jam.classes.Controller;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.HealthBar;
 import com.deeep.jam.entities.RepairBar;
-
 
 /**
  * Created by scanevaro on 10/10/2014.
@@ -34,6 +35,7 @@ public class GameScreen implements Screen {
     private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
     private Stage stage; //for UI
+    private Stage cStage; //for controllers
     public static boolean dialogOpen;
     //Widgets
     private Label waveLabel;
@@ -81,9 +83,13 @@ public class GameScreen implements Screen {
             prepareGameOverDialog();
 
         stage.act();
+        cStage.act();
 
+        Gdx.gl.glViewport(stage.getViewport().getScreenX(), stage.getViewport().getScreenY(), stage.getViewport().getScreenWidth(), stage.getViewport().getScreenHeight());
         world.draw();
         stage.draw();
+        Gdx.gl.glViewport(cStage.getViewport().getScreenX(), cStage.getViewport().getScreenY(), cStage.getViewport().getScreenWidth(), cStage.getViewport().getScreenHeight());
+        cStage.draw();
     }
 
     @Override
@@ -100,8 +106,10 @@ public class GameScreen implements Screen {
         prepareShop();
         addShopListeners();
 
-        Gdx.input.setInputProcessor(stage);
-        Controller.getController().addToStage(stage);
+        InputMultiplexer multiplexer = new InputMultiplexer(stage, cStage);
+        Gdx.input.setInputProcessor(multiplexer);
+
+        Controller.getController().addToStage(cStage);
 
         if (!Game.MUTE)
             inGameMusic.play();
@@ -121,6 +129,7 @@ public class GameScreen implements Screen {
         camera.position.set(Game.VIRTUAL_WIDTH / 2, Game.VIRTUAL_HEIGHT / 2, 0);
         spriteBatch = game.getSpriteBatch();
         stage = new Stage(new FitViewport(Game.VIRTUAL_WIDTH, Game.VIRTUAL_HEIGHT), spriteBatch);
+        cStage = new Stage(new StretchViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()), spriteBatch);
     }
 
     private void setWidgets() {
@@ -794,6 +803,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
+        stage.getViewport().update(width, height, true);
+        cStage.getViewport().update(width, height, true);
         world.resize(width, height);
     }
 

@@ -47,7 +47,7 @@ public class Game implements ApplicationListener {
     public void render() {
         Camera.getCamera().update(Gdx.graphics.getDeltaTime());
 
-        Gdx.gl.glViewport((int) viewport.x, (int) viewport.y, (int) viewport.width, (int) viewport.height);
+//        Gdx.gl.glViewport((int) viewport.x, (int) viewport.y, (int) viewport.width, (int) viewport.height);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // This cryptic line clears the screen.
 
         spriteBatch.setProjectionMatrix(Camera.getCamera().getProjectionMatrix());
@@ -59,25 +59,25 @@ public class Game implements ApplicationListener {
     public void resize(int width, int height) {
         if (screen != null) screen.resize(width, height);
 
-        float aspectRatio = (float) width / (float) height;
-        float scale = 1;
-
-        if (aspectRatio > VIRTUAL_ASPECT) {
-            scale = (float) height / VIRTUAL_HEIGHT;
-            crop.x = (width - VIRTUAL_WIDTH * scale) / 2f;
-        } else if (aspectRatio < VIRTUAL_ASPECT) {
-            scale = (float) width / VIRTUAL_WIDTH;
-            crop.y = (height - VIRTUAL_HEIGHT * scale) / 2f;
-        } else {
-            scale = (float) width / VIRTUAL_WIDTH;
-        }
-
-        float w = VIRTUAL_WIDTH * scale;
-        float h = VIRTUAL_HEIGHT * scale;
-
-        viewport.set(crop.x, crop.y, w, h);
-
-        screen.resize((int) w, (int) h);
+//        float aspectRatio = (float) width / (float) height;
+//        float scale = 1;
+//
+//        if (aspectRatio > VIRTUAL_ASPECT) {
+//            scale = (float) height / VIRTUAL_HEIGHT;
+//            crop.x = (width - VIRTUAL_WIDTH * scale) / 2f;
+//        } else if (aspectRatio < VIRTUAL_ASPECT) {
+//            scale = (float) width / VIRTUAL_WIDTH;
+//            crop.y = (height - VIRTUAL_HEIGHT * scale) / 2f;
+//        } else {
+//            scale = (float) width / VIRTUAL_WIDTH;
+//        }
+//
+//        float w = VIRTUAL_WIDTH * scale;
+//        float h = VIRTUAL_HEIGHT * scale;
+//
+//        viewport.set(crop.x, crop.y, w, h);
+//
+//        screen.resize((int) w, (int) h);
     }
 
     @Override
