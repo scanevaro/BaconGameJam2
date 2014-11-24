@@ -35,7 +35,6 @@ public class Game implements ApplicationListener {
     public void create() {
         Assets.getAssets().load();
 
-
         spriteBatch = new SpriteBatch();
 
         viewport = new Rectangle();
