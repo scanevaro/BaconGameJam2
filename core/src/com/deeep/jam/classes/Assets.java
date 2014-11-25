@@ -88,42 +88,25 @@ public class Assets {
      */
     public void load() {
         if (!loaded) {
-            textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
-            loadSkin();
+//            textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
             loadFont();
-            logo = new Texture(Gdx.files.internal("data/newLogo.png"));
-            title = new Texture(Gdx.files.internal("data/title.png"));
-            shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
-            soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
-            muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
-            canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
-            gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
-            aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
-
-            //music
-            mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
-            inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/VolatileReaction.mp3"));
-
-            //sound effects
-            big1 = Gdx.audio.newSound(Gdx.files.internal("sounds/big1.mp3"));
-            big2 = Gdx.audio.newSound(Gdx.files.internal("sounds/big2.mp3"));
-            medium = Gdx.audio.newSound(Gdx.files.internal("sounds/medium.mp3"));
-            small = Gdx.audio.newSound(Gdx.files.internal("sounds/small.mp3"));
-            selected = Gdx.audio.newSound(Gdx.files.internal("sounds/selected.mp3"));
-            shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
-
-            TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/assetsPack.pack"));
-            skin.addRegions(buttonAtlas);
+            loadSkin();
+            loadTextures();
+            loadMusic();
+            loadSFX();
+            loadAtlas();
 
             loaded = true;
         }
     }
 
-
     private void loadSkin() {
         skin = new Skin();
-        FileHandle fileHandle = Gdx.files.internal("data/uiskin.json");
-        FileHandle atlasFile = fileHandle.sibling("uiskin.atlas");
+        //add font
+        skin.add("default-font", font, BitmapFont.class);
+
+        FileHandle fileHandle = Gdx.files.internal("data/skin.json");
+        FileHandle atlasFile = fileHandle.sibling("skin.atlas");
         if (atlasFile.exists()) {
             skin.addRegions(new TextureAtlas(atlasFile));
         }
@@ -134,8 +117,37 @@ public class Assets {
         // Instead of using the default font that comes with libgdx default skin, we use a TrueType font and load it in runtime.
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Toucon.ttf"));
         font = generator.generateFont(12);
+    }
 
-        skin.add("gameFont", font, BitmapFont.class);
+    private void loadTextures() {
+        logo = new Texture(Gdx.files.internal("data/newLogo.png"));
+        title = new Texture(Gdx.files.internal("data/title.png"));
+        shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
+        soundIcon = new Texture(Gdx.files.internal("data/soundIcon.png"));
+        muteIcon = new Texture(Gdx.files.internal("data/muteIcon.png"));
+        canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
+        gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
+        aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
+    }
+
+    private void loadMusic() {
+        mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
+        inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/VolatileReaction.mp3"));
+    }
+
+    private void loadSFX() {
+        big1 = Gdx.audio.newSound(Gdx.files.internal("sounds/big1.mp3"));
+        big2 = Gdx.audio.newSound(Gdx.files.internal("sounds/big2.mp3"));
+        medium = Gdx.audio.newSound(Gdx.files.internal("sounds/medium.mp3"));
+        small = Gdx.audio.newSound(Gdx.files.internal("sounds/small.mp3"));
+        selected = Gdx.audio.newSound(Gdx.files.internal("sounds/selected.mp3"));
+        shopClick = Gdx.audio.newSound(Gdx.files.internal("sounds/shopClick.mp3"));
+    }
+
+    private void loadAtlas() {
+        textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
+        TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/assetsPack.pack"));
+        skin.addRegions(buttonAtlas);
     }
 
     /**
