@@ -1,11 +1,9 @@
 package com.deeep.jam.classes;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 /**
  * Created by Elmar on 11/10/2014.
@@ -23,13 +21,13 @@ public class Controller {
     private Vector2 movementVector, fireVector;
 
     public Controller() {
-        Skin touchPadSkin = new Skin();
-        touchPadSkin.add("touchBackground", new Texture(Gdx.files.internal("images/touchBackground.png")));
-        touchPadSkin.add("touchKnob", new Texture(Gdx.files.internal("images/touchKnob.png")));
+//        Skin touchPadSkin = new Skin();
+//        touchPadSkin.add("touchBackground", Assets.getAssets().getRegion("touchBackground"));
+//        touchPadSkin.add("touchKnob", Assets.getAssets().getRegion("touchKnob"));
 
         Touchpad.TouchpadStyle touchpadStyle = new Touchpad.TouchpadStyle();
-        touchpadStyle.knob = touchPadSkin.getDrawable("touchKnob");
-        touchpadStyle.background = touchPadSkin.getDrawable("touchBackground");
+        touchpadStyle.knob = new TextureRegionDrawable(Assets.getAssets().getRegion("touchKnob"));
+        touchpadStyle.background = new TextureRegionDrawable(Assets.getAssets().getRegion("touchBackground"));
 
         movementPad = new Touchpad(10, touchpadStyle);
         firePad = new Touchpad(10, touchpadStyle);

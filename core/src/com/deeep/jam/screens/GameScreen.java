@@ -243,11 +243,7 @@ public class GameScreen implements Screen {
         }
 
         {//create dialog, add close button, add table container. Its not added to the Stage until its wanted to be shown
-            Window.WindowStyle style = new Window.WindowStyle();
-            style.background = Assets.getAssets().getSkin().getDrawable("dialogTest");
-            style.titleFont = Assets.getAssets().getSkin().getFont("gameFont");
-
-            shopDialog = new Window("Shop - Blow sht up !", style);
+            shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
 //            shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
             shopDialog.setSize(512, 512);
             shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
