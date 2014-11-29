@@ -206,7 +206,7 @@ public class GameScreen implements Screen {
 
         healthLabel.setPosition(Game.VIRTUAL_WIDTH / 2 - healthBar.getWidth() / 2, healthBar.getHeight());
 
-        repairBar.setSize(96, 16);
+        repairBar.setSize(128, 50);
         repairBar.setPosition(Game.VIRTUAL_WIDTH / 2 - repairBar.getWidth() / 2, 50);
 
         repairLabel.setPosition(Game.VIRTUAL_WIDTH / 2 - repairBar.getWidth() / 2, repairBar.getHeight() + 50);

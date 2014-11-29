@@ -1,11 +1,9 @@
 package com.deeep.jam.entities;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.NinePatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
+import com.deeep.jam.classes.Assets;
 import com.deeep.jam.screens.GameScreen;
 
 /**
@@ -22,11 +20,8 @@ public class RepairBar extends Actor {
     public float stateTime;
 
     public RepairBar() {
-        TextureAtlas skinAtlas = new TextureAtlas(Gdx.files.internal("data/uiskin.atlas"));
-        NinePatch loadingBarBackgroundPatch = new NinePatch(skinAtlas.findRegion("default-round"), 5, 5, 4, 4);
-        NinePatch loadingBarPatch = new NinePatch(skinAtlas.findRegion("default-round-down"), 5, 5, 4, 4);
-        loadingBar = new NinePatchDrawable(loadingBarPatch);
-        loadingBarBackground = new NinePatchDrawable(loadingBarBackgroundPatch);
+        loadingBar = new NinePatchDrawable(Assets.getAssets().getSkin().getPatch("repairBarFill"));
+        loadingBarBackground = new NinePatchDrawable(Assets.getAssets().getSkin().getPatch("healthBar"));
 
         stateTime = 0;
     }
@@ -37,9 +32,9 @@ public class RepairBar extends Actor {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        loadingBarBackground.draw(batch, getX(), getY(), getWidth() * getScaleX(), getHeight() * getScaleY());
         if (stateTime > 0)
-            loadingBar.draw(batch, getX(), getY(), stateTime / 10 * getWidth() * getScaleX(), getHeight() * getScaleY());
+            loadingBar.draw(batch, getX() + 15, getY() + 22, stateTime / 10 * (getWidth() - 25) * getScaleX(), getHeight() * .3f * getScaleY());
+        loadingBarBackground.draw(batch, getX(), getY(), getWidth() * getScaleX(), getHeight() * getScaleY());
     }
 
     @Override
