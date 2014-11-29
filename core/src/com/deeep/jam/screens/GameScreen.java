@@ -239,11 +239,10 @@ public class GameScreen implements Screen {
 
         {//create dialog, add close button, add table container. Its not added to the Stage until its wanted to be shown
             shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
-//            shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
             shopDialog.setSize(512, 512);
             shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
 
-            TextButton closeDialogButton = new TextButton("X", Assets.getAssets().getSkin());
+            Button closeDialogButton = new Button(Assets.getAssets().getSkin().get("closeDialogStyle", Button.ButtonStyle.class));
             closeDialogButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
@@ -253,7 +252,7 @@ public class GameScreen implements Screen {
                     shopDialog.remove();
                 }
             });
-            shopDialog.getButtonTable().add(closeDialogButton).height(shopDialog.getPadTop());
+            shopDialog.getButtonTable().add(closeDialogButton).height(60).width(60).padBottom(12).padRight(5);
 
             shopDialog.addActor(container);
 
@@ -274,47 +273,47 @@ public class GameScreen implements Screen {
         }
 
         {//setWidgets
-            ImageButton.ImageButtonStyle topGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle topGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             topGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
             smallGun1Button = new ImageButton(topGun1Style);
 
-            ImageButton.ImageButtonStyle leftGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle leftGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             leftGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
             smallGun2Button = new ImageButton(leftGun2Style);
 
-            ImageButton.ImageButtonStyle leftGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle leftGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             leftGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
             smallGun3Button = new ImageButton(leftGun3Style);
 
-            ImageButton.ImageButtonStyle rightGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle rightGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             rightGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
             smallGun4Button = new ImageButton(rightGun2Style);
 
-            ImageButton.ImageButtonStyle rightGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle rightGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             rightGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_gray"));
             smallGun5Button = new ImageButton(rightGun3Style);
 
-            ImageButton.ImageButtonStyle topGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle topGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             topGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_huge"));
             bigGun1Button = new ImageButton(topGun2Style);
 
-            ImageButton.ImageButtonStyle topGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle topGun3Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             topGun3Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_gun_dual_gray"));
             dualGun1Button = new ImageButton(topGun3Style);
 
-            ImageButton.ImageButtonStyle leftGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle leftGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             leftGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
             mediumGun1Button = new ImageButton(leftGun1Style);
 
-            ImageButton.ImageButtonStyle rightGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle rightGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             rightGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
             mediumGun2Button = new ImageButton(rightGun1Style);
 
-            ImageButton.ImageButtonStyle bottomGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle bottomGun1Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             bottomGun1Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
             mediumGun3Button = new ImageButton(bottomGun1Style);
 
-            ImageButton.ImageButtonStyle bottomGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+            ImageButton.ImageButtonStyle bottomGun2Style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get("weaponSlotStyle", Button.ButtonStyle.class));
             bottomGun2Style.imageUp = new TextureRegionDrawable(Assets.getAssets().getRegion("ship_big_gun"));
             mediumGun4Button = new ImageButton(bottomGun2Style);
 
