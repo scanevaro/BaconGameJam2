@@ -71,8 +71,7 @@ healthBar
   rotate: false
   xy: 503, 437
   size: 361, 64
-  split: 113, 17, 19, 36
-  pad: 113, 17, 19, 35
+  split: 112, 17, 19, 36
   orig: 361, 64
   offset: 0, 0
   index: -1

@@ -9,7 +9,9 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 	dialogDim: { name: white, color: { r: 0, g: 0, b: 0, a: 0.45 } }
 },
 com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
-	default: { down: buttonDown, up: buttonUp }
+	default: { down: buttonDown, up: buttonUp },
+	soundStyle: { checked: soundsDown, up: soundsUp },
+	shopStyle: { down: shopBDown, up: shopBUp }
 },
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 	default: { down: buttonDown, up: buttonUp, font: default-font, fontColor: white }

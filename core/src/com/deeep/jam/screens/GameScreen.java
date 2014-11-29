@@ -49,8 +49,9 @@ public class GameScreen implements Screen {
     private Label score;
     private HealthBar healthBar;
     private RepairBar repairBar;
-    private ImageButton shopButton;
     private Window shopDialog;
+    private Button soundButton;
+    private Button shopButton;
     private ImageButton smallGun1Button;
     private ImageButton bigGun1Button;
     private ImageButton dualGun1Button;
@@ -60,7 +61,6 @@ public class GameScreen implements Screen {
     private ImageButton mediumGun2Button;
     private ImageButton smallGun4Button;
     private ImageButton smallGun5Button;
-    private ImageButton muteButton;
     private ImageButton mediumGun3Button;
     private ImageButton mediumGun4Button;
     private ImageButton shipImage;
@@ -146,14 +146,9 @@ public class GameScreen implements Screen {
         healthBar = new HealthBar();
         repairBar = new RepairBar();
 
-        ImageButton.ImageButtonStyle nowPlayingStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        nowPlayingStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getShopButton()));
-        shopButton = new ImageButton(nowPlayingStyle);
+        shopButton = new Button(Assets.getAssets().getSkin().get("shopStyle", Button.ButtonStyle.class));
 
-        ImageButton.ImageButtonStyle soundStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        soundStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getSoundIcon()));
-        soundStyle.imageChecked = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getMuteIcon()));
-        muteButton = new ImageButton(soundStyle);
+        soundButton = new Button(Assets.getAssets().getSkin().get("soundStyle", Button.ButtonStyle.class));
 
         stage.addActor(waveLabel);
         stage.addActor(wave);
@@ -167,7 +162,7 @@ public class GameScreen implements Screen {
         stage.addActor(shopButton);
         stage.addActor(scoreLabel);
         stage.addActor(score);
-        stage.addActor(muteButton);
+        stage.addActor(soundButton);
     }
 
     private void addListeners() {
@@ -181,7 +176,7 @@ public class GameScreen implements Screen {
                 money.setText(money_amount + "");
             }
         });
-        muteButton.addListener(new ClickListener() {
+        soundButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 if (!Game.MUTE) {
@@ -206,7 +201,7 @@ public class GameScreen implements Screen {
 
         money.setPosition(moneyLabel.getPrefWidth(), Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight());
 
-        healthBar.setSize(128, 32);
+        healthBar.setSize(256, 50);
         healthBar.setPosition(Game.VIRTUAL_WIDTH / 2 - healthBar.getWidth() / 2, 0);
 
         healthLabel.setPosition(Game.VIRTUAL_WIDTH / 2 - healthBar.getWidth() / 2, healthBar.getHeight());
@@ -222,10 +217,10 @@ public class GameScreen implements Screen {
         scoreLabel.setPosition(0, Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight() - scoreLabel.getPrefHeight());
         score.setPosition(scoreLabel.getPrefWidth(), Game.VIRTUAL_HEIGHT - waveLabel.getPrefHeight() - moneyLabel.getPrefHeight() - scoreLabel.getPrefHeight());
 
-        muteButton.setSize(64, 64);
-        muteButton.setPosition(Game.VIRTUAL_WIDTH - muteButton.getWidth() - shopButton.getWidth(), Game.VIRTUAL_HEIGHT - muteButton.getHeight());
+        soundButton.setSize(64, 64);
+        soundButton.setPosition(Game.VIRTUAL_WIDTH - soundButton.getWidth() - shopButton.getWidth(), Game.VIRTUAL_HEIGHT - soundButton.getHeight());
         if (Game.MUTE)
-            muteButton.setChecked(true);
+            soundButton.setChecked(true);
     }
 
     private void prepareWorld() {

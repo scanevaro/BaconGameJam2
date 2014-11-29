@@ -21,10 +21,6 @@ public class Controller {
     private Vector2 movementVector, fireVector;
 
     public Controller() {
-//        Skin touchPadSkin = new Skin();
-//        touchPadSkin.add("touchBackground", Assets.getAssets().getRegion("touchBackground"));
-//        touchPadSkin.add("touchKnob", Assets.getAssets().getRegion("touchKnob"));
-
         Touchpad.TouchpadStyle touchpadStyle = new Touchpad.TouchpadStyle();
         touchpadStyle.knob = new TextureRegionDrawable(Assets.getAssets().getRegion("touchKnob"));
         touchpadStyle.background = new TextureRegionDrawable(Assets.getAssets().getRegion("touchBackground"));

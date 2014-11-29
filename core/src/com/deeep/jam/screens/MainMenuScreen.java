@@ -4,13 +4,14 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
@@ -26,8 +27,8 @@ public class MainMenuScreen implements Screen {
     private TextButton playButton;
     private TextButton aboutButton;
     private TextButton quitButton;
+    private Button soundButton;
     private Table table;
-    private ImageButton muteButton;
 
     private Music intro;
 
@@ -59,17 +60,14 @@ public class MainMenuScreen implements Screen {
         aboutButton = new TextButton("About", Assets.getAssets().getSkin());
         quitButton = new TextButton("Quit", Assets.getAssets().getSkin());
 
-        ImageButton.ImageButtonStyle soundStyle = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
-        soundStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getSoundIcon()));
-        soundStyle.imageChecked = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getMuteIcon()));
-        muteButton = new ImageButton(soundStyle);
+        soundButton = new Button(Assets.getAssets().getSkin().get("soundStyle", Button.ButtonStyle.class));
 
         titleImage = new Image(Assets.getAssets().getTitle());
     }
 
     private void configureActors() {
-        muteButton.setSize(128, 128);
-        muteButton.setPosition(0, 0);
+        soundButton.setSize(128, 128);
+        soundButton.setPosition(0, 0);
 
         playButton.setSize(128, 128);
         aboutButton.setSize(192, 128);
@@ -111,7 +109,7 @@ public class MainMenuScreen implements Screen {
                 Gdx.app.exit();
             }
         });
-        muteButton.addListener(new ClickListener() {
+        soundButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 if (!Game.MUTE) {
@@ -154,7 +152,7 @@ public class MainMenuScreen implements Screen {
         //add table to stage
         stage.addActor(table);
 
-        stage.addActor(muteButton);
+        stage.addActor(soundButton);
     }
 
     @Override
