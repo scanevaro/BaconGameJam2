@@ -161,8 +161,8 @@ weaponSlot64
   rotate: false
   xy: 925, 389
   size: 62, 48
-  split: 8, 37, 9, 9
-  pad: 4, 37, 6, 6
+  split: 0, 0, 0, 0
+  pad: 5, 5, 7, 6
   orig: 62, 48
   offset: 0, 0
   index: -1
