@@ -239,7 +239,7 @@ public class GameScreen implements Screen {
 
         {//create dialog, add close button, add table container. Its not added to the Stage until its wanted to be shown
             shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
-            shopDialog.setSize(512, 512);
+            shopDialog.setSize(720, 600);
             shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
 
             Button closeDialogButton = new Button(Assets.getAssets().getSkin().get("closeDialogStyle", Button.ButtonStyle.class));
@@ -323,8 +323,8 @@ public class GameScreen implements Screen {
         }
 
         {//configure widgets
-            smallGun1Button.setSize(64, 64);
-            smallGun2Button.setSize(64, 64);
+            smallGun1Button.setSize(128, 128);
+            smallGun2Button.setSize(128, 128);
             smallGun3Button.setSize(64, 64);
             smallGun4Button.setSize(64, 64);
             smallGun5Button.setSize(64, 64);
@@ -342,7 +342,7 @@ public class GameScreen implements Screen {
         }
 
         {//setLayout
-            leftGunsTable.add(smallGun1Button).padBottom(2).width(64).height(64);
+            leftGunsTable.add(smallGun1Button).padBottom(2).width(128).height(128);
             leftGunsTable.row();
             leftGunsTable.add(bigGun1Button).padBottom(2).width(64).height(64);
             leftGunsTable.row();
@@ -350,7 +350,7 @@ public class GameScreen implements Screen {
             leftGunsTable.row();
             leftGunsTable.add(mediumGun3Button).padBottom(2).width(64).height(64);
             leftGunsTable.row();
-            leftGunsTable.add(smallGun2Button).padBottom(2).width(64).height(64);
+            leftGunsTable.add(smallGun2Button).padBottom(2).width(128).height(128);
             leftGunsTable.row();
             leftGunsTable.add(smallGun3Button).width(64).height(64);
 
