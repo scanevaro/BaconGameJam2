@@ -18,7 +18,9 @@ com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 },
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 	default: { down: buttonDown, up: buttonUp, font: default-font, fontColor: white },
-	defaultRed: { down: buttonRedDown, up: buttonRedUp, font: default-font, fontColor: white }
+	defaultRed: { down: buttonRedDown, up: buttonRedUp, font: default-font, fontColor: white },
+	defaultRed64: { down: buttonRedDown64, up: buttonRedUp64, font: default-font, fontColor: white },
+	default64: { down: buttonDown64, up: buttonUp64, font: default-font, fontColor: white }
 },
 com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
 	default: { titleFont: default-font, background: dialogFull, titleFontColor: white },

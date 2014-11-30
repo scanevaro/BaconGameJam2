@@ -24,7 +24,6 @@ public class Assets {
     private Texture canonIndexReferenceTexture;
     private Texture gameOverTexture;
     private Texture aboutTexture;
-    private Texture shopButton;
     private Music mainMenuMusic;
     private Music inGameMusic;
     private Sound big1;
@@ -120,7 +119,6 @@ public class Assets {
     private void loadTextures() {
         logo = new Texture(Gdx.files.internal("data/newLogo.png"));
         title = new Texture(Gdx.files.internal("data/title.png"));
-        shopButton = new Texture(Gdx.files.internal("data/button-shop.png"));
         canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
         gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
         aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
@@ -197,7 +195,6 @@ public class Assets {
         small.dispose();
         shopClick.dispose();
         selected.dispose();
-        shopButton.dispose();
         canonIndexReferenceTexture.dispose();
 
         loaded = false;
@@ -221,10 +218,6 @@ public class Assets {
 
     public Sound getSelected() {
         return selected;
-    }
-
-    public Texture getShopButton() {
-        return shopButton;
     }
 
     public Sound getBig2() {

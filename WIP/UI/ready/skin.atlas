@@ -13,12 +13,29 @@ buttonDown
   orig: 96, 68
   offset: 0, 0
   index: -1
+buttonDown64
+  rotate: false
+  xy: 823, 319
+  size: 62, 44
+  split: 24, 24, 14, 14
+  pad: 24, 24, 15, 14
+  orig: 62, 44
+  offset: 0, 0
+  index: -1
 buttonRedDown
   rotate: false
   xy: 631, 367
   size: 96, 68
   split: 38, 38, 21, 22
   orig: 96, 68
+  offset: 0, 0
+  index: -1
+buttonRedDown64
+  rotate: false
+  xy: 925, 343
+  size: 62, 44
+  split: 24, 24, 13, 14
+  orig: 62, 44
   offset: 0, 0
   index: -1
 buttonRedUp
@@ -29,12 +46,28 @@ buttonRedUp
   orig: 96, 68
   offset: 0, 0
   index: -1
+buttonRedUp64
+  rotate: false
+  xy: 601, 257
+  size: 62, 44
+  split: 24, 24, 14, 14
+  orig: 62, 44
+  offset: 0, 0
+  index: -1
 buttonUp
   rotate: false
   xy: 729, 367
   size: 96, 68
   split: 38, 38, 21, 21
   orig: 96, 68
+  offset: 0, 0
+  index: -1
+buttonUp64
+  rotate: false
+  xy: 601, 211
+  size: 62, 44
+  split: 24, 24, 13, 13
+  orig: 62, 44
   offset: 0, 0
   index: -1
 closeDown
@@ -53,7 +86,7 @@ closeUp
   index: -1
 close_B
   rotate: false
-  xy: 823, 325
+  xy: 665, 263
   size: 38, 38
   orig: 38, 38
   offset: 0, 0
@@ -161,8 +194,8 @@ weaponSlot64
   rotate: false
   xy: 925, 389
   size: 62, 48
-  split: 8, 37, 9, 9
-  pad: 4, 37, 6, 6
+  split: 0, 0, 0, 0
+  pad: 5, 5, 7, 6
   orig: 62, 48
   offset: 0, 0
   index: -1
