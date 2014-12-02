@@ -1,8 +1,9 @@
 package com.deeep.jam.classes;
 
+import box2dLight.RayHandler;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.deeep.jam.Camera;
@@ -20,22 +21,17 @@ public class Worlds {
     public static boolean day;
     private static float dayNightStateTime;
     private SpriteBatch batch;
-    private ShaderProgram vignetteShader;
     public static Ship ship;
     public static World world;
     private Box2DDebugRenderer debugRenderer;
+    public static RayHandler rayHandler;
     private Map map;
     private EnemySpawn enemySpawner;
+    private Color daylightColour;
 
     public Worlds() {
         this.batch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
-
-        {//prepare shader
-            ShaderProgram.pedantic = false;
-            vignetteShader = new ShaderProgram(Gdx.files.internal("shaders/vignette.vsh"), Gdx.files.internal("shaders/vignette.fsh"));
-            if (!vignetteShader.isCompiled())
-                System.out.println(vignetteShader.getLog());
-        }
+        daylightColour = new Color(1,1,1,1);
 
         {//set day or night
             setDay(true);
@@ -46,6 +42,13 @@ public class Worlds {
         debugRenderer = new Box2DDebugRenderer();
         Vector2 gravity = new Vector2(0, 0);
         world = new World(gravity, false);
+        RayHandler.setGammaCorrection(true);
+        RayHandler.useDiffuseLight(true);
+        rayHandler = new RayHandler(world);
+        rayHandler.setAmbientLight(0f, 0f, 0f, 0.5f);
+        rayHandler.setBlurNum(3);
+
+
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
@@ -116,7 +119,6 @@ public class Worlds {
     public void draw() {
         batch.setColor(1, 1, 1, 1);
 
-        batch.setShader(vignetteShader);
 
         map.render(batch);
         ship.draw(batch);
@@ -128,8 +130,10 @@ public class Worlds {
         enemySpawner.render(batch);
         Effects.getEffects().render(batch);
         batch.end();
+        rayHandler.setCombinedMatrix(batch.getProjectionMatrix());
+        rayHandler.update();
+        rayHandler.render();
 
-        batch.setShader(null);
     }
 
     public void update(float delta) {
@@ -143,21 +147,25 @@ public class Worlds {
     private void setDayNight(float delta) {
         if (day) {
             if (dayNightStateTime < 0.8f) {
-                dayNightStateTime += delta / 2;
+                dayNightStateTime += delta / 4;
 
-                vignetteShader.begin();
-                vignetteShader.setUniformf("u_intensity", dayNightStateTime);
-                vignetteShader.end();
+            }else{
+                day = !day;
             }
         } else {
             if (dayNightStateTime > 0) {
-                dayNightStateTime -= delta / 2;
+                dayNightStateTime -= delta / 4;
 
-                vignetteShader.begin();
-                vignetteShader.setUniformf("u_intensity", dayNightStateTime);
-                vignetteShader.end();
+
+            }else{
+                day = !day;
             }
         }
+        System.out.println(dayNightStateTime);
+        daylightColour.r = dayNightStateTime;
+        daylightColour.g = dayNightStateTime;
+        daylightColour.b = dayNightStateTime;
+        rayHandler.setAmbientLight(daylightColour);
     }
 
     private void updateShip(float delta) {
@@ -165,9 +173,7 @@ public class Worlds {
     }
 
     public void resize(int width, int height) {
-        vignetteShader.begin();
-        vignetteShader.setUniformf("u_resolution", width, height);
-        vignetteShader.end();
+
     }
 
     public static boolean isDay() {

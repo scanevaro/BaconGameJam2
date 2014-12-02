@@ -1,5 +1,7 @@
 package com.deeep.jam.entities.Bullets;
 
+import box2dLight.PointLight;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -26,8 +28,10 @@ public abstract class Bullet {
     public float aliveTime = 10;
     public int explosionType = 2;
     public float damage;
+    public PointLight pointLight;
 
     public Bullet(Sprite sprite, float rotation, float force, float x, float y, float damage) {
+
         this.sprite = sprite;
         this.rotation = rotation;
         this.force = force;
@@ -45,10 +49,12 @@ public abstract class Bullet {
         groundShape.setAsBox(sprite.getWidth() / 2, sprite.getHeight() / 2);
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = groundShape;
-
+        pointLight = new PointLight(Worlds.rayHandler, 5, Color.WHITE, 40, x, y);
         body = Worlds.world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         body.setUserData(this);
+        pointLight.attachToBody(body);
+
     }
 
 
@@ -71,8 +77,9 @@ public abstract class Bullet {
     }
 
     public boolean isDead() {
-        if (x < 0 || x > Map.sizeX || y < 0 || y > Map.sizeY || !alive)
+        if (x < 0 || x > Map.sizeX || y < 0 || y > Map.sizeY || !alive) {
             return true;
+        }
         return false;
     }
 }

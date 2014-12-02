@@ -1,7 +1,9 @@
 package com.deeep.jam.entities;
 
+import box2dLight.PointLight;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -46,16 +48,19 @@ public class Ship {
     private HashMap<Integer, Gun> slotsToMediumGuns = new HashMap<Integer, Gun>();
     private HashMap<Integer, Gun> slotsToBigGuns = new HashMap<Integer, Gun>();
     private HashMap<Integer, Gun> slotsToTwinGuns = new HashMap<Integer, Gun>();
+    private PointLight pointLight;
 
     private RepairBar repairBar;
 
     public Ship() {
+
         splash = new Sprite[5];
         for (int i = 0; i < 5; i++) {
             splash[i] = new Sprite(Assets.getAssets().getRegion("water_ripple_big", i));
         }
         x = Map.sizeX / 2;
         y = Map.sizeY / 2;
+        pointLight = new PointLight(Worlds.rayHandler, 100, Color.WHITE, 500, x, y);
         force = rotation = 0;
         sprite = new Sprite(Assets.getAssets().getRegion("ship_large_body"));
         sprite.setCenterX(sprite.getWidth() / 2);
@@ -72,6 +77,7 @@ public class Ship {
         body = Worlds.world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         body.setUserData(this);
+        pointLight.attachToBody(body);
     }
 
     public void updateSmallGun(int slot) {
@@ -139,6 +145,7 @@ public class Ship {
     }
 
     public void update(float deltaT) {
+        pointLight.update();
         if (force > deltaT * friction) {
             force -= deltaT * friction;
         } else if (force < -deltaT * friction) {
