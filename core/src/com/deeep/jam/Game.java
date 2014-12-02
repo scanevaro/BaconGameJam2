@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.interfaces.ActionResolver;
 import com.deeep.jam.screens.SplashScreen;
 
 public class Game implements ApplicationListener {
@@ -21,14 +22,13 @@ public class Game implements ApplicationListener {
     public static int score = 0;
     public static Vector2 crop = new Vector2(0f, 0f);
 
+    public ActionResolver actionResolver;
     private SpriteBatch spriteBatch;
     private Screen screen;
     public static Rectangle viewport;
 
-    public Game() {
-    }
-
-    public Game(boolean android) {
+    public Game(ActionResolver actionResolver, boolean android) {
+        this.actionResolver = actionResolver;
         Game.android = android;
     }
 
