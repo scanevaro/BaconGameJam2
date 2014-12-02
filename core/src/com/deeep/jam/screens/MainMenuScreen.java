@@ -132,7 +132,7 @@ public class MainMenuScreen implements Screen {
         //set fill parent
         table.setFillParent(true);
         //add game title, align center, set pad, and add new row
-        table.add(titleImage).width(256).height(192);
+        table.add(titleImage).width(800).height(200);
         table.align(Align.center);
         table.pad(15);
         table.row();
