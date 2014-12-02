@@ -46,7 +46,7 @@ public class GameScreen implements Screen {
     private Label repairLabel;
     private Label health;
     private Label scoreLabel;
-    private Label score;
+    public static Label score;
     private HealthBar healthBar;
     private RepairBar repairBar;
     private Window shopDialog;

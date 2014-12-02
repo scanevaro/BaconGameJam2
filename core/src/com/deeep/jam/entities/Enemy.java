@@ -7,6 +7,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.deeep.jam.Game;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.math.PositionVector;
 import com.deeep.jam.screens.GameScreen;
@@ -153,11 +154,13 @@ public abstract class Enemy {
     }
 
     protected void die() {
+        Game.score ++;
         actuallyFuckingSetTheSprite(deadSprite);
         finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
         startDecay();
         GameScreen.money_amount += cashMoneyBitch;
         GameScreen.money.setText("" + GameScreen.money_amount);
+        GameScreen.score.setText("" + Game.score);
     }
 
     protected abstract void startDecay();

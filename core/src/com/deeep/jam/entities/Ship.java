@@ -226,6 +226,7 @@ public class Ship {
     }
 
     public void takeDamage(float damageCausal) {
+        Game.score --;
         health -= damageCausal;
         if (health <= 0) {
             die();

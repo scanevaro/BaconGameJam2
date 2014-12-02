@@ -18,6 +18,7 @@ public class Game implements ApplicationListener {
     private final float VIRTUAL_ASPECT = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
     public static boolean GAME_OVER = false;
     public static boolean MUTE = false;
+    public static int score = 0;
     public static Vector2 crop = new Vector2(0f, 0f);
 
     private SpriteBatch spriteBatch;

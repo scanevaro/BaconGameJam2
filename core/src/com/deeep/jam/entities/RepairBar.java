@@ -3,6 +3,7 @@ package com.deeep.jam.entities;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
+import com.deeep.jam.Game;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.screens.GameScreen;
 
@@ -47,6 +48,8 @@ public class RepairBar extends Actor {
 
                 if (ship.health <= 90)
                     ship.health += 10;
+                    Game.score -= 3;
+                    if(Game.score < 0) Game.score = 0;
             }
         }
     }
