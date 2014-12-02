@@ -7,7 +7,7 @@ import com.deeep.jam.Game;
 public class DesktopLauncher {
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-        config.title = "BaconGameJam - Millons of Trolls";
+        config.title = "Battle In The Atlantic rc 1";
         config.width = (int) Game.VIRTUAL_WIDTH;
         config.height = (int) Game.VIRTUAL_HEIGHT;
         new LwjglApplication(new Game(), config);
