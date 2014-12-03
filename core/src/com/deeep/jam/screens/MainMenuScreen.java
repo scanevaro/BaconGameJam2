@@ -26,6 +26,9 @@ public class MainMenuScreen implements Screen {
     private Image titleImage;
     private TextButton playButton;
     private TextButton aboutButton;
+    private TextButton leaderboardsButton;
+    private TextButton achievementsButton;
+    private TextButton loginButton;
     private TextButton quitButton;
     private Button soundButton;
     private Table table;
@@ -58,7 +61,10 @@ public class MainMenuScreen implements Screen {
     private void setWidgets() {
         playButton = new TextButton("Play", Assets.getAssets().getSkin());
         aboutButton = new TextButton("About", Assets.getAssets().getSkin());
-        quitButton = new TextButton("Quit", Assets.getAssets().getSkin());
+        leaderboardsButton = new TextButton("Leaderboards", Assets.getAssets().getSkin());
+        achievementsButton = new TextButton("Achievements", Assets.getAssets().getSkin());
+        loginButton = new TextButton("Login G+", Assets.getAssets().getSkin());
+        quitButton = new TextButton("Quit", Assets.getAssets().getSkin().get("defaultRed", TextButton.TextButtonStyle.class));
 
         soundButton = new Button(Assets.getAssets().getSkin().get("soundStyle", Button.ButtonStyle.class));
 
@@ -71,6 +77,9 @@ public class MainMenuScreen implements Screen {
 
         playButton.setSize(128, 128);
         aboutButton.setSize(192, 128);
+        leaderboardsButton.setSize(128, 128);
+        achievementsButton.setSize(128, 128);
+        loginButton.setSize(128, 128);
         quitButton.setSize(128, 128);
 
         titleImage.setSize(256, 192);
@@ -99,7 +108,24 @@ public class MainMenuScreen implements Screen {
                 game.setScreen(new AboutScreen());
             }
         });
-
+        leaderboardsButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.actionResolver.getLeaderboardGPGS();
+            }
+        });
+        achievementsButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.actionResolver.getAchievementsGPGS();
+            }
+        });
+        loginButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.actionResolver.loginGPGS();
+            }
+        });
         quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -132,18 +158,22 @@ public class MainMenuScreen implements Screen {
         //set fill parent
         table.setFillParent(true);
         //add game title, align center, set pad, and add new row
-        table.add(titleImage).width(800).height(200);
+        table.add(titleImage).width(800).height(200).colspan(5);
         table.align(Align.center);
         table.pad(15);
         table.row();
         //add button and align center
-        table.add(playButton).align(Align.center).width(128).height(128);
+        table.add(playButton).align(Align.center).width(128).height(128).colspan(5);
         //add a pad of 10 pixels
         table.row().pad(10);
-        table.add(aboutButton).align(Align.center).width(192).height(128);
+        table.add(aboutButton).align(Align.center).width(192).height(128).colspan(5);
         //add new row
         table.row();
-        table.add(quitButton).align(Align.center).width(128).height(128);
+        table.add();
+        table.add(leaderboardsButton).width(128).height(128);
+        table.add(achievementsButton).width(128).height(128);
+        table.add(loginButton).width(128).height(128);
+        table.add();
         table.row().pad(10);
 
         //debug table layout
@@ -153,6 +183,9 @@ public class MainMenuScreen implements Screen {
         stage.addActor(table);
 
         stage.addActor(soundButton);
+
+        quitButton.setPosition(Game.VIRTUAL_WIDTH - quitButton.getWidth(), 0);
+        stage.addActor(quitButton);
     }
 
     @Override
