@@ -180,7 +180,6 @@ public class Worlds {
                 day = false;
             }
         }
-        System.out.println(dayNightStateTime);
         daylightColour.r = dayNightStateTime;
         daylightColour.g = dayNightStateTime;
         daylightColour.b = dayNightStateTime;
