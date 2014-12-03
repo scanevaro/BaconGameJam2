@@ -24,10 +24,13 @@ import com.deeep.jam.entities.HealthBar;
 import com.deeep.jam.entities.RepairBar;
 
 /**
- * Created by scanevaro on 10/10/2014.
+ * Created by the meme overlord on 10/10/2014.
  */
 public class GameScreen implements Screen {
-    public static int money_amount = 100000;
+    public static int money_amount = 0;
+    
+    private static TextButton yes1Button, yes2Button, yes3Button, yes4Button, yes5Button, yes6Button, yes7Button, yes8Button, yes9Button, yes10Button, yes11Button;
+    private static TextButton no1Button, no2Button, no3Button, no4Button, no5Button, no6Button, no7Button, no8Button, no9Button, no10Button, no11Button;
 
     //Main
     private Game game;
@@ -169,9 +172,14 @@ public class GameScreen implements Screen {
         if (!Game.MUTE)
             selectedSound.play();
         dialogOpen = true;
+
+        updateButtons();
+
         stage.addActor(shopDialog);
         money.setText(money_amount + "");
     }
+
+
 
     private void addListeners() {
         shopButton.addListener(new ClickListener() {
@@ -242,7 +250,7 @@ public class GameScreen implements Screen {
         }
 
         {//create dialog, add close button, add table container. Its not added to the Stage until its wanted to be shown
-            shopDialog = new Window("Shop - Blow sht up !", Assets.getAssets().getSkin());
+            shopDialog = new Window("Shop - Blow Elmars up !", Assets.getAssets().getSkin());
             shopDialog.setSize(544, 576);
             shopDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
 
@@ -383,52 +391,77 @@ public class GameScreen implements Screen {
         }
     }
 
+    private static void updateButtons() {
+        yes1Button.setDisabled(false);
+        yes2Button.setDisabled(false);
+        yes3Button.setDisabled(false);
+        yes4Button.setDisabled(false);
+        yes5Button.setDisabled(false);
+        yes6Button.setDisabled(false);
+        yes7Button.setDisabled(false);
+        yes8Button.setDisabled(false);
+        yes9Button.setDisabled(false);
+        yes10Button.setDisabled(false);
+        yes11Button.setDisabled(false);
+        if(money_amount < 500) yes1Button.setDisabled(true);
+        if(money_amount < 2000) yes2Button.setDisabled(true);
+        if(money_amount < 1500) yes3Button.setDisabled(true);
+        if(money_amount < 1000) yes4Button.setDisabled(true);
+        if(money_amount < 500) yes5Button.setDisabled(true);
+        if(money_amount < 1000) yes6Button.setDisabled(true);
+        if(money_amount < 1000) yes7Button.setDisabled(true);
+        if(money_amount < 500) yes8Button.setDisabled(true);
+        if(money_amount < 1000) yes9Button.setDisabled(true);
+        if(money_amount < 1000) yes10Button.setDisabled(true);
+        if(money_amount < 1000) yes11Button.setDisabled(true);
+    }
+
 
     private void addShopListeners() {
-        TextButton yes1Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes1Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes1Button.setSize(64, 32);
-        TextButton yes2Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes2Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes2Button.setSize(64, 32);
-        TextButton yes3Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes3Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes3Button.setSize(64, 32);
-        TextButton yes4Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes4Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes4Button.setSize(64, 32);
-        TextButton yes5Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes5Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes5Button.setSize(64, 32);
-        TextButton yes6Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes6Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes6Button.setSize(64, 32);
-        TextButton yes7Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes7Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes7Button.setSize(64, 32);
-        TextButton yes8Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes8Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes8Button.setSize(64, 32);
-        TextButton yes9Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes9Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes9Button.setSize(64, 32);
-        TextButton yes10Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes10Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes10Button.setSize(64, 32);
-        TextButton yes11Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
+        yes11Button = new TextButton("Yes", Assets.getAssets().getSkin().get("default64", TextButton.TextButtonStyle.class));
         yes11Button.setSize(64, 32);
 
-        TextButton no1Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no1Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no1Button.setSize(64, 32);
-        TextButton no2Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no2Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no2Button.setSize(64, 32);
-        TextButton no3Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no3Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no3Button.setSize(64, 32);
-        TextButton no4Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no4Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no4Button.setSize(64, 32);
-        TextButton no5Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no5Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no5Button.setSize(64, 32);
-        TextButton no6Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no6Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no6Button.setSize(64, 32);
-        TextButton no7Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no7Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no7Button.setSize(64, 32);
-        TextButton no8Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no8Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no8Button.setSize(64, 32);
-        TextButton no9Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no9Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no9Button.setSize(64, 32);
-        TextButton no10Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no10Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no10Button.setSize(64, 32);
-        TextButton no11Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
+        no11Button = new TextButton("No", Assets.getAssets().getSkin().get("defaultRed64", TextButton.TextButtonStyle.class));
         no11Button.setSize(64, 32);
 
         final Dialog smallGun1Dialog;
@@ -483,6 +516,7 @@ public class GameScreen implements Screen {
             bigGun1Dialog.getButtonTable().add(no2Button).width(64).height(32);
             bigGun1Dialog.setObject(yes2Button, true);
             bigGun1Dialog.setObject(no2Button, false);
+
 
             dualGun1Dialog = new Dialog("Dual Gun", Assets.getAssets().getSkin(), "dialog") {
                 protected void result(Object object) {
@@ -558,7 +592,7 @@ public class GameScreen implements Screen {
                         }
                 }
             };
-            smallGun3Dialog.text("Upgrade Small Gun 3 for 500 moneyz?");
+            smallGun3Dialog.text("Upgrade Small Gun 3 for 1000 moneyz?");
             smallGun3Dialog.getButtonTable().add(yes6Button).width(64).height(32);
             smallGun3Dialog.getButtonTable().add(no6Button).width(64).height(32);
             smallGun3Dialog.setObject(yes6Button, true);
@@ -618,7 +652,7 @@ public class GameScreen implements Screen {
                         }
                 }
             };
-            smallGun5Dialog.text("Upgrade Small Gun 5 for 500 moneyz?");
+            smallGun5Dialog.text("Upgrade Small Gun 5 for 1000 moneyz?");
             smallGun5Dialog.getButtonTable().add(yes9Button).width(64).height(32);
             smallGun5Dialog.getButtonTable().add(no9Button).width(64).height(32);
             smallGun5Dialog.setObject(yes9Button, true);

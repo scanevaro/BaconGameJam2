@@ -12,6 +12,26 @@ import com.deeep.jam.interfaces.ActionResolver;
 import com.deeep.jam.screens.MainMenuScreen;
 
 public class Game implements ApplicationListener {
+
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+    //( ͡° ͜ʖ ͡°) < l'elmar face
+
     public static boolean android = false;
     public static final boolean DEBUG = true;
     public static final float VIRTUAL_WIDTH = 1024;
