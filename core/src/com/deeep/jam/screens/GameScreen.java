@@ -165,7 +165,7 @@ public class GameScreen implements Screen {
         stage.addActor(soundButton);
     }
 
-    public static void showShop(){
+    public static void showShop() {
         if (!Game.MUTE)
             selectedSound.play();
         dialogOpen = true;
@@ -769,24 +769,23 @@ public class GameScreen implements Screen {
                 game.setScreen(new GameScreen());
             }
         });
-        retryButton.setPosition(gameOverDialog.getWidth() / 2 - retryButton.getWidth() / 2, gameOverDialog.getHeight() / 2 - 100);
+        retryButton.setPosition(gameOverDialog.getWidth() / 2 - retryButton.getWidth() / 2 - 100, gameOverDialog.getHeight() / 2 - 170);
 
         //add to dialog
         gameOverDialog.addActor(retryButton);
 
-        TextButton quitButton = new TextButton("I M  D O N E", Assets.getAssets().getSkin());
+        TextButton quitButton = new TextButton("I M  D O N E", Assets.getAssets().getSkin().get("defaultRed", TextButton.TextButtonStyle.class));
         quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.app.exit();
             }
         });
-        quitButton.setPosition(gameOverDialog.getWidth() / 2 - quitButton.getWidth() / 2, gameOverDialog.getHeight() / 2 - 135);
-
+        quitButton.setPosition(gameOverDialog.getWidth() / 2 - quitButton.getWidth() / 2 + 100, gameOverDialog.getHeight() / 2 - 170);
         //add to dialog
         gameOverDialog.addActor(quitButton);
 
-        gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - shopDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - shopDialog.getHeight() / 2);
+        gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - gameOverDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - gameOverButton.getHeight() / 2);
 
         stage.addActor(gameOverDialog);
     }
