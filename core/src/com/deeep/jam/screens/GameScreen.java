@@ -28,7 +28,7 @@ import com.deeep.jam.entities.RepairBar;
  */
 public class GameScreen implements Screen {
     public static int money_amount = 1000;
-    
+
     private static TextButton yes1Button, yes2Button, yes3Button, yes4Button, yes5Button, yes6Button, yes7Button, yes8Button, yes9Button, yes10Button, yes11Button;
     private static TextButton no1Button, no2Button, no3Button, no4Button, no5Button, no6Button, no7Button, no8Button, no9Button, no10Button, no11Button;
 
@@ -83,12 +83,12 @@ public class GameScreen implements Screen {
             world.update(delta);
 
 
-
         stage.act();
         cStage.act();
 
         Gdx.gl.glViewport(stage.getViewport().getScreenX(), stage.getViewport().getScreenY(), stage.getViewport().getScreenWidth(), stage.getViewport().getScreenHeight());
         world.draw();
+        Gdx.gl.glViewport(stage.getViewport().getScreenX(), stage.getViewport().getScreenY(), stage.getViewport().getScreenWidth(), stage.getViewport().getScreenHeight());
         stage.draw();
         Gdx.gl.glViewport(cStage.getViewport().getScreenX(), cStage.getViewport().getScreenY(), cStage.getViewport().getScreenWidth(), cStage.getViewport().getScreenHeight());
         cStage.draw();
@@ -177,7 +177,6 @@ public class GameScreen implements Screen {
         stage.addActor(shopDialog);
         money.setText(money_amount + "");
     }
-
 
 
     private void addListeners() {
@@ -402,17 +401,17 @@ public class GameScreen implements Screen {
         yes9Button.setDisabled(false);
         yes10Button.setDisabled(false);
         yes11Button.setDisabled(false);
-        if(money_amount < 500) yes1Button.setDisabled(true);
-        if(money_amount < 2000) yes2Button.setDisabled(true);
-        if(money_amount < 1500) yes3Button.setDisabled(true);
-        if(money_amount < 1000) yes4Button.setDisabled(true);
-        if(money_amount < 500) yes5Button.setDisabled(true);
-        if(money_amount < 1000) yes6Button.setDisabled(true);
-        if(money_amount < 1000) yes7Button.setDisabled(true);
-        if(money_amount < 500) yes8Button.setDisabled(true);
-        if(money_amount < 1000) yes9Button.setDisabled(true);
-        if(money_amount < 1000) yes10Button.setDisabled(true);
-        if(money_amount < 1000) yes11Button.setDisabled(true);
+        if (money_amount < 500) yes1Button.setDisabled(true);
+        if (money_amount < 2000) yes2Button.setDisabled(true);
+        if (money_amount < 1500) yes3Button.setDisabled(true);
+        if (money_amount < 1000) yes4Button.setDisabled(true);
+        if (money_amount < 500) yes5Button.setDisabled(true);
+        if (money_amount < 1000) yes6Button.setDisabled(true);
+        if (money_amount < 1000) yes7Button.setDisabled(true);
+        if (money_amount < 500) yes8Button.setDisabled(true);
+        if (money_amount < 1000) yes9Button.setDisabled(true);
+        if (money_amount < 1000) yes10Button.setDisabled(true);
+        if (money_amount < 1000) yes11Button.setDisabled(true);
     }
 
 
@@ -796,7 +795,7 @@ public class GameScreen implements Screen {
                 game.setScreen(new GameScreen());
             }
         });
-        retryButton.setPosition(retryButton.getWidth()/4, retryButton.getHeight()/2);
+        retryButton.setPosition(retryButton.getWidth() / 4, retryButton.getHeight() / 2);
 
         //add to dialog
         gameOverDialog.addActor(retryButton);
@@ -808,12 +807,12 @@ public class GameScreen implements Screen {
                 Gdx.app.exit();
             }
         });
-        quitButton.setPosition(retryButton.getWidth()/4 + 20 + retryButton.getWidth(), quitButton.getHeight()/2);
+        quitButton.setPosition(retryButton.getWidth() / 4 + 20 + retryButton.getWidth(), quitButton.getHeight() / 2);
         //add to dialog
         gameOverDialog.addActor(quitButton);
 
         gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - gameOverDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2);
-        gameOverDialog.setSize(retryButton.getWidth()/4 + 20 +quitButton.getWidth()/4 + retryButton.getWidth() + quitButton.getWidth(), quitButton.getHeight() *2.5f);
+        gameOverDialog.setSize(retryButton.getWidth() / 4 + 20 + quitButton.getWidth() / 4 + retryButton.getWidth() + quitButton.getWidth(), quitButton.getHeight() * 2.5f);
         stage.addActor(gameOverDialog);
     }
 

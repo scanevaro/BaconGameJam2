@@ -11,10 +11,8 @@ import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.Bullets.Bullet;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Vector;
 
 /**
  * Created by Elmar on 18-10-2014.
