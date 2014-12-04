@@ -2,279 +2,2827 @@ TextureAtlass.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-explosion/expl_07
-  rotate: false
-  xy: 695, 1004
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 9
-explosion/expl_02
-  rotate: false
-  xy: 621, 526
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-water0
-  rotate: false
-  xy: 217, 1005
-  size: 48, 16
-  orig: 48, 16
-  offset: 0, 0
-  index: -1
-explosion/expl_08
-  rotate: false
-  xy: 612, 762
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 31
-explosion/expl_09
-  rotate: false
-  xy: 279, 266
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 26
-explosion/expl_11
-  rotate: false
-  xy: 262, 770
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 23
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 250
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 29
-muzzle/muzzle2
-  rotate: false
-  xy: 496, 152
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-ship_gun_base
-  rotate: false
-  xy: 538, 186
-  size: 12, 12
-  orig: 12, 12
-  offset: 0, 0
-  index: -1
-explosion/expl_02
-  rotate: false
-  xy: 755, 900
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-explosion/expl_08
-  rotate: false
-  xy: 614, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-explosion/expl_10
-  rotate: false
-  xy: 166, 134
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 21
 explosion/expl_01
   rotate: false
-  xy: 718, 752
+  xy: 183, 542
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+explosion/expl_01
+  rotate: false
+  xy: 230, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/expl_01
+  rotate: false
+  xy: 264, 646
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
-explosion/expl_09
+explosion/expl_01
   rotate: false
-  xy: 411, 266
-  size: 64, 64
-  orig: 64, 64
+  xy: 298, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/expl_01
+  rotate: false
+  xy: 332, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/expl_01
+  rotate: false
+  xy: 366, 646
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: 5
-explosion/expl_11
+explosion/expl_01
   rotate: false
-  xy: 562, 764
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 8
-explosion/puff_smoke_01
-  rotate: false
-  xy: 561, 186
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-explosion/expl_04
-  rotate: false
-  xy: 723, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-rocket_flame/rocket_1
-  rotate: false
-  xy: 615, 882
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 4
-explosion/expl_03
-  rotate: false
-  xy: 767, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_08
-  rotate: false
-  xy: 621, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-explosion/expl_04
-  rotate: false
-  xy: 801, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-explosion/expl_03
-  rotate: false
-  xy: 684, 208
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-explosion/expl_08
-  rotate: false
-  xy: 585, 492
+  xy: 400, 646
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 6
-explosion/expl_10
+explosion/expl_01
   rotate: false
-  xy: 367, 880
-  size: 64, 64
-  orig: 64, 64
+  xy: 434, 646
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
-  index: 3
-explosion/expl_07
+  index: 7
+explosion/expl_01
   rotate: false
-  xy: 1005, 2
-  size: 16, 16
-  orig: 16, 16
+  xy: 468, 646
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
-  index: 3
-explosion/expl_02
+  index: 8
+explosion/expl_01
   rotate: false
-  xy: 680, 730
+  xy: 502, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/expl_01
+  rotate: false
+  xy: 536, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/expl_01
+  rotate: false
+  xy: 570, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/expl_01
+  rotate: false
+  xy: 604, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+explosion/expl_01
+  rotate: false
+  xy: 707, 68
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 13
 explosion/expl_01
   rotate: false
-  xy: 899, 240
+  xy: 707, 102
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 23
-explosion/puff_smoke_01
+  index: 14
+explosion/expl_01
   rotate: false
-  xy: 511, 420
+  xy: 638, 118
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/expl_01
+  rotate: false
+  xy: 638, 152
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/expl_01
+  rotate: false
+  xy: 567, 152
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/expl_01
+  rotate: false
+  xy: 567, 186
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/expl_01
+  rotate: false
+  xy: 823, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/expl_01
+  rotate: false
+  xy: 823, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/expl_01
+  rotate: false
+  xy: 823, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/expl_01
+  rotate: false
+  xy: 823, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/expl_01
+  rotate: false
+  xy: 823, 52
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 23
 explosion/expl_02
   rotate: false
-  xy: 678, 242
+  xy: 857, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+explosion/expl_02
+  rotate: false
+  xy: 891, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/expl_02
+  rotate: false
+  xy: 925, 52
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
-explosion/expl_01
+explosion/expl_02
   rotate: false
-  xy: 647, 344
+  xy: 959, 52
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/expl_02
+  rotate: false
+  xy: 823, 86
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/expl_02
+  rotate: false
+  xy: 767, 102
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+explosion/expl_02
+  rotate: false
+  xy: 707, 136
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+explosion/expl_02
+  rotate: false
+  xy: 672, 156
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+explosion/expl_02
+  rotate: false
+  xy: 638, 186
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+explosion/expl_02
+  rotate: false
+  xy: 567, 220
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/expl_02
+  rotate: false
+  xy: 857, 86
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/expl_02
+  rotate: false
+  xy: 891, 86
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/expl_02
+  rotate: false
+  xy: 925, 86
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+explosion/expl_02
+  rotate: false
+  xy: 959, 86
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+explosion/expl_02
+  rotate: false
+  xy: 801, 120
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 14
+explosion/expl_02
+  rotate: false
+  xy: 767, 136
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/expl_02
+  rotate: false
+  xy: 707, 170
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/expl_02
+  rotate: false
+  xy: 672, 190
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/expl_02
+  rotate: false
+  xy: 638, 220
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/expl_02
+  rotate: false
+  xy: 567, 254
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/expl_02
+  rotate: false
+  xy: 835, 120
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/expl_02
+  rotate: false
+  xy: 869, 120
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/expl_02
+  rotate: false
+  xy: 903, 120
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/expl_02
+  rotate: false
+  xy: 937, 120
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+explosion/expl_03
+  rotate: false
+  xy: 989, 124
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/expl_03
+  rotate: false
+  xy: 801, 154
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+explosion/expl_03
+  rotate: false
+  xy: 759, 170
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/expl_03
+  rotate: false
+  xy: 835, 154
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/expl_03
+  rotate: false
+  xy: 869, 154
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+explosion/expl_03
+  rotate: false
+  xy: 903, 154
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+explosion/expl_03
+  rotate: false
+  xy: 937, 154
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+explosion/expl_03
+  rotate: false
+  xy: 989, 158
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+explosion/expl_03
+  rotate: false
+  xy: 793, 188
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/expl_03
+  rotate: false
+  xy: 707, 204
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/expl_03
+  rotate: false
+  xy: 672, 224
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/expl_03
+  rotate: false
+  xy: 638, 254
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+explosion/expl_03
+  rotate: false
+  xy: 567, 288
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+explosion/expl_03
+  rotate: false
+  xy: 741, 204
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 14
+explosion/expl_03
+  rotate: false
+  xy: 827, 188
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/expl_03
+  rotate: false
+  xy: 861, 188
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/expl_03
+  rotate: false
+  xy: 895, 188
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/expl_03
+  rotate: false
+  xy: 929, 188
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/expl_03
+  rotate: false
+  xy: 963, 192
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/expl_03
+  rotate: false
+  xy: 775, 222
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/expl_03
+  rotate: false
+  xy: 707, 238
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/expl_03
+  rotate: false
+  xy: 741, 238
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/expl_03
+  rotate: false
+  xy: 672, 258
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+explosion/expl_04
+  rotate: false
+  xy: 638, 288
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+explosion/expl_04
+  rotate: false
+  xy: 567, 322
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/expl_04
+  rotate: false
+  xy: 809, 222
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+explosion/expl_04
+  rotate: false
+  xy: 843, 222
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/expl_04
+  rotate: false
+  xy: 877, 222
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/expl_04
+  rotate: false
+  xy: 911, 222
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+explosion/expl_04
+  rotate: false
+  xy: 963, 226
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+explosion/expl_04
+  rotate: false
+  xy: 543, 362
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+explosion/expl_04
+  rotate: false
+  xy: 543, 396
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+explosion/expl_04
+  rotate: false
+  xy: 543, 430
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/expl_04
+  rotate: false
+  xy: 543, 464
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/expl_04
+  rotate: false
+  xy: 567, 498
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/expl_04
+  rotate: false
+  xy: 567, 532
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+explosion/expl_04
+  rotate: false
+  xy: 577, 356
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+explosion/expl_04
+  rotate: false
+  xy: 577, 390
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 14
+explosion/expl_04
+  rotate: false
+  xy: 577, 424
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/expl_04
+  rotate: false
+  xy: 577, 458
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/expl_04
+  rotate: false
+  xy: 601, 492
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/expl_04
+  rotate: false
+  xy: 601, 526
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/expl_04
+  rotate: false
+  xy: 626, 560
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/expl_04
+  rotate: false
+  xy: 626, 594
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/expl_04
+  rotate: false
+  xy: 638, 628
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/expl_04
+  rotate: false
+  xy: 611, 346
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/expl_04
+  rotate: false
+  xy: 611, 380
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+explosion/expl_05
+  rotate: false
+  xy: 228, 752
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 0
+explosion/expl_05
+  rotate: false
+  xy: 246, 752
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 1
+explosion/expl_05
+  rotate: false
+  xy: 264, 752
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 2
+explosion/expl_05
+  rotate: false
+  xy: 282, 752
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 3
+explosion/expl_05
+  rotate: false
+  xy: 267, 1004
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 4
+explosion/expl_05
+  rotate: false
+  xy: 285, 1004
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 5
+explosion/expl_05
+  rotate: false
+  xy: 310, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 6
+explosion/expl_05
+  rotate: false
+  xy: 328, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 7
+explosion/expl_05
+  rotate: false
+  xy: 346, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 8
+explosion/expl_05
+  rotate: false
+  xy: 364, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 9
+explosion/expl_05
+  rotate: false
+  xy: 382, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 10
+explosion/expl_05
+  rotate: false
+  xy: 400, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 11
+explosion/expl_05
+  rotate: false
+  xy: 418, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 12
+explosion/expl_05
+  rotate: false
+  xy: 436, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 13
+explosion/expl_05
+  rotate: false
+  xy: 454, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 14
+explosion/expl_05
+  rotate: false
+  xy: 472, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 15
+explosion/expl_05
+  rotate: false
+  xy: 490, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 16
+explosion/expl_05
+  rotate: false
+  xy: 508, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 17
+explosion/expl_05
+  rotate: false
+  xy: 526, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 18
+explosion/expl_05
+  rotate: false
+  xy: 544, 746
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 19
+explosion/expl_05
+  rotate: false
+  xy: 617, 140
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 20
+explosion/expl_05
+  rotate: false
+  xy: 601, 184
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 21
+explosion/expl_05
+  rotate: false
+  xy: 543, 200
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 22
+explosion/expl_05
+  rotate: false
+  xy: 543, 218
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 23
+explosion/expl_06
+  rotate: false
+  xy: 611, 414
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+explosion/expl_06
+  rotate: false
+  xy: 611, 448
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/expl_06
+  rotate: false
+  xy: 635, 482
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+explosion/expl_06
+  rotate: false
+  xy: 635, 516
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/expl_06
+  rotate: false
+  xy: 660, 550
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/expl_06
+  rotate: false
+  xy: 660, 584
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+explosion/expl_06
+  rotate: false
+  xy: 672, 618
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+explosion/expl_06
+  rotate: false
+  xy: 690, 652
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+explosion/expl_06
+  rotate: false
+  xy: 690, 686
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+explosion/expl_06
+  rotate: false
+  xy: 694, 720
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/expl_06
+  rotate: false
+  xy: 694, 754
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/expl_06
+  rotate: false
+  xy: 697, 788
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/expl_06
+  rotate: false
+  xy: 697, 822
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+explosion/expl_06
+  rotate: false
+  xy: 697, 856
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+explosion/expl_06
+  rotate: false
+  xy: 697, 890
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 14
+explosion/expl_06
+  rotate: false
+  xy: 707, 924
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/expl_06
+  rotate: false
+  xy: 707, 958
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/expl_06
+  rotate: false
+  xy: 645, 322
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/expl_06
+  rotate: false
+  xy: 645, 356
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/expl_06
+  rotate: false
+  xy: 645, 390
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/expl_06
+  rotate: false
+  xy: 645, 424
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/expl_06
+  rotate: false
+  xy: 669, 458
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/expl_06
+  rotate: false
+  xy: 669, 492
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/expl_06
+  rotate: false
+  xy: 694, 526
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+explosion/expl_06
+  rotate: false
+  xy: 694, 560
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 24
+explosion/expl_06
+  rotate: false
+  xy: 706, 594
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 25
+explosion/expl_06
+  rotate: false
+  xy: 724, 628
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 26
+explosion/expl_06
+  rotate: false
+  xy: 724, 662
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 27
+explosion/expl_06
+  rotate: false
+  xy: 728, 696
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 28
+explosion/expl_06
+  rotate: false
+  xy: 728, 730
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 29
+explosion/expl_06
+  rotate: false
+  xy: 731, 764
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 30
+explosion/expl_06
+  rotate: false
+  xy: 731, 798
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 31
+explosion/expl_07
+  rotate: false
+  xy: 601, 202
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 0
+explosion/expl_07
+  rotate: false
+  xy: 993, 52
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 1
+explosion/expl_07
+  rotate: false
+  xy: 993, 70
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 2
+explosion/expl_07
+  rotate: false
+  xy: 741, 132
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 3
+explosion/expl_07
+  rotate: false
+  xy: 619, 210
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 4
+explosion/expl_07
+  rotate: false
+  xy: 801, 102
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 5
+explosion/expl_07
+  rotate: false
+  xy: 601, 220
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 6
+explosion/expl_07
+  rotate: false
+  xy: 543, 236
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 7
+explosion/expl_07
+  rotate: false
+  xy: 993, 88
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 8
+explosion/expl_07
+  rotate: false
+  xy: 993, 106
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 9
+explosion/expl_07
+  rotate: false
+  xy: 741, 150
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 10
+explosion/expl_07
+  rotate: false
+  xy: 741, 168
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 11
+explosion/expl_07
+  rotate: false
+  xy: 619, 228
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 12
+explosion/expl_07
+  rotate: false
+  xy: 601, 238
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 13
+explosion/expl_07
+  rotate: false
+  xy: 619, 246
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 14
+explosion/expl_07
+  rotate: false
+  xy: 601, 256
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 15
+explosion/expl_07
+  rotate: false
+  xy: 543, 254
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 16
+explosion/expl_07
+  rotate: false
+  xy: 543, 272
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 17
+explosion/expl_07
+  rotate: false
+  xy: 971, 120
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 18
+explosion/expl_07
+  rotate: false
+  xy: 971, 138
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 19
+explosion/expl_07
+  rotate: false
+  xy: 741, 186
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 20
+explosion/expl_07
+  rotate: false
+  xy: 971, 156
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 21
+explosion/expl_07
+  rotate: false
+  xy: 971, 174
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 22
+explosion/expl_07
+  rotate: false
+  xy: 619, 264
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 23
+explosion/expl_07
+  rotate: false
+  xy: 601, 274
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 24
+explosion/expl_07
+  rotate: false
+  xy: 619, 282
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 25
+explosion/expl_07
+  rotate: false
+  xy: 601, 292
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 26
+explosion/expl_07
+  rotate: false
+  xy: 543, 290
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 27
+explosion/expl_07
+  rotate: false
+  xy: 543, 308
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 28
+explosion/expl_07
+  rotate: false
+  xy: 775, 204
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 29
+explosion/expl_07
+  rotate: false
+  xy: 997, 192
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 30
+explosion/expl_07
+  rotate: false
+  xy: 997, 210
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 31
+explosion/expl_08
+  rotate: false
+  xy: 731, 832
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+explosion/expl_08
+  rotate: false
+  xy: 731, 866
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/expl_08
+  rotate: false
+  xy: 741, 900
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+explosion/expl_08
+  rotate: false
+  xy: 741, 934
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/expl_08
+  rotate: false
+  xy: 741, 968
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/expl_08
+  rotate: false
+  xy: 679, 292
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+explosion/expl_08
+  rotate: false
+  xy: 679, 326
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+explosion/expl_08
+  rotate: false
+  xy: 679, 360
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+explosion/expl_08
+  rotate: false
+  xy: 679, 394
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+explosion/expl_08
+  rotate: false
+  xy: 703, 428
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/expl_08
+  rotate: false
+  xy: 703, 462
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/expl_08
+  rotate: false
+  xy: 728, 496
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/expl_08
+  rotate: false
+  xy: 728, 530
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+explosion/expl_08
+  rotate: false
+  xy: 740, 564
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+explosion/expl_08
+  rotate: false
+  xy: 758, 598
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 14
+explosion/expl_08
+  rotate: false
+  xy: 758, 632
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/expl_08
+  rotate: false
+  xy: 762, 666
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/expl_08
+  rotate: false
+  xy: 762, 700
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/expl_08
+  rotate: false
+  xy: 796, 256
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/expl_08
+  rotate: false
+  xy: 762, 272
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/expl_08
+  rotate: false
+  xy: 713, 272
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/expl_08
+  rotate: false
+  xy: 830, 256
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/expl_08
+  rotate: false
+  xy: 864, 256
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/expl_08
+  rotate: false
+  xy: 898, 256
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+explosion/expl_08
+  rotate: false
+  xy: 932, 260
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 24
+explosion/expl_08
+  rotate: false
+  xy: 966, 260
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 25
+explosion/expl_08
+  rotate: false
+  xy: 713, 306
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 26
+explosion/expl_08
+  rotate: false
+  xy: 713, 340
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 27
+explosion/expl_08
+  rotate: false
+  xy: 713, 374
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 28
+explosion/expl_08
+  rotate: false
+  xy: 737, 408
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 29
+explosion/expl_08
+  rotate: false
+  xy: 737, 442
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 30
+explosion/expl_08
+  rotate: false
+  xy: 762, 476
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 31
+explosion/expl_09
+  rotate: false
+  xy: 2, 957
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 0
+explosion/expl_09
+  rotate: false
+  xy: 68, 957
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion/expl_09
+  rotate: false
+  xy: 228, 686
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion/expl_09
+  rotate: false
+  xy: 235, 832
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion/expl_09
+  rotate: false
+  xy: 235, 898
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+explosion/expl_09
+  rotate: false
+  xy: 301, 820
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 5
+explosion/expl_09
+  rotate: false
+  xy: 301, 886
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 6
+explosion/expl_09
+  rotate: false
+  xy: 147, 212
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 7
+explosion/expl_09
+  rotate: false
+  xy: 166, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 8
+explosion/expl_09
+  rotate: false
+  xy: 166, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 9
+explosion/expl_09
+  rotate: false
+  xy: 166, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 10
+explosion/expl_09
+  rotate: false
+  xy: 147, 278
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 11
+explosion/expl_09
+  rotate: false
+  xy: 147, 344
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 12
+explosion/expl_09
+  rotate: false
+  xy: 147, 410
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 13
+explosion/expl_09
+  rotate: false
+  xy: 147, 476
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 14
+explosion/expl_09
+  rotate: false
+  xy: 213, 200
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 15
+explosion/expl_09
+  rotate: false
+  xy: 232, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 16
+explosion/expl_09
+  rotate: false
+  xy: 232, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 17
+explosion/expl_09
+  rotate: false
+  xy: 232, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 18
+explosion/expl_09
+  rotate: false
+  xy: 213, 266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 19
+explosion/expl_09
+  rotate: false
+  xy: 213, 332
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 20
+explosion/expl_09
+  rotate: false
+  xy: 213, 398
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 21
+explosion/expl_09
+  rotate: false
+  xy: 213, 464
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 22
+explosion/expl_09
+  rotate: false
+  xy: 230, 580
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 23
+explosion/expl_09
+  rotate: false
+  xy: 296, 580
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 24
+explosion/expl_09
+  rotate: false
+  xy: 294, 680
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 25
+explosion/expl_09
+  rotate: false
+  xy: 360, 680
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 26
+explosion/expl_09
+  rotate: false
+  xy: 367, 814
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 27
+explosion/expl_09
+  rotate: false
+  xy: 367, 880
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 28
+explosion/expl_09
+  rotate: false
+  xy: 377, 946
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 29
+explosion/expl_09
+  rotate: false
+  xy: 433, 814
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 30
+explosion/expl_09
+  rotate: false
+  xy: 433, 880
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 31
+explosion/expl_10
+  rotate: false
+  xy: 443, 946
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 0
+explosion/expl_10
+  rotate: false
+  xy: 279, 200
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion/expl_10
+  rotate: false
+  xy: 298, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion/expl_10
+  rotate: false
+  xy: 298, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion/expl_10
+  rotate: false
+  xy: 298, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+explosion/expl_10
+  rotate: false
+  xy: 279, 266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 5
+explosion/expl_10
+  rotate: false
+  xy: 279, 332
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 6
+explosion/expl_10
+  rotate: false
+  xy: 279, 398
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 7
+explosion/expl_10
+  rotate: false
+  xy: 279, 464
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 8
+explosion/expl_10
+  rotate: false
+  xy: 362, 580
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 9
+explosion/expl_10
+  rotate: false
+  xy: 426, 680
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 10
+explosion/expl_10
+  rotate: false
+  xy: 499, 814
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 11
+explosion/expl_10
+  rotate: false
+  xy: 499, 880
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 12
+explosion/expl_10
+  rotate: false
+  xy: 509, 946
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 13
+explosion/expl_10
+  rotate: false
+  xy: 345, 200
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 14
+explosion/expl_10
+  rotate: false
+  xy: 364, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 15
+explosion/expl_10
+  rotate: false
+  xy: 364, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 16
+explosion/expl_10
+  rotate: false
+  xy: 364, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 17
+explosion/expl_10
+  rotate: false
+  xy: 345, 266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 18
+explosion/expl_10
+  rotate: false
+  xy: 345, 332
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 19
+explosion/expl_10
+  rotate: false
+  xy: 345, 398
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 20
+explosion/expl_10
+  rotate: false
+  xy: 345, 464
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 21
+explosion/expl_10
+  rotate: false
+  xy: 411, 200
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 22
+explosion/expl_10
+  rotate: false
+  xy: 430, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 23
+explosion/expl_10
+  rotate: false
+  xy: 430, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 24
+explosion/expl_10
+  rotate: false
+  xy: 430, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 25
+explosion/expl_10
+  rotate: false
+  xy: 411, 266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 26
+explosion/expl_10
+  rotate: false
+  xy: 411, 332
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 27
+explosion/expl_10
+  rotate: false
+  xy: 411, 398
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 28
+explosion/expl_10
+  rotate: false
+  xy: 411, 464
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 29
+explosion/expl_10
+  rotate: false
+  xy: 428, 580
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 30
+explosion/expl_10
+  rotate: false
+  xy: 494, 580
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 31
+explosion/expl_11
+  rotate: false
+  xy: 262, 770
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 0
+explosion/expl_11
+  rotate: false
+  xy: 327, 952
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 1
+explosion/expl_11
+  rotate: false
+  xy: 217, 530
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 2
+explosion/expl_11
+  rotate: false
+  xy: 267, 530
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 3
+explosion/expl_11
+  rotate: false
+  xy: 312, 764
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 4
+explosion/expl_11
+  rotate: false
+  xy: 362, 764
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 5
+explosion/expl_11
+  rotate: false
+  xy: 412, 764
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 6
 explosion/expl_11
   rotate: false
   xy: 317, 530
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
+  index: 7
+explosion/expl_11
+  rotate: false
+  xy: 462, 764
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 8
+explosion/expl_11
+  rotate: false
+  xy: 367, 530
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 9
+explosion/expl_11
+  rotate: false
+  xy: 417, 530
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 10
+explosion/expl_11
+  rotate: false
+  xy: 467, 530
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 11
+explosion/expl_11
+  rotate: false
+  xy: 512, 764
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 12
+explosion/expl_11
+  rotate: false
+  xy: 517, 530
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 13
+explosion/expl_11
+  rotate: false
+  xy: 567, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 14
+explosion/expl_11
+  rotate: false
+  xy: 567, 52
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 15
+explosion/expl_11
+  rotate: false
+  xy: 638, 68
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
   index: 16
+explosion/expl_11
+  rotate: false
+  xy: 567, 102
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 17
+explosion/expl_11
+  rotate: false
+  xy: 773, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 18
+explosion/expl_11
+  rotate: false
+  xy: 823, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 19
+explosion/expl_11
+  rotate: false
+  xy: 873, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 20
+explosion/expl_11
+  rotate: false
+  xy: 923, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 21
+explosion/expl_11
+  rotate: false
+  xy: 973, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 22
+explosion/expl_11
+  rotate: false
+  xy: 773, 52
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 23
 explosion/puff_smoke_01
   rotate: false
-  xy: 545, 302
+  xy: 762, 510
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+explosion/puff_smoke_01
+  rotate: false
+  xy: 774, 544
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+explosion/puff_smoke_01
+  rotate: false
+  xy: 792, 578
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+explosion/puff_smoke_01
+  rotate: false
+  xy: 792, 612
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+explosion/puff_smoke_01
+  rotate: false
+  xy: 747, 306
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+explosion/puff_smoke_01
+  rotate: false
+  xy: 747, 340
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+explosion/puff_smoke_01
+  rotate: false
+  xy: 747, 374
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+explosion/puff_smoke_01
+  rotate: false
+  xy: 771, 408
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+explosion/puff_smoke_01
+  rotate: false
+  xy: 771, 442
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+explosion/puff_smoke_01
+  rotate: false
+  xy: 796, 476
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+explosion/puff_smoke_01
+  rotate: false
+  xy: 796, 510
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+explosion/puff_smoke_01
+  rotate: false
+  xy: 808, 544
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+explosion/puff_smoke_01
+  rotate: false
+  xy: 842, 290
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 12
-ship_gun_base_big_destroyed
+explosion/puff_smoke_01
   rotate: false
-  xy: 492, 730
-  size: 14, 14
-  orig: 14, 14
+  xy: 805, 290
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
-  index: -1
-explosion/expl_08
+  index: 13
+explosion/puff_smoke_01
   rotate: false
-  xy: 615, 848
+  xy: 876, 290
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 14
+explosion/puff_smoke_01
+  rotate: false
+  xy: 781, 324
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+explosion/puff_smoke_01
+  rotate: false
+  xy: 781, 358
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+explosion/puff_smoke_01
+  rotate: false
+  xy: 805, 392
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+explosion/puff_smoke_01
+  rotate: false
+  xy: 805, 426
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+explosion/puff_smoke_01
+  rotate: false
+  xy: 815, 324
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+explosion/puff_smoke_01
+  rotate: false
+  xy: 815, 358
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+explosion/puff_smoke_01
+  rotate: false
+  xy: 830, 460
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 21
+explosion/puff_smoke_01
+  rotate: false
+  xy: 830, 494
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+explosion/puff_smoke_01
+  rotate: false
+  xy: 839, 392
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+explosion/puff_smoke_01
+  rotate: false
+  xy: 839, 426
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 24
+explosion/puff_smoke_01
+  rotate: false
+  xy: 849, 324
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 25
+explosion/puff_smoke_01
+  rotate: false
+  xy: 849, 358
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 26
+explosion/puff_smoke_01
+  rotate: false
+  xy: 910, 294
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 27
+explosion/puff_smoke_01
+  rotate: false
+  xy: 944, 294
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 28
+explosion/puff_smoke_01
+  rotate: false
+  xy: 978, 294
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 29
-explosion/expl_10
+explosion/puff_smoke_01
   rotate: false
-  xy: 147, 212
-  size: 64, 64
-  orig: 64, 64
+  xy: 883, 328
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
-  index: 24
-water_ripple_medium
+  index: 30
+explosion/puff_smoke_01
   rotate: false
-  xy: 46, 842
-  size: 42, 113
-  orig: 42, 113
+  xy: 917, 328
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 31
+hit/hit
+  rotate: false
+  xy: 619, 300
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 0
+hit/hit
+  rotate: false
+  xy: 601, 310
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 1
+hit/hit
+  rotate: false
+  xy: 619, 318
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 2
+hit/hit
+  rotate: false
+  xy: 601, 328
+  size: 16, 16
+  orig: 16, 16
   offset: 0, 0
   index: 3
-explosion/expl_01
+hit/hit
   rotate: false
-  xy: 751, 786
+  xy: 543, 326
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 4
+hit/hit
+  rotate: false
+  xy: 543, 344
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 5
+hit/hit
+  rotate: false
+  xy: 945, 222
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 6
+hit/hit
+  rotate: false
+  xy: 945, 240
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 7
+hit/hit
+  rotate: false
+  xy: 997, 228
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 8
+muzzle/muzzle2
+  rotate: false
+  xy: 951, 328
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+muzzle/muzzle2
+  rotate: false
+  xy: 985, 328
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 muzzle/muzzle2
   rotate: false
-  xy: 264, 646
+  xy: 883, 362
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+muzzle/muzzle2
+  rotate: false
+  xy: 917, 362
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+muzzle/muzzle2
+  rotate: false
+  xy: 951, 362
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+muzzle/muzzle2
+  rotate: false
+  xy: 985, 362
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+muzzle/muzzle2
+  rotate: false
+  xy: 873, 396
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+muzzle/muzzle2
+  rotate: false
+  xy: 907, 396
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+muzzle/muzzle2
+  rotate: false
+  xy: 941, 396
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+muzzle/muzzle2
+  rotate: false
+  xy: 975, 396
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 9
+muzzle/muzzle2
+  rotate: false
+  xy: 873, 430
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
+muzzle/muzzle2
+  rotate: false
+  xy: 907, 430
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 11
+muzzle/muzzle2
+  rotate: false
+  xy: 941, 430
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 12
+muzzle/muzzle2
+  rotate: false
+  xy: 975, 430
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+muzzle/muzzle2
+  rotate: false
+  xy: 864, 464
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 14
+muzzle/muzzle2
+  rotate: false
+  xy: 898, 464
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 15
+muzzle/muzzle2
+  rotate: false
+  xy: 932, 464
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 16
+muzzle/muzzle2
+  rotate: false
+  xy: 966, 464
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 17
+muzzle/muzzle2
+  rotate: false
+  xy: 864, 498
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 18
+muzzle/muzzle2
+  rotate: false
+  xy: 898, 498
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 19
+muzzle/muzzle2
+  rotate: false
+  xy: 932, 498
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 20
+muzzle/muzzle2
+  rotate: false
+  xy: 966, 498
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 21
-water_ripple_big
+muzzle/muzzle2
   rotate: false
-  xy: 2, 212
-  size: 80, 208
-  orig: 80, 208
+  xy: 765, 734
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 22
+muzzle/muzzle2
+  rotate: false
+  xy: 796, 646
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 23
+rocket_flame/rocket_1
+  rotate: false
+  xy: 114, 814
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 0
+rocket_flame/rocket_1
+  rotate: false
+  xy: 122, 814
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 1
+rocket_flame/rocket_1
+  rotate: false
+  xy: 130, 813
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 2
+rocket_flame/rocket_1
+  rotate: false
+  xy: 138, 813
+  size: 6, 24
+  orig: 6, 24
   offset: 0, 0
   index: 3
+rocket_flame/rocket_1
+  rotate: false
+  xy: 617, 2
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 4
+rocket_flame/rocket_1
+  rotate: false
+  xy: 617, 28
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 5
+rocket_flame/rocket_1
+  rotate: false
+  xy: 617, 54
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 6
+rocket_flame/rocket_1
+  rotate: false
+  xy: 688, 68
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 7
+rocket_flame/rocket_1
+  rotate: false
+  xy: 759, 68
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 8
+rocket_flame/rocket_1
+  rotate: false
+  xy: 759, 94
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 9
+rocket_flame/rocket_1
+  rotate: false
+  xy: 626, 158
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 10
+rocket_flame/rocket_1
+  rotate: false
+  xy: 626, 184
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 11
+rocket_flame/rocket_1
+  rotate: false
+  xy: 617, 158
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 12
+rocket_flame/rocket_1
+  rotate: false
+  xy: 1011, 52
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 13
+rocket_flame/rocket_1
+  rotate: false
+  xy: 1011, 78
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 14
+rocket_flame/rocket_1
+  rotate: false
+  xy: 759, 120
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: 15
+ship_big_gun
+  rotate: false
+  xy: 741, 68
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+ship_big_gun_destroyed
+  rotate: false
+  xy: 741, 100
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+ship_big_gun_dual
+  rotate: false
+  xy: 128, 778
+  size: 16, 33
+  orig: 16, 33
+  offset: 0, 0
+  index: -1
+ship_big_gun_dual_destroyed
+  rotate: false
+  xy: 147, 542
+  size: 16, 33
+  orig: 16, 33
+  offset: 0, 0
+  index: -1
+ship_big_gun_dual_hit
+  rotate: false
+  xy: 165, 542
+  size: 16, 33
+  orig: 16, 33
+  offset: 0, 0
+  index: -1
+ship_big_gun_hit
+  rotate: false
+  xy: 672, 124
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+ship_gun_base
+  rotate: false
+  xy: 575, 1010
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+ship_gun_base_big
+  rotate: false
+  xy: 690, 124
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+ship_gun_base_big_destroyed
+  rotate: false
+  xy: 601, 152
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+ship_gun_base_dark
+  rotate: false
+  xy: 589, 1010
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+ship_gun_base_dark_destroyed
+  rotate: false
+  xy: 603, 1010
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+ship_gun_base_destroyed
+  rotate: false
+  xy: 617, 1010
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+ship_gun_bullet_big
+  rotate: false
+  xy: 238, 825
+  size: 2, 5
+  orig: 2, 5
+  offset: 0, 0
+  index: -1
+ship_gun_bullet_huge
+  rotate: false
+  xy: 233, 825
+  size: 3, 5
+  orig: 3, 5
+  offset: 0, 0
+  index: -1
+ship_gun_bullet_small
+  rotate: false
+  xy: 146, 833
+  size: 1, 4
+  orig: 1, 4
+  offset: 0, 0
+  index: -1
+ship_gun_dual_gray
+  rotate: false
+  xy: 617, 80
+  size: 17, 28
+  orig: 17, 28
+  offset: 0, 0
+  index: -1
+ship_gun_dual_gray_destroyed
+  rotate: false
+  xy: 617, 110
+  size: 17, 28
+  orig: 17, 28
+  offset: 0, 0
+  index: -1
+ship_gun_dual_gray_hit
+  rotate: false
+  xy: 688, 94
+  size: 17, 28
+  orig: 17, 28
+  offset: 0, 0
+  index: -1
+ship_gun_dual_green
+  rotate: false
+  xy: 303, 1002
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
 ship_gun_dual_green_destroyed
   rotate: false
   xy: 321, 1002
@@ -282,11 +2830,88 @@ ship_gun_dual_green_destroyed
   orig: 16, 20
   offset: 0, 0
   index: -1
-ship_gun_green_hit
+ship_gun_dual_green_hit
   rotate: false
-  xy: 631, 994
+  xy: 339, 1002
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+ship_gun_gray
+  rotate: false
+  xy: 357, 1002
+  size: 8, 20
+  orig: 8, 20
+  offset: 0, 0
+  index: -1
+ship_gun_gray_bullet
+  rotate: false
+  xy: 242, 825
+  size: 2, 5
+  orig: 2, 5
+  offset: 0, 0
+  index: -1
+ship_gun_gray_destroyed
+  rotate: false
+  xy: 367, 1002
+  size: 8, 20
+  orig: 8, 20
+  offset: 0, 0
+  index: -1
+ship_gun_gray_hit
+  rotate: false
+  xy: 300, 746
+  size: 8, 20
+  orig: 8, 20
+  offset: 0, 0
+  index: -1
+ship_gun_green
+  rotate: false
+  xy: 697, 2
   size: 8, 23
   orig: 8, 23
+  offset: 0, 0
+  index: -1
+ship_gun_green_destroyed
+  rotate: false
+  xy: 697, 27
+  size: 8, 23
+  orig: 8, 23
+  offset: 0, 0
+  index: -1
+ship_gun_green_hit
+  rotate: false
+  xy: 697, 52
+  size: 8, 23
+  orig: 8, 23
+  offset: 0, 0
+  index: -1
+ship_gun_huge
+  rotate: false
+  xy: 235, 964
+  size: 16, 38
+  orig: 16, 38
+  offset: 0, 0
+  index: -1
+ship_gun_huge_destroyed
+  rotate: false
+  xy: 253, 964
+  size: 16, 38
+  orig: 16, 38
+  offset: 0, 0
+  index: -1
+ship_gun_huge_hit
+  rotate: false
+  xy: 271, 964
+  size: 16, 38
+  orig: 16, 38
+  offset: 0, 0
+  index: -1
+ship_gun_red
+  rotate: false
+  xy: 84, 814
+  size: 8, 25
+  orig: 8, 25
   offset: 0, 0
   index: -1
 ship_gun_red_destroyed
@@ -296,305 +2921,88 @@ ship_gun_red_destroyed
   orig: 8, 25
   offset: 0, 0
   index: -1
-explosion/expl_08
+ship_gun_red_hit
   rotate: false
-  xy: 614, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-explosion/expl_10
-  rotate: false
-  xy: 213, 464
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 9
-explosion/expl_06
-  rotate: false
-  xy: 649, 800
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 30
-explosion/puff_smoke_01
-  rotate: false
-  xy: 477, 488
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 30
-muzzle/muzzle2
-  rotate: false
-  xy: 576, 730
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-ship_gun_dual_gray_destroyed
-  rotate: false
-  xy: 565, 120
-  size: 17, 28
-  orig: 17, 28
+  xy: 104, 814
+  size: 8, 25
+  orig: 8, 25
   offset: 0, 0
   index: -1
-explosion/expl_07
+ship_large_body
   rotate: false
-  xy: 643, 976
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 15
-water_ripple_small
-  rotate: false
-  xy: 194, 686
-  size: 32, 84
-  orig: 32, 84
-  offset: 0, 0
-  index: 3
-explosion/expl_06
-  rotate: false
-  xy: 687, 902
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 27
-explosion/expl_07
-  rotate: false
-  xy: 698, 20
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 4
-ship_gun_bullet_small
-  rotate: false
-  xy: 146, 833
-  size: 1, 4
-  orig: 1, 4
+  xy: 84, 212
+  size: 61, 184
+  orig: 61, 184
   offset: 0, 0
   index: -1
-explosion/expl_02
+ship_large_body_destroyed
   rotate: false
-  xy: 678, 696
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
-explosion/expl_03
-  rotate: false
-  xy: 835, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_09
-  rotate: false
-  xy: 426, 680
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 21
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 386
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 24
-explosion/expl_06
-  rotate: false
-  xy: 801, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-hit/hit
-  rotate: false
-  xy: 346, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 0
-ship_big_gun_dual_hit
-  rotate: false
-  xy: 128, 778
-  size: 16, 33
-  orig: 16, 33
+  xy: 84, 398
+  size: 61, 184
+  orig: 61, 184
   offset: 0, 0
   index: -1
-explosion/expl_08
+ship_medium_body
   rotate: false
-  xy: 579, 220
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 23
-explosion/expl_09
-  rotate: false
-  xy: 345, 464
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 10
-explosion/expl_11
-  rotate: false
-  xy: 492, 680
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 11
-explosion/expl_04
-  rotate: false
-  xy: 869, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-explosion/expl_05
-  rotate: false
-  xy: 1005, 182
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 5
-explosion/expl_08
-  rotate: false
-  xy: 579, 288
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-explosion/expl_10
-  rotate: false
-  xy: 147, 476
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 17
-water_ripple_medium
-  rotate: false
-  xy: 2, 842
-  size: 42, 113
-  orig: 42, 113
-  offset: 0, 0
-  index: 4
-explosion/expl_09
-  rotate: false
-  xy: 430, 68
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 7
-muzzle/muzzle2
-  rotate: false
-  xy: 230, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_04
-  rotate: false
-  xy: 971, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-explosion/expl_08
-  rotate: false
-  xy: 626, 662
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-muzzle/muzzle2
-  rotate: false
-  xy: 332, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-ship_gun_dual_green
-  rotate: false
-  xy: 339, 1002
-  size: 16, 20
-  orig: 16, 20
+  xy: 128, 686
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
   index: -1
-explosion/expl_04
+ship_medium_body_b
   rotate: false
-  xy: 723, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-explosion/expl_03
-  rotate: false
-  xy: 613, 288
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 3
-explosion/expl_06
-  rotate: false
-  xy: 655, 868
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 28
-muzzle/muzzle2
-  rotate: false
-  xy: 477, 250
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-ship_gun_base_big
-  rotate: false
-  xy: 527, 234
-  size: 14, 14
-  orig: 14, 14
+  xy: 134, 839
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
   index: -1
-explosion/expl_08
+ship_medium_body_b_destroyed
   rotate: false
-  xy: 661, 976
-  size: 32, 32
-  orig: 32, 32
+  xy: 134, 931
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
-  index: 24
-explosion/expl_01
+  index: -1
+ship_medium_body_destroyed
   rotate: false
-  xy: 647, 276
-  size: 32, 32
-  orig: 32, 32
+  xy: 161, 686
+  size: 31, 90
+  orig: 31, 90
   offset: 0, 0
-  index: 16
-explosion/expl_09
-  rotate: false
-  xy: 499, 880
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 19
-explosion/expl_11
-  rotate: false
-  xy: 367, 530
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 14
-explosion/expl_07
-  rotate: false
-  xy: 364, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 31
+  index: -1
 ship_small_b_body
+  rotate: false
+  xy: 146, 778
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+ship_small_body
+  rotate: false
+  xy: 175, 778
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+ship_small_body_b_destroyed
+  rotate: false
+  xy: 204, 772
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+ship_small_body_destroyed
   rotate: false
   xy: 233, 770
   size: 27, 53
   orig: 27, 53
+  offset: 0, 0
+  index: -1
+touchBackground
+  rotate: false
+  xy: 128, 584
+  size: 100, 100
+  orig: 100, 100
   offset: 0, 0
   index: -1
 touchKnob
@@ -604,1686 +3012,188 @@ touchKnob
   orig: 36, 36
   offset: 0, 0
   index: -1
-rocket_flame/rocket_1
-  rotate: false
-  xy: 599, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 8
-explosion/expl_09
-  rotate: false
-  xy: 430, 2
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 8
-explosion/expl_07
-  rotate: false
-  xy: 610, 744
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 20
-ship_gun_base_dark_destroyed
-  rotate: false
-  xy: 510, 186
-  size: 12, 12
-  orig: 12, 12
-  offset: 0, 0
-  index: -1
-explosion/expl_04
-  rotate: false
-  xy: 937, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-explosion/expl_03
-  rotate: false
-  xy: 937, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-explosion/puff_smoke_01
-  rotate: false
-  xy: 610, 710
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-explosion/expl_06
-  rotate: false
-  xy: 689, 868
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_07
-  rotate: false
-  xy: 630, 796
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 17
-explosion/expl_03
-  rotate: false
-  xy: 613, 254
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-explosion/expl_06
-  rotate: false
-  xy: 971, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-hit/hit
-  rotate: false
-  xy: 285, 1004
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 3
-explosion/expl_07
-  rotate: false
-  xy: 749, 1004
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 6
-explosion/expl_05
-  rotate: false
-  xy: 1005, 92
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 21
-explosion/expl_02
-  rotate: false
-  xy: 638, 628
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-explosion/expl_09
-  rotate: false
-  xy: 345, 266
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 13
-explosion/expl_11
-  rotate: false
-  xy: 327, 952
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 22
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 318
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 26
-muzzle/muzzle2
-  rotate: false
-  xy: 546, 86
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-explosion/expl_06
-  rotate: false
-  xy: 723, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-explosion/expl_04
-  rotate: false
-  xy: 684, 72
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 23
-explosion/expl_05
-  rotate: false
-  xy: 660, 176
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 10
-explosion/expl_10
-  rotate: false
-  xy: 147, 278
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 20
-explosion/expl_01
-  rotate: false
-  xy: 694, 650
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-explosion/expl_09
-  rotate: false
-  xy: 411, 464
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 2
-explosion/expl_11
-  rotate: false
-  xy: 565, 814
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 7
-ship_large_body
-  rotate: false
-  xy: 84, 398
-  size: 61, 184
-  orig: 61, 184
-  offset: 0, 0
-  index: -1
-explosion/expl_04
-  rotate: false
-  xy: 835, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-explosion/expl_05
-  rotate: false
-  xy: 638, 210
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 7
-explosion/expl_10
-  rotate: false
-  xy: 232, 2
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 15
-ship_gun_huge
-  rotate: false
-  xy: 271, 964
-  size: 16, 38
-  orig: 16, 38
-  offset: 0, 0
-  index: -1
-explosion/expl_07
-  rotate: false
-  xy: 400, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 29
-explosion/expl_04
-  rotate: false
-  xy: 903, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-explosion/expl_10
-  rotate: false
-  xy: 377, 946
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 2
-explosion/puff_smoke_01
-  rotate: false
-  xy: 545, 404
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_07
-  rotate: false
-  xy: 612, 796
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 18
-explosion/expl_01
-  rotate: false
-  xy: 899, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_09
-  rotate: false
-  xy: 279, 332
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 25
-hit/hit
-  rotate: false
-  xy: 267, 1004
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 4
-explosion/expl_09
-  rotate: false
-  xy: 364, 134
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 14
-explosion/expl_06
-  rotate: false
-  xy: 723, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_05
-  rotate: false
-  xy: 638, 138
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 19
-rocket_flame/rocket_1
-  rotate: false
-  xy: 130, 813
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 13
-explosion/expl_08
-  rotate: false
-  xy: 653, 908
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 26
-explosion/expl_10
-  rotate: false
-  xy: 166, 2
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 23
-water_ripple_medium
-  rotate: false
-  xy: 90, 841
-  size: 42, 113
-  orig: 42, 113
-  offset: 0, 0
-  index: 0
-explosion/expl_01
-  rotate: false
-  xy: 751, 820
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-explosion/expl_07
-  rotate: false
-  xy: 517, 556
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 23
-water_ripple_big
-  rotate: false
-  xy: 2, 2
-  size: 80, 208
-  orig: 80, 208
-  offset: 0, 0
-  index: 4
-explosion/expl_05
-  rotate: false
-  xy: 660, 194
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 8
-explosion/expl_03
-  rotate: false
-  xy: 684, 174
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-explosion/expl_08
-  rotate: false
-  xy: 587, 526
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-explosion/expl_10
-  rotate: false
-  xy: 230, 580
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 8
-explosion/puff_smoke_01
-  rotate: false
-  xy: 560, 608
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 3
-muzzle/muzzle2
-  rotate: false
-  xy: 468, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-explosion/expl_07
-  rotate: false
-  xy: 648, 782
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 12
-explosion/expl_02
-  rotate: false
-  xy: 613, 424
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_03
-  rotate: false
-  xy: 869, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-water_ripple_small
-  rotate: false
-  xy: 167, 919
-  size: 32, 84
-  orig: 32, 84
-  offset: 0, 0
-  index: 2
-explosion/expl_07
-  rotate: false
-  xy: 1005, 38
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 1
-explosion/expl_02
-  rotate: false
-  xy: 717, 798
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-explosion/expl_03
-  rotate: false
-  xy: 937, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-explosion/expl_01
-  rotate: false
-  xy: 899, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 488
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-muzzle/muzzle2
-  rotate: false
-  xy: 477, 386
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-explosion/expl_06
-  rotate: false
-  xy: 937, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 3
-explosion/expl_05
-  rotate: false
-  xy: 638, 174
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 13
-explosion/expl_02
-  rotate: false
-  xy: 865, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-ship_big_gun
-  rotate: false
-  xy: 601, 914
-  size: 16, 30
-  orig: 16, 30
-  offset: 0, 0
-  index: -1
-explosion/expl_10
-  rotate: false
-  xy: 228, 686
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 29
-explosion/expl_11
-  rotate: false
-  xy: 512, 764
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 10
-explosion/puff_smoke_01
-  rotate: false
-  xy: 545, 370
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-explosion/expl_05
-  rotate: false
-  xy: 638, 228
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 2
-explosion/expl_10
-  rotate: false
-  xy: 213, 200
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 16
-explosion/expl_01
-  rotate: false
-  xy: 662, 582
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-explosion/expl_11
-  rotate: false
-  xy: 575, 946
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 5
-explosion/expl_07
-  rotate: false
-  xy: 490, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 24
-explosion/puff_smoke_01
-  rotate: false
-  xy: 560, 574
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-muzzle/muzzle2
-  rotate: false
-  xy: 434, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-explosion/expl_03
-  rotate: false
-  xy: 835, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-explosion/expl_09
-  rotate: false
-  xy: 279, 200
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 30
-explosion/expl_06
-  rotate: false
-  xy: 835, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-water1
+water0
   rotate: false
   xy: 167, 1005
   size: 48, 16
   orig: 48, 16
   offset: 0, 0
   index: -1
-explosion/expl_09
+water1
   rotate: false
-  xy: 298, 134
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 27
-muzzle/muzzle2
-  rotate: false
-  xy: 477, 352
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 2
-explosion/expl_06
-  rotate: false
-  xy: 903, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-hit/hit
-  rotate: false
-  xy: 264, 752
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 6
-explosion/expl_05
-  rotate: false
-  xy: 660, 158
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 14
-explosion/expl_02
-  rotate: false
-  xy: 723, 866
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_08
-  rotate: false
-  xy: 598, 150
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-ship_big_gun_destroyed
-  rotate: false
-  xy: 583, 914
-  size: 16, 30
-  orig: 16, 30
+  xy: 217, 1005
+  size: 48, 16
+  orig: 48, 16
   offset: 0, 0
   index: -1
-ship_gun_base_destroyed
+water_anim0000
   rotate: false
-  xy: 496, 186
-  size: 12, 12
-  orig: 12, 12
+  xy: 492, 680
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
-explosion/expl_01
+water_anim0001
   rotate: false
-  xy: 899, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-explosion/expl_09
-  rotate: false
-  xy: 364, 2
+  xy: 558, 680
   size: 64, 64
   orig: 64, 64
-  offset: 0, 0
-  index: 16
-explosion/expl_11
-  rotate: false
-  xy: 417, 530
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 13
-explosion/puff_smoke_01
-  rotate: false
-  xy: 545, 234
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-rocket_flame/rocket_1
-  rotate: false
-  xy: 623, 882
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 3
-explosion/expl_03
-  rotate: false
-  xy: 971, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 23
-ship_gun_bullet_big
-  rotate: false
-  xy: 242, 825
-  size: 2, 5
-  orig: 2, 5
   offset: 0, 0
   index: -1
-explosion/expl_08
+water_anim0002
   rotate: false
-  xy: 579, 356
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-explosion/expl_10
-  rotate: false
-  xy: 213, 332
+  xy: 562, 746
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 11
-explosion/expl_04
+  index: -1
+water_anim0003
   rotate: false
-  xy: 684, 140
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-explosion/expl_03
-  rotate: false
-  xy: 723, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-explosion/expl_08
-  rotate: false
-  xy: 579, 458
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-explosion/expl_03
-  rotate: false
-  xy: 613, 356
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-explosion/expl_02
-  rotate: false
-  xy: 718, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 3
-explosion/expl_01
-  rotate: false
-  xy: 647, 378
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
-explosion/expl_09
-  rotate: false
-  xy: 298, 68
+  xy: 565, 812
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 28
-explosion/expl_11
+  index: -1
+water_anim0004
   rotate: false
-  xy: 312, 764
-  size: 48, 48
-  orig: 48, 48
+  xy: 565, 878
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
-  index: 19
-explosion/puff_smoke_01
+  index: -1
+water_anim0005
   rotate: false
-  xy: 545, 268
-  size: 32, 32
-  orig: 32, 32
+  xy: 575, 944
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
-  index: 13
-explosion/expl_01
+  index: -1
+water_anim0006
   rotate: false
-  xy: 712, 684
-  size: 32, 32
-  orig: 32, 32
+  xy: 477, 200
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
-  index: 4
-explosion/expl_11
+  index: -1
+water_anim0007
   rotate: false
-  xy: 565, 864
-  size: 48, 48
-  orig: 48, 48
+  xy: 496, 2
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
-  index: 6
+  index: -1
+water_anim0008
+  rotate: false
+  xy: 496, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim0009
+  rotate: false
+  xy: 496, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim0010
+  rotate: false
+  xy: 477, 266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20000
+  rotate: false
+  xy: 477, 332
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20001
+  rotate: false
+  xy: 477, 398
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20002
+  rotate: false
+  xy: 477, 464
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20003
+  rotate: false
+  xy: 560, 580
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20004
+  rotate: false
+  xy: 624, 680
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20005
+  rotate: false
+  xy: 628, 746
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20006
+  rotate: false
+  xy: 631, 812
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20007
+  rotate: false
+  xy: 631, 878
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20008
+  rotate: false
+  xy: 641, 944
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20009
+  rotate: false
+  xy: 707, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+water_anim20010
+  rotate: false
+  xy: 626, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 water_ripple_big
   rotate: false
-  xy: 84, 2
+  xy: 2, 2
   size: 80, 208
   orig: 80, 208
   offset: 0, 0
   index: 0
-explosion/expl_08
+water_ripple_big
   rotate: false
-  xy: 630, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-explosion/expl_10
-  rotate: false
-  xy: 232, 68
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 14
-ship_gun_dual_gray
-  rotate: false
-  xy: 584, 120
-  size: 17, 28
-  orig: 17, 28
-  offset: 0, 0
-  index: -1
-explosion/expl_06
-  rotate: false
-  xy: 646, 730
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 31
-explosion/puff_smoke_01
-  rotate: false
-  xy: 477, 454
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 31
-muzzle/muzzle2
-  rotate: false
-  xy: 542, 730
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-explosion/expl_07
-  rotate: false
-  xy: 454, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 26
-explosion/expl_08
-  rotate: false
-  xy: 579, 424
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-explosion/puff_smoke_01
-  rotate: false
-  xy: 551, 506
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-ship_gun_bullet_huge
-  rotate: false
-  xy: 233, 825
-  size: 3, 5
-  orig: 3, 5
-  offset: 0, 0
-  index: -1
-explosion/expl_06
-  rotate: false
-  xy: 727, 936
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-explosion/expl_07
-  rotate: false
-  xy: 698, 2
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 5
-explosion/expl_02
-  rotate: false
-  xy: 660, 662
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-explosion/expl_09
-  rotate: false
-  xy: 362, 580
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 22
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 352
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 25
-explosion/expl_06
-  rotate: false
-  xy: 723, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-hit/hit
-  rotate: false
-  xy: 328, 746
-  size: 16, 16
-  orig: 16, 16
+  xy: 2, 212
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 1
-ship_gun_green_destroyed
-  rotate: false
-  xy: 641, 994
-  size: 8, 23
-  orig: 8, 23
-  offset: 0, 0
-  index: -1
-explosion/expl_02
-  rotate: false
-  xy: 757, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-explosion/expl_09
-  rotate: false
-  xy: 345, 398
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 11
-explosion/puff_smoke_01
-  rotate: false
-  xy: 596, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
-explosion/expl_06
-  rotate: false
-  xy: 835, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-explosion/expl_04
-  rotate: false
-  xy: 835, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-explosion/expl_05
-  rotate: false
-  xy: 660, 140
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 16
-rocket_flame/rocket_1
-  rotate: false
-  xy: 138, 813
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 12
-explosion/expl_08
-  rotate: false
-  xy: 579, 254
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
-explosion/expl_10
-  rotate: false
-  xy: 166, 68
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 22
-explosion/expl_09
-  rotate: false
-  xy: 494, 580
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 0
-explosion/expl_11
-  rotate: false
-  xy: 496, 102
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 1
-muzzle/muzzle2
-  rotate: false
-  xy: 183, 542
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 23
-explosion/expl_04
-  rotate: false
-  xy: 903, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-explosion/expl_08
-  rotate: false
-  xy: 604, 628
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 2
-explosion/expl_10
-  rotate: false
-  xy: 296, 580
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 7
-muzzle/muzzle2
-  rotate: false
-  xy: 536, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-ship_big_gun_hit
-  rotate: false
-  xy: 565, 914
-  size: 16, 30
-  orig: 16, 30
-  offset: 0, 0
-  index: -1
-explosion/expl_04
-  rotate: false
-  xy: 767, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-water_ripple_small
-  rotate: false
-  xy: 201, 833
-  size: 32, 84
-  orig: 32, 84
-  offset: 0, 0
-  index: 1
-explosion/expl_06
-  rotate: false
-  xy: 649, 834
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 29
-explosion/expl_01
-  rotate: false
-  xy: 899, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-ship_gun_huge_destroyed
-  rotate: false
-  xy: 253, 964
-  size: 16, 38
-  orig: 16, 38
-  offset: 0, 0
-  index: -1
-explosion/expl_06
-  rotate: false
-  xy: 767, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-explosion/expl_08
-  rotate: false
-  xy: 659, 942
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 25
-explosion/expl_10
-  rotate: false
-  xy: 235, 832
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 28
-rocket_flame/rocket_1
-  rotate: false
-  xy: 607, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 7
-rocket_flame/rocket_1
-  rotate: false
-  xy: 575, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 11
-explosion/expl_08
-  rotate: false
-  xy: 648, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
-explosion/expl_01
-  rotate: false
-  xy: 672, 616
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-explosion/expl_09
-  rotate: false
-  xy: 411, 200
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 9
-explosion/expl_11
-  rotate: false
-  xy: 477, 200
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 4
-explosion/expl_07
-  rotate: false
-  xy: 592, 710
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 21
-explosion/expl_04
-  rotate: false
-  xy: 903, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-explosion/puff_smoke_01
-  rotate: false
-  xy: 592, 676
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-ship_medium_body_destroyed
-  rotate: false
-  xy: 128, 686
-  size: 31, 90
-  orig: 31, 90
-  offset: 0, 0
-  index: -1
-explosion/expl_06
-  rotate: false
-  xy: 683, 834
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 23
-explosion/expl_07
-  rotate: false
-  xy: 666, 782
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 10
-explosion/expl_04
-  rotate: false
-  xy: 971, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-explosion/expl_02
-  rotate: false
-  xy: 619, 492
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-explosion/expl_03
-  rotate: false
-  xy: 971, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-explosion/expl_06
-  rotate: false
-  xy: 937, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-explosion/expl_07
-  rotate: false
-  xy: 731, 1004
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 7
-explosion/expl_05
-  rotate: false
-  xy: 1005, 74
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 22
-explosion/expl_02
-  rotate: false
-  xy: 628, 594
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-ship_large_body_destroyed
-  rotate: false
-  xy: 84, 212
-  size: 61, 184
-  orig: 61, 184
-  offset: 0, 0
-  index: -1
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 284
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 27
-muzzle/muzzle2
-  rotate: false
-  xy: 546, 52
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-explosion/expl_06
-  rotate: false
-  xy: 767, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-explosion/expl_05
-  rotate: false
-  xy: 1005, 164
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 11
-explosion/expl_02
-  rotate: false
-  xy: 763, 968
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-explosion/expl_01
-  rotate: false
-  xy: 933, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-explosion/expl_09
-  rotate: false
-  xy: 411, 398
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 3
-explosion/expl_11
-  rotate: false
-  xy: 467, 530
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 12
-explosion/puff_smoke_01
-  rotate: false
-  xy: 580, 52
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-ship_gun_green
-  rotate: false
-  xy: 651, 994
-  size: 8, 23
-  orig: 8, 23
-  offset: 0, 0
-  index: -1
-explosion/expl_04
-  rotate: false
-  xy: 801, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
-explosion/expl_05
-  rotate: false
-  xy: 660, 230
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 0
-rocket_flame/rocket_1
-  rotate: false
-  xy: 631, 882
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 2
-explosion/expl_10
-  rotate: false
-  xy: 213, 398
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 10
-ship_big_gun_dual_destroyed
-  rotate: false
-  xy: 147, 542
-  size: 16, 33
-  orig: 16, 33
-  offset: 0, 0
-  index: -1
-ship_gun_huge_hit
-  rotate: false
-  xy: 235, 964
-  size: 16, 38
-  orig: 16, 38
-  offset: 0, 0
-  index: -1
-explosion/expl_04
-  rotate: false
-  xy: 869, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 2
-explosion/expl_10
-  rotate: false
-  xy: 360, 680
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 5
-explosion/expl_06
-  rotate: false
-  xy: 683, 800
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 24
-explosion/expl_07
-  rotate: false
-  xy: 628, 744
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 19
-hit/hit
-  rotate: false
-  xy: 282, 752
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 5
-explosion/expl_07
-  rotate: false
-  xy: 713, 1004
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 8
-explosion/expl_02
-  rotate: false
-  xy: 628, 560
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-touchBackground
-  rotate: false
-  xy: 128, 584
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-explosion/expl_08
-  rotate: false
-  xy: 615, 814
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 30
-explosion/expl_10
-  rotate: false
-  xy: 2, 957
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 31
-explosion/expl_01
-  rotate: false
-  xy: 647, 412
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-explosion/expl_09
-  rotate: false
-  xy: 364, 68
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 15
-explosion/expl_11
-  rotate: false
-  xy: 362, 764
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 18
-explosion/puff_smoke_01
-  rotate: false
-  xy: 527, 200
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 28
-muzzle/muzzle2
-  rotate: false
-  xy: 530, 152
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-ship_small_body_b_destroyed
-  rotate: false
-  xy: 175, 778
-  size: 27, 53
-  orig: 27, 53
-  offset: 0, 0
-  index: -1
-explosion/expl_08
-  rotate: false
-  xy: 625, 942
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 27
-water_ripple_medium
-  rotate: false
-  xy: 84, 699
-  size: 42, 113
-  orig: 42, 113
-  offset: 0, 0
-  index: 1
-explosion/expl_09
-  rotate: false
-  xy: 411, 332
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 4
-explosion/expl_04
-  rotate: false
-  xy: 684, 106
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
-explosion/expl_05
-  rotate: false
-  xy: 638, 192
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 9
-rocket_flame/rocket_1
-  rotate: false
-  xy: 639, 882
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 1
-explosion/expl_03
-  rotate: false
-  xy: 723, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-explosion/expl_08
-  rotate: false
-  xy: 648, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-explosion/expl_10
-  rotate: false
-  xy: 232, 134
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 13
-ship_big_gun_dual
-  rotate: false
-  xy: 165, 542
-  size: 16, 33
-  orig: 16, 33
-  offset: 0, 0
-  index: -1
-explosion/expl_07
-  rotate: false
-  xy: 646, 764
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 13
-explosion/expl_02
-  rotate: false
-  xy: 613, 390
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 23
-explosion/expl_03
-  rotate: false
-  xy: 801, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-explosion/expl_07
-  rotate: false
-  xy: 1005, 20
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 2
-explosion/expl_02
-  rotate: false
-  xy: 684, 764
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 12
-ship_gun_gray_bullet
-  rotate: false
-  xy: 238, 825
-  size: 2, 5
-  orig: 2, 5
-  offset: 0, 0
-  index: -1
-explosion/expl_03
-  rotate: false
-  xy: 903, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-explosion/puff_smoke_01
-  rotate: false
-  xy: 511, 454
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-ship_gun_gray_hit
-  rotate: false
-  xy: 357, 1002
-  size: 8, 20
-  orig: 8, 20
-  offset: 0, 0
-  index: -1
-explosion/expl_02
-  rotate: false
-  xy: 831, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
-explosion/expl_01
-  rotate: false
-  xy: 647, 446
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-explosion/puff_smoke_01
-  rotate: false
-  xy: 545, 336
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-ship_gun_base_dark
-  rotate: false
-  xy: 524, 186
-  size: 12, 12
-  orig: 12, 12
-  offset: 0, 0
-  index: -1
-ship_medium_body
-  rotate: false
-  xy: 161, 686
-  size: 31, 90
-  orig: 31, 90
-  offset: 0, 0
-  index: -1
-explosion/expl_05
-  rotate: false
-  xy: 660, 212
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 3
-rocket_flame/rocket_1
-  rotate: false
-  xy: 114, 814
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 15
-explosion/expl_08
-  rotate: false
-  xy: 619, 908
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 28
-explosion/expl_10
-  rotate: false
-  xy: 147, 344
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 19
-water_ripple_medium
-  rotate: false
-  xy: 84, 584
-  size: 42, 113
-  orig: 42, 113
-  offset: 0, 0
-  index: 2
-explosion/expl_11
-  rotate: false
-  xy: 546, 2
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 0
-muzzle/muzzle2
-  rotate: false
-  xy: 298, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-explosion/expl_07
-  rotate: false
-  xy: 472, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 25
 water_ripple_big
   rotate: false
   xy: 2, 422
@@ -2291,843 +3201,87 @@ water_ripple_big
   orig: 80, 208
   offset: 0, 0
   index: 2
-explosion/expl_10
-  rotate: false
-  xy: 294, 680
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 6
-explosion/puff_smoke_01
-  rotate: false
-  xy: 553, 540
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-ship_gun_red_hit
-  rotate: false
-  xy: 84, 814
-  size: 8, 25
-  orig: 8, 25
-  offset: 0, 0
-  index: -1
-muzzle/muzzle2
-  rotate: false
-  xy: 400, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-explosion/expl_07
-  rotate: false
-  xy: 603, 120
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 14
-explosion/expl_03
-  rotate: false
-  xy: 801, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-explosion/expl_09
-  rotate: false
-  xy: 443, 946
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 31
-water_ripple_small
-  rotate: false
-  xy: 201, 919
-  size: 32, 84
-  orig: 32, 84
-  offset: 0, 0
-  index: 0
-explosion/expl_06
-  rotate: false
-  xy: 693, 936
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 26
-ship_gun_gray
-  rotate: false
-  xy: 300, 746
-  size: 8, 20
-  orig: 8, 20
-  offset: 0, 0
-  index: -1
-explosion/expl_03
-  rotate: false
-  xy: 869, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-explosion/expl_09
-  rotate: false
-  xy: 499, 814
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 20
-explosion/expl_11
-  rotate: false
-  xy: 217, 530
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 21
-muzzle/muzzle2
-  rotate: false
-  xy: 477, 318
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 3
-explosion/expl_06
-  rotate: false
-  xy: 869, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-hit/hit
-  rotate: false
-  xy: 246, 752
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 7
-explosion/expl_05
-  rotate: false
-  xy: 638, 156
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 15
-explosion/expl_08
-  rotate: false
-  xy: 595, 184
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_10
-  rotate: false
-  xy: 235, 898
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 27
-explosion/expl_09
-  rotate: false
-  xy: 345, 200
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 17
-explosion/expl_05
-  rotate: false
-  xy: 1005, 200
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 4
-rocket_flame/rocket_1
-  rotate: false
-  xy: 615, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 6
-rocket_flame/rocket_1
-  rotate: false
-  xy: 583, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 10
-explosion/expl_08
-  rotate: false
-  xy: 579, 322
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 11
-explosion/expl_01
-  rotate: false
-  xy: 655, 514
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_09
-  rotate: false
-  xy: 430, 134
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 6
-explosion/expl_11
-  rotate: false
-  xy: 496, 2
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 3
-explosion/expl_04
-  rotate: false
-  xy: 767, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-explosion/expl_03
-  rotate: false
-  xy: 767, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
-explosion/expl_08
-  rotate: false
-  xy: 644, 696
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-explosion/expl_10
-  rotate: false
-  xy: 433, 814
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 1
-muzzle/muzzle2
-  rotate: false
-  xy: 366, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 18
-ship_gun_dual_gray_hit
-  rotate: false
-  xy: 546, 120
-  size: 17, 28
-  orig: 17, 28
-  offset: 0, 0
-  index: -1
-explosion/expl_03
-  rotate: false
-  xy: 613, 322
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 2
-explosion/expl_09
-  rotate: false
-  xy: 298, 2
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 29
-muzzle/muzzle2
-  rotate: false
-  xy: 477, 284
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-hit/hit
-  rotate: false
-  xy: 228, 752
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 8
-explosion/expl_01
-  rotate: false
-  xy: 714, 718
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 3
-explosion/expl_09
-  rotate: false
-  xy: 509, 946
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 18
-explosion/expl_11
-  rotate: false
-  xy: 542, 680
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 9
-explosion/expl_07
-  rotate: false
-  xy: 382, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 30
 water_ripple_big
   rotate: false
   xy: 2, 632
   size: 80, 208
   orig: 80, 208
   offset: 0, 0
-  index: 1
-rocket_flame/rocket_1
+  index: 3
+water_ripple_big
   rotate: false
-  xy: 623, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 5
-ship_small_body_destroyed
-  rotate: false
-  xy: 146, 778
-  size: 27, 53
-  orig: 27, 53
-  offset: 0, 0
-  index: -1
-explosion/expl_07
-  rotate: false
-  xy: 436, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 27
-explosion/expl_03
-  rotate: false
-  xy: 971, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
-explosion/expl_08
-  rotate: false
-  xy: 579, 390
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_10
-  rotate: false
-  xy: 367, 814
-  size: 64, 64
-  orig: 64, 64
+  xy: 84, 2
+  size: 80, 208
+  orig: 80, 208
   offset: 0, 0
   index: 4
-explosion/puff_smoke_01
+water_ripple_medium
   rotate: false
-  xy: 545, 472
-  size: 32, 32
-  orig: 32, 32
+  xy: 2, 842
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
-  index: 7
-explosion/expl_06
+  index: 0
+water_ripple_medium
   rotate: false
-  xy: 721, 902
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-explosion/expl_07
-  rotate: false
-  xy: 625, 976
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 16
-explosion/expl_09
-  rotate: false
-  xy: 279, 464
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 23
-explosion/expl_06
-  rotate: false
-  xy: 767, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-hit/hit
-  rotate: false
-  xy: 310, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 2
-explosion/expl_05
-  rotate: false
-  xy: 660, 122
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 20
-explosion/expl_02
-  rotate: false
-  xy: 797, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
-explosion/expl_10
-  rotate: false
-  xy: 68, 957
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 30
-explosion/expl_01
-  rotate: false
-  xy: 647, 310
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-explosion/expl_09
-  rotate: false
-  xy: 345, 332
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 12
-explosion/expl_11
-  rotate: false
-  xy: 412, 764
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 17
-explosion/puff_smoke_01
-  rotate: false
-  xy: 580, 86
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-explosion/expl_06
-  rotate: false
-  xy: 801, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-explosion/expl_04
-  rotate: false
-  xy: 801, 70
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 22
-explosion/expl_05
-  rotate: false
-  xy: 1005, 128
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 17
-ship_medium_body_b
-  rotate: false
-  xy: 134, 931
-  size: 31, 90
-  orig: 31, 90
-  offset: 0, 0
-  index: -1
-explosion/expl_10
-  rotate: false
-  xy: 301, 886
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 25
-explosion/expl_09
-  rotate: false
-  xy: 428, 580
-  size: 64, 64
-  orig: 64, 64
+  xy: 46, 842
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 1
-explosion/expl_04
+water_ripple_medium
   rotate: false
-  xy: 869, 104
-  size: 32, 32
-  orig: 32, 32
+  xy: 84, 584
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
-  index: 11
-explosion/expl_05
+  index: 2
+water_ripple_medium
   rotate: false
-  xy: 619, 218
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 6
-rocket_flame/rocket_1
-  rotate: false
-  xy: 647, 882
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 0
-explosion/expl_08
-  rotate: false
-  xy: 594, 594
-  size: 32, 32
-  orig: 32, 32
+  xy: 84, 699
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
   index: 3
-explosion/expl_10
+water_ripple_medium
   rotate: false
-  xy: 213, 266
-  size: 64, 64
-  orig: 64, 64
+  xy: 90, 841
+  size: 42, 113
+  orig: 42, 113
   offset: 0, 0
-  index: 12
-muzzle/muzzle2
-  rotate: false
-  xy: 502, 646
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
-explosion/expl_07
-  rotate: false
-  xy: 418, 746
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 28
-explosion/expl_04
-  rotate: false
-  xy: 937, 138
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-ship_small_body
-  rotate: false
-  xy: 204, 772
-  size: 27, 53
-  orig: 27, 53
-  offset: 0, 0
-  index: -1
-explosion/puff_smoke_01
-  rotate: false
-  xy: 545, 438
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
+  index: 4
 water_ripple_small
   rotate: false
   xy: 167, 833
   size: 32, 84
   orig: 32, 84
   offset: 0, 0
-  index: 4
-ship_medium_body_b_destroyed
-  rotate: false
-  xy: 134, 839
-  size: 31, 90
-  orig: 31, 90
-  offset: 0, 0
-  index: -1
-explosion/expl_09
-  rotate: false
-  xy: 279, 398
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 24
-explosion/expl_06
-  rotate: false
-  xy: 729, 970
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 19
-explosion/expl_01
-  rotate: false
-  xy: 653, 480
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-explosion/expl_06
-  rotate: false
-  xy: 684, 38
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-explosion/expl_05
-  rotate: false
-  xy: 1005, 110
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 18
-rocket_flame/rocket_1
-  rotate: false
-  xy: 122, 814
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 14
-explosion/expl_08
-  rotate: false
-  xy: 664, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 15
-explosion/expl_10
-  rotate: false
-  xy: 147, 410
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 18
-explosion/expl_07
-  rotate: false
-  xy: 535, 556
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 22
-explosion/expl_08
-  rotate: false
-  xy: 594, 560
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 4
-explosion/puff_smoke_01
-  rotate: false
-  xy: 570, 642
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 2
-muzzle/muzzle2
-  rotate: false
-  xy: 508, 730
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
-explosion/expl_07
-  rotate: false
-  xy: 664, 764
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 11
-explosion/expl_04
-  rotate: false
-  xy: 937, 104
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 9
-explosion/expl_02
-  rotate: false
-  xy: 613, 458
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 21
-explosion/expl_03
-  rotate: false
-  xy: 903, 172
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-explosion/expl_06
-  rotate: false
-  xy: 903, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
-explosion/expl_07
-  rotate: false
-  xy: 1005, 56
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
   index: 0
-explosion/expl_05
+water_ripple_small
   rotate: false
-  xy: 660, 104
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 23
-explosion/expl_02
-  rotate: false
-  xy: 717, 832
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
-explosion/expl_11
-  rotate: false
-  xy: 267, 530
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 20
-explosion/puff_smoke_01
-  rotate: false
-  xy: 517, 522
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 20
-muzzle/muzzle2
-  rotate: false
-  xy: 477, 420
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 0
-explosion/expl_06
-  rotate: false
-  xy: 971, 36
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 2
-explosion/expl_05
-  rotate: false
-  xy: 1005, 146
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: 12
-explosion/expl_02
-  rotate: false
-  xy: 761, 934
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-explosion/expl_10
-  rotate: false
-  xy: 301, 820
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 26
-explosion/expl_01
-  rotate: false
-  xy: 967, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-explosion/expl_11
-  rotate: false
-  xy: 462, 764
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 15
-explosion/puff_smoke_01
-  rotate: false
-  xy: 564, 150
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 17
-ship_gun_red
-  rotate: false
-  xy: 104, 814
-  size: 8, 25
-  orig: 8, 25
-  offset: 0, 0
-  index: -1
-explosion/expl_05
-  rotate: false
-  xy: 619, 236
-  size: 16, 16
-  orig: 16, 16
+  xy: 194, 686
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 1
-rocket_flame/rocket_1
+water_ripple_small
   rotate: false
-  xy: 591, 996
-  size: 6, 24
-  orig: 6, 24
-  offset: 0, 0
-  index: 9
-ship_gun_dual_green_hit
-  rotate: false
-  xy: 303, 1002
-  size: 16, 20
-  orig: 16, 20
-  offset: 0, 0
-  index: -1
-explosion/expl_01
-  rotate: false
-  xy: 662, 548
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
-explosion/expl_11
-  rotate: false
-  xy: 496, 52
-  size: 48, 48
-  orig: 48, 48
+  xy: 167, 919
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 2
-explosion/expl_04
+water_ripple_small
   rotate: false
-  xy: 835, 138
-  size: 32, 32
-  orig: 32, 32
+  xy: 201, 833
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
   index: 3
-explosion/expl_10
+water_ripple_small
   rotate: false
-  xy: 433, 880
-  size: 64, 64
-  orig: 64, 64
+  xy: 201, 919
+  size: 32, 84
+  orig: 32, 84
   offset: 0, 0
-  index: 0
-explosion/expl_06
-  rotate: false
-  xy: 695, 970
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 25
-ship_gun_gray_destroyed
-  rotate: false
-  xy: 367, 1002
-  size: 8, 20
-  orig: 8, 20
-  offset: 0, 0
-  index: -1
-explosion/expl_06
-  rotate: false
-  xy: 869, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 14
+  index: 4

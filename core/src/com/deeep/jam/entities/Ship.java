@@ -198,7 +198,6 @@ public class Ship {
         }
         x += Math.cos(rotation) * force;
         y += Math.sin(rotation) * force;
-        //System.out.println(this);
         splashTimer = (splashTimer + force * deltaT * 4) % 5;
         splash[(int) splashTimer].setPosition(x - splash[(int) force].getWidth() / 2, y - splash[(int) force].getHeight() / 2);
         splash[(int) splashTimer].setRotation((float) Math.toDegrees(rotation - Math.PI / 2));
@@ -229,7 +228,6 @@ public class Ship {
             outsideScreen = false;
         }
         Worlds.setOutsideOfScreen(outsideScreen);
-        System.out.println(x + " - " + Map.sizeX);
     }
 
     public void draw(SpriteBatch spriteBatch) {
