@@ -14,7 +14,7 @@ public class Wave {
 
     public int ship1sCount, ship2sCount, ship1fCount, ship2fCount;
     public float healthMultiplier, interval, timer, shipTypeManager;
-    public static final Wave WAVE_0 = new Wave(15, 4, 0, 0, 1.0F, 2F);
+    public static final Wave WAVE_0 = new Wave(0, 4, 0, 0, 1.0F, 0.1F);
     public static final Wave WAVE_1 = new Wave(20, 8, 2, 0, 1.2F, 1.9F);
     public static final Wave WAVE_2 = new Wave(20, 8, 4, 2, 1.4F, 1.8F);
     public static final Wave WAVE_3 = new Wave(20, 8, 2, 0, 1.6F, 1.7F);

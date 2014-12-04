@@ -161,7 +161,6 @@ public class Ship {
                 double inputRotation = Controller.getController().getMovementVector().angleRad() + Math.PI;
                 double difference = (inputRotation - rotation + Math.PI) - Math.PI * 2;
                 difference %= (Math.PI * 2);
-                System.out.println("Difference: " + difference + " Rotate: " + inputRotation + " Ship: " + (rotation + Math.PI));
                 if (difference > 0) {
                     if (Math.abs(difference) >= Math.PI) {
                         rotation -= deltaT * (force / maxForce) * Math.min(1, Math.abs(difference));
@@ -204,9 +203,13 @@ public class Ship {
         body.setTransform(x, y, (float) (rotation + Math.PI / 2));
         for (Gun gun : guns) {
             if (Game.android) {
-                if (Controller.getController().getFireVector().len() != 0) {
-                    gun.fire();
-                    gun.setRotation((int) Controller.getController().getFireVector().angle());
+                if (Worlds.isDay()) {
+                    if (Controller.getController().getFireVector().len() != 0) {
+                        gun.fire();
+                        gun.setRotation((int) Controller.getController().getFireVector().angle());
+                    }
+                } else if (!Worlds.isGettingDay()) {
+                    Worlds.setDay(true);
                 }
             }
             gun.update(this, deltaT);
@@ -233,7 +236,7 @@ public class Ship {
     }
 
     public void takeDamage(float damageCausal) {
-        Game.score --;
+        Game.score--;
         health -= damageCausal;
         if (health <= 0) {
             die();

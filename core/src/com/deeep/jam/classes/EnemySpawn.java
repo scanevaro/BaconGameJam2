@@ -65,16 +65,17 @@ public class EnemySpawn {
         GameScreen.wave.setText(waveNr + "");
         remove.clear();
         if (enemies.isEmpty()) {
+            if(spawning){
+                Worlds.setDay(false);
+            }
             spawning = false;
             System.out.println("Enemies are missing, " + waveNr);
-            startSpawning(waveNr);
-            waveNr++;
+            if(Worlds.isDay()) {
+                startSpawning(waveNr);
+                waveNr++;
+            }
 
             //iterate between day and night when wave is over
-            if (Worlds.isDay())
-                Worlds.setDay(false);
-            else
-                Worlds.setDay(true);
         }
         if (spawning) {
             updateSpawner(delta);

@@ -34,7 +34,7 @@ public class GameScreen implements Screen {
     //Screen
     private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
-    private Stage stage; //for UI
+    private static Stage stage; //for UI
     private Stage cStage; //for controllers
     public static boolean dialogOpen;
     //Widgets
@@ -49,7 +49,7 @@ public class GameScreen implements Screen {
     public static Label score;
     private HealthBar healthBar;
     private RepairBar repairBar;
-    private Window shopDialog;
+    private static Window shopDialog;
     private Button soundButton;
     private Button shopButton;
     private ImageButton smallGun1Button;
@@ -71,7 +71,7 @@ public class GameScreen implements Screen {
     private Worlds world;
     //Sounds
     private Music inGameMusic;
-    private Sound selectedSound;
+    private static Sound selectedSound;
     private Sound shopClicked;
 
     @Override
@@ -165,15 +165,19 @@ public class GameScreen implements Screen {
         stage.addActor(soundButton);
     }
 
+    public static void showShop(){
+        if (!Game.MUTE)
+            selectedSound.play();
+        dialogOpen = true;
+        stage.addActor(shopDialog);
+        money.setText(money_amount + "");
+    }
+
     private void addListeners() {
         shopButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                if (!Game.MUTE)
-                    selectedSound.play();
-                dialogOpen = true;
-                stage.addActor(shopDialog);
-                money.setText(money_amount + "");
+                showShop();
             }
         });
         soundButton.addListener(new ClickListener() {

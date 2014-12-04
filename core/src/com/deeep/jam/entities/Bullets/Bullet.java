@@ -28,7 +28,6 @@ public abstract class Bullet {
     public float aliveTime = 10;
     public int explosionType = 2;
     public float damage;
-    public PointLight pointLight;
 
     public Bullet(Sprite sprite, float rotation, float force, float x, float y, float damage) {
 
@@ -49,12 +48,9 @@ public abstract class Bullet {
         groundShape.setAsBox(sprite.getWidth() / 2, sprite.getHeight() / 2);
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = groundShape;
-        pointLight = new PointLight(Worlds.rayHandler, 5, Color.WHITE, 40, x, y);
         body = Worlds.world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         body.setUserData(this);
-        pointLight.attachToBody(body);
-
     }
 
 

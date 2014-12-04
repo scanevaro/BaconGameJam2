@@ -1,8 +1,11 @@
 package com.deeep.jam.entities;
 
+import box2dLight.PointLight;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deeep.jam.classes.Assets;
+import com.deeep.jam.classes.Worlds;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +38,8 @@ public class Effects {
                 removeList.add(effect);
         }
         for (Effect effect : removeList) {
+            effect.pointLight.remove();
+            effect.pointLight.dispose();
             effectArrayList.remove(effect);
         }
         removeList.clear();
@@ -54,11 +59,13 @@ public class Effects {
         public int type;
         float x, y;
         private float stateTime = 0;
+        public PointLight pointLight;
 
         public Effect(int type, float x, float y) {
             this.type = type;
             this.x = x;
             this.y = y;
+            pointLight = new PointLight(Worlds.rayHandler, 20, new Color(0.8f, 0.10f, 0.10f, 0.9f), 10, x, y);
         }
 
         public int getType() {

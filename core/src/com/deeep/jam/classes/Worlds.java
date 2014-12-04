@@ -14,11 +14,14 @@ import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.EnemySmall;
 import com.deeep.jam.entities.Ship;
 
+import static com.deeep.jam.screens.GameScreen.showShop;
+
 /**
  * Created by scanevaro on 12/10/2014.
  */
 public class Worlds {
     public static boolean day;
+    public static boolean gettingDay;
     private static float dayNightStateTime;
     private SpriteBatch batch;
     public static Ship ship;
@@ -29,9 +32,10 @@ public class Worlds {
     private EnemySpawn enemySpawner;
     private Color daylightColour;
 
+
     public Worlds() {
         this.batch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
-        daylightColour = new Color(1,1,1,1);
+        daylightColour = new Color(1, 1, 1, 1);
 
         {//set day or night
             setDay(true);
@@ -42,12 +46,11 @@ public class Worlds {
         debugRenderer = new Box2DDebugRenderer();
         Vector2 gravity = new Vector2(0, 0);
         world = new World(gravity, false);
-        RayHandler.setGammaCorrection(true);
+        RayHandler.setGammaCorrection(false);
         RayHandler.useDiffuseLight(true);
         rayHandler = new RayHandler(world);
         rayHandler.setAmbientLight(0f, 0f, 0f, 0.5f);
-        rayHandler.setBlurNum(3);
-
+        rayHandler.setBlurNum(0);
 
         world.setContactListener(new ContactListener() {
             @Override
@@ -55,7 +58,7 @@ public class Worlds {
                 if (contact.getFixtureA().getBody().getUserData() instanceof Enemy && contact.getFixtureB().getBody().getUserData() instanceof Bullet) {
                     Bullet bullet = (Bullet) contact.getFixtureB().getBody().getUserData();
                     Enemy enemy = (Enemy) contact.getFixtureA().getBody().getUserData();
-                    enemy.takeDamage(1);
+                    enemy.takeDamage(bullet.damage);
                     bullet.hitEffect();
                     bullet.alive = false;
                 } else if (contact.getFixtureA().getBody().getUserData() instanceof Bullet && contact.getFixtureB().getBody().getUserData() instanceof Enemy) {
@@ -145,20 +148,21 @@ public class Worlds {
     }
 
     private void setDayNight(float delta) {
-        if (day) {
-            if (dayNightStateTime < 0.8f) {
-                dayNightStateTime += delta / 4;
+        if (Worlds.gettingDay) {
+            if (dayNightStateTime < 1f) {
+                dayNightStateTime += delta / 6;
 
-            }else{
-                day = !day;
+            } else {
+                dayNightStateTime = 1;
+                day = true;
             }
         } else {
             if (dayNightStateTime > 0) {
-                dayNightStateTime -= delta / 4;
-
-
-            }else{
-                day = !day;
+                dayNightStateTime -= delta / 6;
+            } else {
+                if(day)
+                    showShop();
+                day = false;
             }
         }
         System.out.println(dayNightStateTime);
@@ -167,6 +171,7 @@ public class Worlds {
         daylightColour.b = dayNightStateTime;
         rayHandler.setAmbientLight(daylightColour);
     }
+
 
     private void updateShip(float delta) {
         ship.update(delta);
@@ -181,9 +186,13 @@ public class Worlds {
     }
 
     public static void setDay(boolean day) {
-        Worlds.day = day;
+        Worlds.gettingDay = day;
 
         if (day) dayNightStateTime = 0;
         else dayNightStateTime = 1;
+    }
+
+    public static boolean isGettingDay(){
+        return gettingDay;
     }
 }

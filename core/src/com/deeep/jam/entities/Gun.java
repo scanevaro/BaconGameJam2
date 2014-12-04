@@ -56,7 +56,10 @@ public abstract class Gun {
                 rotation = (float) Math.toDegrees(ship.rotation);
             }
             if (Gdx.input.isTouched()) {
-                fire();
+                if (Worlds.isDay())
+                    fire();
+                else if (!Worlds.isGettingDay())
+                    Worlds.setDay(true);
             }
         }
         for (Bullet bullet : bullets) {
