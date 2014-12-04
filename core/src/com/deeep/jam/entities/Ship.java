@@ -29,6 +29,7 @@ import java.util.HashMap;
  * Created by Elmar on 18-10-2014.
  */
 public class Ship {
+    private boolean outsideScreen = false;
     private TextureRegion textureRegion;
     public float x, y;
     public float rotation;
@@ -58,7 +59,8 @@ public class Ship {
         for (int i = 0; i < 5; i++) {
             splash[i] = new Sprite(Assets.getAssets().getRegion("water_ripple_big", i));
         }
-        x = Map.sizeX / 2;
+        x = 10;
+        //x = Map.sizeX / 2;
         y = Map.sizeY / 2;
         pointLight = new PointLight(Worlds.rayHandler, 100, Color.WHITE, 500, x, y);
         force = rotation = 0;
@@ -214,6 +216,12 @@ public class Ship {
             }
             gun.update(this, deltaT);
         }
+        if(x <0 || y <0 || x > Map.sizeX || y > Map.sizeY){
+            outsideScreen = true;
+        }else{
+            outsideScreen = false;
+        }
+        Worlds.setOutsideOfScreen(outsideScreen);
 
     }
 

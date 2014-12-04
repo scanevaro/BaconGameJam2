@@ -3,7 +3,9 @@ package com.deeep.jam.classes;
 import box2dLight.RayHandler;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.deeep.jam.Camera;
@@ -23,6 +25,7 @@ public class Worlds {
     public static boolean day;
     public static boolean gettingDay;
     private static float dayNightStateTime;
+    private static boolean outsideOfScreen = false;
     private SpriteBatch batch;
     public static Ship ship;
     public static World world;
@@ -31,10 +34,12 @@ public class Worlds {
     private Map map;
     private EnemySpawn enemySpawner;
     private Color daylightColour;
+    private ShapeRenderer shapeRenderer;
 
 
     public Worlds() {
         this.batch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
+        shapeRenderer = new ShapeRenderer();
         daylightColour = new Color(1, 1, 1, 1);
 
         {//set day or night
@@ -133,6 +138,16 @@ public class Worlds {
         enemySpawner.render(batch);
         Effects.getEffects().render(batch);
         batch.end();
+        if (outsideOfScreen) {
+            Gdx.gl.glEnable(GL20.GL_BLEND);
+            Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+            shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(0.9f, 0, 0, 0.6f);
+            shapeRenderer.rect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            shapeRenderer.end();
+            Gdx.gl.glDisable(GL20.GL_BLEND);
+        }
         rayHandler.setCombinedMatrix(batch.getProjectionMatrix());
         rayHandler.update();
         rayHandler.render();
@@ -160,7 +175,7 @@ public class Worlds {
             if (dayNightStateTime > 0) {
                 dayNightStateTime -= delta / 6;
             } else {
-                if(day)
+                if (day)
                     showShop();
                 day = false;
             }
@@ -192,7 +207,11 @@ public class Worlds {
         else dayNightStateTime = 1;
     }
 
-    public static boolean isGettingDay(){
+    public static boolean isGettingDay() {
         return gettingDay;
+    }
+
+    public static void setOutsideOfScreen(boolean outsideOfScreen) {
+        Worlds.outsideOfScreen = outsideOfScreen;
     }
 }
