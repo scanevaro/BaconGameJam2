@@ -29,6 +29,7 @@ import java.util.HashMap;
  * Created by Elmar on 18-10-2014.
  */
 public class Ship {
+    private float damageOverTime = 0;
     private boolean outsideScreen = false;
     private TextureRegion textureRegion;
     public float x, y;
@@ -59,8 +60,7 @@ public class Ship {
         for (int i = 0; i < 5; i++) {
             splash[i] = new Sprite(Assets.getAssets().getRegion("water_ripple_big", i));
         }
-        x = 10;
-        //x = Map.sizeX / 2;
+        x = Map.sizeX / 2;
         y = Map.sizeY / 2;
         pointLight = new PointLight(Worlds.rayHandler, 100, Color.WHITE, 500, x, y);
         force = rotation = 0;
@@ -216,13 +216,20 @@ public class Ship {
             }
             gun.update(this, deltaT);
         }
-        if(x <0 || y <0 || x > Map.sizeX || y > Map.sizeY){
+        if(x <0 || y <0 || x > Map.sizeX-500 || y > Map.sizeY-300){
             outsideScreen = true;
+            damageOverTime += deltaT + damageOverTime * deltaT/25;
+            if(damageOverTime>=health){
+                damageOverTime = health;
+            }
+            takeDamage(damageOverTime);
+
         }else{
+            damageOverTime = 0;
             outsideScreen = false;
         }
         Worlds.setOutsideOfScreen(outsideScreen);
-
+        System.out.println(x + " - " + Map.sizeX);
     }
 
     public void draw(SpriteBatch spriteBatch) {
