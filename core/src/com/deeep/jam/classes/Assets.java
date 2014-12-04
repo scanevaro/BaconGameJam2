@@ -140,8 +140,6 @@ public class Assets {
 
     private void loadAtlas() {
         textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
-        TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("data/assetsPack.pack"));
-        skin.addRegions(buttonAtlas);
     }
 
     /**
