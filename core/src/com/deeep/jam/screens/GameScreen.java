@@ -115,6 +115,8 @@ public class GameScreen implements Screen {
 
         if (!Game.MUTE)
             inGameMusic.play();
+
+        money_amount = 1000;
     }
 
     private void prepareAudio() {
