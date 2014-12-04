@@ -98,6 +98,8 @@ public class GameScreen implements Screen {
     public void show() {
         this.game = (Game) Gdx.app.getApplicationListener();
 
+        money_amount = 1000;
+
         prepareAudio();
         prepareScreen();
         setWidgets();
@@ -115,8 +117,6 @@ public class GameScreen implements Screen {
 
         if (!Game.MUTE)
             inGameMusic.play();
-
-        money_amount = 1000;
     }
 
     private void prepareAudio() {
