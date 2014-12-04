@@ -20,7 +20,7 @@ public class EnemySpawn {
     public ArrayList<Enemy> remove = new ArrayList<Enemy>();
     public int ship1sCount, ship2sCount, ship1fCount, ship2fCount;
     public int A_ship1sCount, A_ship2sCount, A_ship1fCount, A_ship2fCount;
-    private int waveNr = 0, mobsSpawned = 0;
+    private int waveNr = 21, mobsSpawned = 0;
     public boolean spawning;
     public float spawnTimer, spawnInterval;
     private Random random;
@@ -124,7 +124,7 @@ public class EnemySpawn {
                 p.x = random.nextInt(500) - 250;
             else
                 p.x = Map.sizeX + random.nextInt(800) - 400;
-            p.y = random.nextInt((int) Math.floor(Map.sizeY));
+                p.y = random.nextInt((int) Math.floor(Map.sizeY));
         } else {
             //stuck on floor/ceiling
             if (random.nextInt(2) == 0)
@@ -140,19 +140,36 @@ public class EnemySpawn {
         if (waveId >= waves.size() || spawning) {
             return;
         }
-        spawning = true;
-        Wave wave = waves.get(waveId);
-        this.ship1sCount = wave.ship1sCount;
-        this.ship1fCount = wave.ship1fCount;
-        this.ship2sCount = wave.ship2sCount;
-        this.ship2fCount = wave.ship2fCount;
-        this.spawnInterval = wave.interval;
-        A_ship1sCount = 0;
-        A_ship1fCount = 0;
-        A_ship2sCount = 0;
-        A_ship2fCount = 0;
-        spawnTimer = 0;
-        mobsSpawned = 0;
+        if(waveId > 20){
+            int increment = waveId - 20;
+            Wave wave = waves.get(20);
+            this.ship1sCount = wave.ship1sCount + 5 * increment;
+            this.ship1fCount = wave.ship1fCount + 5 * increment;
+            this.ship2sCount = wave.ship2sCount + 5 * increment;
+            this.ship2fCount = wave.ship2fCount + 5 * increment;
+            this.spawnInterval = wave.interval - 0.02F * increment;
+            A_ship1sCount = 0;
+            A_ship1fCount = 0;
+            A_ship2sCount = 0;
+            A_ship2fCount = 0;
+            spawnTimer = 0;
+            mobsSpawned = 0;
+        }else{
+            spawning = true;
+            Wave wave = waves.get(waveId);
+            this.ship1sCount = wave.ship1sCount;
+            this.ship1fCount = wave.ship1fCount;
+            this.ship2sCount = wave.ship2sCount;
+            this.ship2fCount = wave.ship2fCount;
+            this.spawnInterval = wave.interval;
+            A_ship1sCount = 0;
+            A_ship1fCount = 0;
+            A_ship2sCount = 0;
+            A_ship2fCount = 0;
+            spawnTimer = 0;
+            mobsSpawned = 0;
+        }
+
     }
 
     public void render(SpriteBatch spriteBatch) {
