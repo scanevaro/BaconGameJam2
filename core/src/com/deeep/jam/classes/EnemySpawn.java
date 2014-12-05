@@ -137,10 +137,11 @@ public class EnemySpawn {
     }
 
     public void startSpawning(int waveId) {
-        if (waveId >= waves.size() || spawning) {
+        if (spawning) {
             return;
         }
         if(waveId > 20){
+            spawning = true;
             int increment = waveId - 20;
             Wave wave = waves.get(20);
             this.ship1sCount = wave.ship1sCount + 5 * increment;
