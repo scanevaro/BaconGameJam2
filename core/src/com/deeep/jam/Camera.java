@@ -56,7 +56,7 @@ public class Camera {
                     (int) (Math.min(Math.max((int) ship.y, Game.VIRTUAL_HEIGHT / 2), Map.sizeY - Game.VIRTUAL_HEIGHT) + shaking.getShakeY()),
                     0);
         } else {
-
+            orthographicCamera.position.set(Map.sizeX / 2, Map.sizeY / 2, 0);
         }
     }
 

@@ -40,9 +40,11 @@ public class Worlds {
     private EnemySpawn enemySpawner;
     private Color daylightColour;
     private ShapeRenderer shapeRenderer;
+    private DeadShips deadShips;
 
 
     public Worlds() {
+        deadShips = new DeadShips();
         this.batch = ((Game) Gdx.app.getApplicationListener()).getSpriteBatch();
         shapeRenderer = new ShapeRenderer();
         daylightColour = new Color(1, 1, 1, 1);
@@ -142,6 +144,8 @@ public class Worlds {
         batch.begin();
         enemySpawner.render(batch);
         Effects.getEffects().render(batch);
+        if(beenGameOver)
+            deadShips.draw(batch);
         batch.end();
         if (outsideOfScreen) {
             Gdx.gl.glEnable(GL20.GL_BLEND);
@@ -198,15 +202,29 @@ public class Worlds {
                 if (!beenGameOver)
                     gamingOvertimer += delta;
                 else {
+                    Camera.getCamera().followShip(null);
+                    DeadShips.playerDied(ship);
                     degradingTimer += delta * 2;
 
                     if (gamingOvertimer <= 0) {
+                        if(dayNightStateTime<1f)
+                            dayNightStateTime-=delta/2;
+                        daylightColour.r = dayNightStateTime;
+                        daylightColour.g = dayNightStateTime;
+                        daylightColour.b = dayNightStateTime;
+                        System.out.println(dayNightStateTime);
+                        rayHandler.setAmbientLight(daylightColour);
+
                         if (degradingTimer >= 4)
                             GameScreen.prepareGameOverDialog();
                     } else {
                         if (degradingTimer >= 1 + (1 - gamingOvertimer)) {
                             degradingTimer -= 1;
                             gamingOvertimer -= 0.1f;
+                            if(gamingOvertimer<=0){
+                                world.clearForces();
+                                Worlds.setOutsideOfScreen(false);
+                            }
                         }
                     }
                 }
