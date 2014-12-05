@@ -15,6 +15,7 @@ import com.deeep.jam.entities.Effects;
 import com.deeep.jam.entities.Enemy;
 import com.deeep.jam.entities.EnemySmall;
 import com.deeep.jam.entities.Ship;
+import com.deeep.jam.screens.GameScreen;
 
 import static com.deeep.jam.screens.GameScreen.showShop;
 
@@ -22,6 +23,10 @@ import static com.deeep.jam.screens.GameScreen.showShop;
  * Created by scanevaro on 12/10/2014.
  */
 public class Worlds {
+    private float gamingOvertimer = 0f;
+    private float degradingTimer = 0;
+    private boolean flashingGameOver = false;
+    private boolean beenGameOver = false;
     public static boolean day;
     public static boolean gettingDay;
     private static float dayNightStateTime;
@@ -148,6 +153,16 @@ public class Worlds {
             shapeRenderer.end();
             Gdx.gl.glDisable(GL20.GL_BLEND);
         }
+        if (gamingOvertimer > 0) {
+            Gdx.gl.glEnable(GL20.GL_BLEND);
+            Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+            shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(1f, 1, 1, gamingOvertimer);
+            shapeRenderer.rect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            shapeRenderer.end();
+            Gdx.gl.glDisable(GL20.GL_BLEND);
+        }
         rayHandler.setCombinedMatrix(batch.getProjectionMatrix());
         rayHandler.update();
         rayHandler.render();
@@ -155,11 +170,58 @@ public class Worlds {
     }
 
     public void update(float delta) {
-        setDayNight(delta);
-        updateShip(delta);
-        world.step(Gdx.graphics.getDeltaTime(), 0, 3);
-        enemySpawner.update(delta);
-        Effects.getEffects().update(delta);
+        if (Game.GAME_OVER) {
+            if (!flashingGameOver) {
+                gamingOvertimer = 1;
+                degradingTimer += delta;
+                if (degradingTimer >= 0.1f) {
+                    gamingOvertimer = 0;
+                    if(degradingTimer >= 0.8f){
+                        gamingOvertimer = 1;
+                        if(degradingTimer >= 0.9f){
+                            gamingOvertimer = 0;
+                            if(degradingTimer >= 1.1f){
+                                gamingOvertimer = 1;
+                                if(degradingTimer >= 1.2f){
+                                    gamingOvertimer = 0;
+                                    flashingGameOver = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (flashingGameOver) {
+                    gamingOvertimer = 0;
+                    degradingTimer = 0;
+                }
+            } else {
+                if (!beenGameOver)
+                    gamingOvertimer += delta;
+                else {
+                    degradingTimer += delta * 2;
+
+                    if (gamingOvertimer <= 0) {
+                        if (degradingTimer >= 4)
+                            GameScreen.prepareGameOverDialog();
+                    } else {
+                        if (degradingTimer >= 1 + (1 - gamingOvertimer)) {
+                            degradingTimer -= 1;
+                            gamingOvertimer -= 0.1f;
+                        }
+                    }
+                }
+                if (gamingOvertimer >= 2) {
+                    beenGameOver = true;
+                    gamingOvertimer = 1;
+                }
+            }
+        } else {
+            setDayNight(delta);
+            updateShip(delta);
+            world.step(Gdx.graphics.getDeltaTime(), 0, 3);
+            enemySpawner.update(delta);
+            Effects.getEffects().update(delta);
+        }
     }
 
     private void setDayNight(float delta) {
@@ -212,5 +274,9 @@ public class Worlds {
 
     public static void setOutsideOfScreen(boolean outsideOfScreen) {
         Worlds.outsideOfScreen = outsideOfScreen;
+    }
+
+    public static void gameOver() {
+
     }
 }

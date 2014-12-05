@@ -27,13 +27,13 @@ import com.deeep.jam.entities.RepairBar;
  * Created by the meme overlord on 10/10/2014.
  */
 public class GameScreen implements Screen {
-    public static int money_amount = 0;
+    public static int money_amount = 1000;
     
     private static TextButton yes1Button, yes2Button, yes3Button, yes4Button, yes5Button, yes6Button, yes7Button, yes8Button, yes9Button, yes10Button, yes11Button;
     private static TextButton no1Button, no2Button, no3Button, no4Button, no5Button, no6Button, no7Button, no8Button, no9Button, no10Button, no11Button;
 
     //Main
-    private Game game;
+    private static Game game;
     //Screen
     private OrthographicCamera camera;
     private SpriteBatch spriteBatch;
@@ -82,8 +82,7 @@ public class GameScreen implements Screen {
         if (!dialogOpen)
             world.update(delta);
 
-        if (Game.GAME_OVER)
-            prepareGameOverDialog();
+
 
         stage.act();
         cStage.act();
@@ -769,7 +768,7 @@ public class GameScreen implements Screen {
         }
     }
 
-    private void prepareGameOverDialog() {
+    public static void prepareGameOverDialog() {
         dialogOpen = true;
         Game.GAME_OVER = false;
 
@@ -788,12 +787,6 @@ public class GameScreen implements Screen {
 
         ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
         shipButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getGameOverTexture()));
-        ImageButton gameOverButton = new ImageButton(shipButtonStyle);
-        gameOverButton.setSize(500, 500);
-        gameOverButton.setPosition(gameOverDialog.getWidth() / 2 - gameOverButton.getWidth() / 2, gameOverDialog.getHeight() / 2 - gameOverButton.getHeight() / 2);
-
-        //add to dialog
-        gameOverDialog.addActor(gameOverButton);
 
         TextButton retryButton = new TextButton("R e t r y", Assets.getAssets().getSkin());
         retryButton.addListener(new ClickListener() {
@@ -803,7 +796,7 @@ public class GameScreen implements Screen {
                 game.setScreen(new GameScreen());
             }
         });
-        retryButton.setPosition(gameOverDialog.getWidth() / 2 - retryButton.getWidth() / 2 - 100, gameOverDialog.getHeight() / 2 - 170);
+        retryButton.setPosition(retryButton.getWidth()/4, retryButton.getHeight()/2);
 
         //add to dialog
         gameOverDialog.addActor(retryButton);
@@ -815,12 +808,12 @@ public class GameScreen implements Screen {
                 Gdx.app.exit();
             }
         });
-        quitButton.setPosition(gameOverDialog.getWidth() / 2 - quitButton.getWidth() / 2 + 100, gameOverDialog.getHeight() / 2 - 170);
+        quitButton.setPosition(retryButton.getWidth()/4 + 20 + retryButton.getWidth(), quitButton.getHeight()/2);
         //add to dialog
         gameOverDialog.addActor(quitButton);
 
-        gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - gameOverDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - gameOverButton.getHeight() / 2);
-
+        gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - gameOverDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2);
+        gameOverDialog.setSize(retryButton.getWidth()/4 + 20 +quitButton.getWidth()/4 + retryButton.getWidth() + quitButton.getWidth(), quitButton.getHeight() *2.5f);
         stage.addActor(gameOverDialog);
     }
 

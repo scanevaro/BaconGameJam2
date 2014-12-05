@@ -27,20 +27,20 @@ public class Map {
     }
 
     public void render(SpriteBatch spriteBatch) {
-        waterTimer += Gdx.graphics.getDeltaTime() * 10;
+        waterTimer += Gdx.graphics.getDeltaTime();
         if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
             water1 = true;
         } else if (Gdx.input.isKeyPressed(Input.Keys.E)) {
             water1 = false;
         }
         spriteBatch.begin();
-        for (int x = 0; x < sizeX / water_1[0].getRegionWidth(); x++) {
-            for (int y = 0; y < sizeX / water_1[0].getRegionHeight(); y++) {
-                if (Camera.getCamera().viewportContains(x * water_1[0].getRegionWidth(), y * water_1[0].getRegionHeight())) {
+        for (int x = 0; x < sizeX / (water_1[0].getRegionWidth()*2); x++) {
+            for (int y = 0; y < sizeY / (water_1[0].getRegionHeight()*2); y++) {
+                if (Camera.getCamera().viewportContains(x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2)) {
                     if (water1) {
-                        spriteBatch.draw(water_2[(int) waterTimer % 10], x * water_1[0].getRegionWidth(), y * water_1[0].getRegionHeight());
+                        spriteBatch.draw(water_2[(int) waterTimer % 10], x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2);
                     } else {
-                        spriteBatch.draw(water_1[(int) waterTimer % 10], x * water_1[0].getRegionWidth(), y * water_1[0].getRegionHeight());
+                        spriteBatch.draw(water_1[(int) waterTimer % 10], x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2);
                     }
                 }
             }

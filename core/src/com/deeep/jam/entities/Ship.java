@@ -35,7 +35,7 @@ public class Ship {
     public float x, y;
     public float rotation;
     public float force;
-    public final float acceleration = 1f;
+    public final float acceleration = 2f;
     public final float friction = acceleration / 2;
     public final float maxForce = 4.5f;
     private Sprite sprite;
@@ -154,6 +154,9 @@ public class Ship {
             force += deltaT * friction;
         } else {
             force = 0;
+        }
+        if(Gdx.input.isKeyPressed(Input.Keys.R)){
+            Game.GAME_OVER = true;
         }
         if (Game.android) {
             if (Controller.getController().getMovementVector().len() != 0) {
