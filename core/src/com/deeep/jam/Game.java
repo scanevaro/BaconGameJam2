@@ -9,8 +9,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.classes.Assets;
 import com.deeep.jam.interfaces.ActionResolver;
-import com.deeep.jam.screens.GameScreen;
-import com.deeep.jam.screens.MainMenuScreen;
+import com.deeep.jam.screens.SplashScreen;
 
 public class Game implements ApplicationListener {
 
@@ -61,7 +60,7 @@ public class Game implements ApplicationListener {
 
         viewport = new Rectangle();
 
-        setScreen(new GameScreen());
+        setScreen(new SplashScreen());
     }
 
     @Override
