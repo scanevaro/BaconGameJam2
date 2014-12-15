@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.deeep.jam.Game;
+import com.deeep.jam.classes.Achievements;
 import com.deeep.jam.classes.Assets;
 
 /**
@@ -89,11 +90,12 @@ public class MainMenuScreen implements Screen {
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                if (!Game.MUTE)
-                    Assets.getAssets().getSelected().play();
+                if (!Game.MUTE) Assets.getAssets().getSelected().play();
 
                 if (intro.isPlaying())
                     intro.stop();
+
+                new Achievements(game);
 
                 game.setScreen(new GameScreen());
             }

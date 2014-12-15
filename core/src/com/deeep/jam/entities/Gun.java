@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.deeep.jam.Camera;
 import com.deeep.jam.Game;
+import com.deeep.jam.classes.Achievements;
 import com.deeep.jam.classes.Shaking;
 import com.deeep.jam.classes.Worlds;
 import com.deeep.jam.entities.Bullets.Bullet;
@@ -90,7 +91,7 @@ public abstract class Gun {
             level++;
             fireRate = defaultFireRate - ((level / (1 + maxLevel)) * defaultFireRate);
             damage = damage + damage * 1.5f;
-        }
+        } else if (level == maxLevel) Achievements.sayHello(true);
     }
 
     public int getMaxLevel() {

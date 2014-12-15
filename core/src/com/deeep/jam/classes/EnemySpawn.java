@@ -65,14 +65,19 @@ public class EnemySpawn {
         GameScreen.wave.setText(waveNr + "");
         remove.clear();
         if (enemies.isEmpty()) {
-            if(spawning){
+            if (spawning) {
                 Worlds.setDay(false);
             }
             spawning = false;
             System.out.println("Enemies are missing, " + waveNr);
-            if(Worlds.isDay()) {
+            if (Worlds.isDay()) {
                 startSpawning(waveNr);
                 waveNr++;
+
+                if (Achievements.noHits) Achievements.noHits(true);
+                if (waveNr == 10) Achievements.wave10(true);
+                if (Achievements.dontShoot) Achievements.dontShoot(true);
+                if (Achievements.dontMove) Achievements.dontMove(true);
             }
 
             //iterate between day and night when wave is over
@@ -124,7 +129,7 @@ public class EnemySpawn {
                 p.x = random.nextInt(500) - 250;
             else
                 p.x = Map.sizeX + random.nextInt(800) - 400;
-                p.y = random.nextInt((int) Math.floor(Map.sizeY));
+            p.y = random.nextInt((int) Math.floor(Map.sizeY));
         } else {
             //stuck on floor/ceiling
             if (random.nextInt(2) == 0)
@@ -140,7 +145,7 @@ public class EnemySpawn {
         if (spawning) {
             return;
         }
-        if(waveId > 20){
+        if (waveId > 20) {
             spawning = true;
             int increment = waveId - 20;
             Wave wave = waves.get(20);
@@ -155,7 +160,7 @@ public class EnemySpawn {
             A_ship2fCount = 0;
             spawnTimer = 0;
             mobsSpawned = 0;
-        }else{
+        } else {
             spawning = true;
             Wave wave = waves.get(waveId);
             this.ship1sCount = wave.ship1sCount;
