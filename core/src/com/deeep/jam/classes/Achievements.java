@@ -17,7 +17,7 @@ public class Achievements {
     public static boolean dontMove;
 
     public static void sayHello(boolean flag) {
-        if (flag) game.actionResolver.unlockAchievementGPGS("CgkIi5Hn5-EIEAIQBg");
+        if (flag ) game.actionResolver.unlockAchievementGPGS("CgkIi5Hn5-EIEAIQBg");
     }
 
     public static void dontShoot(boolean flag) {
