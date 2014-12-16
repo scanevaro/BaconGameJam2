@@ -816,6 +816,8 @@ public class GameScreen implements Screen {
         gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - gameOverDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2);
         gameOverDialog.setSize(retryButton.getWidth() / 4 + 20 + quitButton.getWidth() / 4 + retryButton.getWidth() + quitButton.getWidth(), quitButton.getHeight() * 2.5f);
         stage.addActor(gameOverDialog);
+
+        game.actionResolver.submitScoreGPGS(Game.score);
     }
 
     @Override

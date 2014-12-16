@@ -52,6 +52,8 @@ public class MainMenuScreen implements Screen {
 
         if (!Game.MUTE)
             intro.play();
+
+        game.actionResolver.loginGPGS();
     }
 
     private void prepareAudio() {
