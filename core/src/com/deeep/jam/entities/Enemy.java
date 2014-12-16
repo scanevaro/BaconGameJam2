@@ -154,7 +154,7 @@ public abstract class Enemy {
     }
 
     protected void die() {
-        Game.score++;
+        Game.score += 250;
         actuallyFuckingSetTheSprite(deadSprite);
         finalRotation = (float) Math.toDegrees(rotation - Math.PI / 2);
         startDecay();

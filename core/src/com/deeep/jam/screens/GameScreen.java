@@ -77,6 +77,10 @@ public class GameScreen implements Screen {
     private static Sound selectedSound;
     private Sound shopClicked;
 
+    public GameScreen() {
+        Game.score = 0;
+    }
+
     @Override
     public void render(float delta) {
         if (!dialogOpen)
