@@ -39,6 +39,7 @@ public class Ship {
     public final float friction = acceleration / 2;
     public final float maxForce = 4.5f;
     private Sprite sprite;
+    private Sprite deadSprite;
     ShapeRenderer shapeRenderer = new ShapeRenderer();
     public float splashTimer = 0, health = 100;
     private Body body;
@@ -53,6 +54,7 @@ public class Ship {
     private PointLight pointLight;
 
     private RepairBar repairBar;
+    private boolean destroyed = false;
 
     public Ship() {
 
@@ -65,8 +67,11 @@ public class Ship {
         pointLight = new PointLight(Worlds.rayHandler, 100, Color.WHITE, 500, x, y);
         force = rotation = 0;
         sprite = new Sprite(Assets.getAssets().getRegion("ship_large_body"));
+        deadSprite = new Sprite(Assets.getAssets().getRegion("ship_large_body_destroyed"));
         sprite.setCenterX(sprite.getWidth() / 2);
+        deadSprite.setCenterX(deadSprite.getWidth() / 2);
         sprite.setCenterY(sprite.getHeight() / 2);
+        deadSprite.setCenterY(deadSprite.getHeight() / 2);
         bodyDef.position.setAngleRad(rotation);
         bodyDef.position.set(0, 0);
         bodyDef.type = BodyDef.BodyType.DynamicBody;
@@ -155,7 +160,7 @@ public class Ship {
         } else {
             force = 0;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.R)){
+        if (Gdx.input.isKeyPressed(Input.Keys.R)) {
             Game.GAME_OVER = true;
         }
         if (Game.android) {
@@ -218,15 +223,15 @@ public class Ship {
             }
             gun.update(this, deltaT);
         }
-        if(x <0 || y <0 || x > Map.sizeX-500 || y > Map.sizeY-300){
+        if (x < 0 || y < 0 || x > Map.sizeX - 500 || y > Map.sizeY - 300) {
             outsideScreen = true;
-            damageOverTime += deltaT + damageOverTime * deltaT/25;
-            if(damageOverTime>=health){
+            damageOverTime += deltaT + damageOverTime * deltaT / 25;
+            if (damageOverTime >= health) {
                 damageOverTime = health;
             }
             takeDamage(damageOverTime);
 
-        }else{
+        } else {
             damageOverTime = 0;
             outsideScreen = false;
         }
@@ -237,11 +242,17 @@ public class Ship {
         spriteBatch.begin();
         splash[(int) splashTimer].draw(spriteBatch);
         sprite.setPosition(x - sprite.getWidth() / 2, y - (sprite.getHeight() / 2));
+        deadSprite.setPosition(x - deadSprite.getWidth() / 2, y - (deadSprite.getHeight() / 2));
         sprite.setRotation((int) Math.toDegrees(rotation - Math.PI / 2));
-        sprite.draw(spriteBatch);
-        for (Gun gun : guns) {
-            gun.render(spriteBatch);
-        }
+        deadSprite.setRotation((int) Math.toDegrees(rotation - Math.PI / 2));
+        if (!destroyed) {
+            sprite.draw(spriteBatch);
+            for (Gun gun : guns) {
+                gun.render(spriteBatch);
+            }
+        } else
+            deadSprite.draw(spriteBatch);
+
         spriteBatch.end();
 
     }
@@ -265,6 +276,10 @@ public class Ship {
         Game.GAME_OVER = true;
 
         System.out.println("Game Over!");
+    }
+
+    public void setDestroyed(boolean destroyed) {
+        this.destroyed = destroyed;
     }
 
     public void setRepairBar(RepairBar repairBar) {

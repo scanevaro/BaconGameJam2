@@ -62,7 +62,7 @@ public class Worlds {
         RayHandler.useDiffuseLight(true);
         rayHandler = new RayHandler(world);
         rayHandler.setAmbientLight(0f, 0f, 0f, 0.5f);
-        rayHandler.setBlurNum(0);
+        rayHandler.setBlurNum(4);
 
         world.setContactListener(new ContactListener() {
             @Override
@@ -202,12 +202,13 @@ public class Worlds {
                 if (!beenGameOver)
                     gamingOvertimer += delta;
                 else {
-                    Camera.getCamera().followShip(null);
-                    DeadShips.playerDied(ship);
+                   // Camera.getCamera().followShip(null);
+                    //DeadShips.playerDied(ship);
                     degradingTimer += delta * 2;
+                    ship.setDestroyed(true);
 
                     if (gamingOvertimer <= 0) {
-                        if(dayNightStateTime<1f)
+                        if(dayNightStateTime>0f)
                             dayNightStateTime-=delta/2;
                         daylightColour.r = dayNightStateTime;
                         daylightColour.g = dayNightStateTime;
@@ -234,6 +235,7 @@ public class Worlds {
                 }
             }
         } else {
+            ship.setDestroyed(false);
             setDayNight(delta);
             updateShip(delta);
             world.step(Gdx.graphics.getDeltaTime(), 0, 3);

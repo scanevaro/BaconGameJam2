@@ -34,9 +34,9 @@ public class Map {
             water1 = false;
         }
         spriteBatch.begin();
-        for (int x = 0; x < sizeX / (water_1[0].getRegionWidth()*2); x++) {
-            for (int y = 0; y < sizeY / (water_1[0].getRegionHeight()*2); y++) {
-                if (Camera.getCamera().viewportContains(x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2)) {
+        for (int x = 0; x < sizeX / (water_1[0].getRegionWidth()); x++) {
+            for (int y = 0; y < sizeY / (water_1[0].getRegionHeight()); y++) {
+                if (Camera.getCamera().viewportContains(x * water_1[0].getRegionWidth()*2 +25, y * water_1[0].getRegionHeight()*2+25)) {
                     if (water1) {
                         spriteBatch.draw(water_2[(int) waterTimer % 10], x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2);
                     } else {
