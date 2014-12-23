@@ -1,2 +1,9 @@
 game id for google play services 301133842571
 leaderboards id CgkIi5Hn5-EIEAIQAQ
+
+achievements
+say hello CgkIi5Hn5-EIEAIQBg
+DON'T SHOOT! - CgkIi5Hn5-EIEAIQAw
+NO HITS! - CgkIi5Hn5-EIEAIQBA
+WAVE 10! - CgkIi5Hn5-EIEAIQBQ
+DON'T MOVE! - CgkIi5Hn5-EIEAIQBw

@@ -13,10 +13,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.deeep.jam.Game;
-import com.deeep.jam.classes.Assets;
-import com.deeep.jam.classes.Controller;
-import com.deeep.jam.classes.Map;
-import com.deeep.jam.classes.Worlds;
+import com.deeep.jam.classes.*;
 import com.deeep.jam.entities.guns.BigCannon;
 import com.deeep.jam.entities.guns.MegaCannon;
 import com.deeep.jam.entities.guns.SmallCanon;
@@ -165,6 +162,8 @@ public class Ship {
         }
         if (Game.android) {
             if (Controller.getController().getMovementVector().len() != 0) {
+                Achievements.dontMove = false;
+
                 if (force < maxForce) {
                     force += deltaT * acceleration * Math.abs(Controller.getController().getMovementVector().len());
                 }
@@ -214,6 +213,7 @@ public class Ship {
             if (Game.android) {
                 if (Worlds.isDay()) {
                     if (Controller.getController().getFireVector().len() != 0) {
+                        Achievements.dontShoot = false;
                         gun.fire();
                         gun.setRotation((int) Controller.getController().getFireVector().angle());
                     }
@@ -263,6 +263,7 @@ public class Ship {
     }
 
     public void takeDamage(float damageCausal) {
+        Achievements.noHits = false;
         Game.score--;
         health -= damageCausal;
         if (health <= 0) {
