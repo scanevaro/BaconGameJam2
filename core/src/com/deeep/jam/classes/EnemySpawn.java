@@ -20,7 +20,7 @@ public class EnemySpawn {
     public ArrayList<Enemy> remove = new ArrayList<Enemy>();
     public int ship1sCount, ship2sCount, ship1fCount, ship2fCount;
     public int A_ship1sCount, A_ship2sCount, A_ship1fCount, A_ship2fCount;
-    private int waveNr = 21, mobsSpawned = 0;
+    private int waveNr = 0, mobsSpawned = 0;
     public boolean spawning;
     public float spawnTimer, spawnInterval;
     private Random random;

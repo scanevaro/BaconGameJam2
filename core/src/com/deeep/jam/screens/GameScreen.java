@@ -117,7 +117,8 @@ public class GameScreen implements Screen {
         InputMultiplexer multiplexer = new InputMultiplexer(stage, cStage);
         Gdx.input.setInputProcessor(multiplexer);
 
-        Controller.getController().addToStage(cStage);
+        if (Game.android)
+            Controller.getController().addToStage(cStage);
 
         if (!Game.MUTE)
             inGameMusic.play();
