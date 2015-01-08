@@ -22,7 +22,6 @@ import com.badlogic.gdx.utils.Array;
 public class Assets {
 
     private Texture canonIndexReferenceTexture;
-    private Texture gameOverTexture;
     private Texture aboutTexture;
     private Music mainMenuMusic;
     private Music inGameMusic;
@@ -85,7 +84,6 @@ public class Assets {
      */
     public void load() {
         if (!loaded) {
-//            textureAtlas = new TextureAtlas(Gdx.files.internal("TextureAtlass.txt"));
             loadFont();
             loadSkin();
             loadTextures();
@@ -104,9 +102,7 @@ public class Assets {
 
         FileHandle fileHandle = Gdx.files.internal("data/skin.json");
         FileHandle atlasFile = fileHandle.sibling("skin.atlas");
-        if (atlasFile.exists()) {
-            skin.addRegions(new TextureAtlas(atlasFile));
-        }
+        if (atlasFile.exists()) skin.addRegions(new TextureAtlas(atlasFile));
         skin.load(fileHandle);
     }
 
@@ -120,7 +116,6 @@ public class Assets {
         logo = new Texture(Gdx.files.internal("data/newLogo.png"));
         title = new Texture(Gdx.files.internal("data/title.png"));
         canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
-        gameOverTexture = new Texture(Gdx.files.internal("data/gameOver.png"));
         aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
     }
 
@@ -232,10 +227,6 @@ public class Assets {
 
     public Texture getCanonIndexReferenceTexture() {
         return canonIndexReferenceTexture;
-    }
-
-    public Texture getGameOverTexture() {
-        return gameOverTexture;
     }
 
     public Texture getAboutTexture() {

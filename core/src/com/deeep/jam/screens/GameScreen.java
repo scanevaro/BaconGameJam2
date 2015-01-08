@@ -789,11 +789,6 @@ public class GameScreen implements Screen {
         //( ͡° ͜ʖ ͡°) < l'elmar face
         //( ͡° ͜ʖ ͡°) < l'elmar face
 
-        gameOverDialog.setSize(512, 512);
-
-        ImageButton.ImageButtonStyle shipButtonStyle = new ImageButton.ImageButtonStyle();
-        shipButtonStyle.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getGameOverTexture()));
-
         TextButton retryButton = new TextButton("R e t r y", Assets.getAssets().getSkin());
         retryButton.addListener(new ClickListener() {
             @Override
@@ -818,8 +813,8 @@ public class GameScreen implements Screen {
         //add to dialog
         gameOverDialog.addActor(quitButton);
 
-        gameOverDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - gameOverDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2);
         gameOverDialog.setSize(retryButton.getWidth() / 4 + 20 + quitButton.getWidth() / 4 + retryButton.getWidth() + quitButton.getWidth(), quitButton.getHeight() * 2.5f);
+        gameOverDialog.setPosition(Gdx.graphics.getWidth() / 2 - gameOverDialog.getWidth() / 2, Gdx.graphics.getHeight() / 2);
         stage.addActor(gameOverDialog);
 
         game.actionResolver.submitScoreGPGS(Game.score);
