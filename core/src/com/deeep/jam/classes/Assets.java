@@ -125,6 +125,7 @@ public class Assets {
     private void loadMusic() {
         mainMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/Take_a_Chance.mp3"));
         inGameMusic = Gdx.audio.newMusic(Gdx.files.internal("sounds/music/VolatileReaction.mp3"));
+        inGameMusic.setLooping(true);
     }
 
     private void loadSFX() {
