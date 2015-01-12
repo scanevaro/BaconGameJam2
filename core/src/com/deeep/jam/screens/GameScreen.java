@@ -54,7 +54,7 @@ public class GameScreen implements Screen {
     private RepairBar repairBar;
     private static Window shopDialog;
     private Button soundButton;
-    private Button shopButton;
+    private static Button shopButton;
     private ImageButton smallGun1Button;
     private ImageButton bigGun1Button;
     private ImageButton dualGun1Button;
@@ -70,6 +70,7 @@ public class GameScreen implements Screen {
     private Table container;
     private Table leftGunsTable;
     private Table rightGunsTable;
+    private Window infoDialog;
     //World
     private Worlds world;
     //Sounds
@@ -86,7 +87,6 @@ public class GameScreen implements Screen {
         if (!dialogOpen)
             world.update(delta);
 
-
         stage.act();
         cStage.act();
 
@@ -96,6 +96,11 @@ public class GameScreen implements Screen {
         stage.draw();
         Gdx.gl.glViewport(cStage.getViewport().getScreenX(), cStage.getViewport().getScreenY(), cStage.getViewport().getScreenWidth(), cStage.getViewport().getScreenHeight());
         cStage.draw();
+
+        if (Game.firstStart && Gdx.input.justTouched()) {
+            dialogOpen = false;
+            infoDialog.remove();
+        }
     }
 
     @Override
@@ -122,6 +127,8 @@ public class GameScreen implements Screen {
 
         if (!Game.MUTE)
             inGameMusic.play();
+
+        if (Game.firstStart) infoDialog();
     }
 
     private void prepareAudio() {
@@ -190,7 +197,10 @@ public class GameScreen implements Screen {
         shopButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                showShop();
+                if (!shopButton.isDisabled() && dialogOpen) {
+                    dialogOpen = false;
+                    shopDialog.remove();
+                } else if (!shopButton.isDisabled()) showShop();
             }
         });
         soundButton.addListener(new ClickListener() {
@@ -774,6 +784,27 @@ public class GameScreen implements Screen {
         }
     }
 
+    public void infoDialog() {
+        dialogOpen = true;
+
+        infoDialog = new Window("Info", Assets.getAssets().getSkin());
+
+        Label infoLabel = new Label("\n Welcome to Battle In The Atlantic. \n \n " +
+                "Survive boat waves and improve your battle ship. \n" +
+                "Buy guns with money earned from killing boats (start with 1000$) on the shop. \n" +
+                "Shop Button is on the top right, to the right from the Mute Button. \n" +
+                "Move with the Left Pad. Fire with Right Pad. " +
+                "\n \n \n \n                                  Click Anywhere to begin", Assets.getAssets().getSkin());
+        infoLabel.setSize(512, 350);
+        infoLabel.setPosition(32, 10);
+        //add to dialog
+        infoDialog.addActor(infoLabel);
+
+        infoDialog.setSize(infoLabel.getWidth() + 368, infoLabel.getHeight());
+        infoDialog.setPosition(Game.VIRTUAL_WIDTH / 2 - infoDialog.getWidth() / 2, Game.VIRTUAL_HEIGHT / 2 - infoDialog.getHeight() / 2 + 32);
+        stage.addActor(infoDialog);
+    }
+
     public static void prepareGameOverDialog() {
         dialogOpen = true;
         Game.GAME_OVER = false;
@@ -818,6 +849,8 @@ public class GameScreen implements Screen {
         stage.addActor(gameOverDialog);
 
         game.actionResolver.submitScoreGPGS(Game.score);
+
+        shopButton.setDisabled(true);
     }
 
     @Override
