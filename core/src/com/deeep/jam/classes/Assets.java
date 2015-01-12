@@ -60,6 +60,7 @@ public class Assets {
      * Game Title
      */
     private Texture title;
+    private Texture playIcon;
 
 
     /**
@@ -109,7 +110,7 @@ public class Assets {
     private void loadFont() {
         // Instead of using the default font that comes with libgdx default skin, we use a TrueType font and load it in runtime.
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Toucon.ttf"));
-        font = generator.generateFont(12);
+        font = generator.generateFont(16);
     }
 
     private void loadTextures() {
@@ -117,6 +118,8 @@ public class Assets {
         title = new Texture(Gdx.files.internal("data/title.png"));
         canonIndexReferenceTexture = new Texture(Gdx.files.internal("canonIndexReference2.png"));
         aboutTexture = new Texture(Gdx.files.internal("data/about.png"));
+
+        playIcon = new Texture(Gdx.files.internal("data/play.png"));
     }
 
     private void loadMusic() {
@@ -190,6 +193,8 @@ public class Assets {
         selected.dispose();
         canonIndexReferenceTexture.dispose();
 
+        playIcon.dispose();
+
         loaded = false;
     }
 
@@ -231,5 +236,9 @@ public class Assets {
 
     public Texture getAboutTexture() {
         return aboutTexture;
+    }
+
+    public Texture getPlayIcon() {
+        return playIcon;
     }
 }
