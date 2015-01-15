@@ -39,6 +39,8 @@ public class SplashScreen implements Screen {
                 game.setScreen(new MainMenuScreen());
             }
         }, DURATION);
+
+        Game.firstStart = true;
     }
 
     private void setActors() {

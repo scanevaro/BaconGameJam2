@@ -36,6 +36,7 @@ public class Game implements ApplicationListener {
     public static final boolean DEBUG = true;
     public static final float VIRTUAL_WIDTH = 1024;
     public static final float VIRTUAL_HEIGHT = 720;
+    public static boolean firstStart;
     private final float VIRTUAL_ASPECT = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
     public static boolean GAME_OVER = false;
     public static boolean MUTE = false;

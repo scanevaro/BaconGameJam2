@@ -4,14 +4,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.deeep.jam.Game;
 import com.deeep.jam.classes.Achievements;
@@ -25,7 +24,7 @@ public class MainMenuScreen implements Screen {
     private Stage stage;
 
     private Image titleImage;
-    private TextButton playButton;
+    private ImageButton playButton;
     private TextButton aboutButton;
     private TextButton leaderboardsButton;
     private TextButton achievementsButton;
@@ -62,7 +61,9 @@ public class MainMenuScreen implements Screen {
     }
 
     private void setWidgets() {
-        playButton = new TextButton("Play", Assets.getAssets().getSkin());
+        ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle(Assets.getAssets().getSkin().get(Button.ButtonStyle.class));
+        style.imageUp = new TextureRegionDrawable(new TextureRegion(Assets.getAssets().getPlayIcon()));
+        playButton = new ImageButton(style);
         aboutButton = new TextButton("About", Assets.getAssets().getSkin());
         leaderboardsButton = new TextButton("Leaderboards", Assets.getAssets().getSkin());
         achievementsButton = new TextButton("Achievements", Assets.getAssets().getSkin());
@@ -80,8 +81,8 @@ public class MainMenuScreen implements Screen {
 
         playButton.setSize(128, 128);
         aboutButton.setSize(192, 128);
-        leaderboardsButton.setSize(128, 128);
-        achievementsButton.setSize(128, 128);
+        leaderboardsButton.setSize(192, 128);
+        achievementsButton.setSize(192, 128);
         loginButton.setSize(128, 128);
         quitButton.setSize(128, 128);
 
@@ -174,8 +175,8 @@ public class MainMenuScreen implements Screen {
         //add new row
         table.row();
         table.add();
-        table.add(leaderboardsButton).width(128).height(128);
-        table.add(achievementsButton).width(128).height(128);
+        table.add(leaderboardsButton).width(192).height(128);
+        table.add(achievementsButton).width(192).height(128);
         table.add(loginButton).width(128).height(128);
         table.add();
         table.row().pad(10);
