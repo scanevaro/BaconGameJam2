@@ -32,16 +32,18 @@ public abstract class Bullet {
     public Bullet(Sprite sprite, float rotation, float force, float x, float y, float damage) {
 
         this.sprite = sprite;
+        this.sprite.setScale(2F);
         this.rotation = rotation;
         this.force = force;
         this.damage = damage;
+        // minus half the scale * width height
         this.x = x;
         this.y = y;
         sprite.setRotation((float) Math.toDegrees(rotation + Math.PI / 2));
         sprite.setCenterX(sprite.getWidth() / 2);
         sprite.setCenterY(sprite.getHeight() / 2);
         bodyDef.position.setAngleRad(rotation);
-        bodyDef.position.set(0, 0);
+        bodyDef.position.set(-sprite.getWidth(), -sprite.getHeight());
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.fixedRotation = false;
         groundShape = new PolygonShape();

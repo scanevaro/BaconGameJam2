@@ -14,6 +14,7 @@ public class HugeBullet extends Bullet {
 
     public HugeBullet(float rotation, float force, float x, float y, float damage) {
         super(new Sprite(Assets.getAssets().getRegion("ship_gun_bullet_huge")), rotation, force, x, y, damage);
+        super.sprite.setScale(2F);
         animation = new Animation(0.1f, Assets.getAssets().getTextureRegions("rocket_flame/rocket_1"));
         animation.setPlayMode(Animation.PlayMode.LOOP);
         explosionType = 1;
@@ -33,6 +34,6 @@ public class HugeBullet extends Bullet {
     public void render(SpriteBatch spriteBatch) {
         float width = animation.getKeyFrame(0).getRegionWidth();
         float height = animation.getKeyFrame(0).getRegionHeight();
-        spriteBatch.draw(animation.getKeyFrame(animationTimer, true), x + width, y, 0, 0, width, height, 1, 1, (float) Math.toDegrees(rotation + Math.PI / 2));
+        spriteBatch.draw(animation.getKeyFrame(animationTimer, true), x + width, y, 0, 0, width, height , 1, 1, (float) Math.toDegrees(rotation + Math.PI / 2));
     }
 }
