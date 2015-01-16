@@ -11,37 +11,28 @@ import com.deeep.jam.Camera;
  */
 public class Map {
     private TextureRegion[] water_1;
-    private TextureRegion[] water_2;
     public static int sizeX = 4096;
     public static int sizeY = 4096;
     private float waterTimer = 0;
     boolean water1 = false;
 
     public Map() {
-        water_1 = new TextureRegion[11];
-        water_2 = new TextureRegion[11];
-        for (int i = 0; i < 11; i++) {
-            water_1[i] = Assets.getAssets().getRegion("water_anim000" + i);
-            water_2[i] = Assets.getAssets().getRegion("water_anim2000" + i);
+        water_1 = new TextureRegion[15];
+        for (int i = 0; i < 15; i++) {
+            water_1[i] = Assets.getAssets().getRegion("WATER_ANIM", i + 20000);
         }
     }
 
     public void render(SpriteBatch spriteBatch) {
-        waterTimer += Gdx.graphics.getDeltaTime();
+        waterTimer += Gdx.graphics.getDeltaTime() * 14;
         if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
             water1 = true;
-        } else if (Gdx.input.isKeyPressed(Input.Keys.E)) {
-            water1 = false;
         }
         spriteBatch.begin();
         for (int x = 0; x < sizeX / (water_1[0].getRegionWidth()); x++) {
             for (int y = 0; y < sizeY / (water_1[0].getRegionHeight()); y++) {
-                if (Camera.getCamera().viewportContains(x * water_1[0].getRegionWidth()*2 +25, y * water_1[0].getRegionHeight()*2+25)) {
-                    if (water1) {
-                        spriteBatch.draw(water_2[(int) waterTimer % 10], x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2);
-                    } else {
-                        spriteBatch.draw(water_1[(int) waterTimer % 10], x * water_1[0].getRegionWidth()*2, y * water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2,water_1[0].getRegionHeight()*2);
-                    }
+                if (Camera.getCamera().viewportContains(x * water_1[0].getRegionWidth() * 2 + 25, y * water_1[0].getRegionHeight() * 2 + 25)) {
+                    spriteBatch.draw(water_1[(int) waterTimer % 14], x * water_1[0].getRegionWidth() * 2, y * water_1[0].getRegionHeight() * 2, water_1[0].getRegionHeight() * 2, water_1[0].getRegionHeight() * 2);
                 }
             }
         }

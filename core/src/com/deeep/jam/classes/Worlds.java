@@ -251,7 +251,6 @@ public class Worlds {
 
             } else {
                 dayNightStateTime = 1;
-                day = true;
             }
         } else {
             if (dayNightStateTime > 0) {
@@ -259,7 +258,6 @@ public class Worlds {
             } else {
                 if (day)
                     showShop();
-                day = false;
             }
         }
         daylightColour.r = dayNightStateTime;
@@ -278,7 +276,7 @@ public class Worlds {
     }
 
     public static boolean isDay() {
-        return day;
+        return Worlds.gettingDay && (dayNightStateTime > 0.8f);
     }
 
     public static void setDay(boolean day) {

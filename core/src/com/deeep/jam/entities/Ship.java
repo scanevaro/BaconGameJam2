@@ -236,6 +236,7 @@ public class Ship {
             outsideScreen = false;
         }
         Worlds.setOutsideOfScreen(outsideScreen);
+        System.out.println(rotation);
     }
 
     public void draw(SpriteBatch spriteBatch) {
