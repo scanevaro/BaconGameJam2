@@ -99,6 +99,7 @@ public class GameScreen implements Screen {
 
         if (Game.firstStart && Gdx.input.justTouched()) {
             dialogOpen = false;
+            Game.firstStart = false;
             infoDialog.remove();
         }
     }
@@ -399,7 +400,7 @@ public class GameScreen implements Screen {
 
         //( ͡° ͜ʖ ͡°) < l'elmar face
 
-        {//debug layout
+        {/**debug layout*/
 //            container.debug();
 //            leftGunsTable.debug();
 //            rightGunsTable.debug();
