@@ -107,7 +107,7 @@ public class GameScreen implements Screen {
     public void show() {
         this.game = (Game) Gdx.app.getApplicationListener();
 
-        money_amount = 1000;
+        money_amount = 100000;
 
         prepareAudio();
         prepareScreen();
@@ -598,7 +598,7 @@ public class GameScreen implements Screen {
                     if ((Boolean) object)
                         if (money_amount >= 500) {
                             if ((Boolean) object)
-                                world.ship.updateSmallGun(2);
+                                world.ship.updateSmallGun(3);
 
                             if (!Game.MUTE)
                                 shopClicked.play();
@@ -638,7 +638,7 @@ public class GameScreen implements Screen {
                     if ((Boolean) object)
                         if (money_amount >= 500) {
                             if ((Boolean) object)
-                                world.ship.updateSmallGun(3);
+                                world.ship.updateSmallGun(2);
 
                             if (!Game.MUTE)
                                 shopClicked.play();
