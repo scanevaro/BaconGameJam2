@@ -78,6 +78,10 @@ public class EnemySpawn {
                 if (waveNr == 10) Achievements.wave10(true);
                 if (Achievements.dontShoot) Achievements.dontShoot(true);
                 if (Achievements.dontMove) Achievements.dontMove(true);
+
+                Achievements.dontShoot = true;
+                Achievements.noHits = true;
+                Achievements.dontMove = true;
             }
 
             //iterate between day and night when wave is over
